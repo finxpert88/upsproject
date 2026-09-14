@@ -5,11 +5,13 @@ p=Path(__file__).resolve().parent/'tmp'/'verified'
 expect=json.loads((p/'expected.json').read_text(encoding='utf-8'))
 wb=openpyxl.load_workbook(p/'REP-01.xlsx',data_only=False)
 assert wb.sheetnames==['说明','指标字典','数据质量','当前健康','运行概览','明细','告警事件'],wb.sheetnames
-assert wb['说明']['B2'].value=='模拟数据 / simulation'
+assert any(row[0].value=='来源' and row[1].value=='模拟数据 / simulation' for row in wb['说明'])
 assert wb['明细'].max_row==len(expect['details'])+1
 assert wb['运行概览']['C2'].value==expect['summary'][0][2]
 assert wb['运行概览']['C2'].data_type=='n'
 assert wb['明细'].freeze_panes=='A2'
+assert wb['明细']['B2'].is_date
+assert any(row[0].value=='代次' and row[1].value==expect['generationId'] for row in wb['说明'])
 assert all(c.data_type!='f' for s in wb for row in s for c in row)
 for pdf in p.glob('*.pdf'):
  reader=PdfReader(pdf);texts=[page.extract_text() for page in reader.pages]
