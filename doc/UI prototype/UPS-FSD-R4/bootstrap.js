@@ -1,4 +1,5 @@
 'use strict';
+applyProductLanguage();
 function setField(key,value){
   if(key in state)state[key]=value;
   else if(key.startsWith('sim')){const map={simScenario:'scenario',simSeed:'seed',simCount:'count',simStartAt:'startAt',simHistoryHours:'historyHours',simInterval:'interval',simSpeed:'speed',simSeconds:'seconds',simTarget:'target',simSession:'session'};if(map[key])simForm[map[key]]=value}
@@ -16,11 +17,11 @@ document.addEventListener('click',async e=>{const el=e.target.closest('[data-act
   case 'reportDevice':reportState.preview=null;location.hash='reports';render();break;
   case 'reportTemplate':{const t=reportTemplates.find(t=>t.id===value);if(!t)return;reportState.template=t.id;reportState.format=t.formats[0];reportState.preview=null;render();break}
   case 'notificationTab':notificationState.tab=value;render();break;
-  case 'notificationPreview':modal('测试消息范围预览',kv([['Bot显示名',esc(notificationState.name)],['目标chatId',esc(notificationState.chatId)]])+notice('真实服务未接入，没有发送消息。'));break;
+  case 'notificationPreview':modal(L.m162,kv([[L.m163,esc(notificationState.name)],[L.m164,esc(notificationState.chatId)]])+notice(L.m165)+'<pre class="message-preview">'+esc(notificationMessage({sourceMode:'live',event:'test',title:L.notificationTest,eventAt:new Date().toISOString(),timezone:notificationState.timezone||state.session?.timezone||'Asia/Singapore'}))+'</pre>');break;
   case 'history':if(available('getHistory'))await loadHistory();break;
-  case 'alarm':{const a=state.alarms.find(a=>a.occurrenceId===value);if(!a)return;modal(simActive()?'模拟告警详情':'告警详情',kv([['描述',esc(a.message||a.title||'')],['发生时间',esc(a.occurredAt||'未知')],['活动状态',badge(a.activity)],['确认状态',badge(a.acknowledgement)],['恢复时间',esc(a.physicalClearedAt||'尚未恢复')],['确认时间',esc(a.acknowledgedAt||'尚未确认')]])+(simActive()?notice('仅修改当前模拟会话的确认状态；确认不恢复故障。')+btn('确认模拟告警','ackSimulation:'+a.occurrenceId,'primary',a.kind!=='alarm'||a.acknowledgement==='acknowledged'||simActive().state==='stopped'||!permission('alarm.ack')):notice('真实确认服务尚未接入。')));break}
+  case 'alarm':{const a=state.alarms.find(a=>a.occurrenceId===value);if(!a)return;modal(simActive()?L.m166:L.m167,kv([[L.m168,esc(a.message||a.title||'')],[L.m085,esc(a.occurredAt||L.m004)],[L.m086,badge(a.activity)],[L.m080,badge(a.acknowledgement)],[L.m169,esc(a.physicalClearedAt||L.m170)],[L.m171,esc(a.acknowledgedAt||L.m172)]])+(simActive()?notice(L.m173)+btn(L.m174,'ackSimulation:'+a.occurrenceId,'primary',a.kind!=='alarm'||a.acknowledgement==='acknowledged'||simActive().state==='stopped'||!permission('alarm.ack')):notice(L.m175)));break}
   case 'ackSimulation':simulation.acknowledge(simRequest({occurrenceId:value}));$('#modal').close();await syncSimulation();break;
-  default:toast('该平台操作当前不可用。')}
+  default:toast(L.m176)}
 }catch(error){toast(error.message)}});
 window.addEventListener('hashchange',render);
 initializeSimulation();
