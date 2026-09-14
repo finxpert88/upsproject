@@ -1,0 +1,15 @@
+{
+  "document": "C:\\work\\upsproject\\doc\\planning\\UPS-Fleet-FIN-POD-FSD-v0.1.md",
+  "revision": "版本：v0.1 修订3｜日期：2026-09-14｜作者角色：产品规划与设计｜状态：Dashboard与KPI保真修订，待评审",
+  "sha256": "3d3499c53a801fadb98534668e16d805123b85a9f06e457f1084df353a563234",
+  "artifact": "UPS-Fleet-DEMO.html",
+  "sourceVisualBaseline": "../AI-CES-IoT-UPS/index.html",
+  "schemaVersion": "1.2",
+  "fixtures": [
+    "DMO-FULL",
+    "DMO-RISK",
+    "DMO-MISSING"
+  ],
+  "visualAcceptance": "UI-01..12 pending; browser local-file access previously blocked; no bypass attempted",
+  "runtime": "offline static demo, no FIN connection"
+}
