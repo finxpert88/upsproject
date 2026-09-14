@@ -1,0 +1,66 @@
+[
+  {
+    "file": "REP-01.xlsx",
+    "sheets": [
+      "Notes",
+      "Metric Dictionary",
+      "Data Quality",
+      "Current Health",
+      "Operating Summary",
+      "Details",
+      "Alarms & Events"
+    ]
+  },
+  {
+    "file": "REP-02.xlsx",
+    "sheets": [
+      "Notes",
+      "Metric Dictionary",
+      "Data Quality",
+      "Current Health",
+      "Operating Summary",
+      "Details",
+      "Alarms & Events"
+    ]
+  },
+  {
+    "file": "REP-03.xlsx",
+    "sheets": [
+      "Notes",
+      "Metric Dictionary",
+      "Data Quality",
+      "Alarm Details",
+      "Event"
+    ]
+  },
+  {
+    "file": "REP-04.xlsx",
+    "sheets": [
+      "Notes",
+      "Metric Dictionary",
+      "Data Quality",
+      "Maintenance Health",
+      "Current Health"
+    ]
+  },
+  {
+    "file": "REP-01.pdf",
+    "pages": 2
+  },
+  {
+    "file": "REP-03.pdf",
+    "pages": 1
+  },
+  {
+    "file": "REP-04.pdf",
+    "pages": 1
+  },
+  {
+    "file": "REP-02.csv",
+    "rows": 2308
+  },
+  {
+    "file": "REP-03.csv",
+    "rows": 9
+  }
+]
