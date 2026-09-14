@@ -1,0 +1,2312 @@
+{
+  "connection": "local-mytest",
+  "records": [
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-d1279783",
+        "dis": "F2-FCU01 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU01-valvePos",
+      "dis": "F2-FCU01 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.086Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-9abb6cb5",
+        "dis": "F3-FCU02 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU02-valvePos",
+      "dis": "F3-FCU02 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.86Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F2-FCU01",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "navName": "FCU01",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.366Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F3-FCU01",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "navName": "FCU01",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.618Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "模拟办公楼",
+      "geoCity": "Singapore",
+      "geoCountry": "SG",
+      "navName": "模拟办公楼",
+      "site": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.091Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F1-FCU02",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "navName": "FCU02",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.251Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F3-FCU02",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "navName": "FCU02",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.744Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-b6a01fe6",
+        "dis": "F1-FCU02 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU02-roomTemp",
+      "dis": "F1-FCU02 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.936Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "模拟办公楼 3层",
+      "floor": {
+        "_kind": "marker"
+      },
+      "floorNum": 3,
+      "navName": "3层",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.616Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-544fea63",
+        "dis": "F3-FCU01 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU01-roomTemp",
+      "dis": "F3-FCU01 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.698Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1443141c",
+        "dis": "F3-FCU01 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU01-tempSp",
+      "dis": "F3-FCU01 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.71Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a316dab5",
+        "dis": "F3-FCU02 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU02-fanRun",
+      "dis": "F3-FCU02 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.859Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-e799c4d2",
+        "dis": "F1-FCU02 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU02-supplyTemp",
+      "dis": "F1-FCU02 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.945Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-d29f6116",
+        "dis": "F1-FCU01 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU01-roomTemp",
+      "dis": "F1-FCU01 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.759Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-75021fc3",
+        "dis": "F2-FCU02 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU02-supplyTemp",
+      "dis": "F2-FCU02 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.476Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-fbdcc542",
+        "dis": "F1-FCU01 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU01-valvePos",
+      "dis": "F1-FCU01 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.791Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1e06352a",
+        "dis": "F2-FCU02 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU02-valvePos",
+      "dis": "F2-FCU02 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.498Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-893d077f",
+        "dis": "F1-FCU01 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU01-tempSp",
+      "dis": "F1-FCU01 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.768Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a8026dd9",
+        "dis": "F3-FCU01 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU01-fanRun",
+      "dis": "F3-FCU01 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.72Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-b71e6fd7",
+        "dis": "F2-FCU02 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU02-fanRun",
+      "dis": "F2-FCU02 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.49Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1121d817",
+        "dis": "F1-FCU01 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU01-supplyTemp",
+      "dis": "F1-FCU01 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.772Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-70bf4791",
+        "dis": "F2-FCU01 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU01-roomTemp",
+      "dis": "F2-FCU01 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.068Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "模拟办公楼 1层",
+      "floor": {
+        "_kind": "marker"
+      },
+      "floorNum": 1,
+      "navName": "1层",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.094Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-5c350d98",
+        "dis": "F3-FCU02 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU02-tempSp",
+      "dis": "F3-FCU02 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.855Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-741b3176",
+        "dis": "F2-FCU02 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU02-roomTemp",
+      "dis": "F2-FCU02 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.447Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-9cc53ed8",
+        "dis": "F2-FCU02 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU02-tempSp",
+      "dis": "F2-FCU02 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.474Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-892e0589",
+        "dis": "F1-FCU01 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU01-fanRun",
+      "dis": "F1-FCU01 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.786Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-154d8158",
+        "dis": "F2-FCU01 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU01-tempSp",
+      "dis": "F2-FCU01 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.074Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "模拟办公楼 2层",
+      "floor": {
+        "_kind": "marker"
+      },
+      "floorNum": 2,
+      "navName": "2层",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.364Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a3bf37ac",
+        "dis": "F1-FCU02 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU02-fanRun",
+      "dis": "F1-FCU02 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.953Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-89e42f5d",
+        "dis": "F1-FCU02 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU02-valvePos",
+      "dis": "F1-FCU02 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.957Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-b81c84f9",
+        "dis": "F2-FCU01 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU01-supplyTemp",
+      "dis": "F2-FCU01 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.076Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-7fadfd24",
+        "dis": "F2-FCU02"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F2-FCU02",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "navName": "FCU02",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.491Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-926825f3",
+        "dis": "F1-FCU02 温度设定值"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F1-FCU02-tempSp",
+      "dis": "F1-FCU02 温度设定值",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-6042dfa2",
+        "dis": "F1-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "温度设定值",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "sp": {
+        "_kind": "marker"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:16.94Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-d7e34bec",
+        "dis": "F3-FCU01 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU01-supplyTemp",
+      "dis": "F3-FCU01 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.713Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-b4588fa8",
+        "dis": "F3-FCU02 室温"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU02-roomTemp",
+      "dis": "F3-FCU02 室温",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "室温",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "zone": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.849Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-f3c329f4",
+        "dis": "F3-FCU01 阀门开度"
+      },
+      "cmd": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU01-valvePos",
+      "dis": "F3-FCU01 阀门开度",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-390d45e5",
+        "dis": "F3-FCU01"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "阀门开度",
+      "point": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "unit": "%",
+      "valve": {
+        "_kind": "marker"
+      },
+      "water": {
+        "_kind": "marker"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.724Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-12b4d623",
+        "dis": "F1-FCU01"
+      },
+      "demoBatch": "finDemo20260914",
+      "dis": "F1-FCU01",
+      "equip": {
+        "_kind": "marker"
+      },
+      "fcu": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-1cdc55c6",
+        "dis": "模拟办公楼 1层"
+      },
+      "navName": "FCU01",
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:33:19.095Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-0cb6593d",
+        "dis": "F2-FCU01 风机状态"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F2-FCU01-fanRun",
+      "dis": "F2-FCU01 风机状态",
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-2ab7b605",
+        "dis": "F2-FCU01"
+      },
+      "fan": {
+        "_kind": "marker"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-c903e8a3",
+        "dis": "模拟办公楼 2层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "cov",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Bool",
+      "navName": "风机状态",
+      "point": {
+        "_kind": "marker"
+      },
+      "run": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "tz": "Singapore",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.08Z",
+        "tz": "UTC"
+      }
+    },
+    {
+      "id": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-b7580406",
+        "dis": "F3-FCU02 送风温度"
+      },
+      "air": {
+        "_kind": "marker"
+      },
+      "demoBatch": "finDemo20260914",
+      "demoKey": "F3-FCU02-supplyTemp",
+      "dis": "F3-FCU02 送风温度",
+      "discharge": {
+        "_kind": "marker"
+      },
+      "equipRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-afc28032",
+        "dis": "F3-FCU02"
+      },
+      "floorRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-a0cccc4a",
+        "dis": "模拟办公楼 3层"
+      },
+      "his": {
+        "_kind": "marker"
+      },
+      "hisEnd": {
+        "_kind": "dateTime",
+        "val": "2026-09-13T23:45:00+08:00",
+        "tz": "Singapore"
+      },
+      "hisInterval": {
+        "_kind": "number",
+        "val": 15,
+        "unit": "min"
+      },
+      "hisMode": "sampled",
+      "hisSize": 672,
+      "hisStart": {
+        "_kind": "dateTime",
+        "val": "2026-09-07T00:00:00+08:00",
+        "tz": "Singapore"
+      },
+      "kind": "Number",
+      "navName": "送风温度",
+      "point": {
+        "_kind": "marker"
+      },
+      "sensor": {
+        "_kind": "marker"
+      },
+      "siteRef": {
+        "_kind": "ref",
+        "val": "p:mytest:r:323a7bdf-651678d7",
+        "dis": "模拟办公楼"
+      },
+      "temp": {
+        "_kind": "marker"
+      },
+      "tz": "Singapore",
+      "unit": "°C",
+      "mod": {
+        "_kind": "dateTime",
+        "val": "2026-09-14T09:39:17.857Z",
+        "tz": "UTC"
+      }
+    }
+  ]
+}

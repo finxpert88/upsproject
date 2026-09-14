@@ -1,0 +1,47 @@
+{
+  "request": {
+    "connection_id": "local-mytest",
+    "expression": "do\n  if (readAll(point and upsDemo).size != 138) throw \"Unexpected UPS point count\"\n  if (readAll(upsDemoFill).size != 0) throw \"Backfill already requested; reconcile\"\n  cutoff: now().floor(5min)\n  upsDemoTick20260914()\n  readAll(point and upsDemo and upsSupported==true and upsScenario==\"offline\" and upsLogicalField!=\"communicationStatus\").each(p => do\n    lastGood: cutoff - 30min\n    diff(p, {curVal:upsDemoValue20260914(p, lastGood), curStatus:\"down\", upsQuality:\"stale\", upsSourceTs:lastGood, upsLastGoodAt:lastGood}, {transient}).commit\n  end)\n  diff(readById(@p:mytest:r:323a812d-d8928336), {-disabled}).commit\n  commit(diff(null, {job, upsDemoFill, upsDemo, demoBatch:\"upsDemo20260914\", dis:\"UPS演示 30天历史回填\", upsFillState:\"pending\", upsFillCutoff:cutoff, upsCompletedPoints:0, jobExpr:\"do\\n  state: read(upsDemoFill)\\n  cutoff: state->upsFillCutoff\\n  diff(state, {upsFillState:\\\"running\\\", upsCompletedPoints:0}).commit\\n  points: readAll(point and upsDemo and his and upsSupported==true).toRecList\\n  points.each(p => do\\n    upsDemoBackfill20260914(p, cutoff)\\n    latest: read(upsDemoFill)\\n    diff(latest, {upsCompletedPoints:latest->upsCompletedPoints + 1, upsLastCompletedPoint:p->id}).commit\\n  end)\\n  diff(readById(@p:mytest:r:323a812d-97f4a5fc), {-disabled}).commit\\n  diff(read(upsDemoFill), {upsFillState:\\\"done\\\", upsFinishedAt:now()}).commit\\n  {completedPoints:points.size, cutoff:cutoff}\\nend\", jobSchedule:\"onetime \" + (now() + 10sec).toStr}, {add}))\n  {phase:\"automatic-fill-scheduled\", points:138, historyPoints:88, cutoff:cutoff}\nend",
+    "max_rows": 5,
+    "max_bytes": 5000,
+    "timeout_seconds": 60,
+    "confirmed": false
+  },
+  "preview": {
+    "status": "staged",
+    "audit_id": "18f0efed-6e42-482a-a566-b2b616a700c5",
+    "operation_id": "51b6f8ca-cc6f-4944-9c00-cb6e4ce37617",
+    "risk": "high_impact",
+    "calls": [
+      "if",
+      "readAll",
+      "if",
+      "readAll",
+      "now",
+      "floor",
+      "upsDemoTick20260914",
+      "readAll",
+      "each",
+      "diff",
+      "upsDemoValue20260914",
+      "diff",
+      "readById",
+      "commit",
+      "diff",
+      "now",
+      "commit",
+      "commit"
+    ],
+    "reasons": [
+      "unknown_call:each",
+      "unknown_call:floor",
+      "unknown_call:if",
+      "unknown_call:now",
+      "unknown_call:upsDemoTick20260914",
+      "unknown_call:upsDemoValue20260914",
+      "dynamic_or_assignment"
+    ],
+    "request_hash": "5d2b34e35bb2e7684c877968e522721060bc895e6175b91500dbe2ed960b9ab3",
+    "expires_at": "2026-09-14T10:17:24.503915+00:00"
+  }
+}

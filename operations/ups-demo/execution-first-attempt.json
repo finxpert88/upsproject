@@ -1,0 +1,79 @@
+{
+  "audits": [
+    {
+      "ok": true,
+      "data": {
+        "status": "succeeded",
+        "audit_id": "c9ea0f95-e8eb-421e-9ee1-6b9ba2805662",
+        "operation_id": "8223d93b-81d4-43c6-a66f-768d8a204d45",
+        "risk": "high_impact",
+        "data": {
+          "format": "json",
+          "data": {
+            "_kind": "grid",
+            "meta": {
+              "ver": "3.0"
+            },
+            "cols": [
+              {
+                "name": "phase"
+              }
+            ],
+            "rows": [
+              {
+                "phase": "base-created"
+              }
+            ]
+          },
+          "truncated_bytes": false,
+          "truncated_rows": false
+        }
+      },
+      "errors": [],
+      "warnings": [],
+      "evidence": [],
+      "duration_ms": 79.43019999947865,
+      "tool_version": "2.0.0",
+      "trace_id": "trace-1c2c1da209fd4bac92dddfa7bcc6a682"
+    },
+    {
+      "ok": true,
+      "data": {
+        "status": "succeeded",
+        "audit_id": "6fc1bc27-bec7-4b14-8c77-62917be08798",
+        "operation_id": "45bf5a84-e84e-4544-89ca-439201216d38",
+        "risk": "high_impact",
+        "data": {
+          "format": "json",
+          "data": {
+            "_kind": "grid",
+            "meta": {
+              "ver": "3.0",
+              "errType": "axon::EvalErr",
+              "err": {
+                "_kind": "marker"
+              },
+              "errTrace": "axon::EvalErr: Func failed: diff(Dict orig,Dict changes,Dict flags); args: (null,MapDict,Dict1)\n  folio::DiffErr: Cannot set tag persistently: \"curStatus\" [eval:5]\n  Trace disabled",
+              "dis": "axon::EvalErr: Func failed: diff(Dict orig,Dict changes,Dict flags); args: (null,MapDict,Dict1)\n  folio::DiffErr: Cannot set tag persistently: \"curStatus\" [eval:5]"
+            },
+            "cols": [
+              {
+                "name": "empty"
+              }
+            ],
+            "rows": []
+          },
+          "truncated_bytes": false,
+          "truncated_rows": false
+        }
+      },
+      "errors": [],
+      "warnings": [],
+      "evidence": [],
+      "duration_ms": 63.863899995340034,
+      "tool_version": "2.0.0",
+      "trace_id": "trace-4fbac21e541b4810884ee93d61a5077d"
+    }
+  ],
+  "status": "partial; 2 sites, 1 UPS, 0 points, 4 functions, 2 disabled jobs; old data retained"
+}

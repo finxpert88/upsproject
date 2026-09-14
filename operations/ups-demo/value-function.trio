@@ -1,0 +1,10 @@
+name: "upsDemoValue20260914"
+func
+doc: "Synthetic UPS value, demo only."
+src:
+  (p, ts) =>
+  do
+    fraction: (ts.time.hour + ts.time.minute / 60) / 12 - 1
+    if (p->kind == "Number") p->upsBase + p->upsAmplitude * fraction else p->upsBase
+  end
+

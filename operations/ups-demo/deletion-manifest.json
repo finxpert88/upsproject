@@ -1,0 +1,249 @@
+{
+  "connection": "local-mytest",
+  "project": "mytest",
+  "recordCount": 40,
+  "historyCount": 20160,
+  "records": [
+    {
+      "id": "p:mytest:r:323a7bdf-d1279783",
+      "mod": "2026-09-14T09:39:17.086Z",
+      "dis": "F2-FCU01 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-9abb6cb5",
+      "mod": "2026-09-14T09:39:17.86Z",
+      "dis": "F3-FCU02 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-2ab7b605",
+      "mod": "2026-09-14T09:33:19.366Z",
+      "dis": "F2-FCU01",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-390d45e5",
+      "mod": "2026-09-14T09:33:19.618Z",
+      "dis": "F3-FCU01",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-651678d7",
+      "mod": "2026-09-14T09:33:19.091Z",
+      "dis": "模拟办公楼",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-6042dfa2",
+      "mod": "2026-09-14T09:33:19.251Z",
+      "dis": "F1-FCU02",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-afc28032",
+      "mod": "2026-09-14T09:33:19.744Z",
+      "dis": "F3-FCU02",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-b6a01fe6",
+      "mod": "2026-09-14T09:39:16.936Z",
+      "dis": "F1-FCU02 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-a0cccc4a",
+      "mod": "2026-09-14T09:33:19.616Z",
+      "dis": "模拟办公楼 3层",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-544fea63",
+      "mod": "2026-09-14T09:39:17.698Z",
+      "dis": "F3-FCU01 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-1443141c",
+      "mod": "2026-09-14T09:39:17.71Z",
+      "dis": "F3-FCU01 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-a316dab5",
+      "mod": "2026-09-14T09:39:17.859Z",
+      "dis": "F3-FCU02 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-e799c4d2",
+      "mod": "2026-09-14T09:39:16.945Z",
+      "dis": "F1-FCU02 送风温度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-d29f6116",
+      "mod": "2026-09-14T09:39:16.759Z",
+      "dis": "F1-FCU01 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-75021fc3",
+      "mod": "2026-09-14T09:39:17.476Z",
+      "dis": "F2-FCU02 送风温度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-fbdcc542",
+      "mod": "2026-09-14T09:39:16.791Z",
+      "dis": "F1-FCU01 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-1e06352a",
+      "mod": "2026-09-14T09:39:17.498Z",
+      "dis": "F2-FCU02 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-893d077f",
+      "mod": "2026-09-14T09:39:16.768Z",
+      "dis": "F1-FCU01 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-a8026dd9",
+      "mod": "2026-09-14T09:39:17.72Z",
+      "dis": "F3-FCU01 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-b71e6fd7",
+      "mod": "2026-09-14T09:39:17.49Z",
+      "dis": "F2-FCU02 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-1121d817",
+      "mod": "2026-09-14T09:39:16.772Z",
+      "dis": "F1-FCU01 送风温度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-70bf4791",
+      "mod": "2026-09-14T09:39:17.068Z",
+      "dis": "F2-FCU01 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-1cdc55c6",
+      "mod": "2026-09-14T09:33:19.094Z",
+      "dis": "模拟办公楼 1层",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-5c350d98",
+      "mod": "2026-09-14T09:39:17.855Z",
+      "dis": "F3-FCU02 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-741b3176",
+      "mod": "2026-09-14T09:39:17.447Z",
+      "dis": "F2-FCU02 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-9cc53ed8",
+      "mod": "2026-09-14T09:39:17.474Z",
+      "dis": "F2-FCU02 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-892e0589",
+      "mod": "2026-09-14T09:39:16.786Z",
+      "dis": "F1-FCU01 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-154d8158",
+      "mod": "2026-09-14T09:39:17.074Z",
+      "dis": "F2-FCU01 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-c903e8a3",
+      "mod": "2026-09-14T09:33:19.364Z",
+      "dis": "模拟办公楼 2层",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-a3bf37ac",
+      "mod": "2026-09-14T09:39:16.953Z",
+      "dis": "F1-FCU02 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-89e42f5d",
+      "mod": "2026-09-14T09:39:16.957Z",
+      "dis": "F1-FCU02 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-b81c84f9",
+      "mod": "2026-09-14T09:39:17.076Z",
+      "dis": "F2-FCU01 送风温度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-7fadfd24",
+      "mod": "2026-09-14T09:33:19.491Z",
+      "dis": "F2-FCU02",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-926825f3",
+      "mod": "2026-09-14T09:39:16.94Z",
+      "dis": "F1-FCU02 温度设定值",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-d7e34bec",
+      "mod": "2026-09-14T09:39:17.713Z",
+      "dis": "F3-FCU01 送风温度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-b4588fa8",
+      "mod": "2026-09-14T09:39:17.849Z",
+      "dis": "F3-FCU02 室温",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-f3c329f4",
+      "mod": "2026-09-14T09:39:17.724Z",
+      "dis": "F3-FCU01 阀门开度",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-12b4d623",
+      "mod": "2026-09-14T09:33:19.095Z",
+      "dis": "F1-FCU01",
+      "historySize": 0
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-0cb6593d",
+      "mod": "2026-09-14T09:39:17.08Z",
+      "dis": "F2-FCU01 风机状态",
+      "historySize": 672
+    },
+    {
+      "id": "p:mytest:r:323a7bdf-b7580406",
+      "mod": "2026-09-14T09:39:17.857Z",
+      "dis": "F3-FCU02 送风温度",
+      "historySize": 672
+    }
+  ],
+  "note": "Deletion is a separate staged operation after UPS history and current-value verification. Match exact IDs and revisions. Preserve platform programs/jobs/users/settings."
+}

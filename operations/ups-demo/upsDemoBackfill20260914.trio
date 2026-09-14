@@ -1,0 +1,22 @@
+name: "upsDemoBackfill20260914"
+func
+doc: "UPS demo only; synthetic data; restricted to upsDemo records."
+src:
+  (p, cutoff) =>
+  do
+    start: cutoff - 30day + 5min
+    stop: if (p->upsScenario == "offline") cutoff - 30min else cutoff
+    ts: start
+    while (ts <= stop) do
+      samples: []
+      count: 0
+      while (ts <= stop and count < 288) do
+        samples = samples.add({ts:ts, val:upsDemoValue20260914(p, ts)})
+        ts = ts + 5min
+        count = count + 1
+      end
+      samples.hisWrite(p)
+    end
+    {pointRef:p->id, start:start, stop:stop}
+  end
+

@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UPS Fleet · FSD 修订2交互原型</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="demo"><span>● 独立静态原型 · 固定样例数据 · 无现场连接</span><button id="scenarioOpen">评审场景</button><span>FSD v0.1 修订2 / 2026.09.14</span></div>
+<aside><a class="brand" href="#overview"><b>ϟ</b><div>UPS FLEET<small>电力保障监控平台</small></div></a><div class="nav-label">工作空间 / 示例项目</div><nav id="nav"></nav><div class="aside-bottom"><span class="dot"></span> 本地离线资源<br><small>FIN 目标版本 · 待核验<br>原型不会执行设备控制</small></div></aside>
+<div class="workspace"><header><div id="breadcrumb">工作空间 / 设备总览</div><div class="header-right"><span id="clock">样例采集 2026-09-14 10:00:00 +08:00</span><label>身份 <select id="role"><option value="engineer">工程师 · 全部站点</option><option value="operator">操作员 · A站点</option><option value="viewer">查看者 · B站点</option><option value="none">无查看权限</option></select></label><span class="avatar">陈</span></div></header><main id="app"></main><footer>UPS Fleet Monitor <span>静态交互验收原型 · FSD 修订2</span></footer></div>
+<dialog id="modal"><div id="modalContent"></div></dialog><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script></body></html>

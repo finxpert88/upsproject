@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "data": {
+    "status": "succeeded",
+    "audit_id": "53f0f9aa-92f3-4751-9d82-511d8845586e",
+    "operation_id": "f8058e90-2487-4ad0-ac7e-2067a165e5c9",
+    "risk": "high_impact",
+    "data": {
+      "format": "json",
+      "data": {
+        "_kind": "grid",
+        "meta": {
+          "ver": "3.0",
+          "errType": "axon::EvalErr",
+          "err": {
+            "_kind": "marker"
+          },
+          "errTrace": "axon::EvalErr: haystack::UnitErr: h + min [proj_mytest::upsDemoValue20260914:3]\n  Trace disabled",
+          "dis": "axon::EvalErr: haystack::UnitErr: h + min [proj_mytest::upsDemoValue20260914:3]"
+        },
+        "cols": [
+          {
+            "name": "empty"
+          }
+        ],
+        "rows": []
+      },
+      "truncated_bytes": false,
+      "truncated_rows": false
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "evidence": [],
+  "duration_ms": 67.51309999526711,
+  "tool_version": "2.0.0",
+  "trace_id": "trace-88f4414e711743a095f390cedc69ee05"
+}

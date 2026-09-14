@@ -1,0 +1,13 @@
+do
+  if (readAll(upsDemo).size != 0) throw "UPS demo exists; reconcile"
+  commit(diff(null, {site, dis:"UPS演示站点A", navName:"UPS演示站点A", tz:"Singapore", upsDemo, demoBatch:"upsDemo20260914", upsDemoKey:"site-a"}, {add}))
+  commit(diff(null, {site, dis:"UPS演示站点B", navName:"UPS演示站点B", tz:"Singapore", upsDemo, demoBatch:"upsDemo20260914", upsDemoKey:"site-b"}, {add}))
+  commit(diff(null, {func, name:"upsDemoValue20260914", doc:"Synthetic UPS value, demo only", src:"(p, ts) =>\ndo\n  fraction: (ts.time.hour + ts.time.minute / 60) / 12 - 1\n  if (p->kind == \"Number\") p->upsBase + p->upsAmplitude * fraction else p->upsBase\nend", upsDemo, demoBatch:"upsDemo20260914", dis:"UPS demo synthetic value"}, {add}))
+  commit(diff(null, {func, name:"upsDemoBackfill20260914", doc:"UPS synthetic demo only", src:"(p, cutoff) =>\ndo\n  start: cutoff - 30day + 5min\n  stop: if (p->upsScenario == \"offline\") cutoff - 30min else cutoff\n  ts: start\n  while (ts <= stop) do\n    samples: []\n    count: 0\n    while (ts <= stop and count < 288) do\n      samples = samples.add({ts:ts, val:upsDemoValue20260914(p, ts)})\n      ts = ts + 5min\n      count = count + 1\n    end\n    samples.hisWrite(p)\n  end\n  {pointRef:p->id, start:start, stop:stop}\nend", upsDemo, demoBatch:"upsDemo20260914"}, {add}))
+  commit(diff(null, {func, name:"upsDemoTick20260914", doc:"UPS synthetic demo only", src:"() =>\ndo\n  ts: now()\n  readAll(point and upsDemo and upsSupported==true).each(p => do\n    if (p->upsScenario != \"offline\" or p->upsLogicalField == \"communicationStatus\") do\n      val: upsDemoValue20260914(p, ts)\n      diff(p, {curVal:val, curStatus:\"ok\", upsQuality:\"good\", upsSourceTs:ts, upsLastGoodAt:ts}, {transient}).commit\n    end\n  end)\n  {updatedAt:ts}\nend", upsDemo, demoBatch:"upsDemo20260914"}, {add}))
+  commit(diff(null, {func, name:"upsDemoHistory20260914", doc:"UPS synthetic demo only", src:"() =>\ndo\n  cutoff: now().floor(5min)\n  readAll(point and upsDemo and his and upsSupported==true and upsScenario!=\"offline\").each(p => do\n    if (p[\"hisEnd\"] == null or p->hisEnd < cutoff)\n      [{ts:cutoff, val:upsDemoValue20260914(p, cutoff)}].hisWrite(p)\n  end)\n  {sampleTime:cutoff}\nend", upsDemo, demoBatch:"upsDemo20260914"}, {add}))
+  commit(diff(null, {job, disabled, dis:"UPS演示 当前值", jobExpr:"upsDemoTick20260914()", jobSchedule:"every 10sec", upsDemo, demoBatch:"upsDemo20260914"}, {add}))
+  commit(diff(null, {job, disabled, dis:"UPS演示 历史", jobExpr:"upsDemoHistory20260914()", jobSchedule:"every 5min", upsDemo, demoBatch:"upsDemo20260914"}, {add}))
+
+  {phase:"base-created"}
+end

@@ -1,0 +1,286 @@
+{
+  "scope": "PRD solution synopsis offline validation; not full document semantic or runtime validation",
+  "submitted": {
+    "project_context": {
+      "product": "UPS Fleet FIN POD",
+      "fin_version": "unknown",
+      "version": "unknown",
+      "scope": "PRD only; offline; no implementation, sizing, training or live operations"
+    },
+    "architecture": {
+      "layers": [
+        "UPS -> existing verified FIN connector -> site/equip/point -> UPS business POD -> local frontend"
+      ],
+      "version_status": "unverified"
+    },
+    "claims": [
+      {
+        "claim": "Workspace sample includes frontend resources and Fantom services in one POD; not target compatibility",
+        "status": "workspace_observed",
+        "source_ids": [
+          "8e042e31366acc8caf4f5785"
+        ]
+      },
+      {
+        "claim": "FIN target compatibility requires exact version build and runtime validation",
+        "status": "unverified",
+        "source_ids": [
+          "fin_doc_What's_New_in_FIN_5_Migrations_1355c0cb"
+        ]
+      }
+    ],
+    "requirements": [
+      "site/equip/point hierarchy",
+      "server-side authorization and durable alarm acknowledgement",
+      "real values with quality and timestamps",
+      "offline packaged frontend",
+      "installation upgrade rollback validation"
+    ],
+    "compliance_matrix": [
+      {
+        "requirement": "site/equip/point hierarchy",
+        "status": "proposed",
+        "source_ids": [
+          "7814ae4f98287bd98410aa8c"
+        ]
+      },
+      {
+        "requirement": "target FIN runtime compatibility",
+        "status": "unverified",
+        "source_ids": [
+          "8e042e31366acc8caf4f5785"
+        ]
+      }
+    ],
+    "assumptions": [
+      "100 UPS / 5000 realtime points / 20 users are test assumptions, not observed capacity",
+      "One PRD delivery; no instantiated Haystack point list"
+    ],
+    "pending_confirmation": [
+      "Exact FIN build, SDK, licenses, OS",
+      "UPS model firmware protocol point list and size",
+      "Alarm lifecycle and acknowledgement API on target",
+      "SOC/SOH and units",
+      "Production thresholds and retention"
+    ]
+  },
+  "attempts": [
+    {
+      "ok": true,
+      "data": {
+        "artifact_type": "solution",
+        "issues": [
+          "ARTIFACT_PARSE:AttributeError"
+        ],
+        "structured_issues": [
+          {
+            "rule_id": "ARTIFACT_PARSE",
+            "location": "AttributeError",
+            "severity": "error",
+            "evidence": [
+              "evals/domain_contracts.py"
+            ],
+            "version_applicability": "unverified",
+            "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+            "target_version": "unknown",
+            "target_applicability": "unverified",
+            "version_evidence": []
+          }
+        ],
+        "target_version": "unknown",
+        "version_status": "unverified",
+        "version_assessment": {
+          "catalog_version": "2026-08-29",
+          "target_is_concrete": false,
+          "target_normalized": null,
+          "profile_id": null,
+          "status": "unverified",
+          "declared_version": null,
+          "declaration_matches_target": null,
+          "evaluated_rules": {
+            "ARTIFACT_PARSE": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CLAIMS": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CLAIM_STATUS": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CONTEXT": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_DELIVERY_FIELD": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_HIERARCHY": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_TRACEABILITY": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_VERIFIED_SOURCE": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            }
+          },
+          "compatibility_verified": false,
+          "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+        },
+        "passed": false,
+        "validation_scope": "offline workspace contracts only",
+        "citation_identity_verified": false,
+        "runtime_verified": false,
+        "warnings": [
+          "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+        ]
+      },
+      "errors": [],
+      "warnings": [],
+      "evidence": [],
+      "duration_ms": 3.5547000006772578,
+      "tool_version": "2.0.0",
+      "trace_id": "trace-b95b409f645448b8be4405722f550232"
+    },
+    {
+      "ok": true,
+      "data": {
+        "artifact_type": "solution",
+        "issues": [
+          "ARTIFACT_PARSE:AttributeError"
+        ],
+        "structured_issues": [
+          {
+            "rule_id": "ARTIFACT_PARSE",
+            "location": "AttributeError",
+            "severity": "error",
+            "evidence": [
+              "evals/domain_contracts.py"
+            ],
+            "version_applicability": "unverified",
+            "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+            "target_version": "unknown",
+            "target_applicability": "unverified",
+            "version_evidence": []
+          }
+        ],
+        "target_version": "unknown",
+        "version_status": "unverified",
+        "version_assessment": {
+          "catalog_version": "2026-08-29",
+          "target_is_concrete": false,
+          "target_normalized": null,
+          "profile_id": null,
+          "status": "unverified",
+          "declared_version": null,
+          "declaration_matches_target": null,
+          "evaluated_rules": {
+            "ARTIFACT_PARSE": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CLAIMS": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CLAIM_STATUS": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_CONTEXT": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_DELIVERY_FIELD": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_HIERARCHY": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_TRACEABILITY": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            },
+            "SOLUTION_VERIFIED_SOURCE": {
+              "status": "unverified",
+              "target_version": "unknown",
+              "profile_id": null,
+              "evidence": [],
+              "vendor_runtime_verified": false
+            }
+          },
+          "compatibility_verified": false,
+          "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+        },
+        "passed": false,
+        "validation_scope": "offline workspace contracts only",
+        "citation_identity_verified": false,
+        "runtime_verified": false,
+        "warnings": [
+          "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+        ]
+      },
+      "errors": [],
+      "warnings": [],
+      "evidence": [],
+      "duration_ms": 1.0841999974218197,
+      "tool_version": "2.0.0",
+      "trace_id": "trace-b058ee9a672a44558efc0036c05ea557"
+    }
+  ],
+  "conclusion": "FIN Expert returned ARTIFACT_PARSE:AttributeError on both serialized JSON and object submissions. Validation did not pass. Target version remains unknown/unverified. No live checks performed."
+}
