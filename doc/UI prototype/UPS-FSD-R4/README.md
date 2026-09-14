@@ -1,6 +1,6 @@
 # UPS Fleet Monitor 静态 DEMO
 
-依据 `doc/planning/UPS-Fleet-FIN-POD-FSD-v0.1.md` 修订8（规划提交0a1d963），包括FR-25、第19节SF-23、第20.2节边界验收和第21节英文交付要求。修订6、7验证分别保存在VALIDATION-R6.md、VALIDATION-R7.md，不当作本轮英文验收。
+依据当前 `doc/planning/UPS-Fleet-FIN-POD-FSD-v0.1.md` 修订9，包括FR-25模拟、FR-26响应式、第21节英文和第22节SF-24。此次只改UI目录，保留规划任务正在修改的PRD/FSD。修订6、7、8验证分别保存在VALIDATION-R6.md、VALIDATION-R7.md、VALIDATION-R8.md，不当作本轮响应式验收。
 
 ## 打开与体验
 
@@ -18,6 +18,7 @@
 |文件|职责|
 |---|---|
 |messages.en-US.js / product-language.js|集中英文文案、固定locale、来源英文映射/回退、英文错误及通知正文、IANA时间显示|
+|responsive.css / responsive.js|按内容宽度重排、Menu、完整表格卡片、触控取样、草稿/焦点保持、安全区与文件保存/分享入口|
 |simulation-scenarios.js|七类场景、确定性seed生成器、资产/当前值/初始历史、纯数值规则门槛|
 |simulation-service.js|本地SimulationRepository、controlRevision/dataRevision/generation、清理屏障、虚拟时间、告警/通知及会话记录|
 |simulation-api.js|模拟管理操作的schema2.0类型边界、旧版本/未知字段拒绝、受限的读取/确认/操作状态接口|
@@ -52,7 +53,17 @@ node verify.cjs --single-file
 python verify-files.py
 ```
 
-`verify.cjs`无需npm依赖，运行27项行为/英文检查并将格式验证文件放到被Git忽略的`tmp/verified`。`verify-files.py`使用pypdf、pdfplumber和openpyxl重新打开9个文件、核对数值和类型、检查英文、字体及边界并渲染PDF。本轮证据及限制见ACCEPTANCE.md。历史版本验证独立存档，不混用。
+`verify.cjs`无需npm依赖，运行34项行为/英文/响应式逻辑检查并将格式验证文件放到被Git忽略的`tmp/verified`。`verify-files.py`使用pypdf、pdfplumber和openpyxl重新打开9个文件、核对数值和类型、检查英文、字体及边界并渲染PDF。本轮证据及限制见ACCEPTANCE.md及RESPONSIVE-VALIDATION.md。历史版本验证独立存档，不混用。
+
+## 手机、平板与桌面
+
+在同一个入口打开。按实际内容宽度，小于640px单列、640～980px双列、大于980px三列；窄屏通过Menu进入全部页面。设备和告警表保留全部状态重排成卡片，其余宽表在有英文说明的独立区域滚动。点击Inspect Trend Samples，通过滑块、Previous Sample和Next Sample查看具体值、时区和质量，无需悬停。
+
+表单、步骤、弹窗和安全区同步适配；尺寸变化仅更新显示区域，不重新连接、生成会话、确认或创建定时器。未提交工程草稿仅在当前页面内存保存，刷新后不承诺保留。浏览器缩放未禁用。
+
+生成报告后点Download，再点Open / Save File使用浏览器的预览/保存；支持文件分享时可用Share File。系统取消不会显示“已保存”。两分钟后链接过期，重新点Download取得新链接；报告本身的权限、代次和24小时有效期继续检查。iOS/iPadOS系统实际文件保存仍待真机验证。
+
+本轮浏览器工具的本地访问限制仍在，未绕过；没有页面截图或真实视口/触控/软键盘证据。RESPONSIVE-VALIDATION.md逐项列出待验矩阵，不把Node合成尺寸事件称为浏览器模拟通过。
 
 ## 英文来源边界
 

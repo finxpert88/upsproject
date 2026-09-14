@@ -859,7 +859,7 @@ const L=Object.freeze({
   "t004": "<p>Publishing requires a valid validation report and the current configuration revision. No draft is ready to publish.</p>",
   "t005": "<div class=\"spark-frame\" role=\"img\" aria-label=\"{{0}}: no history available\">{{1}} · {{2}}</div>",
   "t006": "<div class=\"spark-frame\">{{0}} · No Valid Samples</div>",
-  "t007": "<svg class=\"spark\" viewBox=\"0 0 290 86\" role=\"img\" aria-label=\"{{0}}，{{1}} to {{2}}{{3}}，{{4}}\"><line class=\"chart-gridline\" x1=\"30\" y1=\"15\" x2=\"280\" y2=\"15\"/><line class=\"chart-gridline\" x1=\"30\" y1=\"63\" x2=\"280\" y2=\"63\"/><text class=\"chart-axis\" x=\"2\" y=\"17\">{{5}}{{6}}</text><text class=\"chart-axis\" x=\"2\" y=\"65\">{{7}}</text>{{8}}{{9}}<text class=\"chart-axis\" x=\"30\" y=\"80\">{{10}}</text><text class=\"chart-axis\" x=\"254\" y=\"80\">{{11}}</text></svg><div class=\"spark-labels\"><span>{{12}}</span><span>{{13}} · {{14}}</span></div>",
+  "t007": "<svg class=\"spark\" viewBox=\"0 0 290 86\" role=\"img\" aria-label=\"{{0}}, {{1}} to {{2}}{{3}}, {{4}}\"><line class=\"chart-gridline\" x1=\"30\" y1=\"15\" x2=\"280\" y2=\"15\"/><line class=\"chart-gridline\" x1=\"30\" y1=\"63\" x2=\"280\" y2=\"63\"/><text class=\"chart-axis\" x=\"2\" y=\"17\">{{5}}{{6}}</text><text class=\"chart-axis\" x=\"2\" y=\"65\">{{7}}</text>{{8}}{{9}}<text class=\"chart-axis\" x=\"30\" y=\"80\">{{10}}</text><text class=\"chart-axis\" x=\"254\" y=\"80\">{{11}}</text></svg><div class=\"spark-labels\"><span>{{12}}</span><span>{{13}} · {{14}}</span></div>",
   "t008": "<div class=\"scopebar\"><div class=\"scope-left\">{{0}}<span>{{1}}</span></div>{{2}}</div><div class=\"fleet-tabs\" data-kpi=\"KPI-02\">{{3}}</div><section class=\"dashboard-hero {{4}}\"><div class=\"hero-identity\"><div class=\"modeflag\" data-kpi=\"KPI-01\">{{5}}</div><h1>{{6}}<small>{{7}}</small></h1><div class=\"hero-location\">{{8}}</div><div class=\"hero-bottom\">{{9}}{{10}}</div></div><div class=\"hero-runtime\" data-kpi=\"KPI-03\"><div class=\"runtime-number\">{{11}}<small>min</small></div><small>Estimated Runtime at Current Load</small><div class=\"runtime-secondary\" data-kpi=\"KPI-04\">Required {{12}} min · Margin {{13}} min</div><span class=\"muted\">{{14}}</span></div><div class=\"health-container\" data-kpi=\"KPI-05\"><div class=\"health-button {{15}}\"><svg class=\"health-ring\" viewBox=\"0 0 120 120\" aria-label=\"Overall Health\" role=\"img\"><circle class=\"ring-track\" cx=\"60\" cy=\"60\" r=\"52\"/><circle class=\"ring-value\" cx=\"60\" cy=\"60\" r=\"52\" stroke-dasharray=\"326.73 326.73\" stroke-dashoffset=\"{{16}}\"/></svg><span class=\"ring-label\"><strong>{{17}}</strong><small>{{18}}</small></span></div><small>{{19}}</small></div></section><div class=\"risk-strip {{20}}\">{{21}}<span>Coverage: {{22}}</span>{{23}}</div>{{24}}\n<div class=\"dashboard-grid\">\n{{25}}\n{{26}}\n{{27}}\n{{28}}\n{{29}}\n{{30}}\n</div><section class=\"panel dashboard-alarms\" data-kpi=\"KPI-31 KPI-32\"><div class=\"panel-head\"><h2>Equipment Alarms & Events</h2><small>Active: {{31}} · Unacknowledged: {{32}}</small></div>{{33}}</section>",
   "t009": "<div class=\"asset-caption\" data-kpi=\"KPI-06\">{{0}} cells · {{1}}</div><div class=\"compact-metrics\">{{2}}{{3}}{{4}}{{5}}{{6}}{{7}}</div><div class=\"trend-area\" data-kpi=\"KPI-12\"><div class=\"trend-head\">{{8}}</div>{{9}}<div class=\"history-controls\">{{10}}{{11}}</div></div><div class=\"card-foot\" data-kpi=\"KPI-13\">{{12}} {{13}}</div>",
   "t010": "<div class=\"compact-metrics\" data-kpi=\"KPI-14\">{{0}}{{1}}{{2}}{{3}}</div><div class=\"load-title\" style=\"margin-top:14px\"><span>Load Percentage</span><strong>{{4}}%</strong></div><div class=\"load-gauge {{5}}\" data-kpi=\"KPI-15\"><i style=\"width:{{6}}%\"></i></div><div class=\"load-scale\"><span>0%</span><span>50%</span><span>100%</span></div>{{7}}<div class=\"trend-area\" data-kpi=\"KPI-16\">{{8}}</div>",
@@ -880,7 +880,7 @@ const L=Object.freeze({
   "mainNavigation": "Main Navigation",
   "refreshConnection": "Refresh Connection",
   "footerProduct": "UPS FLEET / Power Assurance Monitoring",
-  "footerVersion": "FSD Revision 8 · Static Demo",
+  "footerVersion": "FSD Revision 9 · Responsive Static Demo",
   "sourceFallback": "Untranslated source description",
   "sourceDiagnostic": "Engineering action required: provide a verified English display mapping.",
   "requestError": "Request failed. Review the operation code and connection status.",
@@ -908,6 +908,18 @@ const L=Object.freeze({
   "notificationBody": "Message Preview",
   "localeUnsupported": "LOCALE_UNSUPPORTED: The live session must declare en-US.",
   "englishInput": "VALIDATION_FAILED: Enter an English display value.",
-  "sourceEngineering": "English Display Mapping"
+  "sourceEngineering": "English Display Mapping",
+  "menu": "Menu",
+  "closeMenu": "Close Menu",
+  "closeDialog": "Close Dialog",
+  "scrollTable": "On wide tables, scroll horizontally to view all columns.",
+  "inspectTrend": "Inspect Trend Samples",
+  "sample": "Sample",
+  "previousSample": "Previous Sample",
+  "nextSample": "Next Sample",
+  "saveReport": "Save or Share Report",
+  "saveReportHelp": "Open the file to preview or save it. On supported devices, use Share to choose a destination. Closing the system dialog does not confirm that the file was saved. This link expires after two minutes; select Download again if needed.",
+  "openSaveFile": "Open / Save File",
+  "shareFile": "Share File"
 });
 function msg(key,...values){return L[key].replace(/\{\{(\d+)\}\}/g,(_,i)=>String(values[+i]??''))}

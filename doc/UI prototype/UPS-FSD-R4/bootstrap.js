@@ -1,5 +1,6 @@
 'use strict';
 applyProductLanguage();
+installResponsive();
 function setField(key,value){
   if(key in state)state[key]=value;
   else if(key.startsWith('sim')){const map={simScenario:'scenario',simSeed:'seed',simCount:'count',simStartAt:'startAt',simHistoryHours:'historyHours',simInterval:'interval',simSpeed:'speed',simSeconds:'seconds',simTarget:'target',simSession:'session'};if(map[key])simForm[map[key]]=value}
@@ -11,7 +12,7 @@ document.addEventListener('click',async e=>{const el=e.target.closest('[data-act
   if(action.startsWith('simNotify')){await notificationSimulationAction(action,value);return}
   if(action.startsWith('sim')||action==='liveMode'){await simulationAction(action,value);return}
   if(['reportPreview','reportGenerate','reportAvailable','reportDownload','reportCancel'].includes(action)){await reportAction(action,value);return}
-  switch(action){case 'close':$('#modal').close();break;case 'refresh':if(simActive())await syncSimulation();else await connect();break;case 'unit':state.unit=state.unit==='C'?'F':'C';render();break;case 'dictionary':metricExplain(value);break;
+  switch(action){case 'trendPrevious':moveTrendSample(value,-1);break;case 'trendNext':moveTrendSample(value,1);break;case 'shareReport':await shareReport(value);break;case 'close':$('#modal').close();break;case 'refresh':if(simActive())await syncSimulation();else await connect();break;case 'unit':state.unit=state.unit==='C'?'F':'C';render();break;case 'dictionary':metricExplain(value);break;
   case 'device':if(!state.devices.some(d=>d.identity.equipRef===value))return;DataProvider.validateRef(value);location.hash='dashboard';await loadSnapshot(value);break;
   case 'step':state.configStep=Math.max(0,Math.min(5,Number(value)));render();break;
   case 'reportDevice':reportState.preview=null;location.hash='reports';render();break;

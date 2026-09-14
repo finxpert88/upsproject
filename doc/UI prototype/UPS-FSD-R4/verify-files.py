@@ -50,5 +50,5 @@ for file in sorted(p.glob('*.csv')):
  if file.name=='REP-02.csv':assert len(rows)==len(expect['details'])+4
  results.append({'file':file.name,'rows':len(rows)})
  print(file.name,len(rows),'rows; English headers, simulation marker, and time zone passed')
-(p/'files-r8.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+(p/'files-r9.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
 print('LANG-03 parsing passed for all 9 allowed outputs; inspect rendered pages/sheets separately.')
