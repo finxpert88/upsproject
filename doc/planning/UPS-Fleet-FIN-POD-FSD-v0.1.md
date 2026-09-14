@@ -1,10 +1,10 @@
 # UPS Fleet Monitor 功能规格说明书（FSD）
 
-版本：v0.1 修订6｜日期：2026-09-14｜作者角色：产品规划与设计｜状态：模拟数据功能增补，待评审
+版本：v0.1 修订7｜日期：2026-09-14｜作者角色：产品规划与设计｜状态：评审问题修订，待复审
 
 本文定义功能、交互、数据契约、权限与验收要求；版本历史由Git追溯。
 
-需求基线：[UPS-Fleet-FIN-POD-PRD-v0.1.md](UPS-Fleet-FIN-POD-PRD-v0.1.md)。本规格将其 FR-01～17 细化为可分工实现、可用固定输入测试的功能与系统契约；第18节定义FR-18～21，第19节定义FR-22。PRD 定义“为什么、做什么”，本文定义“如何表现、如何协作、如何判定完成”。
+需求基线：[UPS-Fleet-FIN-POD-PRD-v0.1.md](UPS-Fleet-FIN-POD-PRD-v0.1.md)。本规格将其 FR-01～17 细化为可分工实现、可用固定输入测试的功能与系统契约；第18节定义FR-21～24，第19节定义FR-25。PRD 定义“为什么、做什么”，本文定义“如何表现、如何协作、如何判定完成”。
 
 ## 1. 使用约定与实施边界
 
@@ -146,7 +146,7 @@ PointMapping 必填：mappingId、equipRef、targetObjectRef、logicalField、po
 |observedValue/observedAt|同型/null、时间/null|可解码但量程异常的当前观测；普通查看者可见并标异常，不作为有效输入|
 |unit/precision|字符串/null、整数/null|显示单位与源精度；布尔/枚举可空|
 |quality/reason|枚举、代码/null|见第4节；reason给机器码，UI翻译|
-|sourceRef/origin|Ref或配置ID、枚举|measured/configured/derived|
+|sourceRef/origin|Ref或配置ID可空、枚举|缺失规则见9.4；measured/configured/derived|
 |sourceTs/receivedAt|时间/null、时间/null|真实采样与网关收到源结果；不能用浏览器读取时间代替|
 |freshnessTs/freshnessBasis|时间/null、枚举|sample/connectorRead/heartbeat/config；来源可信策略明确|
 |rawValue/rawStatus|原始值/状态，可空|仅有诊断权限者可查询；不能含设备凭据|
@@ -479,13 +479,13 @@ AuditEvent含 auditId、projectId、serverTs、actorId、action、targetRefs、o
 
 业务检测状态与FIN确认状态分离。对每个新主样本/质量或日历时钟事件，在同一事务提交：RuleState（候选、检测级别、输入水位）、新发生identity或既有发生更新、RuleAlarmOutbox命令。事务失败三者均不前移，重新处理同一事件；不得先保存ACTIVE后再单独保存发送意图。
 
-occurrenceId由持久化发生计数分配；correlationKey=projectId+equipRef+ruleId+occurrenceId。每发生commandSeq单调递增，幂等键=correlationKey+commandSeq，命令kind为CREATE/SEVERITY/CLEAR，保存原发生/恢复时间和前置seq。CREATE总为seq1；升级及恢复顺序跟随；不能以当前时间重写过去发生时间。
+occurrenceId由持久化发生计数分配；correlationKey=projectId+equipRef+ruleId+occurrenceId。每发生持久化occurrenceOrdinal、detectedStartedAt/detectedEndedAt、previousOccurrenceId；commandSeq单调递增，幂等键=correlationKey+commandSeq，命令kind为CREATE/SEVERITY/CLEAR，保存原发生/恢复时间和前置seq。CREATE总为seq1；升级及恢复顺序跟随；不能以当前时间重写过去发生时间。
 
 发送状态为PENDING→DISPATCHING→APPLIED / DEFINITELY_NOT_APPLIED / OUTCOME_UNKNOWN。对同一发生最多一个在途命令；FIN已执行后，把sourceAlarmId/回读结果、outbox APPLIED及关联写入同一事务。发送前退出仍PENDING可发送；DISPATCHING后崩溃一律先只读按correlationKey核对。只有目标FIN支持可验证的幂等键或唯一关联查询，才允许自动创建规则告警；能力不足阻止该功能上线，不能靠“看起来同一描述”查重。
 
 CREATE结果未知时，后续SEVERITY/CLEAR可落队列但禁止外发。业务风险已恢复而CREATE仍未核实时，页面同时保留“已检测历史风险/源同步待核对”和原发生时间；不宣称平台已恢复。待CREATE确认后按seq补发，保持先产生后恢复的历史。源长期不可用时展示本地已检测风险、syncState和首次失败时间，FIN活动数量另列为过期，不能伪造源活动计数。
 
-恢复已确认后若新风险再发生，创建新occurrenceId；同发生CLEAR前不能复用身份。当命令明确未执行可按2/5/10/30秒退避；未知只读对账，D每30秒、连续20次无结论转RECONCILIATION_REQUIRED并停止自动写，保留运维待办。只读对账恢复可继续；无法核实需源系统证据，普通用户无“强制成功”按钮。队列限额D=10,000待发命令，满时停止接受新副作用，显著显示监控降级并保留错误日志；RuleState不能在outbox落库失败时前移。
+本地恢复判定达标并原子写入CLEAR时，立即结束该检测发生并写detectedEndedAt；不等待FIN确认。再次达标触发即分配新的occurrenceId和occurrenceOrdinal，不继承旧确认；每个发生保留独立CREATE/CLEAR及检测起止时间。即使前一CREATE或CLEAR未知，新发生仍可持久化。发送依赖为同规则/设备occurrenceOrdinal顺序：后一CREATE等待前一CLEAR被源确认，旧发生的CLEAR只引用旧sourceAlarmId，不能结束新发生。前一命令未知只阻断这条发生链的外发，不阻断本地检测；多个快速发生/恢复均按序持久化，受原有outbox事务及容量约束。当命令明确未执行可按2/5/10/30秒退避；未知只读对账，D每30秒、连续20次无结论转RECONCILIATION_REQUIRED并停止自动写，保留运维待办。只读对账恢复可继续；无法核实需源系统证据，普通用户无“强制成功”按钮。队列限额D=10,000待发命令，满时停止接受新副作用，显著显示监控降级并保留错误日志；RuleState不能在outbox落库失败时前移。
 
 ## 8. 工程发布、并发和恢复
 
@@ -512,13 +512,13 @@ validate返回validationId、draftRevision/hash、platformBindingFingerprint、b
 |ACTIVATING|闸门关闭，全部模块切同一epoch并确认；模块不齐时不运行新副作用|超时D30秒或任一失败→RECOVERY_REQUIRED；保留新提交决定，禁止静默退旧版|
 |ACTIVE|全模块一致后持久化LastSuccessfulActivation及操作成功，打开闸门|重启加载ActiveConfigPointer并重建；按未决操作协议恢复|
 |ABORTED|提交前失败，记录原因，旧epoch恢复运行|旧版唯一有效|
-|RECOVERY_REQUIRED|提交后失败，只读诊断；旧快照标“配置切换未完成”，禁规则新评估/外发及新变更|每次启动尝试重建已提交候选；失败保持此态；管理员可发经校验的显式恢复发布|
+|RECOVERY_REQUIRED|提交后失败，只读诊断；旧快照标“配置切换未完成”，禁规则新评估/外发及普通新变更，OP-31紧急暂停除外|每次启动尝试重建已提交候选；失败保持此态；管理员可发经校验的显式恢复发布|
 
 启动选择只看持久化COMMITTED决定/ActiveConfigPointer，不以LastSuccessfulActivation代替提交决定。没有COMMITTED的孤立候选作废；有COMMITTED必须全部加载同版后再开闸。外部已发送但未知命令不因epoch变更重发，保留7.4身份；发布前的在途回调仅允许完成其已登记操作，不允许再生成旧epoch新命令。
 
 提交后恢复旧内容也作为新的恢复发布：复制previousRevision为新候选/新epoch，做同样PREPARE→COMMIT→ACTIVATE及审计；不倒写旧指针。恢复发布若改变相关映射，继续受8.4活动发生限制。恢复失败保持RECOVERY_REQUIRED，由运维处理；不能一边cfg8遥测一边cfg7规则。未激活时间段标历史解释边界但不声称插件曾运行规则。
 
-激活期间读请求返回CONFIG_ACTIVATING或带旧epoch/过期标识的最后快照；不得返回混合模块快照。变更请求返回PUBLICATION_BUSY，只有已提交operationId状态读取继续可用。
+激活期间读请求返回CONFIG_ACTIVATING或带旧epoch/过期标识的最后快照；不得返回混合模块快照。变更请求返回PUBLICATION_BUSY；已提交operationId状态读取及OP-31紧急暂停独立保持可用，OP-31不依赖候选配置激活。
 
 ### 8.3 历史策略、回退与外部服务
 
@@ -563,7 +563,7 @@ MVP选定可执行的保守策略：**有相关活动检测、未完成CREATE/SE
 
 ### 9.1 联调字段规则（评审13）
 
-9.2为独立于FIN的业务类型契约，以TypeScript式类型记法表达数据schema，不是产品代码或SDK声明。未标?的字段必填，?为允许省略；可空必须显式null。所有ID/Ref/版本为非空不透明字符串（≤128字符），文本≤500字符，数组按操作上限限制；未知枚举/额外字段拒绝。操作目录与此契约冲突时按此节及状态机处理。
+9.2为独立于FIN的业务类型契约，以TypeScript式类型记法表达数据schema，不是产品代码或SDK声明。未标?的字段必填，?为允许省略；可空必须显式null。所有ID/Ref/版本为非空不透明字符串（≤128字符），文本≤500字符，数组按操作上限限制；未知枚举/额外字段拒绝。所有操作统一使用9.2与9.4契约；目录只作索引，不允许另加未声明字段。
 
 请求默认：列表pageSize=50；filter为空表示全部授权对象；alarm list默认activity=active，纯事件只在all视图；history缺省时窗serverNow前1小时至serverNow；audit缺省7天。排序不可由客户端注入表达式，枚举限文中列举。数据更新响应（ok/partial）与notModified以kind区分；notModified仍给serverTime和snapshotRevision，客户端只在本地缓存同设备/权限/configRevision且存在时使用，否则重新取全量。质量时间变化或权限/配置变化必须产生新snapshotRevision。
 
@@ -587,12 +587,15 @@ type ErrorCode = "UNAUTHENTICATED" | "FORBIDDEN" | "OBJECT_UNAVAILABLE" |
   "RATE_LIMITED" | "PERSISTENCE_UNAVAILABLE" | "OUTCOME_UNKNOWN" |
   "CAPABILITY_UNSUPPORTED" | "SCOPE_CONFLICT" |
   "ACTIVE_OCCURRENCE_BLOCKS_CHANGE" | "PUBLICATION_BUSY" |
-  "CONFIG_ACTIVATING" | "RECOVERY_REQUIRED";
+  "CONFIG_ACTIVATING" | "RECOVERY_REQUIRED" | "SOURCE_MODE_MISMATCH" |
+  "GENERATION_MISMATCH" | "SESSION_BUSY" | "SESSION_DELETED" | "INVALID_STATE" |
+  "LIMIT_EXCEEDED" | "REPORT_EXPIRED" | "REPORT_NOT_READY" |
+  "SCHEMA_VERSION_UNSUPPORTED" | "CHANNEL_PAUSED";
 type Issue = { path: string; code: string; message: string };
 type PartialError = { targetRef: Id | null; component: "telemetry" |
-  "history" | "alarm" | "rule" | "configuration";
+  "history" | "alarm" | "rule" | "configuration" | "report" | "notification" | "simulation";
   code: ErrorCode; message: string; retryable: boolean; lastGoodAt: Ts | null };
-type Meta = { requestId: Id; serverTime: Ts; schemaVersion: "1.2" };
+type Meta = { requestId: Id; serverTime: Ts; schemaVersion: "2.0"; context: SourceContext };
 type Response<T> = Meta & (
   { kind: "ok"; data: T; warnings: Issue[] } |
   { kind: "partial"; data: T; warnings: Issue[]; partialErrors: PartialError[] } |
@@ -606,7 +609,7 @@ type Metric = {
   lastGoodValue: Scalar | null; lastGoodAt: Ts | null;
   observedValue: Scalar | null; observedAt: Ts | null;
   unit: string | null; precision: number | null; quality: Quality; reason: string | null;
-  sourceRef: Id; origin: "measured" | "configured" | "derived";
+  sourceRef: Id | null; origin: "measured" | "configured" | "derived";
   sourceTs: Ts | null; receivedAt: Ts | null; freshnessTs: Ts | null;
   freshnessBasis: "sample" | "connectorRead" | "heartbeat" | "config";
   mappingRevision: Id; rawValue?: Scalar | null; rawStatus?: string | null;
@@ -731,7 +734,9 @@ type Entity = { entityType: "enrollment"; payload: Enrollment } |
   { entityType: "mapping"; payload: Mapping } |
   { entityType: "rule"; payload: Rule } |
   { entityType: "plan"; payload: Plan } |
-  { entityType: "assessmentBinding"; payload: AssessmentBinding };
+  { entityType: "assessmentBinding"; payload: AssessmentBinding } |
+  { entityType: "notificationChannel"; payload: NotificationChannel } |
+  { entityType: "notificationSubscription"; payload: NotificationSubscription };
 type EntityRecord = Entity & { entityId: Id; entityRevision: Id };
 type Patch = ({ op: "add"; entityId: Id; expectedEntityRevision: null } & Entity) |
   ({ op: "update"; entityId: Id; expectedEntityRevision: Id } & Entity) |
@@ -761,7 +766,7 @@ type Diagnostics = { committedRevision: Id; lastSuccessfulRevision: Id;
   pendingOperations: number; ruleOutboxDepth: number; alarmSyncQuality: Quality;
   errors: PartialError[] };
 //每个OP返回Response<下面指定的响应类型>；只有OP-03允许notModified。
-type Contracts = {
+type CoreContracts = {
   "OP-01": { request: {}; response: { actorId: Id; permissions: string[];
     authorizedSiteRefs: Id[]; language: "zh-CN"; timezone: string; scopeVersion: Id } };
   "OP-02": { request: { filter?: Filter; pageSize?: number; cursor?: Id;
@@ -813,9 +818,114 @@ Patch update是单个有权实体完整替换，不是项目完整替换；delet
 
 这是OP-12部分诊断可用；不能把不可用的告警通道解释为无告警。
 
-schemaVersion为1.2，新增Snapshot.batteryAssets/healthIndicator/outlook。字段缺失不能被1.2客户端默认成有效评分；需按unknown渲染。AssessmentBinding沿用OP-08局部patch、校验/发布与权限范围；仅引用已有且可读FIN对象，不新建预测引擎。未配置绑定也必须返回unknown健康环及unavailable展望；batteryAssets按所选对象返回真实资产描述，未知值为null。配置源失效不可用时禁止沿用上个设备分值。评分availability=available要求metric.quality=good、0～100范围、methodologyRef和非空来源；否则拒绝配置或标unknown。outlook按targetObjectRef+component+kind去重并允许计划/预测并存，显示来源标签。externalPrediction须有有效时间窗、方法证据与质量；unavailable各日期为空，不能输出占位月份。仪表历史仍由OP-04独立提供，未并入快照刷新事务。
+schemaVersion为2.0，Snapshot含batteryAssets/healthIndicator/outlook；所有业务操作还须使用9.4上下文。字段缺失不能被2.0客户端默认成有效评分；需按unknown渲染。AssessmentBinding沿用OP-08局部patch、校验/发布与权限范围；仅引用已有且可读FIN对象，不新建预测引擎。未配置绑定也必须返回unknown健康环及unavailable展望；batteryAssets按所选对象返回真实资产描述，未知值为null。配置源失效不可用时禁止沿用上个设备分值。评分availability=available要求metric.quality=good、0～100范围、methodologyRef和非空来源；否则拒绝配置或标unknown。outlook按targetObjectRef+component+kind去重并允许计划/预测并存，显示来源标签。externalPrediction须有有效时间窗、方法证据与质量；unavailable各日期为空，不能输出占位月份。仪表历史仍由OP-04独立提供，未并入快照刷新事务。
 
 OP-03未变化不含空data；本地缺少对应快照时重取完整快照。源过期、量程异常或权限改变必须返回更新或错误，不能继续notModified。
+
+
+### 9.4 统一扩展契约与版本
+
+以下类型与9.2组成同一schema2.0。每个JSON请求必须有schemaVersion与context，不把context塞入额外业务字段。服务器先验证版本、会话身份、运行模式及代次，再按10.1检查动作；客户端不可指定他人项目或owner。模拟根上下文只允许OP-01、OP-23及OP-30 list，此时sessionId/generationId均为null。其他模拟操作两者必须非空；live不得携带模拟ID。模拟root响应的场景和时间为空，已绑定会话响应必须完整。
+
+2.0是有破坏性变更的接口版本：1.2客户端返回SCHEMA_VERSION_UNSUPPORTED并提示升级，不静默丢弃新字段或回填live。OP-01允许无版本的首次GET只返回支持版本与升级提示，不返回业务数据。新版本响应的notModified同样包含context，缓存必须匹配用户、权限版本、模式、sessionId、generationId、设备和配置版本。
+
+```typescript
+type RequestContext = { mode: "live" } |
+  { mode: "simulation"; sessionId: Id | null; generationId: Id | null };
+type SourceContext = { sourceMode: "live" } |
+  { sourceMode: "simulation"; simulationSessionId: Id | null; generationId: Id | null;
+    scenarioId: Id | null; scenarioVersion: Id | null; seed: number | null;
+    virtualTime: Ts | null };
+type NotificationChannel = { channelId: Id; name: string; enabled: boolean;
+  secretRef: Id; chatId: string; messageThreadId: number | null;
+  timezone: string; resumePauseRevision: Id | null };
+type NotificationSubscription = { subscriptionId: Id; channelId: Id;
+  enabled: boolean; equipRefs: Id[]; severities: Severity[];
+  eventTypes: ("occurred" | "physicalCleared" | "acknowledged")[];
+  quietHours: { start: string; end: string } | null }; // HH:mm，按channel.timezone
+type ChannelGate = { channelId: Id; paused: boolean; pauseRevision: Id;
+  pausedAt: Ts | null; pausedBy: Id | null; reason: string | null };
+
+type ReportParams = { templateId: "REP-01" | "REP-02" | "REP-03" | "REP-04";
+  templateVersion: Id; equipRefs: Id[]; start: Ts; end: Ts; timezone: string;
+  metricIds: string[]; aggregation: "raw" | "bucketed" | "summary";
+  bucketSeconds: number | null; format: "pdf" | "xlsx" | "csv"; allowEmpty: boolean };
+type ReportJob = { jobId: Id; ownerId: Id; context: SourceContext; params: ReportParams;
+  state: "queued" | "running" | "succeeded" | "failed" | "cancelled" | "expired";
+  progressPct: number; createdAt: Ts; expiresAt: Ts | null;
+  dataCutoffAt: Ts; collectedFrom: Ts | null; collectedTo: Ts | null;
+  rows: number; bytes: number; qualitySummary: Issue[];
+  checksum: string | null; errorCode: ErrorCode | null; reason: string | null };
+type ReportFile = { fileName: string; mime: string; bytes: number; checksum: string };
+type NotifyJob = { notificationId: Id; context: SourceContext; channelId: Id | null;
+  alarmRef: Id | null; eventKey: Id; eventAt: Ts; createdAt: Ts;
+  state: "queued" | "sending" | "accepted" | "retry_wait" | "unknown" | "failed" | "cancelled";
+  attempt: number; nextAttemptAt: Ts | null; channelRevision: Id | null;
+  transport: "telegram" | "simulated"; messageId: string | null;
+  simulatedOutcome: "accepted" | "rateLimited" | "rejected" | "unknown" | null;
+  lastError: string | null };
+type MetricDefinition = { metricId: string; name: string; meaning: string;
+  unit: string | null; formula: string | null; measurementLocation: string | null;
+  sourceRef: Id | null; qualityMeaning: string;
+  basis: { kind: "standard" | "vendor" | "project"; title: string;
+    version: string | null; locator: string | null; status: "verified" | "pending" }[] };
+type SimState = "ready" | "running" | "paused" | "stopped" | "failed" |
+  "resetting" | "deleting" | "deleted";
+type SimSession = { sessionId: Id; ownerId: Id; generationId: Id;
+  controlRevision: Id; dataRevision: Id; state: SimState; initialized: boolean;
+  scenarioId: Id; scenarioVersion: Id; seed: number; deviceCount: number;
+  startAt: Ts; timezone: string; virtualTime: Ts; speed: 1 | 5 | 10;
+  historyHours: number; sampleIntervalSeconds: number; historyRows: number;
+  lastActivityAt: Ts; cleanupOperationId: Id | null; reason: string | null };
+type SimMutation = { sessionId: Id; generationId: Id;
+  expectedControlRevision: Id; operationId: Id };
+type ScenarioChange = { scenarioId: Id; scenarioVersion: Id; targetSimEquipIds: Id[];
+  simulatedOutcome: "accepted" | "rateLimited" | "rejected" | "unknown" | null };
+type ExtendedContracts = {
+  "OP-15": { request: ReportParams & { operationId: Id }; response: { job: ReportJob } };
+  "OP-16": { request: { action: "get"; jobId: Id } |
+    { action: "list"; cursor?: Id; pageSize?: number };
+    response: { job: ReportJob } | Page<ReportJob> };
+  "OP-17": { request: { jobId: Id }; response: ReportFile };
+  "OP-18": { request: { jobId: Id; operationId: Id }; response: { job: ReportJob } };
+  "OP-19": { request: { channelDraftId: Id; draftRevision: Id; operationId: Id };
+    response: { job: NotifyJob } };
+  "OP-20": { request: { channelId?: Id; states?: NotifyJob["state"][];
+    from?: Ts; to?: Ts; cursor?: Id; pageSize?: number }; response: Page<NotifyJob> };
+  "OP-21": { request: { notificationId: Id; operationId: Id; acceptDuplicateRisk: boolean };
+    response: { job: NotifyJob } };
+  "OP-22": { request: { metricIds: string[]; equipRef: Id };
+    response: { items: MetricDefinition[] } };
+  "OP-23": { request: { operationId: Id; scenarioId: Id; scenarioVersion: Id;
+    seed: number; deviceCount?: number; startAt?: Ts; timezone: string };
+    response: { session: SimSession } };
+  "OP-24": { request: SimMutation & { historyHours?: number; sampleIntervalSeconds?: number };
+    response: { session: SimSession } };
+  "OP-25": { request: SimMutation & { action: "start" | "pause" | "resume" | "stop";
+    speed?: 1 | 5 | 10 }; response: { session: SimSession } };
+  "OP-26": { request: SimMutation & { seconds: number }; response: { session: SimSession } };
+  "OP-27": { request: SimMutation & ScenarioChange; response: { session: SimSession } };
+  "OP-28": { request: SimMutation; response: { operation: Operation; session: SimSession } };
+  "OP-29": { request: SimMutation; response: { operation: Operation; session: SimSession } };
+  "OP-30": { request: { action: "get"; sessionId: Id } |
+    { action: "list"; cursor?: Id; pageSize?: number }; response: { session: SimSession } | Page<SimSession> };
+  "OP-31": { request: { channelId: Id; operationId: Id; reason: string };
+    response: { gate: ChannelGate; operation: Operation } };
+};
+type Contracts = CoreContracts & ExtendedContracts;
+type WireRequest<K extends keyof Contracts> = Contracts[K]["request"] &
+  { schemaVersion: "2.0"; context: RequestContext };
+type WireResponse<K extends keyof Contracts> = Response<Contracts[K]["response"]>;
+```
+
+OP-17为唯一二进制成功响应例外：成功返回文件流，Content-Type、Content-Disposition、Content-Length与校验和分别对应ReportFile；响应头包含requestId/schemaVersion及不透明上下文指纹，失败返回JSON Response<never>，下载发出前重新授权。不得将文件base64塞入ReportFile未声明字段。
+
+新增类型的必填、null、未知字段规则与9.1相同。列表默认50、上限100；OP-16/20/30沿用Page的范围游标；OP-20时间默认7天、上限31天、from/to同时出现。seed为0～2147483647整数；场景ID/版本由受控注册表校验，未知返回VALIDATION_FAILED；OP-27数组非空、全部同会话同代次且≤deviceCount。OP-25 speed只允许start/resume时填写，省略使用当前speed，其他action带speed拒绝。新增错误含义：模式不匹配SOURCE_MODE_MISMATCH，代次过期GENERATION_MISMATCH，屏障中SESSION_BUSY，删除SESSION_DELETED，状态不允许INVALID_STATE，资源超限LIMIT_EXCEEDED，文件过期REPORT_EXPIRED/未完成REPORT_NOT_READY。
+
+REP-01/04仅pdf/xlsx且aggregation=summary、bucketSeconds=null；REP-02仅xlsx/csv且raw或bucketed；raw时bucketSeconds=null，bucketed时60～86400整数且必填；REP-03 pdf使用summary，xlsx/csv使用raw，bucketSeconds=null。metricIds在REP-02非空且≤32，其他模板为空数组并用模板字典。start<end且满足18.2限额。ReportJob的progressPct为0～100，完成文件才为100。NotifyJob在transport=simulated时messageId必须null，真实transport时simulatedOutcome必须null；模拟场景参数不能控制真实传输适配器。
+
+Metric.sourceRef的缺失规则：quality=unmapped/unsupported时sourceRef允许null且value=null，sourceTs/receivedAt/freshnessTs=null，reason非空，不生成占位引用。已绑定但离线/stale/fault保留已知sourceRef与历史时间；unknown可空但当前value必须null。good必须有非空sourceRef；derived指向已登记计算定义，输入来源在derivation中列出；configured指向配置对象。不存在映射时mappingRevision用已发布配置的版本令牌，不编造pointRef。缺失状态仍返回Metric以保留界面组件。
+
 
 ## 10. 角色、会话与访问控制矩阵
 
@@ -832,6 +942,29 @@ OP-03未变化不含空data；本地缺少对应快照时重取完整快照。�
 缓存内可共享原始设备快照，但出参组装每次重做授权；任何用户可见列表/聚合缓存必须含范围版本，不能跨用户复用已过滤结果。权限撤销在下一请求生效，不以缓存TTL延迟执行。会话过期清除页面敏感数据，保留非敏感显示偏好；不使用localStorage存设备快照或令牌。
 
 所有变更防跨站请求伪造，身份取自验证过的FIN会话；权限校验覆盖直接调用业务入口。所有数据访问限定在授权项目与设备范围。接口日志脱敏，厂商资料引用不能包含连接密码。
+
+
+### 10.1 运行模式与权限贯通
+
+服务端先根据登录项目和RequestContext定位live对象或模拟会话ACL，再查动作；模式不能从ID字符串猜测。simulation.manage包含simulation.read/ack/export，仅作用拥有或显式授予manage的会话；simulation.read不含ack/export。共享会话ACL分别授read、ack、export、manage，账号权限与ACL须同时满足，live的fleet/alarm/report权限不替代模拟权限。管理员身份也须显式持有模拟权限；创建仅需simulation.manage，owner由服务器填写。
+
+|操作|live|simulation|
+|---|---|---|
+|OP-01|登录后返回真实范围/动作|返回模拟会话授权动作，不返回真实站点列表|
+|OP-02/03/04/05/22|原fleet/history/alarm.view及设备范围|simulation.read＋会话read；历史无需history.view|
+|OP-06|alarm.ack＋真实告警范围，经FinGateway|simulation.ack＋会话ack，仅模拟存储；manage可执行|
+|OP-07|原动作权限与范围|原模拟动作权限、会话与journal所有权；不得路由真实确认|
+|OP-15/17/18|report.export＋全部真实设备范围，取消需所有者|simulation.export＋会话export，取消需所有者；只读用户不能生成/下载/取消|
+|OP-16|report.read及任务/设备范围|simulation.read＋会话read；可读授权共享作业元信息，不能因此下载|
+|OP-20|notification.read＋渠道/设备范围|simulation.read＋会话read，仅模拟投递记录|
+|OP-21|notification.manage＋渠道范围|simulation.manage＋会话manage，仅本地重试|
+|OP-23|不允许|simulation.manage；创建本人会话|
+|OP-24～29|不允许|simulation.manage＋会话manage|
+|OP-30|不允许|simulation.read＋会话read，root列表只列有权会话|
+|OP-08～14、19、31|原配置/验收/审计/通知管理权限|不允许；模拟场景由OP-27管理，模拟确认由OP-06完成|
+
+OP-02～22表中既有权限列均为live分支；simulation按本矩阵替换而非叠加。模拟报表下载重新检查会话/代次与export，真实报表继续重新检查真实设备范围。授权变更触发scopeVersion变化并清缓存，不因已有文件或operationId继续放行数据读取。OP-31要求notification.manage及整个渠道订阅范围，暂停审计不暴露无权订阅。
+
 
 ## 11. 生命周期、运行限制与运维
 
@@ -918,7 +1051,7 @@ STOPPING：拒绝新的变更，等待/持久化在途操作状态，取消任�
 
 ### 12.2 联合验收基线
 
-功能：PRD AC-01～12、FT-01～36、UI-01～12、NEW-01～12及SIM-01～08全部通过；P1/P2不以空接口假装完成。首页首次可用p95≤3s、详情首次可用≤2s、24h历史≤5s；确认完成目标p95≤3s，转“处理中”属于正确异常交互，但不能计作在3秒完成确认。
+功能：PRD AC-01～12、FT-01～36、UI-01～12、NEW-01～12、SIM-01～08及R7-01～10全部通过；P1/P2不以空接口假装完成。首页首次可用p95≤3s、详情首次可用≤2s、24h历史≤5s；确认完成目标p95≤3s，转“处理中”属于正确异常交互，但不能计作在3秒完成确认。
 
 刷新链路以同一个源更新关联ID记录时间：
 
@@ -1041,7 +1174,7 @@ KPI-ID为视觉/信息追踪ID，不新增FIN标准标签；术语纠正为“�
 |维护展望|Snapshot.outlook由已发布MaintenancePlan与经验证的外部建议/预测聚合；保留Unavailable项是UI需求，不创建虚假FIN点|
 |内嵌趋势|复用OP-04按映射版本查询；客户端由完整返回桶进一步保峰下采样≤60点，不篡改质量，和主值独立加载|
 |组件能力|完整/缺失能力属于设备档案，不以“这版MVP暂未实现图形”伪装设备不支持|
-|版本|业务schemaVersion=1.2；对比修订2的1.1增加batteryAssets/healthIndicator/outlook及可选assessmentBinding配置，客户端缺字段显示unknown并报契约不匹配，不填零|
+|版本|业务schemaVersion=2.0，统一9.2/9.4上下文、实体和操作；1.2请求明确拒绝并提示升级，不静默填补字段|
 
 lastTransferAt是事件时间（独立带时区字符串），不能借Number历史通道制造数值时序。评分/预测外部适配来源、许可证与产品版本仍需核验；工作区混合POD证据E-01支持组织候选，不证明任何评分API存在。设备数据与FIN版本均需独立核验。
 
@@ -1072,9 +1205,9 @@ KPI台账完成条件：32项全部标“可用/缺失均实现并验证”或�
 
 ## 18. 指标释义、报表、Telegram与双主题
 
-本节定义FR-18～21：指标释义、报表导出、Telegram通知和双主题；与前述仪表盘、权限及告警生命周期要求共同实施。
+本节定义FR-21～24：指标释义、报表导出、Telegram通知和双主题；与前述仪表盘、权限及告警生命周期要求共同实施。
 
-### 18.1 KPI是什么：术语、定义与判断依据（FR-18）
+### 18.1 KPI是什么：术语、定义与判断依据（FR-21）
 
 KPI = Key Performance Indicator（关键绩效/性能指标）。本项目真正的核心性能指标包括续航余量、负载率、电池SOC/SOH等；型号、设备tabs、风扇状态、趋势组件不全是KPI。第17节KPI-01～32只是既有追踪编号，今后统一称“监控信息项”，保留编号以免开发引用失效，不代表32个行业标准指标或FIN标准标签。
 
@@ -1111,7 +1244,7 @@ KPI = Key Performance Indicator（关键绩效/性能指标）。本项目真正
 - STD-04：界面可读性参考[W3C WCAG 2.2 对比度说明](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)，不是UPS电气标准。
 - 每条ThresholdBasis保存basisId、kind（standard/vendor/project）、文档名/版次、条款/页码（未知不得编造）、适用型号/条件、数值/单位、批准人/日期。第6节规则配置必须引用可核验依据；没有依据显示“项目拟定，待批准”，不能标“行业标准”。本节不自动更改已批准规则数值。
 
-### 18.2 SF-20 报表中心与导出（FR-19，首期P0）
+### 18.2 SF-20 报表中心与导出（FR-22，首期P0）
 
 入口：主导航“报表”；Dashboard提供“导出本机报告”，继承所选设备与时间范围，进入同一报表流程。流程为选择模板 → 站点/设备/周期/时区/格式 → 预览范围及预计量 → 生成 → 任务状态 → 下载。默认最近完整自然日、FIN项目时区；项目未配置时区则要求选择后生成，不能默默按浏览器时区。
 
@@ -1129,6 +1262,15 @@ KPI = Key Performance Indicator（关键绩效/性能指标）。本项目真正
 - live报表使用服务端FIN历史/告警数据，simulation报表使用第19节隔离数据源；不抓页面DOM。锁定请求、设备范围及配置映射版本，结果生成后不可变；目标平台不支持一致性快照时标注实际采集起止和“跨源非原子快照”，不得伪装同一事务。重生成是新报告。
 - 历史不足、部分测点失败可以生成标“数据不完整”的报告，列明缺口；越权设备、非法范围、完全无可读数据必须明确报错或显示空报告预览，由用户选择导出带“无数据”标记的空报告，禁止只导当前页却称完整导出。
 
+
+**历史边界与时点状态（统一口径）：**
+- requestedEnd为用户查询的end；dataCutoffAt=min(requestedEnd,提交作业时该模式的当前时间)，live用服务器时间，simulation用virtualTime。createdAt、collectedFrom/To是真实服务时间；数据查询采用[start,dataCutoffAt)，期末状态指截止点之前的瞬时状态（end左极限）。范围全在未来拒绝；包含未来时段的请求截断并提示。
+- 每个有效映射段额外读取段内查询起点之前最后一个样本作为carry-in候选。只有该样本与起点同mappingRevision/assetGeneration、质量good、且freshness尚未过期才可向区间内延续；到下一样本、freshness截止、映射validTo或dataCutoffAt的最早者停止。样本本身不计入区间新样本数，延续时长参与时间加权/覆盖率；没有前置样本或证据则该段开头为缺口。
+- 映射切换处不把旧源值延续进新段；若起点等于新映射validFrom且该段暂无值，即为缺口。明细保留源时间及carry-in标记，不制造start时点的采样。原始采样峰值仅按区间内有效源样本计算，承接值如需列出单独标“起点承接值”。
+- REP-01期末设备状态、活动与未确认计数均按dataCutoffAt之前的权威历史重建；REP-03确认耗时也只使用截止前已发生的确认事件。截止之后才确认的告警在过去报告中仍未确认。设备状态缺历史、生命周期有缺段或身份不完整时返回“期末状态不可得”，不回填生成时的当前状态。
+- REP-04仍是生成时最新健康/维护资料，标题明确“当前评估（评估时点）”，不作为历史快照。当前值与历史区间指标必须分区显示，来源无法重建的字段不计入期末分母。
+
+
 **作业与限制（项目设计默认，非平台能力声明）：**
 - 异步ReportJob：queued → running → succeeded/failed/cancelled，succeeded在文件过期后为expired；失败可创建新作业。取消不影响FIN采集。重启中断任务标failed(reason=interrupted)，不把部分文件当成功。
 - 单次≤100设备、≤31天、≤100,000明细行、≤50MB；每用户最多2个排队/执行任务、项目最多2个执行worker。预估超限返回建议缩小范围；读取中超限则失败不静默截断。PDF最多200页；超过时要求选摘要或XLSX/CSV。摘要明确省略明细及省略数量。
@@ -1137,7 +1279,7 @@ KPI = Key Performance Indicator（关键绩效/性能指标）。本项目真正
 - 创建、预览、查询、下载均检查report.read/report.export与设备范围；默认操作员可导出自己可读设备，审计员需显式赋予导出能力。下载前重新检查全报告设备权限，任一撤销则拒绝原文件并提示缩小范围重新生成；禁止公共永久URL。记录创建/下载/取消及结果，日志不保存完整敏感报表。
 - 首期手动导出必须实现；每日/每周/月定时生成及自动分发列P1，不拿定时计划页面代替首期可下载文件。
 
-### 18.3 SF-21 FIN告警 → Telegram通知（FR-20，首期P0）
+### 18.3 SF-21 FIN告警 → Telegram通知（FR-23，首期P0）
 
 业务目的：当FIN中UPS范围的原生告警发生、恢复或确认时，向指定Telegram私聊/群/频道发送通知；点击链接返回FIN登录后的告警详情。首期“连接”定义为告警外发＋详情跳转，不接收Telegram内确认、旁路、停机等写命令。双向确认作为P1独立设计，须有Telegram用户到FIN身份绑定、逐对象授权及确认审计，不以群成员身份当FIN权限。
 
@@ -1160,7 +1302,16 @@ flowchart LR
 - 工程 → 通知渠道：Bot显示名、服务端secretRef、chatId（字符串）、可选messageThreadId、站点/设备范围、级别/事件类型、时区、静默时间、发送状态。Bot token只经受保护配置提交到服务端秘密存储，不写前端、本地存储、导出配置、URL日志或审计正文；接口只回脱敏状态。发送仅到官方HTTPS端点，不能让普通用户填任意转发URL。
 - 管理员配置渠道，具有notification.manage且授权覆盖订阅设备才可发布；收件群是显式批准的数据接收范围，FIN权限不会自动同步到群成员，渠道配置页须展示其外发设备范围及允许的消息字段。
 - 首次创建disabled；管理员在产品中主动“发送测试消息”，页面提示目标聊天及预览内容，实际得到Telegram成功响应后可启用；仅验证token或getMe不等于可向目标chat发消息。私聊用户需先与Bot建立会话，群/频道需Bot具备发消息权限。chatId/token由部署方配置。
-- 渠道/订阅使用OP-08～10的草稿、范围、CAS及epoch发布流程；秘密独立保管，配置版本只引用secretRef。暂停/撤销渠道立即阻止未发项；修改设备范围后发送前再校验，新版本不把旧积压自动发往新chat。删除或换chat取消旧目标未发记录并留审计。密钥轮换保留渠道身份且重新测试，队列使用当前有效secret。
+- 渠道/订阅使用OP-08～10的草稿、范围、CAS及epoch发布流程；秘密独立保管，配置版本只引用secretRef。紧急暂停通过OP-31持久化发送闸门立即阻止尚未领取发送许可的项；常规enabled/范围变更按发布生效；修改设备范围后发送前再校验，新版本不把旧积压自动发往新chat。删除或换chat取消旧目标未发记录并留审计。密钥轮换保留渠道身份且重新测试，队列使用当前有效secret。
+
+
+**独立发送暂停闸门（OP-31）：**
+ChannelGate是独立持久化运行记录，优先级高于配置enabled与epoch。OP-31只允许pause、不允许resume，不等待OP-09/10，也不受PUBLICATION_BUSY/RECOVERY_REQUIRED阻断；需正常身份、渠道管理范围、幂等operationId和非空原因。暂停原子写paused=true、新pauseRevision及审计，存储不可写时返回PERSISTENCE_UNAVAILABLE，发送器同时fail-closed停止获取新许可。
+
+每次HTTP外发前，发送worker与OP-31共享同一渠道的原子许可边界：只有未暂停、配置启用、订阅/权限仍有效才将任务登记sending并获取许可。暂停完成后没有新许可；之前已获许可的请求视为在途，可能已发出，不能承诺撤回。其响应照常落库为accepted/unknown/failed，不冒充取消；页面显示在途数量。
+
+恢复须在OP-08草稿的NotificationChannel.resumePauseRevision填写当前暂停版本，经OP-09/10验证后在ACTIVE激活边界CAS释放闸门；若期间再次紧急暂停，版本变化使释放失败，配置可激活但仍paused，返回警告。旧配置重启或一般发布不得自动解除暂停。范围或chat变化继续按发布流程，未发队列重新校验，不把紧急暂停当成配置回退。
+
 
 **事件与内容：**
 - 默认订阅critical/warning的发生、恢复；确认事件可勾选。原生severity到产品级别的映射须配置核验，不能假定FIN数字优先级越大越严重。
@@ -1180,7 +1331,7 @@ flowchart LR
 
 Telegram技术依据：[Bot API sendMessage](https://core.telegram.org/bots/api#sendmessage)、[ResponseParameters](https://core.telegram.org/bots/api#responseparameters)及[官方限流FAQ](https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)，查阅日期2026-09-14。官方定义消息发送与限流响应；本项目队列、重试次数、权限、顺序和unknown策略是设计决定，不是Telegram提供的端到端保证。
 
-### 18.4 SF-22 浅色/深色自由切换（FR-21，首期P0）
+### 18.4 SF-22 浅色/深色自由切换（FR-24，首期P0）
 
 用户明确要求优先于原始DEMO深色配色。默认浅色，不跟随操作系统首次自动变深；右上角常驻“浅色/深色”切换，所有业务页面、表单、弹窗、表格、图表及空/异常状态一致生效，不重载、不清空筛选、不改变选中设备。
 
@@ -1194,9 +1345,9 @@ Telegram技术依据：[Bot API sendMessage](https://core.telegram.org/bots/api#
 
 偏好保存为localStorage中的light/dark枚举，key包含项目＋当前用户的非敏感不透明标识，仅作用本浏览器；跨设备同步列P1。页面首屏绘制前读取有效偏好以避免闪屏；不存在/损坏/存储不可用一律浅色，存储不可用时当次仍可切换。退出后不把前一用户选择套到另一用户。切换按钮支持键盘、可访问名称和当前状态。用户重置偏好回浅色；系统颜色变化不覆盖手动选择。PDF/打印固定浅色，Excel/CSV不随主题变更数据或单位。
 
-### 18.5 新增业务契约、权限与实施分工
+### 18.5 业务操作目录与实施分工
 
-沿用第9节结构化响应/错误及会话、权限约定；以下是拟定业务操作，不是实际FIN路由。既有Snapshot schema1.2不因新增独立操作改变；新增对象各带contractVersion=1.0。
+沿用第9节结构化响应/错误及会话、权限约定；以下是拟定业务操作，不是实际FIN路由。公共schema统一升级2.0，所有请求/响应及对象按9.2/9.4声明；不再使用额外未声明的contractVersion字段。
 
 |操作|请求/响应的必需内容|权限及异常|
 |---|---|---|
@@ -1237,14 +1388,14 @@ WP-10：M-01/OP-22，信息项说明、浅深主题、报表/渠道页面及完�
 
 IEC、W3C及Telegram来源见本节链接；FIN具体接口仍需目标构建验证。报告、通知、权限和主题的功能验收按18.6执行。
 
-## 19. SF-23 模拟数据服务与静态DEMO（FR-22，P0）
+## 19. SF-23 模拟数据服务与静态DEMO（FR-25，P0）
 
 ### 19.1 功能范围与两种运行方式
 
 用户要求静态DEMO包含模拟数据，产品提供模拟数据函数。本节替代修订5的无预置数据静态交付口径。FSD只规定功能、参数、场景及验收；具体设备数组、生成脚本输出、批量执行记录不嵌入本文，也不恢复旧operations目录。
 
 - 静态DEMO：首次打开自动加载完整场景，默认浅色；无需FIN即可查看设备、32项监控信息、历史曲线、告警、维护展望，并操作模拟场景与导出有实际内容的PDF/XLSX/CSV。页面、来源抽屉和导出文件标明“模拟数据”。不得恢复仅空态的交付。
-- 产品运行：同一业务POD增加M-15 SimulationService与SimulationRepository；工程页提供“模拟数据”入口，默认未启用，具备simulation.manage权限的人员可创建会话、生成设备、启停、步进、切换场景、重置和清理。具备simulation.read的用户可查看范围内会话。真实监控仍由FinGateway提供。
+- 产品运行：同一业务POD增加M-15 SimulationService与SimulationRepository；工程页提供“模拟数据”入口，默认未启用，具备simulation.manage权限的人员可创建会话、生成设备、启停、步进、切换场景、重置和清理。具备simulation.read的用户可查看范围内会话；确认/导出依10.1矩阵，不继承真实操作权限。真实监控仍由FinGateway提供。
 - 运行模式为live/simulation。产品切换到simulation必须由用户明确选择已有模拟会话；真实接口断开不能自动降级成模拟值。顶部常驻模式与会话标识；切回live清除模拟视图缓存并重新读取真实源。
 - 静态DEMO是模拟功能的前端实现与体验载体，不能替代POD后台模拟服务的交付。首轮开发完成静态版；产品版须按第14节目标FIN版本门槛实现与验收。
 
@@ -1252,9 +1403,9 @@ IEC、W3C及Telegram来源见本节链接；FIN具体接口仍需目标构建验
 
 UI → 业务入口 → DataProvider；live路由到FinGateway，simulation路由到SimulationService。模拟域提供与当前值、历史、告警、评估、报表所需相同的领域契约；领域组件和业务规则共用，不能维护一套省略字段的模拟页面。
 
-每个模拟响应携带sourceMode=simulation、simulationSessionId、scenarioId/version、seed、virtualTime；业务对象使用sim:<sessionId>:<localId>命名空间，模拟ID不作为FIN真实引用。DataContext由服务端权限与会话解析，不能仅凭客户端传入mode绕过授权。
+每个模拟响应在Meta.context中携带sourceMode、simulationSessionId、generationId、scenarioId/scenarioVersion、seed、virtualTime；根级列表字段按9.4允许为空；业务对象使用sim:<sessionId>:<generationId>:<localId>命名空间，模拟ID不作为FIN真实引用。DataContext由服务端权限与会话解析，不能仅凭客户端传入mode绕过授权。
 
-模拟设备、当前值、历史、告警、操作记录、报告文件和通知记录在独立会话存储中维护，不写入真实设备点、FIN原生告警或生产历史。真实业务对象拒绝sim引用，模拟会话拒绝真实equipRef；查询、统计、导出和缓存键必须包含mode/sessionId。跨模式请求返回SOURCE_MODE_MISMATCH。
+模拟设备、当前值、历史、告警、操作记录、报告文件和通知记录在独立会话存储中维护，不写入真实设备点、FIN原生告警或生产历史。真实业务对象拒绝sim引用，模拟会话拒绝真实equipRef；查询、统计、导出和缓存键必须包含mode/sessionId/generationId。跨模式请求返回SOURCE_MODE_MISMATCH。
 
 第7节FIN权威生命周期适用于live；simulation在独立存储实现相同发生/确认/恢复语义，模拟确认仅改模拟记录，不能调用真实确认入口。第18.2节报表在模拟模式读取模拟历史/事件，标注来源并保持相同统计和缺口规则；第18.3节模拟通知默认使用本地传输适配器，只产生明确标注的模拟结果，不调用Telegram。真实Telegram渠道测试仍由真实渠道页的独立测试动作触发，不与模拟场景联动。
 
@@ -1267,21 +1418,21 @@ POD模拟服务不是设备协议写入工具，也不将虚拟设备注册成�
 |操作/函数|输入与输出|行为|
 |---|---|---|
 |OP-23 simulationCreate|operationId、scenarioId/version、seed、deviceCount、startAt、timezone → session|建立ready会话；设备数默认3、范围1～100；startAt为空取创建时服务器时点并固定保存，重放使用原时点|
-|OP-24 simulationGenerate|sessionId、expectedRevision、historyHours、sampleIntervalSeconds、operationId → revision/统计|生成逐设备资产、能力、当前值与初始历史；默认24h、300s；允许0～168h、60～3600s，预计超过100万条则拒绝，不静默截断；只在ready且未运行时执行一次|
-|OP-25 simulationControl|sessionId、expectedRevision、action、speed、operationId → state/virtualTime|action=start/pause/resume/stop；speed为1/5/10倍；状态转移见下节|
-|OP-26 simulationStep|sessionId、expectedRevision、seconds、operationId → virtualTime/revision|ready或paused下按1～60秒推进一次，统一更新当前值、历史与规则，不依赖浏览器刷新|
-|OP-27 simulationScenario|sessionId、expectedRevision、scenarioId、targetSimEquipIds、operationId → revision|对会话内目标应用预定义场景；生成状态及规则输入变化，保留已有历史；配置参数受量纲/范围校验|
-|OP-28 simulationReset|sessionId、expectedRevision、operationId → ready/newRevision|停机后将整个会话恢复到保存的seed、起始时点和初始场景；删除该会话后续历史/告警/报表/通知，界面先列清理范围|
-|OP-29 simulationDelete|sessionId、expectedRevision、operationId → deleted|仅ready/paused/stopped可删；仅删除该会话及派生文件，产品保留脱敏管理审计|
+|OP-24 simulationGenerate|sessionId/generationId、expectedControlRevision、historyHours、sampleIntervalSeconds、operationId → revision/统计|生成逐设备资产、能力、当前值与初始历史；默认24h、300s；允许0～168h、60～3600s，预计超过100万条则拒绝，不静默截断；只在ready且initialized=false时执行一次|
+|OP-25 simulationControl|sessionId/generationId、expectedControlRevision、action、speed、operationId → state/virtualTime|action=start/pause/resume/stop；speed为1/5/10倍；状态转移见下节|
+|OP-26 simulationStep|sessionId/generationId、expectedControlRevision、seconds、operationId → virtualTime/revision|仅initialized=true的ready或paused下按1～60秒推进一次，统一更新当前值、历史与规则，不依赖浏览器刷新|
+|OP-27 simulationScenario|sessionId/generationId、expectedControlRevision、scenarioId、targetSimEquipIds、operationId → revision|仅initialized=true的ready/running/paused可用，对会话内目标应用预定义场景；生成状态及规则输入变化，保留已有历史；配置参数受量纲/范围校验|
+|OP-28 simulationReset|sessionId/generationId、expectedControlRevision、operationId → ready/newRevision|按19.7屏障清理旧代次，返回ready且initialized=false；保留seed、起始场景及生成参数供再次generate，界面先列清理范围|
+|OP-29 simulationDelete|sessionId/generationId、expectedControlRevision、operationId → deleted|仅ready/paused/stopped/failed可删；仅删除该会话及派生文件，产品保留脱敏管理审计|
 |OP-30 simulationGet/List|sessionId或范围/分页 → 会话状态及统计|simulation.read与会话范围过滤；不泄露其他项目/用户会话|
 
 纯生成逻辑函数：generateAssets(config)、generateCurrent(seed,scenario,simTime)、generateHistory(config,range)、evaluateScenarioTransition(previous,current)。相同seed、场景版本、起始时间和步进序列必须可重放；用带seed的生成器或确定性函数，不由页面每次渲染调用无种子随机数。
 
-所有变更采用operationId幂等、expectedRevision冲突检查和会话内串行执行；相同ID相同请求复用结果，不同请求拒绝。工程师只有被授予simulation.manage才可管理自己的会话；共享会话由管理员显式授权，普通真实设备读取权限不自动授予模拟管理权限。静态版在本地呈现相同操作语义，不宣称实现了服务端安全边界。
+所有模拟变更采用operationId幂等、expectedControlRevision冲突检查和会话内串行执行；相同ID相同请求复用结果，不同请求拒绝。simulation.manage显式包含模拟read/ack/export，工程师只有被授予该权限才可管理自己的会话；共享会话由管理员显式授权，普通真实设备读取权限不自动授予模拟管理权限。静态版在本地呈现相同操作语义，不宣称实现了服务端安全边界。
 
 ### 19.4 状态、时间与资源
 
-状态：创建后ready；生成完成才可start → running；pause → paused；resume → running；stop → stopped。stopped禁止继续写入，需reset后重新开始。删除后deleted。错误为failed，停止调度并保留原因；恢复先人工reset。产品进程重启将原running会话恢复为paused，不自动继续产生事件。
+状态：创建后ready；initialized=true才可start → running；pause → paused；resume → running；stop → stopped。stopped禁止继续写入，需reset后重新开始。重置/删除依次经过resetting/deleting屏障，完成删除后deleted。错误为failed，停止调度并保留原因；恢复先人工reset。产品进程重启将原running会话恢复为paused，不自动继续产生事件。
 
 产品由后台调度器推进虚拟时间，默认每真实1秒推进speed秒；最多每会话一个任务。暂停冻结virtualTime，规则持续时长、历史及模拟数据freshness都使用虚拟时钟；界面另显示真实服务连接状态，避免暂停误判业务通信故障。停止后数据只读。浏览器隐藏/关闭不产生多实例计时器；产品后台按会话状态继续，静态版离开页面暂停并提示，不假装跨页面后台运行。
 
@@ -1319,3 +1470,64 @@ POD模拟服务不是设备协议写入工具，也不将虚拟设备注册成�
 |SIM-08|越权、重复请求、revision冲突、删除/重置及资源超限|权限和幂等有效、清理仅当前会话、超限有明确状态；产品后台重启恢复paused|
 
 静态实现应将生成器、场景定义、内存数据适配与视图分离；保留可接入真实DataProvider的边界。开发可新建受控模拟功能源码/测试文件，不恢复旧现场执行记录和备份。POD实现M-15及OP-23～30列为产品功能交付，FIN SDK绑定、持久化及权限须另有实际验收；静态版通过不等于产品后台已实现。
+
+### 19.7 控制版本、代次与异步清理屏障
+
+controlRevision只因成功的管理命令（生成、控制、步进、场景、重置/删除屏障）改变；后台tick仅增加dataRevision，不修改controlRevision，因此暂停请求不因每秒采样冲突。后台限额/超时自动暂停或stop、故障、进程恢复等控制状态改变必须增加controlRevision。generationId只在reset屏障建立时切换；新会话初始化首个代次，普通tick/场景不改代次。SimMutation同时检查context与body的sessionId/generationId一致；幂等查找先于版本冲突检查，重复请求返回原操作状态。
+
+|操作|ready未生成|ready已生成|running|paused|stopped|failed|resetting/deleting/deleted|
+|---|---|---|---|---|---|---|---|
+|generate|允许|拒绝|拒绝|拒绝|拒绝|拒绝|拒绝|
+|start|拒绝|允许|拒绝|拒绝|拒绝|拒绝|拒绝|
+|pause/resume|拒绝|拒绝|仅pause|仅resume|拒绝|拒绝|拒绝|
+|stop|允许|允许|允许|允许|同ID幂等，否则已停止|拒绝|拒绝|
+|step/scenario|拒绝|允许|仅scenario|允许|拒绝|拒绝|拒绝|
+|reset|允许|允许|拒绝，先stop|允许|允许|允许|仅原operationId查状态|
+|delete|允许|允许|拒绝，先stop|允许|允许|允许|仅原operationId查状态|
+|get/list|允许|允许|允许|允许|允许|允许|返回管理状态；不返回旧代次数据|
+
+所有管理动作与虚拟时间事件按会话串行化。reset/delete不是先删文件的同步操作：在同一持久化事务记录cleanupOperationId、旧代次、目标代次（delete为墓碑）、管理审计与屏障状态，并关闭新数据任务受理。reset立刻换generationId、进入resetting；delete进入deleting且墓碑从屏障时对数据接口生效。之后取消调度/报告/通知worker，停止新查询，分批清理旧代次文件与索引。只有清理完成才能将reset置ready(initialized=false、virtualTime=startAt)，重新generate使用保存的seed及生成配置；delete完成为deleted。失败保持屏障及原因，重启优先续做清理，不回滚至可读旧数据状态。
+
+报表/通知worker提交及文件发布前，在同一受控提交边界重新检查state、generationId和权限；屏障已建立则取消结果、清除临时文件，不注册下载地址。所有临时与正式文件路径以sessionId/generationId分区，禁止后台绕过报告文件登记写入可下载目录。删除与已获准文件流的边界：屏障关闭新下载，尝试中断已有流；已传给浏览器的数据无法收回，不承诺撤销本地已下载副本。
+
+请求游标、缓存、文件引用、报告/通知job、操作结果和前端DataContext均包含generationId。旧查询晚回即丢弃；旧代次业务请求返回GENERATION_MISMATCH（删除返回SESSION_DELETED）。只有原cleanup operationId的OP-07允许在旧上下文下查询脱敏清理状态，不返回旧代次业务内容；墓碑/幂等管理日志保留90天，重复reset/delete不能误作用新代次。自动到期清理复用同一屏障，不能另写直接删除路径。
+
+### 19.8 虚拟时钟的事件推进协议
+
+advanceTo(targetTime)必须按虚拟到期时间处理区间(currentTime,targetTime]内全部事件，不只算终点。事件来源包含已安排的场景变化、源采样/断线、质量过期及持续门槛、维护日期边界；同时间依次为：场景变更 → 源采样 → 质量计时 → 日历计时 → 规则评估与outbox落库 → 历史/快照提交。相同类型再按稳定设备/规则ID及事件序号排序。规则新样本去重仍按第6节，不能因一次advance触发多次相同主样本。
+
+场景变更记录scenarioId/version、targetSimEquipIds、virtualEffectiveAt、eventSeq、参数及controlRevision；OP-27在当前virtualTime形成一次已排序事件，新旧生成器切换不能追改过去历史。seed按设备ID、字段及虚拟采样序号派生，不按外层tick调用次数消耗随机数。初始历史也按相同事件调度规则生成。
+
+一次60秒步进、60次1秒步进以及1/5/10倍实时推进，在相同seed、起点、场景有效时间安排下，必须产生相同业务值与告警发生/恢复序列（忽略真实receivedAt与管理调用次数）。批量推进允许按事务分片，但只能把virtualTime提交到已经完整处理的最后事件时点；崩溃后从持久化水位续行，幂等防重，不能先跳到targetTime再漏处理途中事件。性能不足时减慢真实推进并显示“追赶中”，不得丢弃事件。
+
+
+## 20. 需求追踪与新增边界验收
+
+### 20.1 需求编号与分期
+
+PRD原FR-18（模块拓扑/冗余P1）、FR-19（增强功能P1）、FR-20（自研寿命预测/跨项目P2）保留原身份，不再用于新增功能。两文档统一新增编号如下，旧引用须按“文档修订号＋旧编号”迁移，不能仅按数字替换PRD原编号。
+
+|当前编号|功能/优先级|修订6 FSD旧编号|实现与验收|
+|---|---|---|---|
+|FR-21|指标释义P0|FR-18|18.1、OP-22、NEW-01/02|
+|FR-22|首期报表导出P0|FR-19|18.2、OP-15～18、NEW-03～06|
+|FR-23|Telegram通知P0|FR-20|18.3、OP-19～21/31、NEW-07～10|
+|FR-24|浅/深主题P0|FR-21|18.4、NEW-11/12|
+|FR-25|模拟服务及有数据静态DEMO P0|FR-22|19节、OP-23～30、SIM-01～08|
+
+FR-22将PRD原FR-19中的告警/趋势导出明确提升为P0，以18.2四模板为边界；原FR-19其余审计导出、维护记录增强、模板复用和批量导入仍P1。FR-18模块拓扑和FR-20自研预测不因模拟数据功能提前承诺。
+
+### 20.2 边界验收（待实际执行）
+
+|ID|输入/操作|唯一预期|
+|---|---|---|
+|R7-01|按2.0校验通知Entity、live/simulation响应及OP-15～31；提交1.2请求|合法字段通过；未知字段拒绝；旧版明确提示升级，通知配置可通过OP-08～10，不需私加schema字段|
+|R7-02|仅simulation.read的共享用户读历史、确认、导出；再分别授ack/export|先仅可读，后各动作按独立授权放行；live权限不能代替模拟权限，模拟确认无FinGateway写调用|
+|R7-03|CREATE-A未知时A恢复，再发生B并恢复；CLEAR-A未知时又发生C|本地A/B/C身份独立、起止完整；外发按A创建/恢复→B创建/恢复→C顺序，旧CLEAR不清新发生，重启不重复|
+|R7-04|报表运行中reset/delete，旧请求延迟返回；清理中重启|屏障及generation阻断旧结果/文件发布，旧UI响应丢弃；重启续清理，已删除数据不复活|
+|R7-05|核对PRD/FSD/任务与验收的FR-18～25|同一编号含义及分期一致，旧引用有修订号及迁移记录|
+|R7-06|running连续tick后以未变controlRevision pause；stopped scenario；未generate step|pause成功；另两项INVALID_STATE；tick仅dataRevision变化，管理变更才改变controlRevision|
+|R7-07|同场景有效时点安排，用60秒单步、1秒分步及1/5/10倍推进|源值、质量触发、日历及告警序列相同；中途过期/恢复不丢失，不以终点代替全事件|
+|R7-08|start前有效样本跨入、区间内换映射；昨天未确认今天确认|承接只到freshness/映射边界；昨日期末仍未确认；缺权威历史标不可得，不用当前状态覆盖|
+|R7-09|配置ACTIVATING或RECOVERY_REQUIRED时pause，发送许可前后竞态；旧恢复发布遭遇新暂停|暂停持久生效，新许可为零；在途不可撤回如实记录；旧pauseRevision不能释放新闸门|
+|R7-10|unmapped/unsupported无来源、unknown未绑定、stale已有来源、good无来源|前三者按9.4表示；stale保留来源；good无来源拒绝；不伪造pointRef，缺失组件仍返回|

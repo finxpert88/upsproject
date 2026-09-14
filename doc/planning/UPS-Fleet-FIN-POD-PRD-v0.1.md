@@ -100,12 +100,18 @@ P0 为 MVP 发布必须；P1 为后续增强；P2 为研究项。P0 的可选设
 |FR-12|P0|维护提示显示规则依据、输入、质量、时间和规则版本；不足时“无法评估”|AC-03/08|
 |FR-13|P0|工程映射、量纲/枚举/引用校验、草稿发布、配置版本与回退|AC-09|
 |FR-14|P0|服务端权限、范围过滤和审计；敏感配置只引用凭据|AC-10|
-|FR-15|P0|功能限定监控与告警处理；项目数据与身份权限隔离|AC-11|
+|FR-15|P0|真实设备功能限定监控与告警处理；模拟域按FR-25隔离|AC-11|
 |FR-16|P0|连接状态与错误诊断、日志关联 ID、安装版本可查|AC-02/12|
 |FR-17|P0|可复现构建、离线资源、安装升级回滚说明及验证记录|AC-12|
 |FR-18|P1|模块/电池串拓扑和经过验证的冗余判断|AC-13|
-|FR-19|P1|告警/趋势/审计导出、维护记录、规则模板复用、批量工程导入|独立评审|
+|FR-19|P1|审计导出、维护记录增强、规则模板复用、批量工程导入；原告警/趋势导出移交FR-22为P0|独立评审；导出见FR-22|
 |FR-20|P2|寿命预测及置信区间、跨项目分析|需数据与模型验收协议|
+|FR-21|P0|监控信息项释义、单位、来源与标准/厂家/项目依据|FSD NEW-01/02|
+|FR-22|P0|运行概览、历史、告警、维护报告，PDF/XLSX/CSV导出及权限/质量口径|FSD NEW-03～06、R7-08|
+|FR-23|P0|FIN告警Telegram通知、可靠投递、独立紧急暂停|FSD NEW-07～10、R7-09|
+|FR-24|P0|默认浅色、浅/深切换与偏好记忆|FSD NEW-11/12|
+|FR-25|P0|独立模拟会话、数据生成与控制、场景、模拟报告及有数据静态DEMO|FSD SIM-01～08、R7-02/04/06/07|
+
 
 ## 7. 数据模型、点位字典与时间契约
 
@@ -148,7 +154,7 @@ P0 为 MVP 发布必须；P1 为后续增强；P2 为研究项。P0 的可选设
 
 ### 7.2 每个值的公共数据包 D
 
-`value` 可为空；`sourceRef` 指向测点/配置/事件；`origin` 为 measured/configured/derived；`sourceTs` 为源采样时间（可空）；`receivedAt` 为服务器接收时间；`lastGoodAt` 为最近良好值时间；`quality`、`reason`、`unit`、`mappingVersion` 必须可查。派生值另含 inputRefs、inputTimes、ruleVersion、calculatedAt。
+`value` 可为空；`sourceRef` 指向测点/配置/事件，unmapped/unsupported或未绑定unknown可空，good不可空（见FSD 9.4）；`origin` 为 measured/configured/derived；`sourceTs` 为源采样时间（可空）；`receivedAt` 为服务器接收时间；`lastGoodAt` 为最近良好值时间；`quality`、`reason`、`unit`、`mappingVersion` 必须可查。派生值另含 inputRefs、inputTimes、ruleVersion、calculatedAt。
 
 产品质量枚举为 good/stale/fault/down/unknown/disabled/unmapped/unsupported；这是应用归一化，不声称与 FIN 原生状态完全相同。保留原始状态；错误/停用优先于时效判断。原生正常但无有效采样可为 unknown，原生正常但采样过期为 stale。通讯在线并不保证所有点良好。
 
@@ -327,3 +333,7 @@ FIN Expert 版本规则对 5.1.9 为 evidence_scoped、5.2.x 为 workspace_obser
 证据结论置信度：原型行为高；业务设计为建议待评审；混合 POD 路线为有工作区依据的架构候选；目标运行兼容未验证。未保存项目长期记忆，未修改原型、未开发代码、未推送 GitHub。
 
 离线方案校验结果见同目录 `UPS-Fleet-FIN-POD-PRD-v0.1-validation.json`。实际向 FIN Expert 提交了方案摘要，分别以 JSON 文本和对象调用，两次均返回 `ARTIFACT_PARSE:AttributeError`，`passed=false`，因此本次自动方案校验未通过，不能声称结构校验成功。已保留输入、结果和 trace ID，需在技术设计阶段排查校验契约后重新执行；该工具问题不阻止本版需求评审。人工核对了本文需求/验收对应、来源边界和未知条件。即使后续离线校验通过，也不代表整篇 PRD 的语义、性能、视觉、编译或现场验收通过。
+
+## 17. 需求编号同步
+
+FR-18保留模块拓扑/冗余P1；FR-19保留其余增强P1，告警/趋势导出由FR-22接管为P0；FR-20保留自研预测/跨项目P2。FSD修订6曾重复使用FR-18～22，现统一迁移为FR-21～25，详细旧新映射见FSD 20.1。引用旧文档必须同时写修订号，不以旧FSD编号替代PRD原义。当前详细交互、契约和验收按FSD修订7。
