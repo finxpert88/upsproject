@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "Documentation structural checks only",
+  "counts": {
+    "backendBehaviorTypes": 39,
+    "frontendFiles": 79,
+    "pages": 12,
+    "routes": 22,
+    "operations": 31,
+    "functionalSpecifications": 24
+  },
+  "checks": [
+    "All 31 approved operations have exactly one backend owner and one API client owner",
+    "Backend dependencies reference declared classes",
+    "Unique class, file and route identifiers",
+    "All routes reference declared pages and operations",
+    "All 24 SF rows mapped to design owners",
+    "Referenced baseline files exist and SHA-256 is recorded",
+    "No approved source overwritten by generator",
+    "All operation mode permissions and scopes match approved JSON exactly",
+    "One frontend API family per operation",
+    "All route operations legal for route mode",
+    "All 39 behavior classes appear in UML",
+    "Diagram node/edge integrity and four nonempty render formats",
+    "Relative documentation links resolve",
+    "Input SHA-256 hashes unchanged after all document writes",
+    "Current branch equals Leader assignment",
+    "No application .fan or .ts source generated"
+  ],
+  "runtimeVerified": false,
+  "sdkCompiled": false,
+  "productAcceptanceExecuted": false,
+  "visualReview": "Four rendered diagrams inspected; no clipped labels or missing nodes observed. UML important methods only; full dependencies in JSON.",
+  "finExpert": "Offline solution contract passed; connector probe not applicable/passed=false; see fin-expert-validation.json"
+}

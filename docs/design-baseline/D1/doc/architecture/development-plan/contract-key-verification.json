@@ -1,0 +1,260 @@
+{
+  "compiler": "5.9.3",
+  "passed": true,
+  "incorrectMethodKeys": {
+    "errors": [
+      {
+        "code": 2339,
+        "message": "Property 'sessionCapabilities' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'sessionCapabilities' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'equipmentList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'equipmentList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'equipmentSnapshot' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'equipmentSnapshot' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'metricHistory' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'metricHistory' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'alarmListDetail' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'alarmListDetail' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'alarmAcknowledge' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'alarmAcknowledge' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'operationStatus' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'operationStatus' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configGetSaveDraft' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configGetSaveDraft' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configValidate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configValidate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configPublish' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configPublish' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configRollbackDraft' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'configRollbackDraft' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'diagnostics' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'diagnostics' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'auditList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'auditList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'commissioningAccept' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'commissioningAccept' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportCreate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportCreate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportGetList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportGetList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportDownload' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportDownload' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportCancel' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'reportCancel' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationTest' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationTest' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationDeliveryList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationDeliveryList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationRetry' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationRetry' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'metricDictionary' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'metricDictionary' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationCreate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationCreate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationGenerate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationGenerate' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationControl' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationControl' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationStep' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationStep' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationScenario' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationScenario' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationReset' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationReset' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationDelete' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationDelete' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationGetList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'simulationGetList' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationPause' does not exist on type 'Contracts'."
+      },
+      {
+        "code": 2339,
+        "message": "Property 'notificationPause' does not exist on type 'Contracts'."
+      }
+    ]
+  },
+  "correctOpKeys": {
+    "errors": []
+  },
+  "scope": "实际TypeScript编译器检查31项索引；非Fantom或FIN验证"
+}

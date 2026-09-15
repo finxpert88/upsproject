@@ -1,0 +1,1241 @@
+{
+  "version": "A2.2",
+  "wireSchema": "2.0",
+  "layout": {
+    "id": "Folio Ref",
+    "upsRecordType": "codec name",
+    "upsSchemaVersion": "2.0",
+    "upsPayloadJson": "strict canonical wire object; required null retained"
+  },
+  "trustedEnvelope": {
+    "required": [
+      "projectId",
+      "mode"
+    ],
+    "simulationRequired": [
+      "sessionId",
+      "generationId"
+    ],
+    "tags": {
+      "projectId": "upsProjectId",
+      "mode": "upsSourceMode",
+      "sessionId": "upsSimulationSessionId",
+      "generationId": "upsGenerationId"
+    },
+    "source": "server session and data router; never supplied by client DTO"
+  },
+  "semanticRefFields": [
+    "equipRef",
+    "siteRef",
+    "objectRef",
+    "targetObjectRef",
+    "pointRef",
+    "healthScorePointRef",
+    "sensorEquipRef",
+    "evidenceRef",
+    "methodologyRef",
+    "sourceRef",
+    "alarmSourceRef",
+    "comparableEvidenceRef"
+  ],
+  "semanticRefArrays": [
+    "equipRefs",
+    "pointRefs",
+    "evidenceRefs",
+    "outlookRecordRefs",
+    "targetRefs",
+    "inputRefs",
+    "authorizedSiteRefs"
+  ],
+  "indexes": {
+    "Enrollment": {
+      "equipRef": "equipRef",
+      "siteRef": "siteRef",
+      "upsCommissioningStatus": "commissioningStatus"
+    },
+    "Rule": {
+      "equipRef": "equipRef",
+      "upsRuleId": "ruleId",
+      "upsRuleVersion": "ruleVersion",
+      "upsEnabled": "enabled"
+    },
+    "Capability": {
+      "upsTargetObjectRef": "objectRef",
+      "upsStatus": "status"
+    },
+    "ReportJob": {
+      "upsJobId": "jobId",
+      "upsOwnerId": "ownerId",
+      "upsState": "state",
+      "upsSourceMode": "context.sourceMode"
+    },
+    "Plan": {
+      "equipRef": "equipRef",
+      "upsTargetObjectRef": "targetObjectRef",
+      "upsPlanId": "planId",
+      "upsDueDate": "dueDate"
+    }
+  },
+  "schemas": {
+    "Capability": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "objectRef": {
+          "type": "string"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "const": "supported"
+            },
+            {
+              "const": "unsupported"
+            },
+            {
+              "const": "unverified"
+            }
+          ]
+        },
+        "evidenceRef": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "field",
+        "objectRef",
+        "status",
+        "evidenceRef"
+      ],
+      "additionalProperties": false
+    },
+    "Plan": {
+      "type": "object",
+      "properties": {
+        "planId": {
+          "type": "string"
+        },
+        "planRevision": {
+          "type": "string"
+        },
+        "equipRef": {
+          "type": "string"
+        },
+        "targetObjectRef": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "const": "manufacturer"
+            },
+            {
+              "const": "manual"
+            }
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": "string",
+          "semanticFormat": "date"
+        },
+        "remindDays": {
+          "type": "number"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "const": "scheduled"
+            },
+            {
+              "const": "completed"
+            },
+            {
+              "const": "cancelled"
+            }
+          ]
+        },
+        "completedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "semanticFormat": "date"
+        },
+        "updatedAt": {
+          "type": "string",
+          "semanticFormat": "date-time"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supersedesPlanRevision": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "planId",
+        "planRevision",
+        "equipRef",
+        "targetObjectRef",
+        "source",
+        "title",
+        "dueDate",
+        "remindDays",
+        "status",
+        "completedDate",
+        "updatedAt",
+        "updatedBy",
+        "evidenceRefs",
+        "supersedesPlanRevision"
+      ],
+      "additionalProperties": false
+    },
+    "Rule": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "ruleVersion": {
+              "type": "string"
+            },
+            "equipRef": {
+              "type": "string"
+            },
+            "enabled": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            },
+            "driver": {
+              "const": "sample"
+            },
+            "primaryMappingId": {
+              "type": "string"
+            },
+            "auxiliaryMappingIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "maxInputSkewMs": {
+              "type": "number"
+            },
+            "maxSampleGapMs": {
+              "type": "number"
+            },
+            "type": {
+              "const": "R-01"
+            },
+            "requiredMinutes": {
+              "type": "number"
+            },
+            "hysteresisMinutes": {
+              "type": "number"
+            },
+            "trigger": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "clear": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "ruleId",
+            "ruleVersion",
+            "equipRef",
+            "enabled",
+            "driver",
+            "primaryMappingId",
+            "auxiliaryMappingIds",
+            "maxInputSkewMs",
+            "maxSampleGapMs",
+            "type",
+            "requiredMinutes",
+            "hysteresisMinutes",
+            "trigger",
+            "clear"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "ruleVersion": {
+              "type": "string"
+            },
+            "equipRef": {
+              "type": "string"
+            },
+            "enabled": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            },
+            "driver": {
+              "const": "sample"
+            },
+            "primaryMappingId": {
+              "type": "string"
+            },
+            "auxiliaryMappingIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "maxInputSkewMs": {
+              "type": "number"
+            },
+            "maxSampleGapMs": {
+              "type": "number"
+            },
+            "type": {
+              "const": "R-02"
+            },
+            "warningPct": {
+              "type": "number"
+            },
+            "criticalPct": {
+              "type": "number"
+            },
+            "warningHysteresis": {
+              "type": "number"
+            },
+            "criticalHysteresis": {
+              "type": "number"
+            },
+            "triggerWarning": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "triggerCritical": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "upgrade": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "downgrade": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "clear": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "ruleId",
+            "ruleVersion",
+            "equipRef",
+            "enabled",
+            "driver",
+            "primaryMappingId",
+            "auxiliaryMappingIds",
+            "maxInputSkewMs",
+            "maxSampleGapMs",
+            "type",
+            "warningPct",
+            "criticalPct",
+            "warningHysteresis",
+            "criticalHysteresis",
+            "triggerWarning",
+            "triggerCritical",
+            "upgrade",
+            "downgrade",
+            "clear"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "ruleVersion": {
+              "type": "string"
+            },
+            "equipRef": {
+              "type": "string"
+            },
+            "enabled": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            },
+            "driver": {
+              "const": "sample"
+            },
+            "primaryMappingId": {
+              "type": "string"
+            },
+            "auxiliaryMappingIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "maxInputSkewMs": {
+              "type": "number"
+            },
+            "maxSampleGapMs": {
+              "type": "number"
+            },
+            "type": {
+              "const": "R-03"
+            },
+            "baseline": {
+              "type": "number"
+            },
+            "warningChangePct": {
+              "type": "number"
+            },
+            "hysteresisPct": {
+              "type": "number"
+            },
+            "comparableEvidenceRef": {
+              "type": "string"
+            },
+            "trigger": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            },
+            "clear": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number"
+                },
+                "durationMs": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "count",
+                "durationMs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "ruleId",
+            "ruleVersion",
+            "equipRef",
+            "enabled",
+            "driver",
+            "primaryMappingId",
+            "auxiliaryMappingIds",
+            "maxInputSkewMs",
+            "maxSampleGapMs",
+            "type",
+            "baseline",
+            "warningChangePct",
+            "hysteresisPct",
+            "comparableEvidenceRef",
+            "trigger",
+            "clear"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "ruleVersion": {
+              "type": "string"
+            },
+            "equipRef": {
+              "type": "string"
+            },
+            "enabled": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            },
+            "type": {
+              "const": "R-04"
+            },
+            "driver": {
+              "const": "calendar"
+            },
+            "planId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ruleId",
+            "ruleVersion",
+            "equipRef",
+            "enabled",
+            "type",
+            "driver",
+            "planId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ruleId": {
+              "type": "string"
+            },
+            "ruleVersion": {
+              "type": "string"
+            },
+            "equipRef": {
+              "type": "string"
+            },
+            "enabled": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            },
+            "type": {
+              "const": "R-05"
+            },
+            "driver": {
+              "const": "quality"
+            },
+            "requiredMappingIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "triggerDelayMs": {
+              "type": "number"
+            },
+            "clearDelayMs": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "ruleId",
+            "ruleVersion",
+            "equipRef",
+            "enabled",
+            "type",
+            "driver",
+            "requiredMappingIds",
+            "triggerDelayMs",
+            "clearDelayMs"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Enrollment": {
+      "type": "object",
+      "properties": {
+        "equipRef": {
+          "type": "string"
+        },
+        "siteRef": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "commissioningStatus": {
+          "anyOf": [
+            {
+              "const": "draft"
+            },
+            {
+              "const": "ready"
+            },
+            {
+              "const": "accepted"
+            },
+            {
+              "const": "disabled"
+            },
+            {
+              "const": "retired"
+            }
+          ]
+        },
+        "capabilityProfile": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "objectRef": {
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "supported"
+                  },
+                  {
+                    "const": "unsupported"
+                  },
+                  {
+                    "const": "unverified"
+                  }
+                ]
+              },
+              "evidenceRef": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "field",
+              "objectRef",
+              "status",
+              "evidenceRef"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "sourceDocumentVersion": {
+          "type": "string"
+        },
+        "baseRequiredMappingIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alarmSourceRef": {
+          "type": "string"
+        },
+        "acceptanceRevision": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "equipRef",
+        "siteRef",
+        "displayName",
+        "commissioningStatus",
+        "capabilityProfile",
+        "sourceDocumentVersion",
+        "baseRequiredMappingIds",
+        "alarmSourceRef",
+        "acceptanceRevision"
+      ],
+      "additionalProperties": false
+    },
+    "ReportJob": {
+      "type": "object",
+      "properties": {
+        "jobId": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "context": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "sourceMode": {
+                  "const": "live"
+                }
+              },
+              "required": [
+                "sourceMode"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "sourceMode": {
+                  "const": "simulation"
+                },
+                "simulationSessionId": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "generationId": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "scenarioId": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "scenarioVersion": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "seed": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "virtualTime": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "semanticFormat": "date-time"
+                }
+              },
+              "required": [
+                "sourceMode",
+                "simulationSessionId",
+                "generationId",
+                "scenarioId",
+                "scenarioVersion",
+                "seed",
+                "virtualTime"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "params": {
+          "type": "object",
+          "properties": {
+            "templateId": {
+              "anyOf": [
+                {
+                  "const": "REP-01"
+                },
+                {
+                  "const": "REP-02"
+                },
+                {
+                  "const": "REP-03"
+                },
+                {
+                  "const": "REP-04"
+                }
+              ]
+            },
+            "templateVersion": {
+              "type": "string"
+            },
+            "equipRefs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "start": {
+              "type": "string",
+              "semanticFormat": "date-time"
+            },
+            "end": {
+              "type": "string",
+              "semanticFormat": "date-time"
+            },
+            "timezone": {
+              "type": "string"
+            },
+            "metricIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "aggregation": {
+              "anyOf": [
+                {
+                  "const": "raw"
+                },
+                {
+                  "const": "bucketed"
+                },
+                {
+                  "const": "summary"
+                }
+              ]
+            },
+            "bucketSeconds": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "format": {
+              "anyOf": [
+                {
+                  "const": "pdf"
+                },
+                {
+                  "const": "xlsx"
+                },
+                {
+                  "const": "csv"
+                }
+              ]
+            },
+            "allowEmpty": {
+              "anyOf": [
+                {
+                  "const": false
+                },
+                {
+                  "const": true
+                }
+              ]
+            }
+          },
+          "required": [
+            "templateId",
+            "templateVersion",
+            "equipRefs",
+            "start",
+            "end",
+            "timezone",
+            "metricIds",
+            "aggregation",
+            "bucketSeconds",
+            "format",
+            "allowEmpty"
+          ],
+          "additionalProperties": false
+        },
+        "state": {
+          "anyOf": [
+            {
+              "const": "cancelled"
+            },
+            {
+              "const": "queued"
+            },
+            {
+              "const": "running"
+            },
+            {
+              "const": "succeeded"
+            },
+            {
+              "const": "failed"
+            },
+            {
+              "const": "expired"
+            }
+          ]
+        },
+        "progressPct": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string",
+          "semanticFormat": "date-time"
+        },
+        "expiresAt": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "semanticFormat": "date-time"
+        },
+        "dataCutoffAt": {
+          "type": "string",
+          "semanticFormat": "date-time"
+        },
+        "collectedFrom": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "semanticFormat": "date-time"
+        },
+        "collectedTo": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "semanticFormat": "date-time"
+        },
+        "rows": {
+          "type": "number"
+        },
+        "bytes": {
+          "type": "number"
+        },
+        "qualitySummary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "checksum": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "errorCode": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "const": "UNAUTHENTICATED"
+            },
+            {
+              "const": "FORBIDDEN"
+            },
+            {
+              "const": "OBJECT_UNAVAILABLE"
+            },
+            {
+              "const": "VALIDATION_FAILED"
+            },
+            {
+              "const": "REVISION_CONFLICT"
+            },
+            {
+              "const": "IDEMPOTENCY_CONFLICT"
+            },
+            {
+              "const": "CURSOR_EXPIRED"
+            },
+            {
+              "const": "SOURCE_UNAVAILABLE"
+            },
+            {
+              "const": "HISTORY_UNAVAILABLE"
+            },
+            {
+              "const": "RATE_LIMITED"
+            },
+            {
+              "const": "PERSISTENCE_UNAVAILABLE"
+            },
+            {
+              "const": "OUTCOME_UNKNOWN"
+            },
+            {
+              "const": "CAPABILITY_UNSUPPORTED"
+            },
+            {
+              "const": "SCOPE_CONFLICT"
+            },
+            {
+              "const": "ACTIVE_OCCURRENCE_BLOCKS_CHANGE"
+            },
+            {
+              "const": "PUBLICATION_BUSY"
+            },
+            {
+              "const": "CONFIG_ACTIVATING"
+            },
+            {
+              "const": "RECOVERY_REQUIRED"
+            },
+            {
+              "const": "SOURCE_MODE_MISMATCH"
+            },
+            {
+              "const": "GENERATION_MISMATCH"
+            },
+            {
+              "const": "SESSION_BUSY"
+            },
+            {
+              "const": "SESSION_DELETED"
+            },
+            {
+              "const": "INVALID_STATE"
+            },
+            {
+              "const": "LIMIT_EXCEEDED"
+            },
+            {
+              "const": "REPORT_EXPIRED"
+            },
+            {
+              "const": "REPORT_NOT_READY"
+            },
+            {
+              "const": "SCHEMA_VERSION_UNSUPPORTED"
+            },
+            {
+              "const": "CHANNEL_PAUSED"
+            }
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "jobId",
+        "ownerId",
+        "context",
+        "params",
+        "state",
+        "progressPct",
+        "createdAt",
+        "expiresAt",
+        "dataCutoffAt",
+        "collectedFrom",
+        "collectedTo",
+        "rows",
+        "bytes",
+        "qualitySummary",
+        "checksum",
+        "errorCode",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

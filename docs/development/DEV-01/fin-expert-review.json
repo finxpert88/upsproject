@@ -1,0 +1,337 @@
+{
+  "initialParseAttempt": {
+    "ok": true,
+    "data": {
+      "artifact_type": "connector",
+      "issues": [
+        "ARTIFACT_PARSE:JSONDecodeError"
+      ],
+      "structured_issues": [
+        {
+          "rule_id": "ARTIFACT_PARSE",
+          "location": "JSONDecodeError",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        }
+      ],
+      "target_version": "5.3.0.2761",
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": true,
+        "target_normalized": "5.3.0.2761",
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "ARTIFACT_PARSE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_ARCHITECTURE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LICENSE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIFECYCLE_SOURCE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIFECYCLE_STATUS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIVE_BOUNDARY": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_RETRY": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_RUNTIME_CLAIM": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_SECRETS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_TESTS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_VERSION_SCOPE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_WRITE_VALIDATION": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Concrete target is outside the evidence-scoped local FIN version profiles. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": false,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 1.5496000014536548,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-040b4573cd1647ea9d06800a4ca8df11"
+  },
+  "structuredArtifactReview": {
+    "ok": true,
+    "data": {
+      "artifact_type": "connector",
+      "issues": [
+        "CONNECTOR_VERSION_SCOPE",
+        "CONNECTOR_ARCHITECTURE",
+        "CONNECTOR_RETRY",
+        "CONNECTOR_SECRETS",
+        "CONNECTOR_WRITE_VALIDATION",
+        "CONNECTOR_TESTS"
+      ],
+      "structured_issues": [
+        {
+          "rule_id": "CONNECTOR_VERSION_SCOPE",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        },
+        {
+          "rule_id": "CONNECTOR_ARCHITECTURE",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        },
+        {
+          "rule_id": "CONNECTOR_RETRY",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        },
+        {
+          "rule_id": "CONNECTOR_SECRETS",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        },
+        {
+          "rule_id": "CONNECTOR_WRITE_VALIDATION",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        },
+        {
+          "rule_id": "CONNECTOR_TESTS",
+          "location": "$",
+          "severity": "error",
+          "evidence": [
+            "evals/domain_contracts.py"
+          ],
+          "version_applicability": "unverified",
+          "suggestion": "Resolve against cited rule and supplied project facts; do not infer a unit, reference, role or write priority.",
+          "target_version": "5.3.0.2761",
+          "target_applicability": "unverified",
+          "version_evidence": []
+        }
+      ],
+      "target_version": "5.3.0.2761",
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": true,
+        "target_normalized": "5.3.0.2761",
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "CONNECTOR_ARCHITECTURE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LICENSE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIFECYCLE_SOURCE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIFECYCLE_STATUS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_LIVE_BOUNDARY": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_RETRY": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_RUNTIME_CLAIM": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_SECRETS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_TESTS": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_VERSION_SCOPE": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "CONNECTOR_WRITE_VALIDATION": {
+            "status": "unverified",
+            "target_version": "5.3.0.2761",
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Concrete target is outside the evidence-scoped local FIN version profiles. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": false,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 1.00880000172765,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-c6749107650b48edb8209d0d1ee7a508"
+  }
+}

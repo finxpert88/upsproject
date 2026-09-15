@@ -1,0 +1,257 @@
+{
+  "revision": "B1.1",
+  "owner": "Lifecycle.start",
+  "mechanism": "Explicit instance composition and bounded task callbacks; no service locator, bus or generic factory",
+  "operationDispatch": [
+    {
+      "operation": "OP-01",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "RequestFacade.sessionCapabilities",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-02",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "InventoryService.equipmentList",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-03",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "TelemetryService.equipmentSnapshot",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-04",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "HistoryService.metricHistory",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-05",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "AlarmService.alarmListDetail",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-06",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "AlarmService.alarmAcknowledge",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-07",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "OperationRepository.operationStatus",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-08",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ConfigurationService.configGetSaveDraft",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-09",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ConfigurationService.configValidate",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-10",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ConfigurationService.configPublish",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-11",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ConfigurationService.configRollbackDraft",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-12",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "LifecycleDiagnostics.diagnostics",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-13",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "AuditRepository.auditList",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-14",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ConfigurationService.commissioningAccept",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-15",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ReportService.reportCreate",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-16",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ReportService.reportGetList",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-17",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ReportService.reportDownload",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-18",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "ReportService.reportCancel",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-19",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "NotificationService.notificationTest",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-20",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "NotificationService.notificationDeliveryList",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-21",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "NotificationService.notificationRetry",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-22",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "MetricDictionaryService.metricDictionary",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-23",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationCreate",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-24",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationGenerate",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-25",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationControl",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-26",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationStep",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-27",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationScenario",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-28",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationReset",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-29",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationDelete",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-30",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "SimulationService.simulationGetList",
+      "binding": "Direct owner instance supplied at project startup"
+    },
+    {
+      "operation": "OP-31",
+      "dispatcher": "RequestFacade.dispatch",
+      "target": "NotificationService.notificationPause",
+      "binding": "Direct owner instance supplied at project startup"
+    }
+  ],
+  "taskRegistrations": [
+    {
+      "id": "live-observations",
+      "registrar": "Lifecycle.start",
+      "scheduler": "WorkScheduler.admit",
+      "callbacks": [
+        "TelemetryService.pollBatch",
+        "RuleEngine.advance"
+      ],
+      "scope": "project live",
+      "order": "Normalize observation batch, then feed sample/quality/calendar event with current epoch to shared RuleEngine"
+    },
+    {
+      "id": "rule-command-outbox",
+      "registrar": "Lifecycle.start",
+      "scheduler": "WorkScheduler.admit",
+      "callbacks": [
+        "AlarmSynchronizer.dispatchNext",
+        "AlarmSynchronizer.reconcileUnknown"
+      ],
+      "scope": "project + occurrence chain",
+      "order": "Unknown reconciles before any dependent dispatch"
+    },
+    {
+      "id": "reports",
+      "registrar": "ReportService.reportCreate",
+      "scheduler": "WorkScheduler.admit",
+      "callbacks": [
+        "ReportWorker.execute"
+      ],
+      "scope": "job + source context",
+      "order": "Persist authorized job first; two-worker bound"
+    },
+    {
+      "id": "notifications",
+      "registrar": "Lifecycle.start",
+      "scheduler": "WorkScheduler.admit",
+      "callbacks": [
+        "NotificationWorker.deliver",
+        "NotificationWorker.reconcileUnknown"
+      ],
+      "scope": "channel/source context",
+      "order": "Persist outbox then claim atomic gate permit; explicit OP-21 exception documented separately"
+    },
+    {
+      "id": "simulation",
+      "registrar": "SimulationService.simulationControl",
+      "scheduler": "WorkScheduler.admit",
+      "callbacks": [
+        "SimulationEngine.advanceEvents"
+      ],
+      "scope": "session/generation/worker fence",
+      "order": "Management operation selects bounded work; direct step/generate use same serialization and engine"
+    }
+  ],
+  "shutdown": {
+    "owner": "Lifecycle.stop",
+    "callbacks": [
+      "WorkScheduler.cancel",
+      "WorkScheduler.drain"
+    ],
+    "rule": "Reject new work, fence active generations, drain/cancel and preserve recoverable checkpoints"
+  },
+  "diagramScope": "UML depicts selected static dependencies and realization. Runtime dispatch/task-registration edges are in this table, not drawn into the class sheets."
+}

@@ -1,0 +1,61 @@
+{
+  "recordedAtUtc": "2026-09-15T12:59:53.5985408Z",
+  "executable": "C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.32.101-hotspot\\bin\\java.exe",
+  "arguments": [
+    "-Dfan.home=C:\\work\\upsproject-implementation\\.runtime\\DEV-01",
+    "-Djava.io.tmpdir=C:\\work\\upsproject-implementation\\.artifacts\\DEV-01/tmp",
+    "-Duser.home=C:\\work\\upsproject-implementation\\.runtime\\DEV-01/user",
+    "-cp",
+    "C:\\work\\upsproject-implementation\\.runtime\\DEV-01/lib/java/sys.jar",
+    "fanx.tools.Fan",
+    "C:\\work\\upsproject-implementation/upsFleet/build.fan",
+    "compile"
+  ],
+  "workingDirectory": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01",
+  "exitCode": 0,
+  "outputDirectory": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\test",
+  "sdkInputs": [
+    {
+      "path": "lib/fan/sys.pod",
+      "sha256": "7B7F69AADE02F35921ECF148A31FD297D9F382B9D0A16E5D1F0874C665FE0D99"
+    },
+    {
+      "path": "lib/fan/compiler.pod",
+      "sha256": "43FB4F1C5307F73899842388AFC0DC6CFCC673E906B7BB7335B7C13650FA0A89"
+    },
+    {
+      "path": "lib/fan/build.pod",
+      "sha256": "C3B780C2AE37D02C3B1EBA437B42845DF2365FD26D2858A1FE262C3D58AD20FF"
+    },
+    {
+      "path": "lib/java/sys.jar",
+      "sha256": "26D4853DBF1B407DE117390A757A069783B186B3F601C8ABB43DE458743613E5"
+    },
+    {
+      "path": "etc/sys/timezones.ftz",
+      "sha256": "CAD3BEB42A9F83733F6BF36869921E107237F6ECE34C66ABFDD1A87766AC06CE"
+    },
+    {
+      "path": "etc/sys/timezone-aliases.props",
+      "sha256": "F1FA0D84BC2B0F6297B76A8F5B5BC0146957BED7FBFB518BCAF485373CC85C96"
+    },
+    {
+      "path": "etc/sys/units.txt",
+      "sha256": "365ADB70D5842139EC30A16F139756F5397CD1C0198A8DAC16324A7E6E7C22BF"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "upsFleet/build.fan",
+      "sha256": "091796F28BDBFF323DCA135754EDB3280E59D5EB055BEEFD5C23385A16D44681"
+    },
+    {
+      "path": "upsFleet/fan/domain/telemetry/QualityEvaluator.fan",
+      "sha256": "AF8936308708EF594A7084FBBCFCD0379E0A41754E95C13DCA29DCD421553C17"
+    },
+    {
+      "path": "upsFleet/test/domain/QualityEvaluatorTest.fan",
+      "sha256": "487EC3F1F40F6FC5CA085C0B0D1AF737860B42A7BA3CF98FCE96F83EEDD617B2"
+    }
+  ]
+}

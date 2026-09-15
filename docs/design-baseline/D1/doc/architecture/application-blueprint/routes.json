@@ -1,0 +1,1604 @@
+[
+  {
+    "id": "R-L-1",
+    "path": "#/live/dashboard",
+    "page": "DashboardPage",
+    "context": "live",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-02",
+      "OP-03"
+    ],
+    "optionalReads": [
+      "OP-04",
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-03": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-2",
+    "path": "#/simulation/:sessionId/:generationId/dashboard",
+    "page": "DashboardPage",
+    "context": "simulation",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-02",
+      "OP-03"
+    ],
+    "optionalReads": [
+      "OP-04",
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-03": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-3",
+    "path": "#/live/equipment",
+    "page": "EquipmentPage",
+    "context": "live",
+    "operations": [
+      "OP-02"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-02"
+    ],
+    "optionalReads": [],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-4",
+    "path": "#/simulation/:sessionId/:generationId/equipment",
+    "page": "EquipmentPage",
+    "context": "simulation",
+    "operations": [
+      "OP-02"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-02"
+    ],
+    "optionalReads": [],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-5",
+    "path": "#/live/equipment/:equipId",
+    "page": "DashboardPage",
+    "context": "live",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-02",
+      "OP-03"
+    ],
+    "optionalReads": [
+      "OP-04",
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-03": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-6",
+    "path": "#/simulation/:sessionId/:generationId/equipment/:equipId",
+    "page": "DashboardPage",
+    "context": "simulation",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-02",
+      "OP-03"
+    ],
+    "optionalReads": [
+      "OP-04",
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-02": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-03": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-7",
+    "path": "#/live/equipment/:equipId/history",
+    "page": "HistoryPage",
+    "context": "live",
+    "operations": [
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-04"
+    ],
+    "optionalReads": [
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-8",
+    "path": "#/simulation/:sessionId/:generationId/equipment/:equipId/history",
+    "page": "HistoryPage",
+    "context": "simulation",
+    "operations": [
+      "OP-04",
+      "OP-22"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-04"
+    ],
+    "optionalReads": [
+      "OP-22"
+    ],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-04": {
+        "permissionByMode": {
+          "live": "history.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-22": {
+        "permissionByMode": {
+          "live": "fleet.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-9",
+    "path": "#/live/alarms",
+    "page": "AlarmPage",
+    "context": "live",
+    "operations": [
+      "OP-05",
+      "OP-06",
+      "OP-07"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-05"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-06"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-05": {
+        "permissionByMode": {
+          "live": "alarm.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-06": {
+        "permissionByMode": {
+          "live": "alarm.ack",
+          "simulation": "simulation.ack"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-10",
+    "path": "#/simulation/:sessionId/:generationId/alarms",
+    "page": "AlarmPage",
+    "context": "simulation",
+    "operations": [
+      "OP-05",
+      "OP-06",
+      "OP-07"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-05"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-06"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-05": {
+        "permissionByMode": {
+          "live": "alarm.view",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-06": {
+        "permissionByMode": {
+          "live": "alarm.ack",
+          "simulation": "simulation.ack"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-11",
+    "path": "#/live/reports",
+    "page": "ReportPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-15",
+      "OP-16",
+      "OP-18"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-16"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-15",
+      "OP-18"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-15": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-16": {
+        "permissionByMode": {
+          "live": "report.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-18": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-12",
+    "path": "#/simulation/:sessionId/:generationId/reports",
+    "page": "ReportPage",
+    "context": "simulation",
+    "operations": [
+      "OP-07",
+      "OP-15",
+      "OP-16",
+      "OP-18"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-16"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-15",
+      "OP-18"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-15": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-16": {
+        "permissionByMode": {
+          "live": "report.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-18": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-L-13",
+    "path": "#/live/reports/:jobId",
+    "page": "ReportDetailPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-16",
+      "OP-17",
+      "OP-18"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "No selection: choose first authorized equipment; empty fleet renders explicit no-data state. Detail identifiers never bypass authorization.",
+    "entryReads": [
+      "OP-16"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-17",
+      "OP-18"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-16": {
+        "permissionByMode": {
+          "live": "report.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-17": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-18": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-14",
+    "path": "#/simulation/:sessionId/:generationId/reports/:jobId",
+    "page": "ReportDetailPage",
+    "context": "simulation",
+    "operations": [
+      "OP-07",
+      "OP-16",
+      "OP-17",
+      "OP-18"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Reuse page; require current generation and session ACL. Reset/delete invalidates old views; acknowledgement/export use simulation permissions.",
+    "entryReads": [
+      "OP-16"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-17",
+      "OP-18"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-16": {
+        "permissionByMode": {
+          "live": "report.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-17": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-18": {
+        "permissionByMode": {
+          "live": "report.export",
+          "simulation": "simulation.export"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-15",
+    "path": "#/live/engineering",
+    "page": "EngineeringPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-08"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-08": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-09": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-10": {
+        "permissionByMode": {
+          "live": "config.publish",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-11": {
+        "permissionByMode": {
+          "live": "config.publish",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-16",
+    "path": "#/live/engineering/drafts/:draftId",
+    "page": "EngineeringPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-08"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-08": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-09": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-10": {
+        "permissionByMode": {
+          "live": "config.publish",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-11": {
+        "permissionByMode": {
+          "live": "config.publish",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-17",
+    "path": "#/live/engineering/commissioning",
+    "page": "CommissioningPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-12",
+      "OP-14"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-08",
+      "OP-12"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-14"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-08": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-12": {
+        "permissionByMode": {
+          "live": "diagnostics.view",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-14": {
+        "permissionByMode": {
+          "live": "commissioning.accept",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-18",
+    "path": "#/live/engineering/notifications",
+    "page": "NotificationPage",
+    "context": "live",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-19",
+      "OP-20",
+      "OP-21",
+      "OP-31"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-20"
+    ],
+    "optionalReads": [
+      "OP-08"
+    ],
+    "actions": [
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-19",
+      "OP-21",
+      "OP-31"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-08": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-09": {
+        "permissionByMode": {
+          "live": "config.edit",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-10": {
+        "permissionByMode": {
+          "live": "config.publish",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-19": {
+        "permissionByMode": {
+          "live": "notification.manage",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-20": {
+        "permissionByMode": {
+          "live": "notification.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-21": {
+        "permissionByMode": {
+          "live": "notification.manage",
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-31": {
+        "permissionByMode": {
+          "live": "notification.manage",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-19",
+    "path": "#/live/engineering/diagnostics",
+    "page": "DiagnosticsPage",
+    "context": "live",
+    "operations": [
+      "OP-12"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-12"
+    ],
+    "optionalReads": [],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-12": {
+        "permissionByMode": {
+          "live": "diagnostics.view",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-E-20",
+    "path": "#/live/engineering/audit",
+    "page": "AuditPage",
+    "context": "live",
+    "operations": [
+      "OP-13"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Engineering actions are live-only; route guards hide controls but server remains authoritative.",
+    "entryReads": [
+      "OP-13"
+    ],
+    "optionalReads": [],
+    "actions": [],
+    "reconciliationReads": [],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-13": {
+        "permissionByMode": {
+          "live": "audit.view",
+          "simulation": null
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  },
+  {
+    "id": "R-S-ROOT",
+    "path": "#/simulation",
+    "page": "SimulationPage",
+    "context": "simulation-root",
+    "operations": [
+      "OP-07",
+      "OP-23",
+      "OP-24",
+      "OP-25",
+      "OP-26",
+      "OP-27",
+      "OP-28",
+      "OP-29",
+      "OP-30"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Only list/create without a session; other operations require selected session and generation. Read-only account cannot manage.",
+    "entryReads": [
+      "OP-30"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-23",
+      "OP-24",
+      "OP-25",
+      "OP-26",
+      "OP-27",
+      "OP-28",
+      "OP-29"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-23": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "create owned session"
+        },
+        "rootSimulationAllowed": true
+      },
+      "OP-24": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-25": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-26": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-27": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-28": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-29": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-30": {
+        "permissionByMode": {
+          "live": null,
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "filter authorized session ACL"
+        },
+        "rootSimulationAllowed": true
+      }
+    }
+  },
+  {
+    "id": "R-S-NOTIFY",
+    "path": "#/simulation/:sessionId/:generationId/notifications",
+    "page": "NotificationPage",
+    "context": "simulation",
+    "operations": [
+      "OP-07",
+      "OP-20",
+      "OP-21"
+    ],
+    "guard": "Entry read authorization is independent of optional reads, actions and original-operation reconciliation. Preserve approved per-mode permissions and object scope for each call.",
+    "notes": "Delivery list/local retry only; no channel editor, external test, publish or emergency pause.",
+    "entryReads": [
+      "OP-20"
+    ],
+    "optionalReads": [],
+    "actions": [
+      "OP-21"
+    ],
+    "reconciliationReads": [
+      "OP-07"
+    ],
+    "entryPolicy": {
+      "require": "authenticated valid source context plus at least one authorized entry read",
+      "reads": "Only invoke individually authorized reads; partial sections may remain unavailable",
+      "actions": "Do not require action permissions to enter; authorize every action independently on server",
+      "mixedOperation": "OP-08 entry is get only; save is an explicit action with draft/entity CAS",
+      "rootScope": "Only OP-23 create and OP-30 list at simulation root; all other actions and OP-07 require the selected/original operation context"
+    },
+    "operationGuards": {
+      "OP-07": {
+        "permissionByMode": {
+          "live": "originalActionByMode",
+          "simulation": "originalActionByMode"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-20": {
+        "permissionByMode": {
+          "live": "notification.read",
+          "simulation": "simulation.read"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      },
+      "OP-21": {
+        "permissionByMode": {
+          "live": "notification.manage",
+          "simulation": "simulation.manage"
+        },
+        "scopeByMode": {
+          "live": "current project + all referenced authorized objects",
+          "simulation": "current session ACL + generation + referenced session objects"
+        },
+        "rootSimulationAllowed": false
+      }
+    }
+  }
+]

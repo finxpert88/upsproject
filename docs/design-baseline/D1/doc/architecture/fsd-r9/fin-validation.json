@@ -1,0 +1,526 @@
+{
+  "trioDevices": {
+    "ok": true,
+    "data": {
+      "artifact_type": "trio",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "AXON_CUSTOM_ROLLUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DIRECT_ALARM_STATE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DO_END": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_EMPTY_GRID_GUARD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_LEVEL17_UNSCOPED": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NAVNAME_LOOKUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NULL_COALESCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_PLUS_DAYS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_RETURN": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_TRIO_TAG": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_ZERO_DAY_RANGE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_DUPLICATE_ID": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_FORMAT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_HEADER": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ID_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_RECORDS_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ROW_WIDTH": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_TEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 3.939199999877019,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-f7bb7f7b454c435d961ace9728711eb0"
+  },
+  "trioBusiness": {
+    "ok": true,
+    "data": {
+      "artifact_type": "trio",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "AXON_CUSTOM_ROLLUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DIRECT_ALARM_STATE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DO_END": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_EMPTY_GRID_GUARD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_LEVEL17_UNSCOPED": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NAVNAME_LOOKUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NULL_COALESCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_PLUS_DAYS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_RETURN": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_TRIO_TAG": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_ZERO_DAY_RANGE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_DUPLICATE_ID": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_FORMAT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_HEADER": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ID_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_RECORDS_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ROW_WIDTH": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_TEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 2.87679999928514,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-076208964acc402ca199ed821a7effcc"
+  },
+  "solution": {
+    "ok": true,
+    "data": {
+      "artifact_type": "solution",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "SOLUTION_CLAIMS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_CLAIM_STATUS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_CONTEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_DELIVERY_FIELD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_HIERARCHY": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_TRACEABILITY": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_VERIFIED_SOURCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 0.7941000003484078,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-78466321afbf4ddf9722243027bf44fc"
+  },
+  "haystack": {
+    "status": "needs_input",
+    "issues": [
+      "HAYSTACK_MODEL_ID:ups-tpl-ups",
+      "HAYSTACK_MODEL_ID:ups-tpl-battery",
+      "HAYSTACK_MODEL_ID:ups-tpl-module",
+      "HAYSTACK_MODEL_ID:ups-tpl-environment",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-powerMode",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-runtimeEstimateMinutes",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batterySocPct",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batterySohPct",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batteryStringVoltage",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batteryImpedance",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batteryTemperature",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-batteryChargeCurrent",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-outputPowerKw",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-outputApparentPowerKva",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-loadPct",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-outputVoltage",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-outputFrequency",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-outputThd",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-rectifierStatus",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-fanStatus",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-capacitorHealthPct",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-ambientTemp",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-humidity",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-airQuality",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-waterDetected",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-transferStatus",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-staticBypassAvailable",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-staticBypassActive",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-maintenanceBypassAvailable",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-maintenanceBypassActive",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-lastTransferDuration",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-healthScore",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-moduleAvailableCapacity",
+      "HAYSTACK_POINT_ROLE:ups-tpl-point-moduleState",
+      "HAYSTACK_RECORD_KIND:ups-tpl-evidence",
+      "HAYSTACK_RECORD_KIND:ups-tpl-config",
+      "HAYSTACK_RECORD_KIND:ups-tpl-enrollment",
+      "HAYSTACK_RECORD_KIND:ups-tpl-capability",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-powerMode",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-runtimeEstimateMinutes",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batterySocPct",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batterySohPct",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batteryStringVoltage",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batteryImpedance",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batteryTemperature",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-batteryChargeCurrent",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-outputPowerKw",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-outputApparentPowerKva",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-loadPct",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-outputVoltage",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-outputFrequency",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-outputThd",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-rectifierStatus",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-fanStatus",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-capacitorHealthPct",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-ambientTemp",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-humidity",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-airQuality",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-waterDetected",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-transferStatus",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-staticBypassAvailable",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-staticBypassActive",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-maintenanceBypassAvailable",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-maintenanceBypassActive",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-lastTransferDuration",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-healthScore",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-moduleAvailableCapacity",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-moduleState",
+      "HAYSTACK_RECORD_KIND:ups-tpl-environment-link",
+      "HAYSTACK_RECORD_KIND:ups-tpl-asset-values",
+      "HAYSTACK_RECORD_KIND:ups-tpl-assessment",
+      "HAYSTACK_RECORD_KIND:ups-tpl-plan",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-R-01",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-R-02",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-R-03",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-R-04",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-R-05",
+      "HAYSTACK_RECORD_KIND:ups-tpl-draft",
+      "HAYSTACK_RECORD_KIND:ups-tpl-validation",
+      "HAYSTACK_RECORD_KIND:ups-tpl-publication",
+      "HAYSTACK_RECORD_KIND:ups-tpl-pointer",
+      "HAYSTACK_RECORD_KIND:ups-tpl-activation",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-state",
+      "HAYSTACK_RECORD_KIND:ups-tpl-rule-outbox",
+      "HAYSTACK_RECORD_KIND:ups-tpl-association",
+      "HAYSTACK_RECORD_KIND:ups-tpl-journal",
+      "HAYSTACK_RECORD_KIND:ups-tpl-audit",
+      "HAYSTACK_RECORD_KIND:ups-tpl-acceptance",
+      "HAYSTACK_RECORD_KIND:ups-tpl-mapping-interval",
+      "HAYSTACK_RECORD_KIND:ups-tpl-plan-event",
+      "HAYSTACK_RECORD_KIND:ups-tpl-outlook",
+      "HAYSTACK_RECORD_KIND:ups-tpl-report",
+      "HAYSTACK_RECORD_KIND:ups-tpl-report-file",
+      "HAYSTACK_RECORD_KIND:ups-tpl-channel",
+      "HAYSTACK_RECORD_KIND:ups-tpl-subscription",
+      "HAYSTACK_RECORD_KIND:ups-tpl-gate",
+      "HAYSTACK_RECORD_KIND:ups-tpl-notify",
+      "HAYSTACK_RECORD_KIND:ups-tpl-attempt",
+      "HAYSTACK_RECORD_KIND:ups-tpl-cursor",
+      "HAYSTACK_RECORD_KIND:ups-tpl-dictionary",
+      "HAYSTACK_RECORD_KIND:ups-tpl-simulation",
+      "HAYSTACK_RECORD_KIND:ups-tpl-sim-cleanup",
+      "HAYSTACK_RECORD_KIND:ups-tpl-sim-sample",
+      "HAYSTACK_RECORD_KIND:ups-tpl-sim-alarm",
+      "HAYSTACK_RECORD_KIND:ups-tpl-schema-migration"
+    ]
+  },
+  "workflow": {
+    "id": "wf-86ecec513f4f42c2b315ac8b2e2a05e4",
+    "status": "needs_input",
+    "reason": "Generic ontology checker requires known equipment model IDs and point roles; business Recs fall outside its site/equip/point contract. No relabeling to evade validation."
+  }
+}

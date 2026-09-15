@@ -1,0 +1,435 @@
+{
+  "workflowId": "wf-9860cedbabde4353a64c284fa0eb94cd",
+  "workflowStatus": "completed",
+  "solutionValidation": {
+    "artifact_type": "solution",
+    "citation_identity_verified": true,
+    "evidence_checks": [
+      {
+        "classification": "internal",
+        "content_sha256": "8160f702aed5ccc51ff0b9cc685317ade3a08b485601b0d200b9b408341f7925",
+        "id": "646baac4d5a91eb1f33729ec",
+        "locations": [
+          "$.claims[1].source_ids"
+        ],
+        "locator": "line:15#chunk:1",
+        "product_versions": [
+          "5"
+        ],
+        "source": "fin-dev-docs/extension-architect/accperform-example.md",
+        "source_class": "workspace_source",
+        "untrusted": false
+      },
+      {
+        "classification": "internal",
+        "content_sha256": "2af0b8eeb84b185d55ecb9fcf337cee8126851f5bdf1eb6d3b7bd5bd78060a89",
+        "id": "fin_web_language_reference_6ec8c158300f9d55",
+        "locations": [
+          "$.claims[0].source_ids"
+        ],
+        "locator": null,
+        "product_versions": [],
+        "source": "external_language_reference:https://fantom.org/doc/docLang/Pods",
+        "source_class": "official_language_reference",
+        "untrusted": false
+      }
+    ],
+    "evidence_scope": "identity, current access and content hash only; claim entailment/version applicability require Codex review",
+    "issues": [],
+    "passed": true,
+    "runtime_verified": false,
+    "structured_issues": [],
+    "target_version": null,
+    "validation_scope": "offline workspace contracts only",
+    "version_assessment": {
+      "catalog_version": "2026-08-29",
+      "compatibility_verified": false,
+      "declaration_matches_target": null,
+      "declared_version": null,
+      "evaluated_rules": {
+        "SOLUTION_CLAIMS": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_CLAIM_STATUS": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_CONTEXT": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_DELIVERY_FIELD": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_HIERARCHY": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_TRACEABILITY": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        },
+        "SOLUTION_VERIFIED_SOURCE": {
+          "evidence": [],
+          "profile_id": null,
+          "status": "unverified",
+          "target_version": null,
+          "vendor_runtime_verified": false
+        }
+      },
+      "profile_id": null,
+      "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility.",
+      "status": "unverified",
+      "target_is_concrete": false,
+      "target_normalized": null
+    },
+    "version_status": "unverified",
+    "warnings": [
+      "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+    ]
+  },
+  "equipment": {
+    "ok": true,
+    "data": {
+      "artifact_type": "trio",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "AXON_CUSTOM_ROLLUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DIRECT_ALARM_STATE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DO_END": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_EMPTY_GRID_GUARD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_LEVEL17_UNSCOPED": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NAVNAME_LOOKUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NULL_COALESCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_PLUS_DAYS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_RETURN": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_TRIO_TAG": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_ZERO_DAY_RANGE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_DUPLICATE_ID": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_FORMAT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_HEADER": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ID_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_RECORDS_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ROW_WIDTH": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_TEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 1.7361000027449336,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-5664849c661d4551a1d728130ccb31d0"
+  },
+  "business": {
+    "ok": true,
+    "data": {
+      "artifact_type": "trio",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "AXON_CUSTOM_ROLLUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DIRECT_ALARM_STATE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_DO_END": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_EMPTY_GRID_GUARD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_LEVEL17_UNSCOPED": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NAVNAME_LOOKUP": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_NULL_COALESCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_PLUS_DAYS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_RETURN": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_TRIO_TAG": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "AXON_ZERO_DAY_RANGE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_DUPLICATE_ID": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_FORMAT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_HEADER": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ID_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_RECORDS_MISSING": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_ROW_WIDTH": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "TRIO_TEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 6.845299998531118,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-96d4f98846554252b45e6e0dbe9b9852"
+  }
+}

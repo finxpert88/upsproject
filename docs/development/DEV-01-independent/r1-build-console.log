@@ -1,0 +1,7 @@
+compile [upsFleet]
+  Compile [upsFleet]
+    FindSourceFiles [1 files]
+    WritePod [file:/C:/work/upsproject-implementation/.artifacts/DEV-01-independent/upsFleet.pod]
+BUILD SUCCESS [19ms]!
+
+Built C:\work\upsproject-implementation\.artifacts\DEV-01-independent\upsFleet.pod SHA256=B9324BEF880FA3C7257B158F9C16A582CF3F512F52D6FF783D91F702B842EA46

@@ -1,0 +1,731 @@
+[
+  {
+    "name": "Lifecycle",
+    "qualifiedName": "upsFleet::Lifecycle",
+    "file": "upsFleet/fan/lifecycle/Lifecycle.fan",
+    "kind": "class",
+    "responsibility": "Own startup, recovery readiness and stop; never create production demo records.",
+    "designMethods": [
+      "start: recover before admit",
+      "stop: drain and release"
+    ],
+    "dependencies": [
+      "LifecycleDiagnostics",
+      "MigrationRunner",
+      "WorkScheduler",
+      "PublicationCoordinator"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "LifecycleDiagnostics",
+    "qualifiedName": "upsFleet::LifecycleDiagnostics",
+    "file": "upsFleet/fan/lifecycle/LifecycleDiagnostics.fan",
+    "kind": "class",
+    "responsibility": "Read module epochs, queue health and recovery state.",
+    "designMethods": [
+      "diagnostics: Contracts[diagnostics]"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-12"
+    ]
+  },
+  {
+    "name": "MigrationRunner",
+    "qualifiedName": "upsFleet::MigrationRunner",
+    "file": "upsFleet/fan/lifecycle/MigrationRunner.fan",
+    "kind": "class",
+    "responsibility": "Version checks, backup manifest and restart-safe migration; no automatic schema 2.1 activation.",
+    "designMethods": [
+      "inspectCompatibility",
+      "planMigration",
+      "resumeMigration"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "WorkScheduler",
+    "qualifiedName": "upsFleet::WorkScheduler",
+    "file": "upsFleet/fan/lifecycle/WorkScheduler.fan",
+    "kind": "class",
+    "responsibility": "Bound shared polling, history requests, report jobs and per-session simulation work.",
+    "designMethods": [
+      "admit",
+      "cancel",
+      "drain"
+    ],
+    "dependencies": [],
+    "lifetime": "project scheduler",
+    "operations": []
+  },
+  {
+    "name": "RequestFacade",
+    "qualifiedName": "upsFleet::RequestFacade",
+    "file": "upsFleet/fan/web/RequestFacade.fan",
+    "kind": "class",
+    "responsibility": "Bootstrap and 31-operation dispatch; normalize response envelope and correlation ID.",
+    "designMethods": [
+      "bootstrap: BootstrapRequest -> BootstrapResponse",
+      "dispatch: WireRequest<K> -> WireResponse<K>",
+      "sessionCapabilities: Contracts[sessionCapabilities]"
+    ],
+    "dependencies": [
+      "RequestGuard",
+      "DtoCodec",
+      "OperationRepository"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-01"
+    ]
+  },
+  {
+    "name": "RequestGuard",
+    "qualifiedName": "upsFleet::RequestGuard",
+    "file": "upsFleet/fan/web/RequestGuard.fan",
+    "kind": "class",
+    "responsibility": "Authenticate, authorize action and all referenced objects, validate source context and limits before side effects.",
+    "designMethods": [
+      "authorize: request + FIN session -> authorized context",
+      "checkOriginalOperationBinding"
+    ],
+    "dependencies": [
+      "FinGateway"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "DtoCodec",
+    "qualifiedName": "upsFleet::DtoCodec",
+    "file": "upsFleet/fan/web/DtoCodec.fan",
+    "kind": "class",
+    "responsibility": "Strict schema 2.0 JSON discriminants, nulls, enums, unknown-field rejection and response projection.",
+    "designMethods": [
+      "decodeRequest<K>",
+      "encodeResponse<K>",
+      "encodeDownloadError"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "InventoryService",
+    "qualifiedName": "upsFleet::InventoryService",
+    "file": "upsFleet/fan/services/inventory/InventoryService.fan",
+    "kind": "class",
+    "responsibility": "Authorized equipment/child inventory and frozen-member cursors; FIN identity remains authoritative.",
+    "designMethods": [
+      "equipmentList: Contracts[equipmentList]"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "ConfigurationService"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-02"
+    ]
+  },
+  {
+    "name": "TelemetryService",
+    "qualifiedName": "upsFleet::TelemetryService",
+    "file": "upsFleet/fan/services/telemetry/TelemetryService.fan",
+    "kind": "class",
+    "responsibility": "Shared batch acquisition and coherent, epoch-tagged snapshots; UI polling never increases device sampling.",
+    "designMethods": [
+      "equipmentSnapshot: Contracts[equipmentSnapshot]",
+      "pollBatch: source observations -> snapshots"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "QualityEvaluator",
+      "CommunicationResolver",
+      "AssessmentEvaluator",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-03"
+    ]
+  },
+  {
+    "name": "QualityEvaluator",
+    "qualifiedName": "upsFleet::QualityEvaluator",
+    "file": "upsFleet/fan/domain/telemetry/QualityEvaluator.fan",
+    "kind": "class",
+    "responsibility": "Preserve zero/false and native timestamps; missing or invalid values do not become fabricated healthy values.",
+    "designMethods": [
+      "evaluate: observation + mapping + time -> Metric"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "CommunicationResolver",
+    "qualifiedName": "upsFleet::CommunicationResolver",
+    "file": "upsFleet/fan/domain/telemetry/CommunicationResolver.fan",
+    "kind": "class",
+    "responsibility": "Resolve communication separately from power mode and alarm state.",
+    "designMethods": [
+      "resolve: source diagnostics -> Comm"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "AssessmentEvaluator",
+    "qualifiedName": "upsFleet::AssessmentEvaluator",
+    "file": "upsFleet/fan/domain/telemetry/AssessmentEvaluator.fan",
+    "kind": "class",
+    "responsibility": "Risk and coverage use rule evidence; external health score and outlook remain separately sourced.",
+    "designMethods": [
+      "evaluate: evidence + bindings -> Assessment"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "HistoryService",
+    "qualifiedName": "upsFleet::HistoryService",
+    "file": "upsFleet/fan/services/history/HistoryService.fan",
+    "kind": "class",
+    "responsibility": "Query half-open mapping segments, enforce bucket/curve limits and preserve gaps.",
+    "designMethods": [
+      "metricHistory: Contracts[metricHistory]",
+      "querySegments: mapping intervals + window -> HistorySegment[]"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "ConfigurationService",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-04"
+    ]
+  },
+  {
+    "name": "RuleEngine",
+    "qualifiedName": "upsFleet::RuleEngine",
+    "file": "upsFleet/fan/domain/rules/RuleEngine.fan",
+    "kind": "class",
+    "responsibility": "Process sample, quality and calendar drivers; persist state/watermark/occurrence/commands atomically.",
+    "designMethods": [
+      "advance: event + runtime state -> transition",
+      "recover: checkpoint -> ready state"
+    ],
+    "dependencies": [
+      "RuleEvaluator",
+      "RuleStateStore"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "RuleEvaluator",
+    "qualifiedName": "upsFleet::RuleEvaluator",
+    "file": "upsFleet/fan/domain/rules/RuleEvaluator.fan",
+    "kind": "class",
+    "responsibility": "R-01 through R-05, hysteresis/count gates and maintenance transitions; no external writes.",
+    "designMethods": [
+      "evaluate: rule + prior state + event -> transition"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "RuleStateStore",
+    "qualifiedName": "upsFleet::RuleStateStore",
+    "file": "upsFleet/fan/persistence/RuleStateStore.fan",
+    "kind": "class",
+    "responsibility": "Atomic rule transition and occurrence chain storage, including debounce candidates/counts/epoch and runtime fence.",
+    "designMethods": [
+      "load",
+      "commitTransition: expected revision + state + occurrence + commands"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "AlarmService",
+    "qualifiedName": "upsFleet::AlarmService",
+    "file": "upsFleet/fan/services/alarm/AlarmService.fan",
+    "kind": "class",
+    "responsibility": "Normalize authority-backed alarms and timeline; delegate reliable single acknowledgement.",
+    "designMethods": [
+      "alarmListDetail: Contracts[alarmListDetail]",
+      "alarmAcknowledge: Contracts[alarmAcknowledge]"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "AlarmSynchronizer",
+      "AcknowledgementCoordinator"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-05",
+      "OP-06"
+    ]
+  },
+  {
+    "name": "AlarmSynchronizer",
+    "qualifiedName": "upsFleet::AlarmSynchronizer",
+    "file": "upsFleet/fan/services/alarm/AlarmSynchronizer.fan",
+    "kind": "class",
+    "responsibility": "Dispatch ordered immutable CREATE/SEVERITY/CLEAR commands and reconcile uncertain outcomes by occurrence correlation.",
+    "designMethods": [
+      "dispatchNext",
+      "reconcileUnknown"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "RuleStateStore",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "AcknowledgementCoordinator",
+    "qualifiedName": "upsFleet::AcknowledgementCoordinator",
+    "file": "upsFleet/fan/services/alarm/AcknowledgementCoordinator.fan",
+    "kind": "class",
+    "responsibility": "Persist intent before acknowledgement; unknown result enters read-only reconciliation.",
+    "designMethods": [
+      "execute: authorized ack -> Operation",
+      "reconcile: operation binding -> authority observation"
+    ],
+    "dependencies": [
+      "UpsDataSource",
+      "OperationRepository",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "ConfigurationService",
+    "qualifiedName": "upsFleet::ConfigurationService",
+    "file": "upsFleet/fan/services/configuration/ConfigurationService.fan",
+    "kind": "class",
+    "responsibility": "Own draft CAS, full immutable configuration snapshots, validation and commissioning.",
+    "designMethods": [
+      "configGetSaveDraft: Contracts[configGetSaveDraft]",
+      "configValidate: Contracts[configValidate]",
+      "configPublish: Contracts[configPublish]",
+      "configRollbackDraft: Contracts[configRollbackDraft]",
+      "commissioningAccept: Contracts[commissioningAccept]"
+    ],
+    "dependencies": [
+      "ConfigurationGuard",
+      "PublicationCoordinator",
+      "FinGateway",
+      "RecordCodec"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11",
+      "OP-14"
+    ]
+  },
+  {
+    "name": "ConfigurationGuard",
+    "qualifiedName": "upsFleet::ConfigurationGuard",
+    "file": "upsFleet/fan/domain/configuration/ConfigurationGuard.fan",
+    "kind": "class",
+    "responsibility": "Validate old/new object scopes and block changes that break unresolved occurrence recovery.",
+    "designMethods": [
+      "validateDraft",
+      "checkActiveOccurrences",
+      "checkAcceptanceEvidence"
+    ],
+    "dependencies": [
+      "RuleStateStore"
+    ],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "PublicationCoordinator",
+    "qualifiedName": "upsFleet::PublicationCoordinator",
+    "file": "upsFleet/fan/services/configuration/PublicationCoordinator.fan",
+    "kind": "class",
+    "responsibility": "Serialize project publication; seal entity members then atomic commit decision and uniform activation epoch.",
+    "designMethods": [
+      "prepare",
+      "commitDecision",
+      "activate",
+      "recoverCommitted"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec",
+      "OperationRepository",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "OperationRepository",
+    "qualifiedName": "upsFleet::OperationRepository",
+    "file": "upsFleet/fan/persistence/OperationRepository.fan",
+    "kind": "class",
+    "responsibility": "Unique (projectId, operationId) intent, actor/action/context/hash binding, cleanup tombstones and status projection.",
+    "designMethods": [
+      "operationStatus: Contracts[operationStatus]",
+      "prepare",
+      "recordOutcome",
+      "findOriginal"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-07"
+    ]
+  },
+  {
+    "name": "AuditRepository",
+    "qualifiedName": "upsFleet::AuditRepository",
+    "file": "upsFleet/fan/persistence/AuditRepository.fan",
+    "kind": "class",
+    "responsibility": "Append-only intent/result audit, filtered reads, preserve records across migration.",
+    "designMethods": [
+      "auditList: Contracts[auditList]",
+      "append"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-13"
+    ]
+  },
+  {
+    "name": "RecordCodec",
+    "qualifiedName": "upsFleet::RecordCodec",
+    "file": "upsFleet/fan/persistence/RecordCodec.fan",
+    "kind": "class",
+    "responsibility": "Explicit tagged payload and native Ref conversion from approved codecs; never serialize DTOs directly as arbitrary Rec.",
+    "designMethods": [
+      "encode: typed internal value -> Folio record",
+      "decode: Folio record -> typed internal value"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless",
+    "operations": []
+  },
+  {
+    "name": "ReportService",
+    "qualifiedName": "upsFleet::ReportService",
+    "file": "upsFleet/fan/services/report/ReportService.fan",
+    "kind": "class",
+    "responsibility": "Authorize full report scope, persist jobs, cancel and reauthorize protected download.",
+    "designMethods": [
+      "reportCreate: Contracts[reportCreate]",
+      "reportGetList: Contracts[reportGetList]",
+      "reportDownload: binary success / JSON error",
+      "reportCancel: Contracts[reportCancel]"
+    ],
+    "dependencies": [
+      "ReportWorker",
+      "FinGateway",
+      "OperationRepository",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-15",
+      "OP-16",
+      "OP-17",
+      "OP-18"
+    ]
+  },
+  {
+    "name": "ReportWorker",
+    "qualifiedName": "upsFleet::ReportWorker",
+    "file": "upsFleet/fan/services/report/ReportWorker.fan",
+    "kind": "class",
+    "responsibility": "Historical interval aggregation, four templates, bounded file production, checksum and expiry.",
+    "designMethods": [
+      "execute: ReportJob -> ReportFile",
+      "expire",
+      "cancelAtBoundary"
+    ],
+    "dependencies": [
+      "HistoryService",
+      "AlarmService",
+      "FinGateway",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "NotificationService",
+    "qualifiedName": "upsFleet::NotificationService",
+    "file": "upsFleet/fan/services/notification/NotificationService.fan",
+    "kind": "class",
+    "responsibility": "Channels/subscriptions use configuration publication; notification operations control delivery and emergency pause.",
+    "designMethods": [
+      "notificationTest: Contracts[notificationTest]",
+      "notificationDeliveryList: Contracts[notificationDeliveryList]",
+      "notificationRetry: Contracts[notificationRetry]",
+      "notificationPause: Contracts[notificationPause]"
+    ],
+    "dependencies": [
+      "NotificationWorker",
+      "FinGateway",
+      "OperationRepository",
+      "AuditRepository"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-19",
+      "OP-20",
+      "OP-21",
+      "OP-31"
+    ]
+  },
+  {
+    "name": "NotificationWorker",
+    "qualifiedName": "upsFleet::NotificationWorker",
+    "file": "upsFleet/fan/services/notification/NotificationWorker.fan",
+    "kind": "class",
+    "responsibility": "Independent notification cursor/outbox; acquire permit atomically with gate, reconcile unknown delivery without blind resend.",
+    "designMethods": [
+      "enqueueAuthorityEvent",
+      "claimPermit",
+      "deliver",
+      "reconcileUnknown"
+    ],
+    "dependencies": [
+      "NotificationTransport",
+      "FinGateway",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "NotificationTransport",
+    "qualifiedName": "upsFleet::NotificationTransport",
+    "file": "upsFleet/fan/services/notification/NotificationTransport.fan",
+    "kind": "mixin",
+    "responsibility": "Narrow delivery result port implemented by actual Telegram and local simulated transport.",
+    "designMethods": [
+      "send: immutable payload + permit -> definite/unknown result"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless contract",
+    "operations": []
+  },
+  {
+    "name": "TelegramTransport",
+    "qualifiedName": "upsFleet::TelegramTransport",
+    "file": "upsFleet/fan/fin/TelegramTransport.fan",
+    "kind": "class",
+    "responsibility": "Server-only HTTPS and secret reference resolution; no browser tokens.",
+    "designMethods": [
+      "send: transport contract"
+    ],
+    "dependencies": [
+      "FinGateway"
+    ],
+    "lifetime": "project adapter",
+    "operations": []
+  },
+  {
+    "name": "SimulatedNotificationTransport",
+    "qualifiedName": "upsFleet::SimulatedNotificationTransport",
+    "file": "upsFleet/fan/services/simulation/SimulatedNotificationTransport.fan",
+    "kind": "class",
+    "responsibility": "Record local simulated delivery; never open Telegram connection.",
+    "designMethods": [
+      "send: transport contract"
+    ],
+    "dependencies": [
+      "FinGateway"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "MetricDictionaryService",
+    "qualifiedName": "upsFleet::MetricDictionaryService",
+    "file": "upsFleet/fan/services/inventory/MetricDictionaryService.fan",
+    "kind": "class",
+    "responsibility": "Versioned English definitions, units, provenance and limits without duplicated editable thresholds.",
+    "designMethods": [
+      "metricDictionary: Contracts[metricDictionary]"
+    ],
+    "dependencies": [
+      "ConfigurationService"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-22"
+    ]
+  },
+  {
+    "name": "SimulationService",
+    "qualifiedName": "upsFleet::SimulationService",
+    "file": "upsFleet/fan/services/simulation/SimulationService.fan",
+    "kind": "class",
+    "responsibility": "Own session ACL, generation/control/data revisions, reset/delete fencing and management operations.",
+    "designMethods": [
+      "simulationCreate",
+      "simulationGenerate",
+      "simulationControl",
+      "simulationStep",
+      "simulationScenario",
+      "simulationReset",
+      "simulationDelete",
+      "simulationGetList"
+    ],
+    "dependencies": [
+      "SimulationEngine",
+      "FinGateway",
+      "OperationRepository",
+      "AuditRepository",
+      "WorkScheduler"
+    ],
+    "lifetime": "project service",
+    "operations": [
+      "OP-23",
+      "OP-24",
+      "OP-25",
+      "OP-26",
+      "OP-27",
+      "OP-28",
+      "OP-29",
+      "OP-30"
+    ]
+  },
+  {
+    "name": "SimulationEngine",
+    "qualifiedName": "upsFleet::SimulationEngine",
+    "file": "upsFleet/fan/domain/simulation/SimulationEngine.fan",
+    "kind": "class",
+    "responsibility": "Seeded virtual event progression, durable scenario log/checkpoint and same rule engine as live.",
+    "designMethods": [
+      "advanceEvents: session + target time -> committed event chunks",
+      "replay: initial state + scenario log -> checkpoint"
+    ],
+    "dependencies": [
+      "RuleEngine",
+      "FinGateway"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "UpsDataSource",
+    "qualifiedName": "upsFleet::UpsDataSource",
+    "file": "upsFleet/fan/domain/source/UpsDataSource.fan",
+    "kind": "mixin",
+    "responsibility": "Context-selected read/authority port with live and simulation implementations; never fall back from failed live to simulated.",
+    "designMethods": [
+      "listEquipment",
+      "readPoints",
+      "readHistory",
+      "readAlarms",
+      "acknowledge",
+      "applyRuleCommand",
+      "reconcileCommand"
+    ],
+    "dependencies": [],
+    "lifetime": "stateless contract",
+    "operations": []
+  },
+  {
+    "name": "LiveDataSource",
+    "qualifiedName": "upsFleet::LiveDataSource",
+    "file": "upsFleet/fan/fin/LiveDataSource.fan",
+    "kind": "class",
+    "responsibility": "Map normalized operations to verified FIN platform semantics.",
+    "designMethods": [
+      "listEquipment",
+      "readPoints",
+      "readHistory",
+      "readAlarms",
+      "acknowledge",
+      "applyRuleCommand",
+      "reconcileCommand"
+    ],
+    "dependencies": [
+      "FinGateway"
+    ],
+    "lifetime": "project adapter",
+    "operations": []
+  },
+  {
+    "name": "SimulationDataSource",
+    "qualifiedName": "upsFleet::SimulationDataSource",
+    "file": "upsFleet/fan/services/simulation/SimulationDataSource.fan",
+    "kind": "class",
+    "responsibility": "Read and update only generation-fenced simulation records, including simulated alarm authority.",
+    "designMethods": [
+      "listEquipment",
+      "readPoints",
+      "readHistory",
+      "readAlarms",
+      "acknowledge",
+      "applyRuleCommand",
+      "reconcileCommand"
+    ],
+    "dependencies": [
+      "FinGateway",
+      "RecordCodec"
+    ],
+    "lifetime": "project service",
+    "operations": []
+  },
+  {
+    "name": "FinGateway",
+    "qualifiedName": "upsFleet::FinGateway",
+    "file": "upsFleet/fan/fin/FinGateway.fan",
+    "kind": "class",
+    "responsibility": "Only FIN SDK boundary: project context, identity, points/history/alarms, Folio transaction/CAS, secrets, protected files and lifecycle binding.",
+    "designMethods": [
+      "readPlatform",
+      "commitBusinessRecords",
+      "compareAndCommit",
+      "readSecretRef",
+      "openProtectedFile"
+    ],
+    "dependencies": [],
+    "lifetime": "project adapter",
+    "operations": []
+  }
+]

@@ -1,0 +1,98 @@
+classDiagram
+direction TB
+class Lifecycle {
+  +start()
+  +stop()
+}
+class LifecycleDiagnostics {
+  +diagnostics()
+}
+class MigrationRunner {
+  +inspectCompatibility()
+  +planMigration()
+  +resumeMigration()
+}
+class WorkScheduler {
+  +admit()
+  +cancel()
+  +drain()
+}
+class RequestFacade {
+  +bootstrap()
+  +dispatch()
+  +sessionCapabilities()
+}
+class RequestGuard {
+  +authorize()
+  +checkOriginalOperationBinding()
+}
+class DtoCodec {
+  +decodeRequest<K>()
+  +encodeResponse<K>()
+  +encodeDownloadError()
+}
+class InventoryService {
+  +equipmentList()
+}
+class TelemetryService {
+  +equipmentSnapshot()
+  +pollBatch()
+}
+class QualityEvaluator {
+  +evaluate()
+}
+class CommunicationResolver {
+  +resolve()
+}
+class AssessmentEvaluator {
+  +evaluate()
+}
+class HistoryService {
+  +metricHistory()
+  +querySegments()
+}
+class MetricDictionaryService {
+  +metricDictionary()
+}
+class UpsDataSource {
+  <<interface>>
+  +listEquipment()
+  +readPoints()
+  +readHistory()
+}
+class LiveDataSource {
+  +listEquipment()
+  +readPoints()
+  +readHistory()
+}
+class SimulationDataSource {
+  +listEquipment()
+  +readPoints()
+  +readHistory()
+}
+class FinGateway {
+  +readPlatform()
+  +commitBusinessRecords()
+  +compareAndCommit()
+}
+Lifecycle ..> LifecycleDiagnostics
+Lifecycle ..> MigrationRunner
+Lifecycle ..> WorkScheduler
+LifecycleDiagnostics ..> FinGateway
+LifecycleDiagnostics ..> WorkScheduler
+MigrationRunner ..> FinGateway
+RequestFacade ..> RequestGuard
+RequestFacade ..> DtoCodec
+RequestGuard ..> FinGateway
+InventoryService ..> UpsDataSource
+TelemetryService ..> UpsDataSource
+TelemetryService ..> QualityEvaluator
+TelemetryService ..> CommunicationResolver
+TelemetryService ..> AssessmentEvaluator
+TelemetryService ..> WorkScheduler
+HistoryService ..> UpsDataSource
+HistoryService ..> WorkScheduler
+LiveDataSource ..> FinGateway
+SimulationDataSource ..> FinGateway
+LiveDataSource ..|> UpsDataSource
+SimulationDataSource ..|> UpsDataSource

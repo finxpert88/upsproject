@@ -1,0 +1,32 @@
+[
+  {
+    "path": ".artifacts\\DEV-01-r1-validation\\upsFleet.pod",
+    "sha256": "e7c512ab8790de831ebd6fca954930d4bbd78beae906ab05a4f5c28c14f6d759",
+    "meta": "pod.name=upsFleet\npod.version=0.0.1\npod.depends=sys 1.0\npod.summary=UPS Fleet DEV-01 source-sample freshness\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=Engineering\nbuild.user=Copperfield\nbuild.ts=2026-09-15T21:06:33+08:00 Singapore\nbuild.tsKey=260915210633\nbuild.compiler=1.0.78.3105\nbuild.platform=win32-x86_64\npod.docApi=false\npod.docSrc=false\npod.native.java=false\npod.native.jni=false\npod.native.dotnet=false\npod.native.js=false\npod.fcode=true\n",
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode"
+    ]
+  },
+  {
+    "path": ".artifacts\\DEV-01-r1-validation\\test\\upsFleet.pod",
+    "sha256": "82193e78cbd9963f2c96d39a916fc54487b65e80c1767eae6da851ad47e60c07",
+    "meta": "pod.name=upsFleet\npod.version=0.0.1\npod.depends=sys 1.0\npod.summary=UPS Fleet DEV-01 source-sample freshness\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=Engineering\nbuild.user=Copperfield\nbuild.ts=2026-09-15T21:06:34+08:00 Singapore\nbuild.tsKey=260915210634\nbuild.compiler=1.0.78.3105\nbuild.platform=win32-x86_64\npod.docApi=false\npod.docSrc=false\npod.native.java=false\npod.native.jni=false\npod.native.dotnet=false\npod.native.js=false\npod.fcode=true\n",
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/ints.def",
+      "fcode/strs.def",
+      "fcode/durations.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode",
+      "fcode/QualityEvaluatorTest.fcode"
+    ]
+  }
+]

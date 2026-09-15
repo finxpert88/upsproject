@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "规划结构检查，不是产品功能验收",
+  "tasks": 14,
+  "operations": 31,
+  "functionalSpecifications": 24,
+  "templateRecords": 111,
+  "acceptanceRows": 103,
+  "checks": [
+    "任务依赖无环",
+    "31接口唯一工作包",
+    "62索引按OP键",
+    "31方法与handlers一致",
+    "OP17二进制例外",
+    "24SF覆盖",
+    "111模板唯一映射",
+    "bootstrap纳入移交hash"
+  ],
+  "runtimeVerified": false
+}

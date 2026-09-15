@@ -1,0 +1,529 @@
+[
+  {
+    "operation": "OP-01",
+    "method": "sessionCapabilities",
+    "task": "DEV-02",
+    "owner": "RequestFacade",
+    "requestType": "Contracts['OP-01']['request']",
+    "responseType": "Contracts['OP-01']['response']",
+    "transportResult": "WireResponse<'OP-01'>",
+    "permissionByMode": {
+      "live": "session",
+      "simulation": "session"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-02",
+    "method": "equipmentList",
+    "task": "DEV-04",
+    "owner": "InventoryService",
+    "requestType": "Contracts['OP-02']['request']",
+    "responseType": "Contracts['OP-02']['response']",
+    "transportResult": "WireResponse<'OP-02'>",
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-03",
+    "method": "equipmentSnapshot",
+    "task": "DEV-04",
+    "owner": "TelemetryService",
+    "requestType": "Contracts['OP-03']['request']",
+    "responseType": "Contracts['OP-03']['response']",
+    "transportResult": "WireResponse<'OP-03'>",
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-04",
+    "method": "metricHistory",
+    "task": "DEV-05",
+    "owner": "HistoryService",
+    "requestType": "Contracts['OP-04']['request']",
+    "responseType": "Contracts['OP-04']['response']",
+    "transportResult": "WireResponse<'OP-04'>",
+    "permissionByMode": {
+      "live": "history.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-05",
+    "method": "alarmListDetail",
+    "task": "DEV-07",
+    "owner": "AlarmService",
+    "requestType": "Contracts['OP-05']['request']",
+    "responseType": "Contracts['OP-05']['response']",
+    "transportResult": "WireResponse<'OP-05'>",
+    "permissionByMode": {
+      "live": "alarm.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-06",
+    "method": "alarmAcknowledge",
+    "task": "DEV-07",
+    "owner": "AlarmService",
+    "requestType": "Contracts['OP-06']['request']",
+    "responseType": "Contracts['OP-06']['response']",
+    "transportResult": "WireResponse<'OP-06'>",
+    "permissionByMode": {
+      "live": "alarm.ack",
+      "simulation": "simulation.ack"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-07",
+    "method": "operationStatus",
+    "task": "DEV-02",
+    "owner": "OperationRepository",
+    "requestType": "Contracts['OP-07']['request']",
+    "responseType": "Contracts['OP-07']['response']",
+    "transportResult": "WireResponse<'OP-07'>",
+    "permissionByMode": {
+      "live": "originalActionByMode",
+      "simulation": "originalActionByMode"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-08",
+    "method": "configGetSaveDraft",
+    "task": "DEV-08",
+    "owner": "ConfigurationService",
+    "requestType": "Contracts['OP-08']['request']",
+    "responseType": "Contracts['OP-08']['response']",
+    "transportResult": "WireResponse<'OP-08'>",
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-09",
+    "method": "configValidate",
+    "task": "DEV-08",
+    "owner": "ConfigurationService",
+    "requestType": "Contracts['OP-09']['request']",
+    "responseType": "Contracts['OP-09']['response']",
+    "transportResult": "WireResponse<'OP-09'>",
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-10",
+    "method": "configPublish",
+    "task": "DEV-08",
+    "owner": "ConfigurationService",
+    "requestType": "Contracts['OP-10']['request']",
+    "responseType": "Contracts['OP-10']['response']",
+    "transportResult": "WireResponse<'OP-10'>",
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-11",
+    "method": "configRollbackDraft",
+    "task": "DEV-08",
+    "owner": "ConfigurationService",
+    "requestType": "Contracts['OP-11']['request']",
+    "responseType": "Contracts['OP-11']['response']",
+    "transportResult": "WireResponse<'OP-11'>",
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-12",
+    "method": "diagnostics",
+    "task": "DEV-12",
+    "owner": "LifecycleDiagnostics",
+    "requestType": "Contracts['OP-12']['request']",
+    "responseType": "Contracts['OP-12']['response']",
+    "transportResult": "WireResponse<'OP-12'>",
+    "permissionByMode": {
+      "live": "diagnostics.view",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-13",
+    "method": "auditList",
+    "task": "DEV-07",
+    "owner": "AuditRepository",
+    "requestType": "Contracts['OP-13']['request']",
+    "responseType": "Contracts['OP-13']['response']",
+    "transportResult": "WireResponse<'OP-13'>",
+    "permissionByMode": {
+      "live": "audit.view",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-14",
+    "method": "commissioningAccept",
+    "task": "DEV-08",
+    "owner": "ConfigurationService",
+    "requestType": "Contracts['OP-14']['request']",
+    "responseType": "Contracts['OP-14']['response']",
+    "transportResult": "WireResponse<'OP-14'>",
+    "permissionByMode": {
+      "live": "commissioning.accept",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-15",
+    "method": "reportCreate",
+    "task": "DEV-09",
+    "owner": "ReportService",
+    "requestType": "Contracts['OP-15']['request']",
+    "responseType": "Contracts['OP-15']['response']",
+    "transportResult": "WireResponse<'OP-15'>",
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-16",
+    "method": "reportGetList",
+    "task": "DEV-09",
+    "owner": "ReportService",
+    "requestType": "Contracts['OP-16']['request']",
+    "responseType": "Contracts['OP-16']['response']",
+    "transportResult": "WireResponse<'OP-16'>",
+    "permissionByMode": {
+      "live": "report.read",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-17",
+    "method": "reportDownload",
+    "task": "DEV-09",
+    "owner": "ReportService",
+    "requestType": "Contracts['OP-17']['request']",
+    "responseType": "Contracts['OP-17']['response']",
+    "transportResult": "BinaryDownload | Response<never>；成功二进制，失败JSON",
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-18",
+    "method": "reportCancel",
+    "task": "DEV-09",
+    "owner": "ReportService",
+    "requestType": "Contracts['OP-18']['request']",
+    "responseType": "Contracts['OP-18']['response']",
+    "transportResult": "WireResponse<'OP-18'>",
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-19",
+    "method": "notificationTest",
+    "task": "DEV-10",
+    "owner": "NotificationService",
+    "requestType": "Contracts['OP-19']['request']",
+    "responseType": "Contracts['OP-19']['response']",
+    "transportResult": "WireResponse<'OP-19'>",
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-20",
+    "method": "notificationDeliveryList",
+    "task": "DEV-10",
+    "owner": "NotificationService",
+    "requestType": "Contracts['OP-20']['request']",
+    "responseType": "Contracts['OP-20']['response']",
+    "transportResult": "WireResponse<'OP-20'>",
+    "permissionByMode": {
+      "live": "notification.read",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-21",
+    "method": "notificationRetry",
+    "task": "DEV-10",
+    "owner": "NotificationService",
+    "requestType": "Contracts['OP-21']['request']",
+    "responseType": "Contracts['OP-21']['response']",
+    "transportResult": "WireResponse<'OP-21'>",
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-22",
+    "method": "metricDictionary",
+    "task": "DEV-04",
+    "owner": "MetricDictionaryService",
+    "requestType": "Contracts['OP-22']['request']",
+    "responseType": "Contracts['OP-22']['response']",
+    "transportResult": "WireResponse<'OP-22'>",
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-23",
+    "method": "simulationCreate",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-23']['request']",
+    "responseType": "Contracts['OP-23']['response']",
+    "transportResult": "WireResponse<'OP-23'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "create owned session"
+    }
+  },
+  {
+    "operation": "OP-24",
+    "method": "simulationGenerate",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-24']['request']",
+    "responseType": "Contracts['OP-24']['response']",
+    "transportResult": "WireResponse<'OP-24'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-25",
+    "method": "simulationControl",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-25']['request']",
+    "responseType": "Contracts['OP-25']['response']",
+    "transportResult": "WireResponse<'OP-25'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-26",
+    "method": "simulationStep",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-26']['request']",
+    "responseType": "Contracts['OP-26']['response']",
+    "transportResult": "WireResponse<'OP-26'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-27",
+    "method": "simulationScenario",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-27']['request']",
+    "responseType": "Contracts['OP-27']['response']",
+    "transportResult": "WireResponse<'OP-27'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-28",
+    "method": "simulationReset",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-28']['request']",
+    "responseType": "Contracts['OP-28']['response']",
+    "transportResult": "WireResponse<'OP-28'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-29",
+    "method": "simulationDelete",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-29']['request']",
+    "responseType": "Contracts['OP-29']['response']",
+    "transportResult": "WireResponse<'OP-29'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  },
+  {
+    "operation": "OP-30",
+    "method": "simulationGetList",
+    "task": "DEV-11",
+    "owner": "SimulationService",
+    "requestType": "Contracts['OP-30']['request']",
+    "responseType": "Contracts['OP-30']['response']",
+    "transportResult": "WireResponse<'OP-30'>",
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "filter authorized session ACL"
+    }
+  },
+  {
+    "operation": "OP-31",
+    "method": "notificationPause",
+    "task": "DEV-10",
+    "owner": "NotificationService",
+    "requestType": "Contracts['OP-31']['request']",
+    "responseType": "Contracts['OP-31']['response']",
+    "transportResult": "WireResponse<'OP-31'>",
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    }
+  }
+]

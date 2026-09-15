@@ -1,0 +1,90 @@
+{
+  "revision": "D1",
+  "files": [
+    {
+      "path": "acceptance-execution-index.json",
+      "sha256": "776459ed4ec35ef76fddb8754e932376cc8354e40f60522a2082136dd7255113"
+    },
+    {
+      "path": "baseline-recheck.json",
+      "sha256": "239bd6586e1738594b873a6673db46dc6b9d958ef0e1e36ebe14f62ee8e3fdba"
+    },
+    {
+      "path": "build-plan.py",
+      "sha256": "d4f88094f43c446f65829fd183813db70cb17046bd8e443a8f3aad92685cff15"
+    },
+    {
+      "path": "check-contract-keys.cjs",
+      "sha256": "e019bf5f3e202af742eb3e8625e1214220fb6fafac605838cb0b3f171631d6cb"
+    },
+    {
+      "path": "contract-key-verification.json",
+      "sha256": "d3a6945ab071e07d78fe4c68567594ab2bb9cb823f4409ddd6c3790435fef20a"
+    },
+    {
+      "path": "development-plan.md",
+      "sha256": "fdce642b9f65ee7b1a72e2be3493c49301c5b35a7aaa4f3f6951711888953175"
+    },
+    {
+      "path": "fin-expert-review.json",
+      "sha256": "f49c50376c4d7b5cae258d2390ed0f5615a518d1fb7cd5ae476e701975750a3a"
+    },
+    {
+      "path": "findings-and-evidence.md",
+      "sha256": "03067d1ac436ba160fb533eea41596955377b3094240b5da7366b475750e85e3"
+    },
+    {
+      "path": "first-work-package.md",
+      "sha256": "a4db567528facec1702ac117ae728ebd733d92fa32615e84bbcf38349c7368d9"
+    },
+    {
+      "path": "operation-execution.json",
+      "sha256": "a66c7611db7f287850f95c35254688f1d72e642be4acee30bf7b64b1b8b5bf78"
+    },
+    {
+      "path": "operation-reference-correction.md",
+      "sha256": "7d5abf1bfbe45afb5c75cf19f0146779900955e59172b00b0cb334610186f2d4"
+    },
+    {
+      "path": "plan-validation.json",
+      "sha256": "96ae8b05fc79278d69dab53d3b1708dece54bdc7e2fe290436e437466405ddd0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a044f8b0698accffc4273284d4d569fb7e6d0c339e31d2103b44eaa54bbc7ea4"
+    },
+    {
+      "path": "recheck-baseline.cjs",
+      "sha256": "84d55530d60ac00de5019fc9a5c7e0969979f9633558083085ae4b802143eff4"
+    },
+    {
+      "path": "record-work-packages.json",
+      "sha256": "82c9b6ba8dacf6958df8992bea619e5adca4bbbb2e0173f1dda5a499db5088d7"
+    },
+    {
+      "path": "rerun-revision-a2-tests.json",
+      "sha256": "fa81019909ce4ed777889253a08f00a547db66090c46f179516d3a4c658c253e"
+    },
+    {
+      "path": "sf-work-packages.json",
+      "sha256": "0d4ff361a5be2515d21a5b8276cc34d4c03df4017f02bea8cb03c1a3d399de58"
+    },
+    {
+      "path": "single-pod-packaging.md",
+      "sha256": "197d50fcfa2f27833cf13e436b30cfa599f2748e4797097c1832b720c248868c"
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "02ab627af2d7dc4468d921cb715ccfe48b115e9c4e79902773095d563850a604"
+    },
+    {
+      "path": "tasks.json",
+      "sha256": "8b4563b0ddeba27e3a3a04719c7f9a8b65ccb209b1657d6ac37ca55e9f69322d"
+    },
+    {
+      "path": "transfer-manifest.json",
+      "sha256": "35e808ee7276a8592437720425cc188c73a5721c8a0418d9959219133658fb75"
+    }
+  ],
+  "scope": "本轮开发规划冻结；源文件迁移另依transfer-manifest.json；handoff-status.md仅记录后续收讫状态"
+}

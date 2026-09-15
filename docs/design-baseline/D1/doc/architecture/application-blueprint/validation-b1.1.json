@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "Local documentation structural verification only; independent review pending",
+  "checks": [
+    "22 route patterns cover page reads/actions after mode pruning",
+    "Entry, optional read, action and original-operation gates explicit",
+    "All 24 actual SF entry mappings resolve to declared methods/events",
+    "Approved conceptual entries unchanged",
+    "All 31 direct dispatch bindings resolve",
+    "All 5 task registrations and shutdown callbacks resolve",
+    "No new class/file inventory entries or schema changes",
+    "Pinned source hashes unchanged"
+  ],
+  "counts": {
+    "classes": 39,
+    "frontendFiles": 79,
+    "routes": 22,
+    "functionalSpecifications": 24,
+    "dispatchBindings": 31,
+    "taskRegistrations": 5
+  },
+  "runtimeVerified": false,
+  "productTestsExecuted": false
+}

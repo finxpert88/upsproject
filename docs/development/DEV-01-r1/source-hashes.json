@@ -1,0 +1,34 @@
+{
+  "revision": "DEV-01-r1",
+  "recordedAtUtc": "2026-09-15T13:08:11.634682+00:00",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "24f16e561cbe96d67d4def4e19a1e39253a0ebf8f9540042267f5348893c5900"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f3be3e7a6e6904d847601ce42c66c3f05f7182168b84634ce6b6d3b9ebc1cb0e"
+    },
+    {
+      "path": "upsFleet/build.fan",
+      "sha256": "091796f28bdbff323dca135754edb3280e59d5eb055beefd5c23385a16d44681"
+    },
+    {
+      "path": "upsFleet/fan/domain/telemetry/QualityEvaluator.fan",
+      "sha256": "af8936308708ef594a7084fbbcfcd0379e0a41754e95c13dca29dcd421553c17"
+    },
+    {
+      "path": "upsFleet/test/domain/QualityEvaluatorTest.fan",
+      "sha256": "487ec3f1f40f6fc5ca085c0b0d1af737860b42a7ba3cf98fce96f83eedd617b2"
+    },
+    {
+      "path": "scripts/build.ps1",
+      "sha256": "add07dec35f80669f4ef41fcc57ad2f2f080aafccb611d9d29a2c7bffb238911"
+    },
+    {
+      "path": "scripts/test.ps1",
+      "sha256": "c41a0bde6ad9dd2480bf063e432c5aadbfc9222a31f13009a85e7c2ae970396f"
+    }
+  ]
+}

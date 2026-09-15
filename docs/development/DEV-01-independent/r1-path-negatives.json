@@ -1,0 +1,17 @@
+[
+  {
+    "exitCode": 1,
+    "log": "Exception: C:\\work\\upsproject-implementation\\scripts\\build.ps1:15\r\nLine |\r\n  15 |      throw 'OutputRoot must be one named run directory directly under  …\r\n     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | OutputRoot must be one named run directory directly under this worktree .artifacts\r\n",
+    "outputRoot": "../forbidden-dev01-independent"
+  },
+  {
+    "exitCode": 1,
+    "log": "Exception: C:\\work\\upsproject-implementation\\scripts\\build.ps1:15\r\nLine |\r\n  15 |      throw 'OutputRoot must be one named run directory directly under  …\r\n     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | OutputRoot must be one named run directory directly under this worktree .artifacts\r\n",
+    "outputRoot": ".artifacts"
+  },
+  {
+    "exitCode": 1,
+    "log": "Exception: C:\\work\\upsproject-implementation\\scripts\\build.ps1:15\r\nLine |\r\n  15 |      throw 'OutputRoot must be one named run directory directly under  …\r\n     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | OutputRoot must be one named run directory directly under this worktree .artifacts\r\n",
+    "outputRoot": ".artifacts/DEV-01-independent/nested"
+  }
+]

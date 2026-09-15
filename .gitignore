@@ -4,3 +4,8 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Local DEV-01 compiler/runtime copies and build outputs.
+/.runtime/
+/.artifacts/
+/dist/upsFleet.pod

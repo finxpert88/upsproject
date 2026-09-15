@@ -1,0 +1,13 @@
+{
+  "timeUtc": "2026-09-15T13:05:21.1991481Z",
+  "branch": "feature/ups-pod-implementation",
+  "head": "3cdc8f5675a0cd32856597d97932f5d5d38ae71a",
+  "powershell": "7.6.5",
+  "sdk": "C:/Program Files (x86)/FIN Framework/FIN Framework 5.3.0.2761",
+  "changedInputs": [],
+  "independentOutputExists": false,
+  "externalOutputExists": false,
+  "status": "BLOCKED: output root restriction; Fantom not launched",
+  "fantomVerifies": null,
+  "artifactSha256": null
+}

@@ -1,0 +1,1432 @@
+// FSD v0.1 revision 9. Engineering templates only. Never auto-import on startup.
+id: @ups-tpl-evidence
+dis: "EvidenceDocument"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "EvidenceDocument"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsEvidenceStatus: "pending"
+upsDocumentVersion: "FSD-r9"
+upsLocator: "PRD section 7; target device point list required"
+---
+id: @ups-tpl-config
+dis: "ConfigVersion"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ConfigVersion"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsConfigRevision: "template-cfg-1"
+upsImmutable: true
+upsBaseline: "FSD-v0.1-r9"
+upsContentHash: "pending-generation"
+upsPublicationStatus: "notPublished"
+upsRequiredFields: ["projectId", "configRevision", "parentRevision", "members", "contentHash", "state"]
+upsContractType: "ConfigVersionRecord"
+---
+id: @ups-tpl-enrollment
+dis: "UpsEnrollment"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "UpsEnrollment"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+siteRef: @ups-tpl-site
+upsConfigRef: @ups-tpl-config
+upsDisplayName: "UPS Engineering Template"
+upsCommissioningStatus: "draft"
+upsCapabilityProfileRef: @ups-tpl-capability
+upsSourceDocumentVersion: "FSD-r9"
+upsBaseRequiredMappingIds: []
+upsAlarmSourceStatus: "unbound"
+---
+id: @ups-tpl-capability
+dis: "CapabilityProfile"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "CapabilityProfile"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsItemsJson: "[{\"field\":\"powerMode\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"runtimeEstimateMinutes\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batterySocPct\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batterySohPct\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryStringVoltage\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryImpedance\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryTemperature\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryChargeCurrent\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputPowerKw\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputApparentPowerKva\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"loadPct\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputVoltage\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputFrequency\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputThd\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"rectifierStatus\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"fanStatus\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"capacitorHealthPct\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"ambientTemp\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"humidity\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"airQuality\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"waterDetected\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"transferStatus\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"staticBypassAvailable\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"staticBypassActive\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"maintenanceBypassAvailable\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"maintenanceBypassActive\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"lastTransferDuration\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"healthScore\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"moduleAvailableCapacity\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"moduleState\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null}]"
+---
+id: @ups-tpl-mapping-powerMode
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-powerMode"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "powerMode"
+upsPointRef: @ups-tpl-point-powerMode
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-runtimeEstimateMinutes
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-runtimeEstimateMinutes"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "runtimeEstimateMinutes"
+upsPointRef: @ups-tpl-point-runtimeEstimateMinutes
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "min"
+upsUnit: "min"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batterySocPct
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batterySocPct"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batterySocPct"
+upsPointRef: @ups-tpl-point-batterySocPct
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batterySohPct
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batterySohPct"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batterySohPct"
+upsPointRef: @ups-tpl-point-batterySohPct
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batteryStringVoltage
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batteryStringVoltage"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batteryStringVoltage"
+upsPointRef: @ups-tpl-point-batteryStringVoltage
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "V"
+upsUnit: "V"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batteryImpedance
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batteryImpedance"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batteryImpedance"
+upsPointRef: @ups-tpl-point-batteryImpedance
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "mΩ"
+upsUnit: "mΩ"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batteryTemperature
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batteryTemperature"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batteryTemperature"
+upsPointRef: @ups-tpl-point-batteryTemperature
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "°C"
+upsUnit: "°C"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-batteryChargeCurrent
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-batteryChargeCurrent"
+upsTargetObjectRef: @ups-tpl-battery
+upsLogicalField: "batteryChargeCurrent"
+upsPointRef: @ups-tpl-point-batteryChargeCurrent
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "A"
+upsUnit: "A"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-outputPowerKw
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-outputPowerKw"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "outputPowerKw"
+upsPointRef: @ups-tpl-point-outputPowerKw
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "kW"
+upsUnit: "kW"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-outputApparentPowerKva
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-outputApparentPowerKva"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "outputApparentPowerKva"
+upsPointRef: @ups-tpl-point-outputApparentPowerKva
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "kVA"
+upsUnit: "kVA"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-loadPct
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-loadPct"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "loadPct"
+upsPointRef: @ups-tpl-point-loadPct
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-outputVoltage
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-outputVoltage"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "outputVoltage"
+upsPointRef: @ups-tpl-point-outputVoltage
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "V"
+upsUnit: "V"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-outputFrequency
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-outputFrequency"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "outputFrequency"
+upsPointRef: @ups-tpl-point-outputFrequency
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "Hz"
+upsUnit: "Hz"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-outputThd
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-outputThd"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "outputThd"
+upsPointRef: @ups-tpl-point-outputThd
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-rectifierStatus
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-rectifierStatus"
+upsTargetObjectRef: @ups-tpl-module
+upsLogicalField: "rectifierStatus"
+upsPointRef: @ups-tpl-point-rectifierStatus
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-fanStatus
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-fanStatus"
+upsTargetObjectRef: @ups-tpl-module
+upsLogicalField: "fanStatus"
+upsPointRef: @ups-tpl-point-fanStatus
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-capacitorHealthPct
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-capacitorHealthPct"
+upsTargetObjectRef: @ups-tpl-module
+upsLogicalField: "capacitorHealthPct"
+upsPointRef: @ups-tpl-point-capacitorHealthPct
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-ambientTemp
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-ambientTemp"
+upsTargetObjectRef: @ups-tpl-environment
+upsLogicalField: "ambientTemp"
+upsPointRef: @ups-tpl-point-ambientTemp
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "°C"
+upsUnit: "°C"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-humidity
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-humidity"
+upsTargetObjectRef: @ups-tpl-environment
+upsLogicalField: "humidity"
+upsPointRef: @ups-tpl-point-humidity
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-airQuality
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-airQuality"
+upsTargetObjectRef: @ups-tpl-environment
+upsLogicalField: "airQuality"
+upsPointRef: @ups-tpl-point-airQuality
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-waterDetected
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-waterDetected"
+upsTargetObjectRef: @ups-tpl-environment
+upsLogicalField: "waterDetected"
+upsPointRef: @ups-tpl-point-waterDetected
+upsRawKind: "Bool"
+upsNormalizedKind: "Bool"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-transferStatus
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-transferStatus"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "transferStatus"
+upsPointRef: @ups-tpl-point-transferStatus
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-staticBypassAvailable
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-staticBypassAvailable"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "staticBypassAvailable"
+upsPointRef: @ups-tpl-point-staticBypassAvailable
+upsRawKind: "Bool"
+upsNormalizedKind: "Bool"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-staticBypassActive
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-staticBypassActive"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "staticBypassActive"
+upsPointRef: @ups-tpl-point-staticBypassActive
+upsRawKind: "Bool"
+upsNormalizedKind: "Bool"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-maintenanceBypassAvailable
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-maintenanceBypassAvailable"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "maintenanceBypassAvailable"
+upsPointRef: @ups-tpl-point-maintenanceBypassAvailable
+upsRawKind: "Bool"
+upsNormalizedKind: "Bool"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-maintenanceBypassActive
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-maintenanceBypassActive"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "maintenanceBypassActive"
+upsPointRef: @ups-tpl-point-maintenanceBypassActive
+upsRawKind: "Bool"
+upsNormalizedKind: "Bool"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-lastTransferDuration
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-lastTransferDuration"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "lastTransferDuration"
+upsPointRef: @ups-tpl-point-lastTransferDuration
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "ms"
+upsUnit: "ms"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-healthScore
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-healthScore"
+upsTargetObjectRef: @ups-tpl-ups
+upsLogicalField: "healthScore"
+upsPointRef: @ups-tpl-point-healthScore
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "%"
+upsUnit: "%"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-moduleAvailableCapacity
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-moduleAvailableCapacity"
+upsTargetObjectRef: @ups-tpl-module
+upsLogicalField: "moduleAvailableCapacity"
+upsPointRef: @ups-tpl-point-moduleAvailableCapacity
+upsRawKind: "Number"
+upsNormalizedKind: "Number"
+upsOrigin: "measured"
+upsRawUnit: "kW"
+upsUnit: "kW"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-mapping-moduleState
+dis: "PointMapping"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PointMapping"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsMappingId: "mapping-moduleState"
+upsTargetObjectRef: @ups-tpl-module
+upsLogicalField: "moduleState"
+upsPointRef: @ups-tpl-point-moduleState
+upsRawKind: "Str"
+upsNormalizedKind: "Str"
+upsOrigin: "measured"
+upsEvidenceRef: @ups-tpl-evidence
+upsTransformJson: "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}"
+upsQualityPolicyJson: "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}"
+upsHistoryPolicyJson: "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}"
+upsBindingStatus: "unverified"
+upsAssetGeneration: "template-generation-1"
+---
+id: @ups-tpl-environment-link
+dis: "EnvironmentAssociation"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "EnvironmentAssociation"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+siteRef: @ups-tpl-site
+upsSensorEquipRef: @ups-tpl-environment
+upsEvidenceRef: @ups-tpl-evidence
+upsLocationBasisStatus: "pending"
+upsConfigRef: @ups-tpl-config
+upsAuthority: "publishedMappingAndValidatedLocationEvidence"
+---
+id: @ups-tpl-asset-values
+dis: "AssetProjection"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "AssetProjection"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsTargetObjectRef: @ups-tpl-ups
+upsEvidenceRef: @ups-tpl-evidence
+upsVerificationStatus: "pending"
+upsAuthority: "publishedRuleAndPlatformSnapshot"
+upsRequiredFields: ["equipRef", "targetObjectRef", "configRevision", "sourceRevision", "ratedCapacityKw", "ratedCapacityKva", "evidenceRefs"]
+---
+id: @ups-tpl-assessment
+dis: "AssessmentBinding"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "AssessmentBinding"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsBindingId: "template-assessment"
+upsOutlookRecordRefs: []
+upsEvidenceRefs: []
+upsBindingStatus: "unbound"
+---
+id: @ups-tpl-plan
+dis: "MaintenancePlan"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "MaintenancePlan"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsTargetObjectRef: @ups-tpl-battery
+upsPlanId: "template-plan"
+upsPlanRevision: "template-plan-1"
+upsSource: "manual"
+upsTitle: "Maintenance Plan Template"
+upsRemindDays: 30
+upsStatus: "draft"
+upsEvidenceRefs: []
+---
+id: @ups-tpl-rule-R-01
+dis: "RuleDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsRuleId: "template-R-01"
+upsRuleVersion: "template-rule-1"
+upsRuleType: "R-01"
+upsDriver: "sample"
+upsEnabled: false
+upsPrimaryMappingRef: @ups-tpl-mapping-runtimeEstimateMinutes
+upsParameterStatus: "engineeringRequired"
+upsParametersJson: "{\"requiredMinutes\":null,\"hysteresisMinutes\":2,\"trigger\":{\"count\":2,\"durationMs\":0},\"clear\":{\"count\":2,\"durationMs\":0}}"
+---
+id: @ups-tpl-rule-R-02
+dis: "RuleDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsRuleId: "template-R-02"
+upsRuleVersion: "template-rule-1"
+upsRuleType: "R-02"
+upsDriver: "sample"
+upsEnabled: false
+upsPrimaryMappingRef: @ups-tpl-mapping-loadPct
+upsParameterStatus: "engineeringRequired"
+upsParametersJson: "{}"
+---
+id: @ups-tpl-rule-R-03
+dis: "RuleDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsRuleId: "template-R-03"
+upsRuleVersion: "template-rule-1"
+upsRuleType: "R-03"
+upsDriver: "sample"
+upsEnabled: false
+upsPrimaryMappingRef: @ups-tpl-mapping-batteryImpedance
+upsParameterStatus: "engineeringRequired"
+upsParametersJson: "{}"
+---
+id: @ups-tpl-rule-R-04
+dis: "RuleDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsRuleId: "template-R-04"
+upsRuleVersion: "template-rule-1"
+upsRuleType: "R-04"
+upsDriver: "calendar"
+upsEnabled: false
+upsParameterStatus: "engineeringRequired"
+upsParametersJson: "{\"planId\":null}"
+---
+id: @ups-tpl-rule-R-05
+dis: "RuleDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+equipRef: @ups-tpl-ups
+upsConfigRef: @ups-tpl-config
+upsRuleId: "template-R-05"
+upsRuleVersion: "template-rule-1"
+upsRuleType: "R-05"
+upsDriver: "quality"
+upsEnabled: false
+upsParameterStatus: "engineeringRequired"
+upsParametersJson: "{\"requiredMappingIds\":[],\"triggerDelayMs\":5000,\"clearDelayMs\":5000}"
+---
+id: @ups-tpl-draft
+dis: "ConfigDraft"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ConfigDraft"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Draft"
+upsNaturalKey: "draftId + draftRevision"
+upsWriter: "config.edit"
+upsRequiredFields: ["baseConfigRevision", "scopeDigest", "contentHash", "patches", "author", "updatedAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-validation
+dis: "ValidationReport"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ValidationReport"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "ValidationReport"
+upsNaturalKey: "validationId"
+upsWriter: "config.edit"
+upsRequiredFields: ["draftRevision", "contentHash", "platformBindingFingerprint", "blockingIssues", "warnings", "affectedEquip", "affectedActiveAlarms", "expiresAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-publication
+dis: "Publication"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Publication"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Publication"
+upsNaturalKey: "projectId + operationId"
+upsWriter: "system"
+upsRequiredFields: ["candidateRevision", "previousRevision", "previousEpoch", "targetEpoch", "state", "moduleReadySet", "decisionAt", "lastError"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-pointer
+dis: "ActiveConfigPointer"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ActiveConfigPointer"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId"
+upsWriter: "system"
+upsRequiredFields: ["configRevision", "activationEpoch", "decisionAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-activation
+dis: "LastSuccessfulActivation"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "LastSuccessfulActivation"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId"
+upsWriter: "system"
+upsRequiredFields: ["configRevision", "activationEpoch", "activatedAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-rule-state
+dis: "RuleState"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleState"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "RuleStateRecord"
+upsNaturalKey: "projectId + mode + sessionId/generationId (simulation only) + equipRef + ruleId + ruleVersion"
+upsWriter: "system"
+upsRequiredFields: ["activationEpoch", "primaryWatermark", "candidate", "count", "candidateSince", "badSince", "goodSince", "detectedRisk", "occurrenceId", "syncState", "lastOccurrenceOrdinal", "context", "workerFence"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-rule-outbox
+dis: "RuleAlarmOutbox"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleAlarmOutbox"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId + mode + sessionId/generationId (simulation only) + occurrenceId + commandSeq"
+upsWriter: "system"
+upsRequiredFields: ["ruleStateRef", "commandType", "correlationKey", "epoch", "requestHash", "state", "sourceResultRef", "attempt", "nextAttemptAt", "commandId", "occurrenceId", "commandSeq", "predecessorCommandId", "previousOccurrenceId", "payload", "payloadHash", "reconcileCount", "context", "workerFence"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-association
+dis: "AlarmAssociation"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "AlarmAssociation"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId + sourceSystem + sourceAlarmId + occurrenceId"
+upsWriter: "system"
+upsRequiredFields: ["equipRef", "sourceRevision", "ruleVersion", "correlationKey", "sourceQuality", "resolutionKind"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-journal
+dis: "OperationJournal"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "OperationJournal"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Operation"
+upsNaturalKey: "projectId + operationId"
+upsWriter: "system"
+upsRequiredFields: ["action", "requestHash", "targetRefs", "expectedRevision", "state", "resultAvailability", "resultRef", "updatedAt", "errorCode", "actorId", "requestContext", "canonicalRequestHash", "originalPermission", "ownerSessionId", "cleanupTombstone", "retainedUntil"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-audit
+dis: "AuditEvent"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "AuditEvent"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Audit"
+upsNaturalKey: "auditId"
+upsWriter: "systemAppendOnly"
+upsRequiredFields: ["projectId", "serverTs", "actorId", "action", "targetRefs", "operationId", "outcome", "beforeRevision", "afterRevision", "redactedDiff", "reasonCode", "sourceResultRef"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-acceptance
+dis: "AcceptanceReport"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "AcceptanceReport"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "AcceptanceReport"
+upsNaturalKey: "reportId"
+upsWriter: "commissioning.accept"
+upsRequiredFields: ["equipRef", "configRevision", "mappingFingerprint", "modelFirmware", "pointListVersion", "baseChecks", "alarmEvidenceRefs", "disconnectEvidenceRefs", "historyEvidenceRefs", "waivers", "acceptedBy", "acceptedAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-mapping-interval
+dis: "MappingInterval"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "MappingInterval"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "mappingId + configRevision + validFrom"
+upsWriter: "system"
+upsRequiredFields: ["mappingRef", "validFrom", "validTo", "sourceRef", "transform", "normalizedUnit", "assetGeneration", "changeReason", "knownMappingError"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-plan-event
+dis: "MaintenancePlanEvent"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "MaintenancePlanEvent"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Alarm.eventDetails"
+upsNaturalKey: "planId + planRevision + stage"
+upsWriter: "system"
+upsRequiredFields: ["equipRef", "targetObjectRef", "stage", "endedAt", "endReason", "ackRequired"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-outlook
+dis: "OutlookRecord"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "OutlookRecord"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "OutlookItem"
+upsNaturalKey: "itemId"
+upsWriter: "config.edit"
+upsRequiredFields: ["equipRef", "targetObjectRef", "component", "kind", "title", "severity", "dueDate", "windowStart", "windowEnd", "assessedAt", "quality", "evidenceRefs", "methodologyRef", "algorithmVersion", "reason"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-report
+dis: "ReportJob"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ReportJob"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "ReportJob"
+upsNaturalKey: "projectId + ownerId + operationId"
+upsWriter: "report.export"
+upsRequiredFields: ["jobId", "ownerId", "context", "params", "state", "progressPct", "createdAt", "expiresAt", "dataCutoffAt", "collectedFrom", "collectedTo", "rows", "bytes", "qualitySummary", "checksum", "errorCode", "reason"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-report-file
+dis: "ReportFileMetadata"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ReportFileMetadata"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "ReportFile"
+upsNaturalKey: "jobId"
+upsWriter: "system"
+upsRequiredFields: ["fileName", "mime", "bytes", "checksum", "protectedStorageKey", "generationId", "expiresAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-channel
+dis: "NotificationChannel"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "NotificationChannel"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "NotificationChannel"
+upsNaturalKey: "channelId + configRevision"
+upsWriter: "notification.manage"
+upsRequiredFields: ["channelId", "name", "enabled", "secretRef", "chatId", "messageThreadId", "timezone", "resumePauseRevision"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-subscription
+dis: "NotificationSubscription"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "NotificationSubscription"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "NotificationSubscription"
+upsNaturalKey: "subscriptionId + configRevision"
+upsWriter: "notification.manage"
+upsRequiredFields: ["subscriptionId", "channelId", "enabled", "equipRefs", "severities", "eventTypes", "quietHours"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-gate
+dis: "ChannelGate"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "ChannelGate"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "ChannelGate"
+upsNaturalKey: "projectId + channelId"
+upsWriter: "notification.manage"
+upsRequiredFields: ["channelId", "paused", "pauseRevision", "pausedAt", "pausedBy", "reason"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-notify
+dis: "NotifyJob"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "NotifyJob"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "NotifyJob"
+upsNaturalKey: "projectId + eventKey + channelId"
+upsWriter: "system"
+upsRequiredFields: ["notificationId", "context", "channelId", "alarmRef", "eventKey", "eventAt", "createdAt", "state", "attempt", "nextAttemptAt", "channelRevision", "transport", "messageId", "simulatedOutcome", "lastError"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-attempt
+dis: "NotificationAttempt"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "NotificationAttempt"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "notificationId + attempt"
+upsWriter: "systemAppendOnly"
+upsRequiredFields: ["operationId", "acceptDuplicateRisk", "permitRevision", "requestHash", "startedAt", "finishedAt", "outcome", "messageId", "error"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-cursor
+dis: "NotificationCursor"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "NotificationCursor"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId + sourceStream + subscriptionId"
+upsWriter: "system"
+upsRequiredFields: ["sourceWatermark", "overlapStart", "lastEnqueuedEventKey", "updatedAt", "gapIntervals"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-dictionary
+dis: "MetricDefinition"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "MetricDefinition"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "MetricDefinition"
+upsNaturalKey: "metricId + dictionaryVersion"
+upsWriter: "system"
+upsRequiredFields: ["metricId", "name", "meaning", "unit", "formula", "measurementLocation", "sourceRef", "qualityMeaning", "basis"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-simulation
+dis: "SimulationSession"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationSession"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "SimulationSessionRecord"
+upsNaturalKey: "projectId + sessionId"
+upsWriter: "simulation.manage"
+upsRequiredFields: ["sessionId", "ownerId", "generationId", "controlRevision", "dataRevision", "state", "initialized", "scenarioId", "scenarioVersion", "seed", "deviceCount", "startAt", "timezone", "virtualTime", "speed", "historyHours", "sampleIntervalSeconds", "historyRows", "lastActivityAt", "cleanupOperationId", "reason", "initialScenarioId", "initialScenarioVersion", "generatorVersion", "initialGenerationParameters", "workerFence"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-sim-cleanup
+dis: "SimulationCleanup"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationCleanup"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "sessionId + operationId"
+upsWriter: "system"
+upsRequiredFields: ["oldGenerationId", "newGenerationId", "action", "fenceRevision", "state", "pendingWorkers", "pendingFiles", "completedAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-sim-sample
+dis: "SimulationSample"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationSample"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "sessionId + generationId + objectId + field + sampleTime + sequence"
+upsWriter: "system"
+upsRequiredFields: ["value", "unit", "quality", "sourceTs", "scenarioVersion", "seed"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-sim-alarm
+dis: "SimulationAlarm"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationAlarm"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "Alarm"
+upsNaturalKey: "sessionId + generationId + occurrenceId"
+upsWriter: "system"
+upsRequiredFields: ["alarmPayload", "sourceMode", "simulationSessionId", "generationId"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-schema-migration
+dis: "SchemaMigration"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SchemaMigration"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "migrationId + fromVersion + toVersion"
+upsWriter: "system"
+upsRequiredFields: ["checksum", "state", "checkpoint", "backupRef", "startedAt", "completedAt"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-occurrence
+dis: "RuleOccurrence"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "RuleOccurrence"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "RuleOccurrenceRecord"
+upsNaturalKey: "projectId + mode + sessionId/generationId (simulation only) + occurrenceId"
+upsRequiredFields: ["equipRef", "ruleId", "ruleVersion", "activationEpoch", "occurrenceId", "occurrenceOrdinal", "previousOccurrenceId", "detectedStartedAt", "detectedEndedAt", "detectedSeverity", "sourceAlarmId", "nextCommandSeq", "revision", "context", "workerFence"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-scenario-event
+dis: "SimulationScenarioEvent"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationScenarioEvent"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "ScenarioEventRecord"
+upsNaturalKey: "projectId + sessionId + generationId + eventSeq"
+upsRequiredFields: ["sessionId", "generationId", "scenarioId", "scenarioVersion", "generatorVersion", "targetSimEquipIds", "virtualEffectiveAt", "eventSeq", "parameters", "controlRevision"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-checkpoint
+dis: "SimulationCheckpoint"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "SimulationCheckpoint"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "SimulationCheckpointRecord"
+upsNaturalKey: "projectId + sessionId + generationId"
+upsRequiredFields: ["sessionId", "generationId", "workerFence", "initialScenarioId", "initialScenarioVersion", "generatorVersion", "seed", "startAt", "generationParameters", "assignments", "lastCompleteEventAt", "lastCommittedEventSeq", "nextEventSeq", "sampleWatermarks", "ruleStateRefs", "batchId"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-entity-version
+dis: "EntityVersion"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "EntityVersion"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "EntityVersionRecord"
+upsNaturalKey: "projectId + entityId + entityRevision"
+upsRequiredFields: ["entityId", "entityRevision", "entityType", "ownerEquipRefs", "payload", "contentHash"]
+upsPrototypeState: "notInstantiated"
+---
+id: @ups-tpl-battery-asset
+dis: "BatteryAssetProjection"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "BatteryAssetProjection"
+upsProjectId: "project-template"
+upsSourceMode: "template"
+upsContractType: "internal"
+upsNaturalKey: "projectId + configRevision + targetObjectRef"
+upsRequiredFields: ["equipRef", "targetObjectRef", "configRevision", "chemistry", "cellCount", "evidenceRef", "sourceRevision"]
+upsPrototypeState: "notInstantiated"

@@ -1,0 +1,49 @@
+[
+  {
+    "metadata": "pod.name=upsFleet\npod.version=0.0.1\npod.depends=sys 1.0\npod.summary=UPS Fleet DEV-01 source-sample freshness\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=Engineering\nbuild.user=Copperfield\nbuild.ts=2026-09-15T21:09:45+08:00 Singapore\nbuild.tsKey=260915210945\nbuild.compiler=1.0.78.3105\nbuild.platform=win32-x86_64\npod.docApi=false\npod.docSrc=false\npod.native.java=false\npod.native.jni=false\npod.native.dotnet=false\npod.native.js=false\npod.fcode=true\n",
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode"
+    ],
+    "sha256": "B9324BEF880FA3C7257B158F9C16A582CF3F512F52D6FF783D91F702B842EA46",
+    "path": ".artifacts/DEV-01-independent/upsFleet.pod"
+  },
+  {
+    "metadata": "pod.name=upsFleet\npod.version=0.0.1\npod.depends=sys 1.0\npod.summary=UPS Fleet DEV-01 source-sample freshness\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=Engineering\nbuild.user=Copperfield\nbuild.ts=2026-09-15T21:10:00+08:00 Singapore\nbuild.tsKey=260915211000\nbuild.compiler=1.0.78.3105\nbuild.platform=win32-x86_64\npod.docApi=false\npod.docSrc=false\npod.native.java=false\npod.native.jni=false\npod.native.dotnet=false\npod.native.js=false\npod.fcode=true\n",
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/ints.def",
+      "fcode/strs.def",
+      "fcode/durations.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode",
+      "fcode/QualityEvaluatorTest.fcode"
+    ],
+    "sha256": "6B227513E39D4CEE1CBA404A89BA9B152BB289A343E821C95EDCD8ED5171C275",
+    "path": ".artifacts/DEV-01-independent/test/upsFleet.pod"
+  },
+  {
+    "metadata": "pod.name=upsFleet\npod.version=0.0.1\npod.depends=sys 1.0\npod.summary=UPS Fleet DEV-01 source-sample freshness\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=Engineering\nbuild.user=Copperfield\nbuild.ts=2026-09-15T21:10:00+08:00 Singapore\nbuild.tsKey=260915211000\nbuild.compiler=1.0.78.3105\nbuild.platform=win32-x86_64\npod.docApi=false\npod.docSrc=false\npod.native.java=false\npod.native.jni=false\npod.native.dotnet=false\npod.native.js=false\npod.fcode=true\n",
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/ints.def",
+      "fcode/strs.def",
+      "fcode/durations.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode",
+      "fcode/QualityEvaluatorTest.fcode"
+    ],
+    "sha256": "6B227513E39D4CEE1CBA404A89BA9B152BB289A343E821C95EDCD8ED5171C275",
+    "path": ".runtime/DEV-01-independent/lib/fan/upsFleet.pod"
+  }
+]

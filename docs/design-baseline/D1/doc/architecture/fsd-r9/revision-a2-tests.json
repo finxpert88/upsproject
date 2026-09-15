@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "testCount": 19,
+  "cases": [
+    {
+      "id": "AR01 multiple occurrences survive unknown CREATE and restart",
+      "passed": true
+    },
+    {
+      "id": "AR01 outbox full and persistence failure keep watermark",
+      "passed": true
+    },
+    {
+      "id": "AR01 accepted source result crash requires reconciliation, no resend",
+      "passed": true
+    },
+    {
+      "id": "AR02 full event/sample equivalence 60/1/5/10",
+      "passed": true
+    },
+    {
+      "id": "AR02 checkpoint before/after crash and late generation worker",
+      "passed": true
+    },
+    {
+      "id": "AR04 full version CAS, omission preserve, delete and scoped rollback",
+      "passed": true
+    },
+    {
+      "id": "AR04 missing member/corrupt hash fails recovery, commit failure atomic",
+      "passed": true
+    },
+    {
+      "id": "AR05 strict wire/Rec roundtrips preserve zero false null date refs lists",
+      "passed": true
+    },
+    {
+      "id": "AR05 nested Ref remap positive and missed remap negative",
+      "passed": true
+    },
+    {
+      "id": "AR06 same stable ID cannot change actor/action/body/target/context",
+      "passed": true
+    },
+    {
+      "id": "AR06 root create retry and new operation old generation rejected",
+      "passed": true
+    },
+    {
+      "id": "AR07 mode account ACL permissions positive and negative matrix",
+      "passed": true
+    },
+    {
+      "id": "AR07 OP07 original action mode owner; bootstrap root limits",
+      "passed": true
+    },
+    {
+      "id": "AR08 bootstrap and full capabilities version/login matrix",
+      "passed": true
+    },
+    {
+      "id": "AR01/02 runtime envelope session generation fence and ordinal restart",
+      "passed": true
+    },
+    {
+      "id": "AR04 immutable config and entity identities, same-content idempotency",
+      "passed": true
+    },
+    {
+      "id": "AR05 typed timestamps reject bad start/end impossible dates and offsets",
+      "passed": true
+    },
+    {
+      "id": "AR05 server envelope live/sim roundtrip and isolation mismatch",
+      "passed": true
+    },
+    {
+      "id": "AR07 OP07 cannot ignore original business owner denial",
+      "passed": true
+    }
+  ],
+  "scope": "Architecture reference model only; no FIN execution; no external messages"
+}

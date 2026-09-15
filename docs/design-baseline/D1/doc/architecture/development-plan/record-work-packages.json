@@ -1,0 +1,890 @@
+[
+  {
+    "id": "ups-tpl-site",
+    "recordType": "Site",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-ups",
+    "recordType": "UPS",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-battery",
+    "recordType": "BatteryString",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-module",
+    "recordType": "PowerModule",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-environment",
+    "recordType": "EnvironmentSensor",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-powerMode",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-runtimeEstimateMinutes",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batterySocPct",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batterySohPct",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batteryStringVoltage",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batteryImpedance",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batteryTemperature",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-batteryChargeCurrent",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-outputPowerKw",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-outputApparentPowerKva",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-loadPct",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-outputVoltage",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-outputFrequency",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-outputThd",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-rectifierStatus",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-fanStatus",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-capacitorHealthPct",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-ambientTemp",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-humidity",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-airQuality",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-waterDetected",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-transferStatus",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-staticBypassAvailable",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-staticBypassActive",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-maintenanceBypassAvailable",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-maintenanceBypassActive",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-lastTransferDuration",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-healthScore",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-moduleAvailableCapacity",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-point-moduleState",
+    "recordType": "Point",
+    "sourceFile": "equipment-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-evidence",
+    "recordType": "EvidenceDocument",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-config",
+    "recordType": "ConfigVersion",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-enrollment",
+    "recordType": "UpsEnrollment",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-capability",
+    "recordType": "CapabilityProfile",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-powerMode",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-runtimeEstimateMinutes",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batterySocPct",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batterySohPct",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batteryStringVoltage",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batteryImpedance",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batteryTemperature",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-batteryChargeCurrent",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-outputPowerKw",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-outputApparentPowerKva",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-loadPct",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-outputVoltage",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-outputFrequency",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-outputThd",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-rectifierStatus",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-fanStatus",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-capacitorHealthPct",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-ambientTemp",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-humidity",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-airQuality",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-waterDetected",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-transferStatus",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-staticBypassAvailable",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-staticBypassActive",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-maintenanceBypassAvailable",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-maintenanceBypassActive",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-lastTransferDuration",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-healthScore",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-moduleAvailableCapacity",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-moduleState",
+    "recordType": "PointMapping",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-environment-link",
+    "recordType": "EnvironmentAssociation",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-asset-values",
+    "recordType": "AssetProjection",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-assessment",
+    "recordType": "AssessmentBinding",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-plan",
+    "recordType": "MaintenancePlan",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-R-01",
+    "recordType": "RuleDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-R-02",
+    "recordType": "RuleDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-R-03",
+    "recordType": "RuleDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-R-04",
+    "recordType": "RuleDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-R-05",
+    "recordType": "RuleDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-draft",
+    "recordType": "ConfigDraft",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-validation",
+    "recordType": "ValidationReport",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-publication",
+    "recordType": "Publication",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-pointer",
+    "recordType": "ActiveConfigPointer",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-activation",
+    "recordType": "LastSuccessfulActivation",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-state",
+    "recordType": "RuleState",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-06",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-rule-outbox",
+    "recordType": "RuleAlarmOutbox",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-06",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-association",
+    "recordType": "AlarmAssociation",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-07",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-journal",
+    "recordType": "OperationJournal",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-02",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-audit",
+    "recordType": "AuditEvent",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-07",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-acceptance",
+    "recordType": "AcceptanceReport",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-mapping-interval",
+    "recordType": "MappingInterval",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-plan-event",
+    "recordType": "MaintenancePlanEvent",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-outlook",
+    "recordType": "OutlookRecord",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-report",
+    "recordType": "ReportJob",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-09",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-report-file",
+    "recordType": "ReportFileMetadata",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-09",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-channel",
+    "recordType": "NotificationChannel",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-subscription",
+    "recordType": "NotificationSubscription",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-gate",
+    "recordType": "ChannelGate",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-notify",
+    "recordType": "NotifyJob",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-attempt",
+    "recordType": "NotificationAttempt",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-cursor",
+    "recordType": "NotificationCursor",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-10",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-dictionary",
+    "recordType": "MetricDefinition",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-04",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-simulation",
+    "recordType": "SimulationSession",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-sim-cleanup",
+    "recordType": "SimulationCleanup",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-sim-sample",
+    "recordType": "SimulationSample",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-sim-alarm",
+    "recordType": "SimulationAlarm",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-schema-migration",
+    "recordType": "SchemaMigration",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-14",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-occurrence",
+    "recordType": "RuleOccurrence",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-06",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-scenario-event",
+    "recordType": "SimulationScenarioEvent",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-checkpoint",
+    "recordType": "SimulationCheckpoint",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-11",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-entity-version",
+    "recordType": "EntityVersion",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  },
+  {
+    "id": "ups-tpl-battery-asset",
+    "recordType": "BatteryAssetProjection",
+    "sourceFile": "business-objects.trio",
+    "codecTask": "DEV-03",
+    "domainTask": "DEV-08",
+    "productionUse": "模板资源；不自动实例化；按工程与契约验证转换"
+  }
+]

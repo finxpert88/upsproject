@@ -1,0 +1,10 @@
+
+-- Run:  upsFleet::QualityEvaluatorTest.testCachedSampleFreshness...
+   Pass: upsFleet::QualityEvaluatorTest.testCachedSampleFreshness [36]
+
+Time: 21ms
+
+***
+*** All tests passed! [1 tests, 1 methods, 36 verifies] 
+***
+

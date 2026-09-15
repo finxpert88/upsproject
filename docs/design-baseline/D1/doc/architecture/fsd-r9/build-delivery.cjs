@@ -1,0 +1,158 @@
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const root = __dirname;
+const fsdPath = path.resolve(root, '../../planning/UPS-Fleet-FIN-POD-FSD-v0.1.md');
+const fsd = fs.readFileSync(fsdPath, 'utf8');
+const write = (name, data) => fs.writeFileSync(path.join(root, name), data, 'utf8');
+const ref = s => ({ref:s});
+const marker = {marker:true};
+const devices=[], business=[];
+function rec(list,id,type,tags) { const r={id:ref(id),dis:type,upsFleet:marker,upsTemplate:marker,upsSchemaVersion:'2.0',upsRecordType:type,...tags}; list.push(r); return r; }
+const site=ref('ups-tpl-site'), ups=ref('ups-tpl-ups'), battery=ref('ups-tpl-battery'), moduleRef=ref('ups-tpl-module'), env=ref('ups-tpl-environment');
+rec(devices,site.ref,'Site',{site:marker,dis:'Engineering Template Site',tz:'Singapore',upsTimezoneNeedsVerification:true});
+rec(devices,ups.ref,'UPS',{equip:marker,siteRef:site,upsEquipment:marker,dis:'UPS Engineering Template',upsAssetGeneration:'template-generation-1',upsCommissioningStatus:'draft'});
+rec(devices,battery.ref,'BatteryString',{equip:marker,siteRef:site,upsParentEquipRef:ups,upsBatteryString:marker,dis:'Battery String Template'});
+rec(devices,moduleRef.ref,'PowerModule',{equip:marker,siteRef:site,upsParentEquipRef:ups,upsPowerModule:marker,dis:'Power Module Template'});
+rec(devices,env.ref,'EnvironmentSensor',{equip:marker,siteRef:site,upsEnvironmentSensor:marker,dis:'Room Sensor Template'});
+// Logical fields are project definitions, not claimed Haystack standard tags.
+const fields=[
+['powerMode','Str',null,'ups'],['runtimeEstimateMinutes','Number','min','ups'],
+['batterySocPct','Number','%','battery'],['batterySohPct','Number','%','battery'],
+['batteryStringVoltage','Number','V','battery'],['batteryImpedance','Number','mΩ','battery'],
+['batteryTemperature','Number','°C','battery'],['batteryChargeCurrent','Number','A','battery'],
+['outputPowerKw','Number','kW','ups'],['outputApparentPowerKva','Number','kVA','ups'],
+['loadPct','Number','%','ups'],['outputVoltage','Number','V','ups'],['outputFrequency','Number','Hz','ups'],
+['outputThd','Number','%','ups'],['rectifierStatus','Str',null,'module'],['fanStatus','Str',null,'module'],
+['capacitorHealthPct','Number','%','module'],['ambientTemp','Number','°C','environment'],
+['humidity','Number','%','environment'],['airQuality','Str',null,'environment'],['waterDetected','Bool',null,'environment'],
+['transferStatus','Str',null,'ups'],['staticBypassAvailable','Bool',null,'ups'],['staticBypassActive','Bool',null,'ups'],
+['maintenanceBypassAvailable','Bool',null,'ups'],['maintenanceBypassActive','Bool',null,'ups'],
+['lastTransferDuration','Number','ms','ups'],['healthScore','Number','%','ups'],
+['moduleAvailableCapacity','Number','kW','module'],['moduleState','Str',null,'module']];
+const parents={ups,battery,module:moduleRef,environment:env};
+for(const [field,kind,unit,parent] of fields){
+ rec(devices,'ups-tpl-point-'+field,'Point',{point:marker,siteRef:site,equipRef:parents[parent],kind,...(unit?{unit}:{}),upsLogicalField:field,upsCapabilityStatus:'unverified',upsSourceBindingStatus:'unbound',upsTargetObjectRef:parents[parent],upsPhaseStatus:'unverified',upsMeasurementLocationStatus:'unverified',...(field==='batteryChargeCurrent'?{upsSignConventionStatus:'unverified'}:{}),...(field==='outputThd'?{upsThdDefinitionStatus:'unverified'}:{}),...(field.startsWith('module')?{upsDeliveryPhase:'P1'}:{})});
+}
+const cfg=ref('ups-tpl-config'), evidence=ref('ups-tpl-evidence');
+function b(id,type,tags={}){return rec(business,'ups-tpl-'+id,type,{upsProjectId:'project-template',upsSourceMode:'template',...tags});}
+b('evidence','EvidenceDocument',{upsEvidenceStatus:'pending',upsDocumentVersion:'FSD-r9',upsLocator:'PRD section 7; target device point list required'});
+b('config','ConfigVersion',{upsConfigRevision:'template-cfg-1',upsImmutable:true,upsBaseline:'FSD-v0.1-r9',upsContentHash:'pending-generation',upsPublicationStatus:'notPublished'});
+b('enrollment','UpsEnrollment',{equipRef:ups,siteRef:site,upsConfigRef:cfg,upsDisplayName:'UPS Engineering Template',upsCommissioningStatus:'draft',upsCapabilityProfileRef:ref('ups-tpl-capability'),upsSourceDocumentVersion:'FSD-r9',upsBaseRequiredMappingIds:[],upsAlarmSourceStatus:'unbound'});
+b('capability','CapabilityProfile',{equipRef:ups,upsConfigRef:cfg,upsItemsJson:JSON.stringify(fields.map(([field,,,parent])=>({field,objectRef:parents[parent].ref,status:'unverified',evidenceRef:null}))) });
+for(const [field,kind,unit,parent] of fields){
+ b('mapping-'+field,'PointMapping',{equipRef:ups,upsConfigRef:cfg,upsMappingId:'mapping-'+field,upsTargetObjectRef:parents[parent],upsLogicalField:field,upsPointRef:ref('ups-tpl-point-'+field),upsRawKind:kind,upsNormalizedKind:kind,upsOrigin:'measured',...(unit?{upsRawUnit:unit,upsUnit:unit}:{}),upsEvidenceRef:evidence,upsTransformJson:JSON.stringify({scale:1,offset:0,enumMap:[],invertBoolean:false}),upsQualityPolicyJson:JSON.stringify({expectedIntervalMs:10000,staleAfterMs:30000,min:null,max:null,freshnessBasis:'sample'}),upsHistoryPolicyJson:JSON.stringify({required:false,periodMs:null,retentionDays:null}),upsBindingStatus:'unverified',upsAssetGeneration:'template-generation-1'});
+}
+b('environment-link','EnvironmentAssociation',{equipRef:ups,siteRef:site,upsSensorEquipRef:env,upsEvidenceRef:evidence,upsLocationBasisStatus:'pending'});
+b('asset-values','AssetConfiguration',{equipRef:ups,upsConfigRef:cfg,upsTargetObjectRef:battery,upsEvidenceRef:evidence,upsAssetFieldsJson:JSON.stringify({batteryChemistry:null,cellCount:null,requiredRuntimeMinutes:null,ratedCapacityKw:null,ratedCapacityKva:null,baselineImpedance:null}),upsVerificationStatus:'pending'});
+b('assessment','AssessmentBinding',{equipRef:ups,upsConfigRef:cfg,upsBindingId:'template-assessment',upsOutlookRecordRefs:[],upsEvidenceRefs:[],upsBindingStatus:'unbound'});
+b('plan','MaintenancePlan',{equipRef:ups,upsConfigRef:cfg,upsTargetObjectRef:battery,upsPlanId:'template-plan',upsPlanRevision:'template-plan-1',upsSource:'manual',upsTitle:'Maintenance Plan Template',upsRemindDays:30,upsStatus:'draft',upsEvidenceRefs:[]});
+for(const [type,driver,input] of [['R-01','sample','runtimeEstimateMinutes'],['R-02','sample','loadPct'],['R-03','sample','batteryImpedance'],['R-04','calendar',null],['R-05','quality',null]]){
+ b('rule-'+type,'RuleDefinition',{equipRef:ups,upsConfigRef:cfg,upsRuleId:'template-'+type,upsRuleVersion:'template-rule-1',upsRuleType:type,upsDriver:driver,upsEnabled:false,...(input?{upsPrimaryMappingRef:ref('ups-tpl-mapping-'+input)}:{}),upsParameterStatus:'engineeringRequired',upsParametersJson:JSON.stringify(type==='R-01'?{requiredMinutes:null,hysteresisMinutes:2,trigger:{count:2,durationMs:0},clear:{count:2,durationMs:0}}:type==='R-05'?{requiredMappingIds:[],triggerDelayMs:5000,clearDelayMs:5000}:type==='R-04'?{planId:null}:{} )});
+}
+// Runtime prototypes have no sendable/active state, dates, occurrence or success claims.
+const models=[
+['draft','ConfigDraft','Draft','draftId + draftRevision','config.edit','baseConfigRevision,scopeDigest,contentHash,patches,author,updatedAt'],
+['validation','ValidationReport','ValidationReport','validationId','config.edit','draftRevision,contentHash,platformBindingFingerprint,blockingIssues,warnings,affectedEquip,affectedActiveAlarms,expiresAt'],
+['publication','Publication','Publication','projectId + operationId','system','candidateRevision,previousRevision,previousEpoch,targetEpoch,state,moduleReadySet,decisionAt,lastError'],
+['pointer','ActiveConfigPointer','internal','projectId','system','configRevision,activationEpoch,decisionAt'],
+['activation','LastSuccessfulActivation','internal','projectId','system','configRevision,activationEpoch,activatedAt'],
+['rule-state','RuleState','internal','projectId + equipRef + ruleId + ruleVersion','system','activationEpoch,primaryWatermark,candidate,count,candidateSince,badSince,goodSince,detectedRisk,occurrenceId,syncState'],
+['rule-outbox','RuleAlarmOutbox','internal','projectId + occurrenceId + commandSeq','system','ruleStateRef,commandType,correlationKey,epoch,requestHash,state,sourceResultRef,attempt,nextAttemptAt'],
+['association','AlarmAssociation','internal','projectId + sourceSystem + sourceAlarmId + occurrenceId','system','equipRef,sourceRevision,ruleVersion,correlationKey,sourceQuality,resolutionKind'],
+['journal','OperationJournal','Operation','projectId + actorId + operationId','system','action,requestHash,targetRefs,expectedRevision,state,resultAvailability,resultRef,updatedAt,errorCode'],
+['audit','AuditEvent','Audit','auditId','systemAppendOnly','projectId,serverTs,actorId,action,targetRefs,operationId,outcome,beforeRevision,afterRevision,redactedDiff,reasonCode,sourceResultRef'],
+['acceptance','AcceptanceReport','AcceptanceReport','reportId','commissioning.accept','equipRef,configRevision,mappingFingerprint,modelFirmware,pointListVersion,baseChecks,alarmEvidenceRefs,disconnectEvidenceRefs,historyEvidenceRefs,waivers,acceptedBy,acceptedAt'],
+['mapping-interval','MappingInterval','internal','mappingId + configRevision + validFrom','system','mappingRef,validFrom,validTo,sourceRef,transform,normalizedUnit,assetGeneration,changeReason,knownMappingError'],
+['plan-event','MaintenancePlanEvent','Alarm.eventDetails','planId + planRevision + stage','system','equipRef,targetObjectRef,stage,endedAt,endReason,ackRequired'],
+['outlook','OutlookRecord','OutlookItem','itemId','config.edit','equipRef,targetObjectRef,component,kind,title,severity,dueDate,windowStart,windowEnd,assessedAt,quality,evidenceRefs,methodologyRef,algorithmVersion,reason'],
+['report','ReportJob','ReportJob','projectId + ownerId + operationId','report.export','jobId,ownerId,context,params,state,progressPct,createdAt,expiresAt,dataCutoffAt,collectedFrom,collectedTo,rows,bytes,qualitySummary,checksum,errorCode,reason'],
+['report-file','ReportFileMetadata','ReportFile','jobId','system','fileName,mime,bytes,checksum,protectedStorageKey,generationId,expiresAt'],
+['channel','NotificationChannel','NotificationChannel','channelId + configRevision','notification.manage','channelId,name,enabled,secretRef,chatId,messageThreadId,timezone,resumePauseRevision'],
+['subscription','NotificationSubscription','NotificationSubscription','subscriptionId + configRevision','notification.manage','subscriptionId,channelId,enabled,equipRefs,severities,eventTypes,quietHours'],
+['gate','ChannelGate','ChannelGate','projectId + channelId','notification.manage','channelId,paused,pauseRevision,pausedAt,pausedBy,reason'],
+['notify','NotifyJob','NotifyJob','projectId + eventKey + channelId','system','notificationId,context,channelId,alarmRef,eventKey,eventAt,createdAt,state,attempt,nextAttemptAt,channelRevision,transport,messageId,simulatedOutcome,lastError'],
+['attempt','NotificationAttempt','internal','notificationId + attempt','systemAppendOnly','operationId,acceptDuplicateRisk,permitRevision,requestHash,startedAt,finishedAt,outcome,messageId,error'],
+['cursor','NotificationCursor','internal','projectId + sourceStream + subscriptionId','system','sourceWatermark,overlapStart,lastEnqueuedEventKey,updatedAt,gapIntervals'],
+['dictionary','MetricDefinition','MetricDefinition','metricId + dictionaryVersion','system','metricId,name,meaning,unit,formula,measurementLocation,sourceRef,qualityMeaning,basis'],
+['simulation','SimulationSession','SimSession','projectId + sessionId','simulation.manage','sessionId,ownerId,generationId,controlRevision,dataRevision,state,initialized,scenarioId,scenarioVersion,seed,deviceCount,startAt,timezone,virtualTime,speed,historyHours,sampleIntervalSeconds,historyRows,lastActivityAt,cleanupOperationId,reason'],
+['sim-cleanup','SimulationCleanup','internal','sessionId + operationId','system','oldGenerationId,newGenerationId,action,fenceRevision,state,pendingWorkers,pendingFiles,completedAt'],
+['sim-sample','SimulationSample','internal','sessionId + generationId + objectId + field + sampleTime + sequence','system','value,unit,quality,sourceTs,scenarioVersion,seed'],
+['sim-alarm','SimulationAlarm','Alarm','sessionId + generationId + occurrenceId','system','alarmPayload,sourceMode,simulationSessionId,generationId'],
+['schema-migration','SchemaMigration','internal','migrationId + fromVersion + toVersion','system','checksum,state,checkpoint,backupRef,startedAt,completedAt']
+];
+for(const [id,type,contract,key,writer,required] of models)b(id,type,{upsContractType:contract,upsNaturalKey:key,upsWriter:writer,upsRequiredFields:required.split(','),upsPrototypeState:'notInstantiated'});
+function enc(v){if(v&&v.ref)return '@'+v.ref;if(v&&v.marker)return null;if(Array.isArray(v))return '['+v.map(x=>enc(x)).join(', ')+']';if(typeof v==='string')return JSON.stringify(v);return String(v);}
+function trio(records){return '// FSD v0.1 revision 9. Engineering templates only. Never auto-import on startup.\n'+records.map(r=>Object.entries(r).map(([k,v])=>{const e=enc(v);return e===null?k:k+': '+e;}).join('\n')).join('\n---\n')+'\n';}
+require('./revision-a2.cjs').augment(business);
+write('equipment-objects.trio',trio(devices));write('business-objects.trio',trio(business));
+write('record-manifest.json',JSON.stringify({baseline:crypto.createHash('sha256').update(fsd).digest('hex'),devices,business},null,2));
+const blocks=[...fsd.matchAll(/```typescript\r?\n([\s\S]*?)```/g)].map(m=>m[1]);
+write('contracts.ts','// Extracted verbatim from approved FSD revision 9. Project types, not FIN SDK.\n'+blocks.join('\n')+'\n');
+const names=['sessionCapabilities','equipmentList','equipmentSnapshot','metricHistory','alarmListDetail','alarmAcknowledge','operationStatus','configGetSaveDraft','configValidate','configPublish','configRollbackDraft','diagnostics','auditList','commissioningAccept','reportCreate','reportGetList','reportDownload','reportCancel','notificationTest','notificationDeliveryList','notificationRetry','metricDictionary','simulationCreate','simulationGenerate','simulationControl','simulationStep','simulationScenario','simulationReset','simulationDelete','simulationGetList','notificationPause'];
+const owners=['RequestFacade','InventoryService','TelemetryService','HistoryService','AlarmService','AlarmService','OperationRepository','ConfigurationService','ConfigurationService','ConfigurationService','ConfigurationService','LifecycleDiagnostics','AuditRepository','ConfigurationService','ReportService','ReportService','ReportService','ReportService','NotificationService','NotificationService','NotificationService','MetricDictionaryService','SimulationService','SimulationService','SimulationService','SimulationService','SimulationService','SimulationService','SimulationService','SimulationService','NotificationService'];
+const accesses=['session','fleet.view','fleet.view','history.view','alarm.view','alarm.ack','originalAction','config.edit','config.edit','config.publish','config.publish','diagnostics.view','audit.view','commissioning.accept','report.export','report.read','report.export','report.export','notification.manage','notification.read','notification.manage','fleet.view','simulation.manage','simulation.manage','simulation.manage','simulation.manage','simulation.manage','simulation.manage','simulation.manage','simulation.read','notification.manage'];
+const recordSets=['FIN session','UpsEnrollment,CapabilityProfile','PointMapping,AssessmentBinding,OutlookRecord','MappingInterval,FIN history','AlarmAssociation,FIN alarm','OperationJournal,AuditEvent,AlarmAssociation','OperationJournal,Publication','ConfigDraft,ConfigVersion','ValidationReport,PointMapping,CapabilityProfile','Publication,ActiveConfigPointer,LastSuccessfulActivation,MappingInterval,AuditEvent','ConfigDraft,ConfigVersion','Publication,RuleAlarmOutbox,OperationJournal','AuditEvent','AcceptanceReport,UpsEnrollment,Publication','ReportJob,MappingInterval','ReportJob','ReportJob,ReportFileMetadata','ReportJob,AuditEvent','NotificationChannel,NotifyJob,OperationJournal','NotifyJob,NotificationAttempt','NotifyJob,NotificationAttempt,AuditEvent','MetricDefinition','SimulationSession','SimulationSession,SimulationSample,SimulationAlarm','SimulationSession,OperationJournal','SimulationSession,SimulationSample,SimulationAlarm','SimulationSession,SimulationSample,SimulationAlarm','SimulationCleanup,SimulationSession','SimulationCleanup,SimulationSession','SimulationSession','ChannelGate,AuditEvent,OperationJournal'];
+let ops=names.map((name,i)=>({id:'OP-'+String(i+1).padStart(2,'0'),name,owner:owners[i],permission:accesses[i],records:recordSets[i],implementationStatus:'design',transport:'POST /upsFleet/api/v2/operations/'+name}));
+ops=require('./revision-a2.cjs').operations(ops);
+write('operations.json',JSON.stringify(ops,null,2));
+write('handlers.ts','/// <reference path="./contracts.ts" />\n// Proposed project handler boundary. OP-17 streams a protected file on success.\ninterface AuthenticatedContext { actorId: Id; scopeVersion: Id; projectId: Id; }\ninterface BinaryDownload { stream: unknown; metadata: ReportFile; requestId: Id; contextFingerprint: Id; }\ntype Handler<K extends keyof Contracts> = (ctx: AuthenticatedContext, req: WireRequest<K>) => Promise<K extends "OP-17" ? BinaryDownload | Response<never> : WireResponse<K>>;\ninterface UpsFleetHandlers {\n'+ops.map(o=>`  ${o.name}: Handler<"${o.id}">;`).join('\n')+'\n}\n');
+const sf=[
+['01','遥测采集与新鲜度','4.1','OP-03','TelemetryService.pollBatch','PointMapping → Metric/Snapshot','缓存重读不推进freshness；≤500ms共享检查'],
+['02','质量决策顺序','4.2','OP-03','QualityEvaluator.evaluate','CapabilityProfile/PointMapping → Metric','0/false有效；bad值null；超量程保留observedValue'],
+['03','通讯和供电模式','4.3','OP-02/03','CommunicationResolver.resolve','FIN诊断/PointMapping → communication/powerMode','连接、供电、告警三轴独立'],
+['04','设备总览','5.1/5.7','OP-01/02','InventoryService.list','UpsEnrollment → FleetPage','权限范围；5分钟游标；最新统计与冻结成员分离'],
+['05','Dashboard与详情','5.2/5.8/17','OP-03/04/22','DashboardPresenter.render','Snapshot/MetricDefinition → 32项组件','六卡、健康环、趋势齐全；无评分显示未知'],
+['06','历史趋势','5.3/5.6','OP-04','HistoryService.querySegments','MappingInterval/FIN history → HistorySegment','4条/7天/1000桶；半开区间；禁止跨映射补值'],
+['07','告警事件页','5.4','OP-05/06/07','AlarmService.query','FIN alarm/AlarmAssociation → Alarm/Timeline','发生/恢复/确认独立；纯事件无确认'],
+['08','工程配置页','5.5','OP-08/09/10/14','EngineeringWizard','ConfigDraft/ValidationReport → 发布或错误','六步工程流程；无设备凭据字段'],
+['09','三类执行模型','6.1/6.3/6.4','内部','RuleEngine.advance','RuleDefinition/RuleState → RuleAlarmOutbox','sample/quality/calendar独立驱动；主水位去重'],
+['10','规则参数与转换','6.2/6.5','OP-08/09/10','RuleEvaluator.evaluate','规则/输入 → 风险与覆盖','AND门槛；R-02边界；无来源不造分数'],
+['11','告警归一','7.1/7.4','OP-05','AlarmSynchronizer.reconcile','FIN event → AlarmAssociation','稳定发生ID；CREATE/SEVERITY/CLEAR顺序'],
+['12','单条确认','7.2','OP-06/07','AcknowledgementCoordinator.execute','OperationJournal → FIN ack → AuditEvent','意图先落盘；未知不重放；查询权威结果'],
+['13','审计','7.3','OP-13','AuditRepository.append','AuditEvent','追加写；拒绝普通用户编辑；失败关闭副作用'],
+['14','范围安全草稿','8.1','OP-08/09/11','ConfigurationService.mergeValidate','ConfigDraft/ValidationReport','局部patch；旧新范围双授权；10分钟报告'],
+['15','统一激活','8.2/8.3','OP-10/07','PublicationCoordinator.activate','ConfigVersion/Publication/Pointer','COMMITTED后只恢复候选；全模块同epoch'],
+['16','活动规则与退役','8.4','OP-08/09/10','ConfigurationGuard.checkActive','RuleState/RuleAlarmOutbox/AlarmAssociation','未决发生阻止破坏恢复链；确认不解除阻断'],
+['17','生命周期','11.1','OP-12','Lifecycle.startStop','Pointer/Journal/Publication','不自动造设备；重启先对账；停止释放任务'],
+['18','容量与压力保护','11.2','OP-02/03/04/12','WorkScheduler.admit','缓存/有界队列','100设备/5000点为测试假设；共享读取不随会话倍增'],
+['19','打包升级回滚','11.3','内部','MigrationRunner.run','SchemaMigration/备份','冻结SDK；迁移幂等；审计保全；72h浸泡'],
+['20','报表导出','18.2','OP-15/16/17/18','ReportWorker.execute','ReportJob/File/MappingInterval','时间加权；carry-in；历史期末状态；撤权拒下载'],
+['21','Telegram通知','18.3','OP-19/20/21/31','NotificationWorker.deliver','NotifyJob/Cursor/Gate/Attempt','独立outbox；许可与暂停原子；unknown不自动重发'],
+['22','双主题','18.4','前端本地','ThemeStore.set','按用户隔离偏好','默认Light；不改变查询状态；PDF固定浅色'],
+['23','模拟服务','19','OP-23～30','SimulationService.advanceEvents','SimulationSession/Sample/Alarm/Cleanup','seed可重放；独立代次；reset/delete屏障；零真实外发'],
+['24','多屏与触控','22','复用业务OP','ResponsiveShell.resize','前端状态','320～1920+；44px触控；旋转不重发变更']];
+write('interface-implementation-list.md','# 可编程接口实现清单\n\n基线：FSD v0.1 修订9；接口schema 2.0。以下方法、路径是本次架构设计，不是 FIN 官方 API。完整请求/响应字段直接从通过评审的FSD提取至 [contracts.ts](contracts.ts)，可编程处理器签名见 [handlers.ts](handlers.ts)。尚未实现业务处理器或验证FIN SDK绑定。\n\n## 1. 逐功能追踪\n\n|规格|需求描述|FSD节|入口|内部实现入口|读写模型|必须实现的判定|\n|---|---|---|---|---|---|---|\n'+sf.map(r=>`|SF-${r[0]}|${r.slice(1).join('|')}|`).join('\n')+'\n\n补充覆盖：FR-21指标释义由OP-22/MetricDefinition实现（18.1）；产品英文由集中en-US资源及全部生成器实现（21）；FR-18～20仍按FSD第20节保留原分期，不重新解释编号。精确FR关系见原需求追踪矩阵。\n\n## 2. 31项外部操作\n\n所有入口先校验schemaVersion/context，再验证服务端会话、对象范围和动作权限；项目身份从会话取得。统一Response联合，额外字段拒绝。下表POST路径是建议同源绑定，待G1冻结；只读POST没有写副作用。OP-01无版本首次GET只返回版本能力。\n\n|操作|处理器|所属模块|权限（另加对象范围）|读取/持久化模型|\n|---|---|---|---|---|\n'+ops.map(o=>`|${o.id}|${o.name}|${o.owner}|${o.permissionByMode.live}|${o.records}|`).join('\n')+'\n\n## 3. 共用实现规则\n\n- 模拟模式权限按FSD 10.1单独检查，live权限不能替代simulation.read/ack/export/manage；OP-19/21/31按模式拒绝跨接真实传输。context/session/generation必须在对象查询之前校验。\n- OP-06/10/14/15/18/19/21/23～29/31：以项目、调用者、operationId及动作建立幂等键，规范化请求hash不一致返回IDEMPOTENCY_CONFLICT；实际键保留模式与会话代次，旧代次不能借重试复活。OP-08采用draft/entity CAS，OP-11只建回退草稿。\n- OP-06采用expectedRevision；发布采用baseConfigRevision和validation hash；模拟管理采用controlRevision，tick只改变dataRevision。\n- OP-07返回SUCCEEDED+pending时只查询，不再次执行。未知外部结果保留OUTCOME_UNKNOWN并对账。\n- OP-17成功为二进制流，元信息映射响应头；失败为JSON。文件开始传输前重新检查全部设备权限及generation。\n- OP-31在RECOVERY_REQUIRED也可暂停；暂停与worker领取许可共用原子边界，恢复必须发布匹配pauseRevision的新配置。\n- 常规并发每会话4、历史2，项目历史8；历史≤4曲线/7天/1000桶。列表默认50、最大100。报表≤100设备/31天/100000行/50MB/PDF200页，2个worker，24小时过期。具体规则以FSD 9.4/18.2为准。\n- 所有字段类型、必填/null、枚举及对象响应，以contracts.ts为唯一编码起点；TypeScript类型检查不能替代运行时JSON验证器。需生成或实现严格运行时校验并用FSD边界用例检查。\n\n## 4. FinGateway内部端口（本项目定义，SDK符号待核验）\n\n|端口|输入→输出|失败/一致性要求|\n|---|---|---|\n|readSessionScope|服务端会话→身份、权限、scopeVersion|默认拒绝，禁止客户端指定actor/project|\n|readPointBatch|已授权Ref集合→类型/原生质量/采样时点/序号/采集证据|缓存读取不能伪造新采样|\n|readConnectionHealth|已绑定诊断源→成功读取/连接状态|环境与UPS主连接分离|\n|readHistory|Ref、半开时窗、carry-in选项→真实源样本|返回缺口；权限逐段检查|\n|readAlarmEvents|源游标、重叠窗口→稳定实例/生命周期事件|可追补短暂发生；缺能力阻断验收|\n|ackAlarm|已登记意图、原生实例/版本→确定或未知结果|不直接改告警字段；无批量|\n|applyRuleAlarmCommand|发生ID、序号、CREATE/SEVERITY/CLEAR→权威结果|未知阻断该发生后续命令；不能重放|\n|transactRecords|预期版本、读集合、写集合→提交凭证|CAS、唯一键、跨Rec原子性须G1证明|\n|readRecordPage|固定模型过滤、权限范围→Rec集合/游标|不得接受任意Axon表达式|\n|writeProtectedFile/readProtectedFile|作业/代次、流→文件句柄/流|无公共URL；清理屏障；配额|\n|resolveSecret|secretRef→仅服务端秘密句柄|不落Trio/响应/日志|\n|registerTasks/stopTasks|有界任务定义→生命周期句柄|停止幂等；不遗留计时器|\n\n## 5. 开发顺序与验收\n\n1. 实现schema2.0严格校验、SourceContext、权限矩阵、领域类型与Rec编解码；校验模板与业务必填字段不同层次。\n2. 在目标FIN构建完成G1：Ref保留/重映射、原子CAS及唯一约束、SDK读点/历史/告警能力、秘密与文件存储。缺原子保证时暂停变更功能并评审存储替代。\n3. 完成真实读取及历史、质量、规则纯逻辑；使用FSD FT/UI/NEW/R7中的固定输入和边界条件。\n4. 完成意图与审计、发布恢复、告警确认与规则outbox，然后报表、通知及模拟服务。\n5. 对照SF-01～24与LANG/RESP测试，实际FIN、Telegram、真机、72h浸泡单独验收；静态DEMO通过不作为这些完成证据。\n');
+write('model-catalog.md','# Folio Rec 数据模型与导入约定\n\n本交付把FSD的逻辑对象映射为Folio Rec设计。所有ups开头标签均为项目自定义标签；site/equip/point/id/dis/siteRef/equipRef/kind/unit/tz采用Haystack常用建模。目标FIN版本未知，兼容性unverified。\n\n## 设备文件\n\n设备文件含1个示例站点、1个UPS、1个电池串、1个模块、1个独立环境设备，以及30个候选点。它们是带upsTemplate标记的工程Rec，不是现场资产清单。点没有curVal、his、writable、连接器地址或真实告警绑定。单位是规范候选；原始单位/精度/相别/测量位置必须在点表确认后填写。airQuality的Str仅为枚举方案，若型号提供数值须按已核验量纲换模；healthScore的%为0～100存储候选，不能据此表示SOC。moduleAvailableCapacity/moduleState为P1候选。\n\n- 电池与模块用upsParentEquipRef关联UPS。环境传感器保持自己的equipRef，经EnvironmentAssociation绑定到UPS。\n- requiredRuntimeMinutes、ratedCapacity、chemistry等资产参数属于AssetConfiguration，缺失保留null；lastTransferAt来自事件时点，不强行变成FSD Mapping不支持的DateTime遥测点。\n- 设备真实版本只引用已存在的FIN资产和点，不能把模板导入动作作为生产登记。\n\n## 业务文件\n\n前半部分为设备注册、能力、30条映射、资产与规则的禁用工程模板。后半部分为运行记录原型Rec：upsRequiredFields给出实例化时必须补齐的业务字段，upsContractType指向contracts.ts。运行原型没有queued/active/success状态，不应被worker领取。它们是完整的Folio模板Rec，但不是满足生产业务schema的运行实例。\n\n|对象|契约|自然唯一键|写入者|运行必需字段|\n|---|---|---|---|---|\n'+models.map(m=>`|${m[1]}|${m[2]}|${m[3]}|${m[4]}|${m[5]}|`).join('\n')+'\n\n## 字段编码\n\n业务实例中领域field统一映射为ups+首字母大写field（如operationId→upsOperationId）；对象关系用Haystack Ref，非平台ID、版本、幂等key用Str。业务引用跨Rec时使用对应的ups…Ref，编码器从逻辑ID解析实际Ref；不把名字当ID。嵌套对象保存为明确的ups…Json字符串，严格按对应schema解码；Rec缺少可空标签映射为JSON null，列表存Zinc List，日期使用Date/DateTime。模板中upsRequiredFields/upsPrototypeState属于模板元信息，不投影给业务API。upsSchemaVersion是接口/模型版本，不是产品版本。JSON payload不用于高频查询条件：project/equip/sourceMode/session/generation/state/nextAttemptAt等必须提取为可索引标签，并验证与payload一致。\n\nTrio中upsSourceMode=template专用于模板隔离，不是WireRequest或SourceContext的合法模式；生产worker固定过滤not upsTemplate且sourceMode严格live或simulation。模板实例化器负责删除模板元数据、设置合法模式并严格验证所有必填字段。不能直接把原型当作Draft/ReportJob等API响应。\n\n业务模板R-01～03均disabled；R-04随有效计划生成，R-05在accepted后依审核策略必须监视。模板不具备accepted资格，所有禁用值只适用于模板。MaintenancePlan的draft也是模板编辑状态，实例化时必须给真实dueDate及合法scheduled/completed/cancelled。映射scale=1和10秒周期仅为显式待验参数，不允许未经工程核验发布。\n\n## 索引与原子边界\n\n- 唯一键定义是应用约束，不因Trio存在就自动建立数据库唯一索引；G1核验Folio/SDK能力。以projectId+mode+session/generation作为隔离前缀；活动指针单项目唯一。\n- Tx-Publish：Pointer、Publication COMMITTED、MappingInterval、规则迁移决定及AuditEvent同事务。全部模块切epoch后再写LastSuccessfulActivation。\n- Tx-Rule：主输入水位、候选、发生状态、RuleAlarmOutbox同事务；对同一发生按commandSeq发送。\n- Tx-Notify：稳定事件去重、NotifyJob入队及Cursor推进同事务；ChannelGate暂停与发送许可领取互斥。\n- Tx-Operation：请求hash/意图先持久化，副作用结果与审计可靠保存；未知结果重启对账。\n- Tx-Sim：generation屏障、控制版本、清理操作同事务；异步写入/文件发布检查generation，旧结果拒绝。\n- 报表文件存受保护文件区，Rec保存元数据。EquipmentSnapshot/Metric为内存投影，FIN历史和原生告警为平台权威；不用普通Rec复制实时值、历史和告警成为第二权威。SimulationSample只用于隔离模拟域，禁止混入FIN真实his。\n\n## 导入/实例化步骤\n\n1. 在隔离开发项目用目标版本Trio读取器解析，检查模板标记、Ref唯一性与单位支持。当前未执行FIN导入。\n2. 模板ID是确定的ups-tpl-* Ref。导入器若不能保留ID，必须两遍创建并维护oldRef→newRef，再重写两文件全部引用；不能只重写id。重复导入按清单拒绝重复，不按dis覆盖。\n3. 按工程资产对应表替换真实site/equip/point引用；不要在生产新造相同UPS。设置点表证据、原始类型单位、精度、相别、符号、枚举、周期和历史策略。\n4. 用独立实例化器补齐运行字段和合法状态，校验自然键、权限、跨设备关联、范围/有限数及来源。时间/操作者由服务端赋值。\n5. 通过OP-08～10发布配置；OP-14经过真实接入检查才能accepted。Trio文件本身不执行发布、告警确认或设备写入。\n6. 不把这两个文件放进会自动加载的POD lib目录；按显式工程导入流程使用。模板清理只针对本次manifest列出的Ref，且先检查是否被引用，不运行全库删除。\n\n## 证据与待定项\n\nFIN Expert完整证据：fin_doc_FIN_Framework_File_Types_643fc6ae（FIN Framework File Types.md）支持Trio/Zinc类型与记录格式；fin_doc_Developers_-_OEM_Axon_Queries_and_How_to_Axon_Queries_and_How_to_ab669c29支持site/equip/point引用查询示例。它们不证明目标版本事务能力。格式优先按[Project Haystack Trio](https://project-haystack.org/doc/docHaystack/Trio)。FSD为项目需求权威。\n\n待现场：FIN精确build/SDK、点表/型号/协议、站点时区、真实Ref、告警源和事件追补、持久化原子性/唯一约束、秘密/文件容量。当前模型设计可信度较高，目标运行兼容性未验证。\n');
+const mermaid=`flowchart TB
+  UI["English UI · Dashboard / Equipment / Alarms / Reports / Engineering<br/>Light & Dark · Responsive"] --> API["RequestFacade · schema 2.0<br/>Authentication · Scope · Rate limits · SourceContext"]
+  API --> ROUTER{"live / simulation"}
+  ROUTER --> LIVE["LiveDataProvider"]
+  ROUTER --> SIM["SimulationService<br/>seed / virtual clock / generation barrier"]
+  LIVE --> DOMAIN["Inventory · Telemetry & Quality · History<br/>Rules · Alarms · Configuration · Reports"]
+  SIM --> DOMAIN
+  DOMAIN --> GW["FinGateway · version-specific adapter<br/>Live context only"]
+  GW --> FIN["FIN Project<br/>Site / Equip / Point · History · Native Alarms"]
+  UPS["UPS & room sensors"] --> CONN["Validated FIN connectors"] --> FIN
+  DOMAIN --> REPO["FolioRepository<br/>CAS / unique keys / atomic transactions · G1 gate"]
+  REPO --> CONFIG["Configuration · Mapping intervals<br/>Publication · Active epoch"]
+  REPO --> STATE["Rule state & outbox<br/>Operation journal · Append-only audit"]
+  SIM --> SIMSTORE["Isolated simulation records<br/>Session / Generation / Samples / Alarms"]
+  DOMAIN --> REPORT["Report worker<br/>Protected files · Download reauthorization"]
+  FIN --> EVENTS["Authoritative lifecycle event feed"]
+  EVENTS --> NOTIFY["NotificationService<br/>Outbox / Cursor / ChannelGate / Attempts"]
+  NOTIFY --> TELEGRAM["TelegramTransport · Server-only secrets<br/>External delivery only in live context"]
+  SIM --> SIMNOTIFY["Simulated transport · zero external messages"]
+  LIFE["Lifecycle & Diagnostics<br/>Recovery before opening epoch gates"] --> DOMAIN
+  LIFE --> NOTIFY
+`;
+write('architecture.mmd',mermaid);
+write('architecture.md','# UPS Fleet POD 整体架构\n\n基线FSD修订9；单业务POD upsFleet，所有模块名为项目逻辑边界。\n\n```mermaid\n'+mermaid+'```\n\n共享领域逻辑通过数据提供器选择来源；模拟上下文无法获得Live FinGateway写端口。图中领域到FinGateway路径仅对live开放。模拟确认、通知和报表分别落模拟域，真实断线不自动切换模式。\n\n配置发布使用持久化提交决定及统一epoch；事务能力是G1门槛。规则、确认、通知的未决状态分别持久化，Telegram失败不能阻塞FIN告警。文件从ReportService的受权接口取得，浏览器不执行任意Axon。\n\n配套：[模型目录](model-catalog.md) · [接口清单](interface-implementation-list.md)。\n');
+// Standalone vector overview, no remote dependency.
+const boxes=[['UI · en-US · Light / Dark · Responsive',240,25,720,60,'#176b8a'],['RequestFacade · schema 2.0 · Auth / Scope / Mode',240,115,720,60,'#176b8a'],['Live provider + FinGateway',50,220,340,65,'#275dad'],['Shared domain services',430,220,340,65,'#176b8a'],['Simulation + generation fence',810,220,340,65,'#7951a8'],['FIN · Site / Equip / Point',50,350,340,65,'#275dad'],['Folio · Config / Epoch / State / Audit',430,350,340,65,'#197568'],['Isolated simulated records',810,350,340,65,'#7951a8'],['FIN History + Native Alarms',50,480,340,65,'#275dad'],['Report jobs + protected files',430,480,340,65,'#197568'],['Simulated transport · no external send',810,480,340,65,'#7951a8'],['Notification outbox / cursor / pause gate',50,610,510,65,'#275dad'],['Telegram · server-only credentials',640,610,510,65,'#275dad'],['Lifecycle / Recovery / Diagnostics · G1: target SDK + atomic storage verification',50,735,1100,65,'#34445e']];
+const edges=[[600,85,600,115],[600,175,220,220],[600,175,600,220],[600,175,980,220],[390,252,430,252],[770,252,810,252],[220,285,220,350],[600,285,600,350],[980,285,980,350],[220,415,220,480],[600,415,600,480],[980,415,980,480],[220,545,220,610],[560,642,640,642]];
+write('architecture.svg',`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850"><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 Z" fill="#64748b"/></marker></defs><rect width="1200" height="850" fill="#f3f6fa"/>${edges.map(([a,b,c,d])=>`<path d="M${a},${b} L${c},${d}" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>`).join('')}${boxes.map(([t,x,y,w,h,color])=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${color}"/><text x="${x+w/2}" y="${y+h/2+6}" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="16">${t.replaceAll('&','&amp;')}</text>`).join('')}<text x="600" y="830" text-anchor="middle" font-family="Arial" font-size="14" fill="#475569">UPS Fleet · Approved FSD r9 baseline · Architecture design · FIN runtime unverified</text></svg>`);
+write('README.md','# FSD修订9 架构实施交付\n\n- [设备对象Trio](equipment-objects.trio)：35个模板Rec（5资产+30候选点）。\n- [业务对象Trio](business-objects.trio)：'+business.length+'个模板/原型Rec，含映射、规则、配置、审计、报表、通知与模拟模型。\n- [模型目录与导入说明](model-catalog.md)：字段类型、主键、原子边界、实例化约束。\n- [可编程接口实现清单](interface-implementation-list.md)：SF-01～24、OP-01～31及内部适配端口。\n- [完整业务类型](contracts.ts) / [处理器接口](handlers.ts)：从已通过FSD提取的schema2.0类型。\n- [整体架构图](architecture.svg) / [Mermaid源文件](architecture.mmd) / [架构说明](architecture.md)。\n\n本次新增设计交付，不改已评审FSD或DEMO。Trio是工程模板Rec，运行实例必须经补齐、绑定、验证和发布；本次没有写入Folio或连接生产，未进行目标FIN编译/运行验收。\n');
+console.log(JSON.stringify({deviceRecords:devices.length,businessRecords:business.length,operations:ops.length,specifications:sf.length}));
+
+require('./revision-a2.cjs').docs(root,ops,business);

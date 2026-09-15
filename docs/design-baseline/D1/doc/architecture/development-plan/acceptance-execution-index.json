@@ -1,0 +1,1143 @@
+[
+  {
+    "id": "NFR-01 容量",
+    "line": 96,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-01 容量|单 FIN 项目、5 站点、100 UPS、每 UPS 最多 50 个实时点、20 并发会话；10 秒典型采集周期；按 5,000 点压测并报告硬件/FIN 负载|PRD第11节；FSD12.2/14；AC-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-02 时延",
+    "line": 97,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-02 时延|正常内网、健康 FIN 条件：收到 FIN 更新到页面呈现 p95≤3 秒；首页可用 p95≤3 秒；详情≤2 秒；历史 24h≤5 秒；确认结果≤3 秒。各 100 次测试、20 并发；采集周期另计，不宣称端到端保护时延|PRD第11节；FSD12.2/14；AC-12；FT-36|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-03 历史与存储",
+    "line": 98,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-03 历史与存储|初始建议 10 个关键数值点/设备、60 秒归档、原始历史 90 天，告警/审计 365 天；按此假设 1,000 历史点约 144 万样本/日、90 天约 1.296 亿样本，需实测存储而非直接承诺。按变化归档/降采样须明确策略；单曲线响应≤1,000 展示点并保留 min/max，防尖峰被平均隐藏|PRD第11节；FSD12.2/14；AC-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-04 内网与安全",
+    "line": 99,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-04 内网与安全|无公网时所有字体/脚本/样式可加载；固定依赖版本、许可证清单与组件清单；会话失效停止请求并清除敏感页面缓存；防越权、请求伪造与注入；日志不含密钥|PRD第11节；FSD12.2/14；AC-12；AC-10/11、FT-12/14|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-05 界面",
+    "line": 100,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-05 界面|验收 1920×1080、1366×768、768 宽、390 宽及 200% 缩放；关键状态和确认按钮不裁切；全键盘可达、有焦点、状态有文字；减少动态偏好有效；颜色对比在视觉验收中记录|PRD第11节；FSD12.2/14；AC-12；UI-01～12、NEW-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-06 稳定性",
+    "line": 101,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-06 稳定性|目标环境 72 小时浸泡无崩溃/未处理异常/持续内存增长；最终 24h 稳态内存漂移 D<10%；断网30分钟后恢复不产生重复告警或丢失已成功确认；后端重启恢复发布配置与规则状态|PRD第11节；FSD12.2/14；AC-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-07 可观测性",
+    "line": 102,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-07 可观测性|输出版本、连接错误数、点新鲜度、历史失败、规则失败、确认待核对数、请求时延；有请求关联 ID；可定位到设备与映射版本|PRD第11节；FSD12.2/14；AC-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NFR-08 维护恢复",
+    "line": 103,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NFR-08 维护恢复|建议维护窗口≤30分钟、配置及审计备份策略明确；应用恢复 RTO≤30分钟为目标环境演练指标；正常重启已确认审计不丢失；灾难恢复 RPO 按实际备份策略冻结，不承诺未配置的零丢失|PRD第11节；FSD12.2/14；AC-12|未执行/待环境冻结|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-01",
+    "line": 111,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-01|FR-01、FR-02|100台设备规模及两个互斥站点角色；搜索/分页/统计正确；从告警进入对应设备，返回保留筛选；无重复/越权对象|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-02",
+    "line": 112,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-02|FR-03、FR-08、FR-16、FR-21|注入 online+battery、offline+最后utility、单点fault、未映射、unsupported；三个状态轴显示正确；超过阈值后值标过期，不转正常；恢复只靠新鲜成功读取|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-03",
+    "line": 113,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-03|FR-04、FR-12|Q=15min，电池供电 R=14 连续两次触发严重；恢复到17连续两次恢复；Q=0拒绝发布；任一输入无效/过旧/时间不齐不计算；显示规则版本与输入|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-04",
+    "line": 114,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-04|FR-05、FR-06、FR-07、FR-08、FR-25|SOC=70、SOH=90 分别显示；缺 SOH 不替代；漏水 null 不为干燥；输出相别、kW/kVA和旁路可用/激活不混淆；与代表型号原始值按其分辨率一致|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-05",
+    "line": 115,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-05|FR-09|真实时间历史跨日/时区、无样本、单样本、10分钟缺口、尖峰和迟到样本均正确；刷新浏览器历史仍在，缺口不连线，聚合不隐去峰值|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-06",
+    "line": 116,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-06|FR-10、FR-25|完整走通四个生命周期状态；恢复后再发生产生新 ID；重复采集不增条；已确认活动严重告警仍严重；断线不自动恢复故障|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-07",
+    "line": 117,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-07|FR-11、FR-25|两人同时确认仅一份有效结果；浏览器刷新和服务重启保留确认；超时先查状态；记录拒绝/失败/未知与最终对账；普通角色无法伪造确认|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-08",
+    "line": 118,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-08|FR-12|删去阻抗基准或提供不匹配对象，规则显示不可评估；维护计划显示计划标签；健康无无依据分值/月数；已知严重项不被数据不足掩盖|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-09",
+    "line": 119,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-09|FR-13|非法单位、重复字段、错误引用、Q≤0阻止发布；并发版本冲突拒绝；发布失败仍为上一版；配置回退不改历史审计|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-10",
+    "line": 120,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-10|FR-02、FR-11、FR-14|直接请求无权设备详情/历史/告警/统计/确认/配置均拒绝或限定；会话失效后动作无效；检查日志、包、浏览器不含凭据|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-11",
+    "line": 121,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-11|FR-15|断开公网后本地监控页面资源可用；无CDN依赖；访问范围受权；外部通知不可达时按降级策略处理|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-12",
+    "line": 122,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-12|FR-16、FR-17、FR-24|在冻结 FIN 构建安装→启用→重启→升级→失败回滚；配置/引用/审计保持一致；完成 NFR 压测和72h测试；版本及校验和可核对|PRD v0.1|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "AC-13",
+    "line": 123,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|AC-13|FR-18|P1：有效模块数据下失去最大模块后校验剩余容量；注入降额、模块故障、未知容量、功率基准不一致，不能错误宣称 N+1|PRD v0.1|P1未排期|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-01",
+    "line": 124,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-01|FR-03、FR-08、FR-16、FR-21|point值未变，每2秒重复读取缓存，源采样保持t0；超过30秒 → stale，不因页面读缓存刷新时效|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-01",
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-02",
+    "line": 125,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-02|FR-04、FR-12|同一源采样R=14,Q=15重复评估3次；随后一个新采样R=14 → 首次仅计1；第二个源采样才触发critical|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-03",
+    "line": 126,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-03|FR-05、FR-06、FR-07、FR-08、FR-25|SOC70、SOH90、water=null、load110 → 独立显示70/90；水未知；负载110保留且不伪造量程故障|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-04",
+    "line": 127,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-04|FR-04、FR-10、FR-12、FR-25|R=14触发；R=17一次后输入down → 告警保持活动，恢复计数中断；不因断线恢复|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-05",
+    "line": 128,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-05|FR-11、FR-25|两个用户同告警不同操作ID并发确认；一个响应丢失 → 一个权威确认、不覆盖确认人；丢失响应只查询对账|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-06",
+    "line": 129,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-06|FR-11、FR-16、FR-17、FR-24、FR-25|FIN确认成功后进程在结果落库前退出 → 重启先核查源，补记审计；不再次盲确认|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-07",
+    "line": 130,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-07|FR-11、FR-25|同operationId更换comment或目标 → IDEMPOTENCY_CONFLICT，无第二动作|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-02",
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-08",
+    "line": 131,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-08|FR-13|两个草稿基于cfg7；A发布cfg8，B再发布 → B冲突；cfg8及审计不被覆盖|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-09",
+    "line": 132,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-09|FR-13、FR-16、FR-17、FR-24|cfg8已COMMITTED，规则模块激活失败 → 所有副作用闸门保持关闭，RECOVERY_REQUIRED；重启只尝试cfg8，不静默运行cfg7|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08",
+      "DEV-12"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-10",
+    "line": 133,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-10|FR-12|字段无good数据，但已有严重活动告警 → risk=critical，coverage不足；不显示normal|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-11",
+    "line": 134,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-11|FR-09|历史10分钟缺口及短尖峰，经1000点分桶 → 缺口仍空、max包络保留尖峰，说明粒度|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-05"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-12",
+    "line": 135,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-12|FR-02、FR-11、FR-14|越权equipRef/operationId/历史/计数请求 → 无数据泄漏；对象级统一不可用|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-02"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-13",
+    "line": 136,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-13|FR-03、FR-08、FR-10、FR-16、FR-21、FR-25|源告警服务down、上次活动数3 → 当前计数null、lastKnownCounts为3并标来源未知；无其他风险时risk=null，不变成0/normal|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-14",
+    "line": 137,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-14|FR-15|离线网络加载所有页面、检查生产路由 → 无CDN请求；没有设备控制路由|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-15",
+    "line": 138,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-15|FR-16、FR-17、FR-24|升级、schema不兼容及回滚演练 → 不以旧schema启动；恢复引用/审计、不重放确认|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-16",
+    "line": 139,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-16|FR-03、FR-08、FR-10、FR-16、FR-21、FR-25|B点t0最后成功，周期10s，之后完全无数据 → t0+30s后stale，持续5s后最迟t0+36s检测到一次R-05；不等待源样本；源不可用则单条outbox待发|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-17",
+    "line": 140,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-17|FR-03、FR-08、FR-10、FR-16、FR-21、FR-25|R-05活动；所有B点在t40取得新证据，t43一项又bad → t45不得恢复；全部B再次新证据good并连续5s后才产生一次CLEAR|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-18",
+    "line": 141,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-18|FR-04、FR-12|R-01续航seq1=14、模式每秒更新5次、Q=15 → 只计主输入1次，不触发；续航seq2=14才触发，重复seq2不增次数|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-19",
+    "line": 142,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-19|FR-04、FR-12|同时间递增主seq1/2；重复seq2；迟到seq0；N=1,duration=0独立条件 → seq1/2各计一次，重复/迟到不计；N=1第一个合格样本即转换|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-20",
+    "line": 143,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-20|FR-04、FR-12|R-02 W75,C90,Hw5,Hc3；所有gate N2,duration0；输入76/76→91/91→86/86→69/69 → 依次warning→critical→warning→normal；同一活动ID；输入87保持critical，70不清除|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-21",
+    "line": 144,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-21|FR-13、FR-16、FR-17、FR-24|cfg8分别在PREPARING/PREPARED/QUIESCING退出，无COMMITTED → 重启运行cfg7，候选ABORTED；无cfg8规则或外发命令|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-22",
+    "line": 145,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-22|FR-13、FR-16、FR-17、FR-24|cfg8 COMMITTED后、模块部分切换后、ACTIVE写入前分别退出 → 重启都读取cfg8决定，全模块cfg8齐备前零新副作用；模块加载失败保持RECOVERY_REQUIRED|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08",
+      "DEV-12"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-23",
+    "line": 146,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-23|FR-13、FR-16、FR-17、FR-24|已COMMITTED cfg8失败；显式恢复发布cfg9（内容来自cfg7）在提交前/后退出 → 提交前仍恢复cfg8或阻断；cfg9提交后唯一目标cfg9；从不倒写旧epoch|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-24",
+    "line": 147,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-24|FR-10、FR-16、FR-17、FR-24、FR-25|规则状态与outbox事务提交前退出，再提交成功但发送前退出 → 前者水位未移，可重评一次；后者恰有一条PENDING，恢复发送一次|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-03",
+      "DEV-06",
+      "DEV-12"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-25",
+    "line": 148,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-25|FR-10、FR-16、FR-17、FR-24、FR-25|CREATE在FIN成功、关联落库前退出 → DISPATCHING恢复先按correlationKey读源；匹配后补关联，绝不重复CREATE|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-26",
+    "line": 149,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-26|FR-10、FR-25|CREATE结果未知期间条件恢复产生CLEAR → CLEAR已持久化但不外发；查明CREATE后按seq顺序发送；保留原发生/恢复时间|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-27",
+    "line": 150,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-27|FR-13|活动规则修改阈值/删除映射/禁用/停用；只执行告警确认 → 均阻断ACTIVE_OCCURRENCE_BLOCKS_CHANGE；确认不解除；旧配置继续自然恢复监视|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-28",
+    "line": 151,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-28|FR-10、FR-13、FR-25|设备永不回线，提交退役且无平台管理结束证据 → 退役阻断，明确运维待办；提供可回读管理结束证据后行政结束，不填physicalClearedAt|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-29",
+    "line": 152,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-29|FR-02、FR-11、FR-13、FR-14|A工程师patch改A并省略B；再显式改/删B → 第一次B逐字段不变；第二次拒绝，报告不泄露B身份/计数；回退也只改A|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-03",
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-30",
+    "line": 153,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-30|FR-13|accepted设备无活动发生，关键mapping改变并发布 → 状态ready、enabled=false、acceptanceRevision=null；新规则不生产报警；OP-14新证据通过后accepted|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-08"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-31",
+    "line": 154,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-31|FR-09|12:00从P1比例1切P2比例2，查[11:00,13:00) → 返回两个半开段；12:00只属P2，分桶不过界；旧段缺源画gap，不用P2补；修正比例不追改旧段|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-05"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-32",
+    "line": 155,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-32|FR-01、FR-02|冻结列表60秒后翻页，180秒从详情返回；超过5分钟再返回 → 有效期内无重复漏行，原成员/顺序保留；过期重建并定位anchor或第一页，给提示；新critical即时顶部提示|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-33",
+    "line": 156,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-33|FR-12|计划due9/20提前30天；9/19改期到10/20；到9/20再检查；之后完成并提供证据 → 旧revision提醒superseded结束；新计划9/19无提前提醒、9/20产生一次upcoming；完成事件ackRequired=false，不产生物理故障恢复|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-06"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-34",
+    "line": 157,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-34|FR-03、FR-08、FR-12、FR-16、FR-21|无已知风险，A告警通道down；其他规则有效；然后本地检测critical而CREATE待同步 → 先risk=null且coverage=partial；后risk=critical并显示待同步，FIN源计数仍未知|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-35",
+    "line": 158,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-35|FR-11、FR-25|OP-06成功但结果投影暂缺，OP-07稍后可读 → SUCCEEDED+pending，页面不重发；OP-07转ready并显示原确认者|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-02",
+      "DEV-07"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "FT-36",
+    "line": 159,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|FT-36|FR-16、FR-17、FR-24|20会话下注入均匀和最不利轮询偏移的100次更新/页 → 分别记录各段延迟与tPaint-tFin；总览/详情端到端p95≤3s；转处理中不计为确认3s完成|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-12"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-01",
+    "line": 160,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-01|FR-02、FR-21、FR-24|首次打开有授权设备的插件 → 默认Dashboard，同屏tabs+Hero+六卡；设备清单是次入口，不以表格充当dashboard|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-02",
+    "line": 161,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-02|FR-02、FR-21、FR-24|1366×900、1440×1000下与原DEMO对照 → 顺序/三列六卡/全宽告警一致；首行在首屏可见；无固定宽工程侧栏挤压|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-03",
+    "line": 162,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-03|FR-02、FR-21、FR-24|有效健康评分 → 健康环可见且比例对应来源分值，有来源说明；Q为续航区次级，模式为hero主体|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-04",
+    "line": 163,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-04|FR-02、FR-21、FR-24|评分缺失或stale，risk critical → 环仍存在且中性/过期，不拿SOH/coverage造分；critical另显著提示|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-05",
+    "line": 164,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-05|FR-02、FR-21、FR-24|电池SOC/SOH选择及历史成功/空/失败 → 电池卡自带趋势和明确标题；无数据保留曲线区；无须跳历史才看到图|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-06",
+    "line": 165,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-06|FR-02、FR-21、FR-24|额定范围内及超额定负载 → 详情完整负载条/0、50、100刻度和趋势可见；超额定数值不裁剪且明确超载|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-07",
+    "line": 166,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-07|FR-02、FR-21、FR-24|有效电容健康值及unsupported → 同位置mini-gauge有效填充/中性空轨，不能两种都只写不支持|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-08",
+    "line": 167,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-08|FR-02、FR-21、FR-24|切换4ms、指定日期时区及缺失场景 → 时长/上次事件时间均在旁路卡可见；不把轮询时间当切换时长|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-09",
+    "line": 168,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-09|FR-02、FR-21、FR-24|三组件维护展望、人工计划、无预测 → 列表行和风险点可见，计划/外部预测明确，未知不写剩余月份|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-10",
+    "line": 169,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-10|FR-02、FR-21、FR-24|逐项核对KPI-01～32 → 每项有对应组件/可用或缺失状态；不能用路由存在或标题存在判通过；每项记录截图区域/验收人|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-11",
+    "line": 170,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-11|FR-02、FR-21、FR-24|切换设备/串、风险、权限及390px/200% → 无跨设备假字段；卡片顺序不乱、图形不溢出、权限撤销无残留；最后切换日期和告警仍可读|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "UI-12",
+    "line": 171,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|UI-12|FR-02、FR-21、FR-24|正常Dashboard → 主页面无常驻工程调试/角色测试控件；来源清楚；截图对照与未验事项齐全|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-04"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-01",
+    "line": 172,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-01|FR-21|SOC=95%、容量型SOH=70%、无综合健康源 → 三者分别解释；健康环待评估，不能显示95分；来源和阈值依据可展开|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-02",
+    "line": 173,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-02|FR-21|P=45kW、额定60kW；R=12min、Q=15min → 负载75%、余量−3min；不称统一标准违规；Q/额定/规则依据可追溯|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-03",
+    "line": 174,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-03|FR-22|导出含英文、多设备、质量缺口的数据 → PDF/XLSX/CSV实际可打开；单位/时间/条件一致；PDF不裁切，不能只返回空链接|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-09"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-04",
+    "line": 175,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-04|FR-22|半开区间端点、跨日时区、2分钟50%+1分钟100%有效负载、另1分钟缺口 → 有效平均66.67%、覆盖75%；缺口不补0，边界不重复，原始峰值100%|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-09"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-05",
+    "line": 176,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-05|FR-22|报告生成后撤销其中一个设备权限；超行数、取消、服务重启、到期下载 → 分别拒绝原文件、显式超限、取消/中断标识、过期；不暴露越权数据|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-09"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-06",
+    "line": 177,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-06|FR-22|文本字段含公式前缀与正常负数；跨期未恢复报警 → 文本不执行公式、负数仍可分析；跨期计数及截断持续时间符合18.2|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-09"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-07",
+    "line": 178,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-07|FR-23|同一FIN事件重复读取、插件重启、短时发生又恢复 → 持久化仅一条/事件/渠道，生命周期顺序正确；短事件可从历史追补|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-10"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-08",
+    "line": 179,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-08|FR-23|Telegram 429、401/403、明确5xx、请求发出后超时 → 分别按等待、停发诊断、有限重试、unknown处理；不影响FIN告警；accepted不标已读|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-10"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-09",
+    "line": 180,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-09|FR-23|渠道暂停/换chat/范围撤销后仍有排队项 → 不向旧/新未授权收件范围误发；测试与人工重试有审计且不泄露token|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-10"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-10",
+    "line": 181,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-10|FR-23|静默中warning随后恢复、critical发生、队列满 → 延迟顺序/critical例外正确；队列降级可见、游标不跳过丢失事件|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-10"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-11",
+    "line": 182,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-11|FR-24|首次打开且操作系统深色；切换、刷新、用户切换、存储失败 → 首次浅色、本人偏好记忆、账户隔离；无重载/筛选丢失/首屏闪黑，失败可当次切换|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "NEW-12",
+    "line": 183,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|NEW-12|FR-24|两主题下1440/1366/移动端、空值/严重/图表tooltip、键盘与PDF导出 → 仪表盘组件齐全、文字对比达标、按钮可用、PDF始终浅色且布局正常|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-01",
+    "line": 184,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-01|FR-15、FR-25|首次打开静态DEMO → 默认浅色、完整模拟数据、32项组件与解释、曲线和告警区域可见，顶部来源明确|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-02",
+    "line": 185,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-02|FR-15、FR-25|同seed/起始时间/场景生成后reset重放 → 资产、初始历史及按相同步骤产生的值/事件一致，无重复设备|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-03",
+    "line": 186,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-03|FR-15、FR-25|start/pause/step/resume/stop与页面刷新 → 状态约束正确、无重复计时器、暂停不造过期业务告警、停止不再追加|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-04",
+    "line": 187,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-04|FR-15、FR-25|live断线、跨模式ID/报表请求 → 不自动展示模拟值，跨模式拒绝；真实点/历史/告警/渠道保持不变|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-05",
+    "line": 188,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-05|FR-15、FR-25|切换异常→确认→恢复 → 发生、确认与恢复独立；历史有时间和质量，规则去抖/回差与正式逻辑一致|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-06",
+    "line": 189,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-06|FR-15、FR-25|选择范围导出三种格式 → 文件实际可打开、有模拟内容、统计一致且标来源；不混入真实数据|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-07",
+    "line": 190,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-07|FR-15、FR-25|通知异常场景 → 仅本地模拟结果，零外部发送；unknown不显示成功、不伪造message_id|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "SIM-08",
+    "line": 191,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|SIM-08|FR-15、FR-25|越权、重复请求、revision冲突、删除/重置及资源超限 → 权限和幂等有效、清理仅当前会话、超限有明确状态；产品后台重启恢复paused|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-01",
+    "line": 192,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-01|FR-14、FR-22、FR-23、FR-25|按2.0校验通知Entity、live/simulation响应及OP-15～31；提交1.2请求 → 合法字段通过；未知字段拒绝；旧版明确提示升级，通知配置可通过OP-08～10，不需私加schema字段|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-02",
+    "line": 193,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-02|FR-14、FR-25|仅simulation.read的共享用户读历史、确认、导出；再分别授ack/export → 先仅可读，后各动作按独立授权放行；live权限不能代替模拟权限，模拟确认无FinGateway写调用|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-03",
+    "line": 194,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-03|FR-10|CREATE-A未知时A恢复，再发生B并恢复；CLEAR-A未知时又发生C → 本地A/B/C身份独立、起止完整；外发按A创建/恢复→B创建/恢复→C顺序，旧CLEAR不清新发生，重启不重复|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-04",
+    "line": 195,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-04|FR-22、FR-25|报表运行中reset/delete，旧请求延迟返回；清理中重启 → 屏障及generation阻断旧结果/文件发布，旧UI响应丢弃；重启续清理，已删除数据不复活|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-05",
+    "line": 196,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-05|FR-18、FR-19、FR-20、FR-21、FR-22、FR-23、FR-24、FR-25|核对PRD/FSD/任务与验收的FR-18～25 → 同一编号含义及分期一致，旧引用有修订号及迁移记录|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-06",
+    "line": 197,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-06|FR-25|running连续tick后以未变controlRevision pause；stopped scenario；未generate step → pause成功；另两项INVALID_STATE；tick仅dataRevision变化，管理变更才改变controlRevision|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-07",
+    "line": 198,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-07|FR-25|同场景有效时点安排，用60秒单步、1秒分步及1/5/10倍推进 → 源值、质量触发、日历及告警序列相同；中途过期/恢复不丢失，不以终点代替全事件|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-11"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-08",
+    "line": 199,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-08|FR-09、FR-22|start前有效样本跨入、区间内换映射；昨天未确认今天确认 → 承接只到freshness/映射边界；昨日期末仍未确认；缺权威历史标不可得，不用当前状态覆盖|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-09"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-09",
+    "line": 200,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-09|FR-13、FR-23|配置ACTIVATING或RECOVERY_REQUIRED时pause，发送许可前后竞态；旧恢复发布遭遇新暂停 → 暂停持久生效，新许可为零；在途不可撤回如实记录；旧pauseRevision不能释放新闸门|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-10"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "R7-10",
+    "line": 201,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|R7-10|FR-03、FR-05、FR-07、FR-08|unmapped/unsupported无来源、unknown未绑定、stale已有来源、good无来源 → 前三者按9.4表示；stale保留来源；good无来源拒绝；不伪造pointRef，缺失组件仍返回|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-14"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "LANG-01",
+    "line": 203,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|LANG-01|FR-02、FR-21、FR-22、FR-23、FR-24、FR-25|首次打开、所有导航/弹窗/tooltip、浅深主题、移动端与200%缩放 → 全部产品文案英文；无中文回退、截断或重叠；lang=en-US；文案、aria-label及title一致|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "LANG-02",
+    "line": 204,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|LANG-02|FR-02、FR-21、FR-22、FR-23、FR-24、FR-25|遍历7类模拟场景并运行/暂停/重置/恢复，触发缺失与权限错误 → 设备/位置/场景/计划/事件/告警均为英文；动态生成及异常路径无中文|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "LANG-03",
+    "line": 205,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|LANG-03|FR-02、FR-21、FR-22、FR-23、FR-24、FR-25|四模板及各允许格式导出，逐页/逐表查看并重新解析 → 标题、表头、工作表、文件名、质量说明及模拟标识全英文；数值、符号和时区正确，文件可打开|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  },
+  {
+    "id": "LANG-04",
+    "line": 206,
+    "source": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "originalRow": "|LANG-04|FR-02、FR-21、FR-22、FR-23、FR-24、FR-25|真实通知模板和本地模拟通知各事件类型；非英文源描述、locale声明 → 英文正文/英文回退，原始来源不直接外发；OP-01返回en-US；本地验证不等于真实Telegram投递|FSD r8|未执行|待补|",
+    "tasks": [
+      "DEV-13"
+    ],
+    "owner": "测试",
+    "status": "未执行；按完整RTM适用性分配，未列入早期包的由DEV-14整体验收承接"
+  }
+]
