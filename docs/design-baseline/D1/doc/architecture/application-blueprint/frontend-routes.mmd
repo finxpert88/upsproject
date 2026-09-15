@@ -1,0 +1,31 @@
+flowchart TB
+  Start["Bootstrap + session capabilities"]
+  Root["AppShell / validated SourceContext"]
+  Live["Live context"]
+  Sessions["SimulationPage<br/>List / create"]
+  Selected["Selected simulation<br/>Session + generation ACL"]
+  Dash["DashboardPage / EquipmentPage"]
+  Hist["HistoryPage"]
+  Alarm["AlarmPage / timeline / ack"]
+  Reports["ReportPage / ReportDetailPage"]
+  Eng["EngineeringPage<br/>Six-step draft wizard"]
+  Commission["CommissioningPage"]
+  Notify["NotificationPage<br/>Live: configure / test / pause"]
+  Diag["DiagnosticsPage / AuditPage"]
+  LocalNotify["NotificationPage<br/>Simulation: local delivery / retry"]
+  Start --> Root
+  Root -->|"default dashboard"| Live
+  Root --> Sessions
+  Sessions --> Selected
+  Live --> Dash
+  Selected -->|"same pages / isolated data"| Dash
+  Dash -->|"equipment history"| Hist
+  Live --> Alarm
+  Selected -->|"sim permissions"| Alarm
+  Live --> Reports
+  Selected -->|"sim permissions"| Reports
+  Live --> Eng
+  Eng --> Commission
+  Eng --> Notify
+  Eng --> Diag
+  Selected --> LocalNotify

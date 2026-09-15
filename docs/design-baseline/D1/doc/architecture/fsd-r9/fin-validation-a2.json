@@ -1,0 +1,18 @@
+{
+  "revision": "A2.2",
+  "scope": "Architecture authored offline Trio only; runtime not verified",
+  "equipment": {
+    "passed": true,
+    "issues": [],
+    "trace_id": "trace-c34348aa132f4ff697145703936284b3",
+    "runtime_verified": false,
+    "version_status": "unverified"
+  },
+  "business": {
+    "passed": true,
+    "issues": [],
+    "trace_id": "trace-6cd246bda63441c69f4a7ad331d2627b",
+    "runtime_verified": false,
+    "version_status": "unverified"
+  }
+}

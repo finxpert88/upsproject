@@ -1,0 +1,16 @@
+{
+  "routes.json": "0e6fc2051a91816d2ed51d4813ff3a0a72d7b93019a4e401396b80553158460e",
+  "frontend-files.json": "9cae8f7b878fbf980fae64617a53e02856a698ae9bc31be1cfb2ee94bfdd70fd",
+  "spec-coverage.json": "2e12afb1ec71f97b1f46573674d57cdc9832026067dca0ba410f05ecce08abc8",
+  "composition.json": "3b04bc7981a5fdb452864fd66aec8dedb723b09d838b7f8d0c60a508fdd59090",
+  "frontend-design.md": "eda9c9ae887d89f1813078dea1c14a363767a309dec0b209e4f5dacfe50c89cb",
+  "backend-design.md": "b223c1812da5b00a470b03250810372bb14c4be906ada5b1b1311651dc524385",
+  "traceability.md": "b9fae2a7286af8664daae2d9e534ec00643e5a83a27d5f16cb9f264b1fad5b04",
+  "component-contracts.md": "9eac0841ba8f6749ee0147626d64d9593403b81125b34702c65744bacd9aca50",
+  "planned-verification-files.md": "86e9eec222e4b17812c68db8383e1d2276a2faaad60c7bf07c8fc7f060bf9e5d",
+  "README.md": "3f044429d2cb5d1d6a3d7e172e80c5be934c281cdcae23982d40f0f7c9dd5126",
+  "validation-b1.1.json": "525d7ef84621a7ed945372aabd7bbfaa6ec1385d5bb30f8cdaf77e581d983a0a",
+  "review-disposition-b1.1.md": "a4e8f82ed921fce08993cdf149d2ffa2455c9ebb466d40ed1b39e455cdc4863f",
+  "revise-b1.py": "9b4afb67cbee096ce8eb2202957fac4ee4f32faa2f9adc4641aa06853fd0fd24",
+  "build-blueprint.py": "f57aed88fcea6ae81a0236ff8e6939d433b6ee110305bb4cdeb5b376b74a9600"
+}

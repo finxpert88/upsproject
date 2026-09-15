@@ -1,0 +1,18 @@
+{
+  "recordedAtUtc": "2026-09-15T13:10:01.2633101Z",
+  "executable": "C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.32.101-hotspot\\bin\\java.exe",
+  "arguments": [
+    "-Dfan.home=C:\\work\\upsproject-implementation\\.runtime\\DEV-01-independent",
+    "-Djava.io.tmpdir=C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-independent/tmp",
+    "-Duser.home=C:\\work\\upsproject-implementation\\.runtime\\DEV-01-independent/user",
+    "-cp",
+    "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-independent/lib/java/sys.jar",
+    "fanx.tools.Fant",
+    "upsFleet::QualityEvaluatorTest"
+  ],
+  "workingDirectory": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-independent",
+  "exitCode": 0,
+  "loadedPod": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-independent/lib/fan/upsFleet.pod",
+  "podSha256": "6B227513E39D4CEE1CBA404A89BA9B152BB289A343E821C95EDCD8ED5171C275",
+  "acceptance": "FT-01 / AC-02 (DEV-01 slice only)"
+}

@@ -1,0 +1,325 @@
+{
+  "sourceRoot": "C:\\work\\upsproject",
+  "destinationRoot": "C:/work/upsproject-implementation",
+  "destinationDesignRoot": "docs/design-baseline/D1",
+  "branch": "feature/ups-pod-implementation",
+  "startingCommit": "3cdc8f5675a0cd32856597d97932f5d5d38ae71a",
+  "copyRule": "Leader下发后按源相对路径保存到destinationDesignRoot下；复制前后逐文件SHA-256验证；包含候选或历史文件不等于批准其实施。禁止覆盖已有业务代码。",
+  "files": [
+    {
+      "path": "doc/planning/UPS-Fleet-FIN-POD-FSD-v0.1.md",
+      "sha256": "2561ae531dce682ab8a7a34cba8b9ebf67b431743f8fb31432ababf2cabd18c8",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-FIN-POD-PRD-v0.1.md",
+      "sha256": "d1ed0008843c618d496dcecb6d33e50045d74462a1be9f1556583c9cd657b29f",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-FSD-r10-review-disposition.md",
+      "sha256": "ba082e27abec2c2ef60df22bb95016317467803835960762de155b729586dae3",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+      "sha256": "a4b2adc124985fa4d0135aa3f2552bb36792ba163e12cf69e743d9efa4fc5f8d",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/architecture-review-results.md",
+      "sha256": "cd492e8d8809b52fbfc5fafa726f7af9691b3298bde63b21b5b9d0d81e12acd6",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/architecture.md",
+      "sha256": "75ff6e9d7eae9cb1acd94e3bb1104a05ba24164e72adc0db2a8d8582c93f134d",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/architecture.mmd",
+      "sha256": "998ccadf3640c65cc64d813650159e5cf543742b23fe4f3a125c6b8448f26659",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/bootstrap-route.json",
+      "sha256": "a1bc3809b9bfd8141c7ec701a90ece21e69ed167a72a80550485bff39910730e",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/build-codecs.cjs",
+      "sha256": "7a4f683b59c7c02937a0d81fa1253585574abc84e6a37d0a35f0e401e64b62d4",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/build-delivery.cjs",
+      "sha256": "9b0a36a260426ef286bd15b6400235afc08a2a6a789065a52c5483e8c88f73a7",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/business-objects.trio",
+      "sha256": "c78b24728f76c62218ce999e69d00b2bd3d61ca484de9e0f221fff7b8b52e600",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/contract-model.cjs",
+      "sha256": "6df9bc465b38c6e158d1c4fef97cf8115ac62f4b2a2c8d923fbb028defdf6e3b",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/contracts.ts",
+      "sha256": "9151f49da9fadf5093483fff43cecbe032cad5b9491d6ee7e8f2619bc31825b9",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/equipment-objects.trio",
+      "sha256": "8b531e3621ec70fb9ed2d866e123e9d700c4c8e1dbb3acee8f62a67445bfc5ee",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/fin-validation-a2.json",
+      "sha256": "6d2676e5d3c06f41739dabc2f66562f3611512e9cd046029162e419543959569",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/fin-validation.json",
+      "sha256": "dc34e1b50cd952e52b7bb67dc2d483482fcaf7289f14bcb9f0a7b1ca8ad945cb",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/fsd-change-proposal.md",
+      "sha256": "8daa6108ace5a8fc081413d15671a34cfaec96a88f25e546ddb7b562b0b465cb",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/handlers.ts",
+      "sha256": "492d8d37913e211460f17addaa6c86adef3e4cbd817ddb90704edb6652ab586e",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/interface-implementation-list.md",
+      "sha256": "02afdee851e16eac03dadd406124ac5f9f7dbc98a7d856c343b8742d1e6e1b69",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/local-validation.json",
+      "sha256": "517cd247db0959479e2fd41b839aeb46733ac41bb1edb900d74aff723106870f",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/model-catalog.md",
+      "sha256": "cbc5f2bb91a5de8f51d5667a7acba649b055f3eb0010f5c8fe95da3b18b1ee37",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/operations.json",
+      "sha256": "720b7147a5cbd1efdaee39119d6f0fd6528e21f0c4701fa10ad3fbc5d84c007e",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/persistence-contracts.ts",
+      "sha256": "a27f3c60bef82814db848f5d78eb85340149759d6a2b1036e6d4f193da945b96",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/persistence-design.md",
+      "sha256": "e05407c4ee447be035a396018086ca15303416635ecc6fae862d2f0e62f89416",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/README.md",
+      "sha256": "b8a42a5d8a29ea49167f97ef84e65c309625305a28315ad7c1aba865c7ebc1b5",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/record-codec.cjs",
+      "sha256": "864903737552c8e1f8047e5e2b4eb4ee521d8317b2e0ab4f6fa478e18623409e",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/record-codecs.json",
+      "sha256": "8a205ceddcf52470836733a2fe499ff66bf0ffac8e61893611d5e36a7f6b4b9f",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/record-manifest.json",
+      "sha256": "5b148f4d44a1c57be9e61d336d588b52db355841de80a78c7c80b548f13f486b",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/review-disposition.md",
+      "sha256": "e3535d86512f66a49c2368bbfcef91a04c62e8bc3a2a4d332a1e7ce23a959694",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/revision-a2-tests.json",
+      "sha256": "3241f1397d82bba8340d1d61dd1dea455085a0b78c8725d1fd8e93a2493ada16",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/revision-a2.cjs",
+      "sha256": "2754e3d56964cb9489f0fe2878f9a6f76486baef4c6e053afa4a105a322a1a59",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/test-revision-a2.cjs",
+      "sha256": "f4e84e7f69eca513caa341387f182b86951bb1ddf5f3e6dd89f5e1cd4fd80afd",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/validate-delivery.cjs",
+      "sha256": "21e53275800846492b8c82b75e7484ffe7085a93eaf11cf5f4a646599a8698a8",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/VALIDATION.md",
+      "sha256": "ddd3b54bc2c970a86873e3ce29d2d1a6998989c4904997b5aab613ea09fbffb4",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/backend-classes.json",
+      "sha256": "0974c5d194492c0bb78d4e59af53e8b02e05d1f1cd394697f80499bc731af9cf",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/backend-core-uml.mmd",
+      "sha256": "69f49739603cf79ff242611eb3a8e9e8f84c55b68ce3e90ef8cdf172494110bb",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/backend-design.md",
+      "sha256": "b223c1812da5b00a470b03250810372bb14c4be906ada5b1b1311651dc524385",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/backend-state-uml.mmd",
+      "sha256": "4ba84e51397428d380ea8ded23fb112623bb2c27d10ff2dbeee99859f93c9cbb",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/baseline.json",
+      "sha256": "784f7c27258ee428b7cab9187eba2bd473e43f2e32a7b7ba3816b863f009892c",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/build-blueprint.py",
+      "sha256": "f57aed88fcea6ae81a0236ff8e6939d433b6ee110305bb4cdeb5b376b74a9600",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/component-contracts.md",
+      "sha256": "9eac0841ba8f6749ee0147626d64d9593403b81125b34702c65744bacd9aca50",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/composition.json",
+      "sha256": "3b04bc7981a5fdb452864fd66aec8dedb723b09d838b7f8d0c60a508fdd59090",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/data-types.md",
+      "sha256": "cad8c287b1fdecae8978fee4a5911cc08864c577c9d2aa339ccc09bb879424ad",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/decisions-and-boundaries.md",
+      "sha256": "ec14a3b941b89fdfae69c7127a5f8e8335f8719aa7d2b120dbe390ff03854c4d",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/diagram-models.json",
+      "sha256": "9c643164da5451fe2bbec264c48778a5258b5bf7db8c7806b8d5cd44e63fb19c",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/fin-expert-validation.json",
+      "sha256": "f59e64d87b4cb16a3556339e3fcc31a9131b0f1e9be6cc2628fa8612318f40a8",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/frontend-design.md",
+      "sha256": "eda9c9ae887d89f1813078dea1c14a363767a309dec0b209e4f5dacfe50c89cb",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/frontend-files.json",
+      "sha256": "9cae8f7b878fbf980fae64617a53e02856a698ae9bc31be1cfb2ee94bfdd70fd",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/frontend-routes.mmd",
+      "sha256": "c8fdaf24b769c8a23a2be89cd5fbad2f85e3a1cdf1bf369412fe5cd3ccd43f17",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/operation-ownership.json",
+      "sha256": "30e55c6f1b845d372a05d596ee6fe53592da9b1b5ed5529aafe61061965d0d3a",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/planned-verification-files.md",
+      "sha256": "86e9eec222e4b17812c68db8383e1d2276a2faaad60c7bf07c8fc7f060bf9e5d",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/README.md",
+      "sha256": "3f044429d2cb5d1d6a3d7e172e80c5be934c281cdcae23982d40f0f7c9dd5126",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/render-diagrams.cjs",
+      "sha256": "06675b0247011c93081b907f2f4c7882407aa195fe0475472e467322d0ac21fa",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/review-disposition-b1.1.md",
+      "sha256": "a4e8f82ed921fce08993cdf149d2ffa2455c9ebb466d40ed1b39e455cdc4863f",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/revise-b1.py",
+      "sha256": "9b4afb67cbee096ce8eb2202957fac4ee4f32faa2f9adc4641aa06853fd0fd24",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/revision-b1.1-hashes.json",
+      "sha256": "2c297aec08f3c554a7845b38d3046e111e3d0444fa31e199695b7e892fb07471",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/routes.json",
+      "sha256": "0e6fc2051a91816d2ed51d4813ff3a0a72d7b93019a4e401396b80553158460e",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/spec-coverage.json",
+      "sha256": "2e12afb1ec71f97b1f46573674d57cdc9832026067dca0ba410f05ecce08abc8",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/system-architecture.mmd",
+      "sha256": "a2a280c40acda0d3ef95aac5b87695058a61d704c9b2af4ffbb63ba9c9e97239",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/traceability.md",
+      "sha256": "b9fae2a7286af8664daae2d9e534ec00643e5a83a27d5f16cb9f264b1fad5b04",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/type-inventory.json",
+      "sha256": "151bcec92efc4d32c76378a6889781bb5113191cbfd6ebd7a8110f3a30d1b6a3",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/validation-b1.1.json",
+      "sha256": "525d7ef84621a7ed945372aabd7bbfaa6ec1385d5bb30f8cdaf77e581d983a0a",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    },
+    {
+      "path": "doc/architecture/application-blueprint/validation.json",
+      "sha256": "a25058b9327bb0840ecc687edd9470dd1ee32eb0ac106f6353eee863a9e6f92a",
+      "use": "当前批准引用／候选边界／历史证据，具体批准见计划正文"
+    }
+  ]
+}

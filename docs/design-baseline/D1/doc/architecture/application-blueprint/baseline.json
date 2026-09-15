@@ -1,0 +1,77 @@
+{
+  "capturedAt": "2026-09-15T09:46:11.649084+00:00",
+  "branch": "feature/fsd-r4-static-demo",
+  "schema": "2.0",
+  "designRevision": "B1",
+  "authorization": {
+    "user": "Current task: interface list and related Trio passed review; requests design skeleton only. Exact bytes pinned below; this is a new capture, not a historical approval signature.",
+    "leader": "2026-09-15 message: assigned doc/architecture/application-blueprint on existing branch; no branch switch, commit or changes outside directory."
+  },
+  "originalFsdR9Hash": "45e6029acaeb0e61ab7b0338c28f3f9882f6835f467043ed5d99fcf160d822ac",
+  "files": [
+    {
+      "path": "doc/planning/UPS-Fleet-FIN-POD-PRD-v0.1.md",
+      "sha256": "d1ed0008843c618d496dcecb6d33e50045d74462a1be9f1556583c9cd657b29f"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-FIN-POD-FSD-v0.1.md",
+      "sha256": "2561ae531dce682ab8a7a34cba8b9ebf67b431743f8fb31432ababf2cabd18c8"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+      "sha256": "a4b2adc124985fa4d0135aa3f2552bb36792ba163e12cf69e743d9efa4fc5f8d"
+    },
+    {
+      "path": "doc/planning/UPS-Fleet-FSD-r10-review-disposition.md",
+      "sha256": "ba082e27abec2c2ef60df22bb95016317467803835960762de155b729586dae3"
+    },
+    {
+      "path": "doc/UI prototype/UPS-FSD-R4/app.js",
+      "sha256": "bc54dbbb49b3cdd8decd5717961ca945ff8dd39bcc2d0f59cf91927ad46fa9b0"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/operations.json",
+      "sha256": "720b7147a5cbd1efdaee39119d6f0fd6528e21f0c4701fa10ad3fbc5d84c007e"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/contracts.ts",
+      "sha256": "9151f49da9fadf5093483fff43cecbe032cad5b9491d6ee7e8f2619bc31825b9"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/persistence-contracts.ts",
+      "sha256": "a27f3c60bef82814db848f5d78eb85340149759d6a2b1036e6d4f193da945b96"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/equipment-objects.trio",
+      "sha256": "8b531e3621ec70fb9ed2d866e123e9d700c4c8e1dbb3acee8f62a67445bfc5ee"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/business-objects.trio",
+      "sha256": "c78b24728f76c62218ce999e69d00b2bd3d61ca484de9e0f221fff7b8b52e600"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/record-manifest.json",
+      "sha256": "5b148f4d44a1c57be9e61d336d588b52db355841de80a78c7c80b548f13f486b"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/record-codecs.json",
+      "sha256": "8a205ceddcf52470836733a2fe499ff66bf0ffac8e61893611d5e36a7f6b4b9f"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/persistence-design.md",
+      "sha256": "e05407c4ee447be035a396018086ca15303416635ecc6fae862d2f0e62f89416"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/interface-implementation-list.md",
+      "sha256": "02afdee851e16eac03dadd406124ac5f9f7dbc98a7d856c343b8742d1e6e1b69"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/architecture-review-results.md",
+      "sha256": "cd492e8d8809b52fbfc5fafa726f7af9691b3298bde63b21b5b9d0d81e12acd6"
+    },
+    {
+      "path": "doc/architecture/fsd-r9/review-disposition.md",
+      "sha256": "e3535d86512f66a49c2368bbfcef91a04c62e8bc3a2a4d332a1e7ce23a959694"
+    }
+  ]
+}

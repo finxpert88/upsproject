@@ -1,0 +1,176 @@
+{
+  "scope": "离线设计参考模型核验，不是Fantom编译或FIN运行",
+  "checks": [
+    {
+      "name": "validate-delivery.cjs",
+      "passed": false,
+      "error": "Approved public contract drift"
+    },
+    {
+      "name": "test-revision-a2.cjs",
+      "passed": true
+    }
+  ],
+  "publicContractBytesUnchanged": false,
+  "publicContractEqualAfterCrLfNormalization": true,
+  "lineEndingNote": "原脚本构造LF头和拼接符，实际契约文件为CRLF；精确字节比较失败，统一CRLF为LF后文本一致。不得声称字节一致。",
+  "currentFsdHash": "2561ae531dce682ab8a7a34cba8b9ebf67b431743f8fb31432ababf2cabd18c8",
+  "originalFsdHash": "45e6029acaeb0e61ab7b0338c28f3f9882f6835f467043ed5d99fcf160d822ac",
+  "referenceKeyMismatch": [
+    {
+      "operation": "OP-01",
+      "incorrect": "Contracts['sessionCapabilities']['request']",
+      "correct": "Contracts['OP-01']['request']"
+    },
+    {
+      "operation": "OP-02",
+      "incorrect": "Contracts['equipmentList']['request']",
+      "correct": "Contracts['OP-02']['request']"
+    },
+    {
+      "operation": "OP-03",
+      "incorrect": "Contracts['equipmentSnapshot']['request']",
+      "correct": "Contracts['OP-03']['request']"
+    },
+    {
+      "operation": "OP-04",
+      "incorrect": "Contracts['metricHistory']['request']",
+      "correct": "Contracts['OP-04']['request']"
+    },
+    {
+      "operation": "OP-05",
+      "incorrect": "Contracts['alarmListDetail']['request']",
+      "correct": "Contracts['OP-05']['request']"
+    },
+    {
+      "operation": "OP-06",
+      "incorrect": "Contracts['alarmAcknowledge']['request']",
+      "correct": "Contracts['OP-06']['request']"
+    },
+    {
+      "operation": "OP-07",
+      "incorrect": "Contracts['operationStatus']['request']",
+      "correct": "Contracts['OP-07']['request']"
+    },
+    {
+      "operation": "OP-08",
+      "incorrect": "Contracts['configGetSaveDraft']['request']",
+      "correct": "Contracts['OP-08']['request']"
+    },
+    {
+      "operation": "OP-09",
+      "incorrect": "Contracts['configValidate']['request']",
+      "correct": "Contracts['OP-09']['request']"
+    },
+    {
+      "operation": "OP-10",
+      "incorrect": "Contracts['configPublish']['request']",
+      "correct": "Contracts['OP-10']['request']"
+    },
+    {
+      "operation": "OP-11",
+      "incorrect": "Contracts['configRollbackDraft']['request']",
+      "correct": "Contracts['OP-11']['request']"
+    },
+    {
+      "operation": "OP-12",
+      "incorrect": "Contracts['diagnostics']['request']",
+      "correct": "Contracts['OP-12']['request']"
+    },
+    {
+      "operation": "OP-13",
+      "incorrect": "Contracts['auditList']['request']",
+      "correct": "Contracts['OP-13']['request']"
+    },
+    {
+      "operation": "OP-14",
+      "incorrect": "Contracts['commissioningAccept']['request']",
+      "correct": "Contracts['OP-14']['request']"
+    },
+    {
+      "operation": "OP-15",
+      "incorrect": "Contracts['reportCreate']['request']",
+      "correct": "Contracts['OP-15']['request']"
+    },
+    {
+      "operation": "OP-16",
+      "incorrect": "Contracts['reportGetList']['request']",
+      "correct": "Contracts['OP-16']['request']"
+    },
+    {
+      "operation": "OP-17",
+      "incorrect": "Contracts['reportDownload']['request']",
+      "correct": "Contracts['OP-17']['request']"
+    },
+    {
+      "operation": "OP-18",
+      "incorrect": "Contracts['reportCancel']['request']",
+      "correct": "Contracts['OP-18']['request']"
+    },
+    {
+      "operation": "OP-19",
+      "incorrect": "Contracts['notificationTest']['request']",
+      "correct": "Contracts['OP-19']['request']"
+    },
+    {
+      "operation": "OP-20",
+      "incorrect": "Contracts['notificationDeliveryList']['request']",
+      "correct": "Contracts['OP-20']['request']"
+    },
+    {
+      "operation": "OP-21",
+      "incorrect": "Contracts['notificationRetry']['request']",
+      "correct": "Contracts['OP-21']['request']"
+    },
+    {
+      "operation": "OP-22",
+      "incorrect": "Contracts['metricDictionary']['request']",
+      "correct": "Contracts['OP-22']['request']"
+    },
+    {
+      "operation": "OP-23",
+      "incorrect": "Contracts['simulationCreate']['request']",
+      "correct": "Contracts['OP-23']['request']"
+    },
+    {
+      "operation": "OP-24",
+      "incorrect": "Contracts['simulationGenerate']['request']",
+      "correct": "Contracts['OP-24']['request']"
+    },
+    {
+      "operation": "OP-25",
+      "incorrect": "Contracts['simulationControl']['request']",
+      "correct": "Contracts['OP-25']['request']"
+    },
+    {
+      "operation": "OP-26",
+      "incorrect": "Contracts['simulationStep']['request']",
+      "correct": "Contracts['OP-26']['request']"
+    },
+    {
+      "operation": "OP-27",
+      "incorrect": "Contracts['simulationScenario']['request']",
+      "correct": "Contracts['OP-27']['request']"
+    },
+    {
+      "operation": "OP-28",
+      "incorrect": "Contracts['simulationReset']['request']",
+      "correct": "Contracts['OP-28']['request']"
+    },
+    {
+      "operation": "OP-29",
+      "incorrect": "Contracts['simulationDelete']['request']",
+      "correct": "Contracts['OP-29']['request']"
+    },
+    {
+      "operation": "OP-30",
+      "incorrect": "Contracts['simulationGetList']['request']",
+      "correct": "Contracts['OP-30']['request']"
+    },
+    {
+      "operation": "OP-31",
+      "incorrect": "Contracts['notificationPause']['request']",
+      "correct": "Contracts['OP-31']['request']"
+    }
+  ]
+}

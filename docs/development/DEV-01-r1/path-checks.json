@@ -1,0 +1,34 @@
+[
+  {
+    "case": "scripts/build.ps1 default parameter AST",
+    "result": ".artifacts/DEV-01"
+  },
+  {
+    "case": "scripts/test.ps1 default parameter AST",
+    "result": ".artifacts/DEV-01"
+  },
+  {
+    "case": "../outside-dev01-r1",
+    "result": "OutputRoot must be one named run directory directly under this worktree .artifacts"
+  },
+  {
+    "case": ".",
+    "result": "OutputRoot must be one named run directory directly under this worktree .artifacts"
+  },
+  {
+    "case": ".artifacts",
+    "result": "OutputRoot must be one named run directory directly under this worktree .artifacts"
+  },
+  {
+    "case": ".artifacts/parent/child",
+    "result": "OutputRoot must be one named run directory directly under this worktree .artifacts"
+  },
+  {
+    "case": "C:/",
+    "result": "OutputRoot must be one named run directory directly under this worktree .artifacts"
+  },
+  {
+    "case": "output junction",
+    "result": "Output ancestor is a reparse point: C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-link-check"
+  }
+]

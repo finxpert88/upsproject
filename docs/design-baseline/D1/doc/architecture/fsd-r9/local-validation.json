@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "records": 111,
+  "uniqueIds": 111,
+  "operations": 31,
+  "checks": [
+    "tag syntax subset",
+    "unique IDs and tags",
+    "top-level and declared nested Ref closure",
+    "reviewer missed-nested-remap negative rejected",
+    "point site/equipment parents",
+    "mapping target consistency",
+    "JSON payload parse",
+    "31 operations in approved FSD contract",
+    "approved contract extraction unchanged",
+    "no writable or fabricated curVal",
+    "manifest roundtrip"
+  ],
+  "scope": "Local static subset validation; not full Zinc parser or FIN runtime validation"
+}

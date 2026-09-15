@@ -1,0 +1,72 @@
+[
+  {
+    "path": ".artifacts/DEV-01/upsFleet.pod",
+    "sha256": "96196584499a132a35c5d0da85afac15506dd0bf1a3b58653c2cabe04c30b38a",
+    "metadata": {
+      "pod.name": "upsFleet",
+      "pod.version": "0.0.1",
+      "pod.depends": "sys 1.0",
+      "pod.summary": "UPS Fleet DEV-01 source-sample freshness",
+      "pod.isScript": "false",
+      "fcode.version": "1.0.51",
+      "build.host": "Engineering",
+      "build.user": "Copperfield",
+      "build.ts": "2026-09-15T20:59:52+08:00 Singapore",
+      "build.tsKey": "260915205952",
+      "build.compiler": "1.0.78.3105",
+      "build.platform": "win32-x86_64",
+      "pod.docApi": "false",
+      "pod.docSrc": "false",
+      "pod.native.java": "false",
+      "pod.native.jni": "false",
+      "pod.native.dotnet": "false",
+      "pod.native.js": "false",
+      "pod.fcode": "true"
+    },
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode"
+    ]
+  },
+  {
+    "path": ".artifacts/DEV-01/test/upsFleet.pod",
+    "sha256": "8daf8c823b499e135fc78b337cfbaea53a1ac5ef675924f41bba8732751cbb3c",
+    "metadata": {
+      "pod.name": "upsFleet",
+      "pod.version": "0.0.1",
+      "pod.depends": "sys 1.0",
+      "pod.summary": "UPS Fleet DEV-01 source-sample freshness",
+      "pod.isScript": "false",
+      "fcode.version": "1.0.51",
+      "build.host": "Engineering",
+      "build.user": "Copperfield",
+      "build.ts": "2026-09-15T20:59:53+08:00 Singapore",
+      "build.tsKey": "260915205953",
+      "build.compiler": "1.0.78.3105",
+      "build.platform": "win32-x86_64",
+      "pod.docApi": "false",
+      "pod.docSrc": "false",
+      "pod.native.java": "false",
+      "pod.native.jni": "false",
+      "pod.native.dotnet": "false",
+      "pod.native.js": "false",
+      "pod.fcode": "true"
+    },
+    "entries": [
+      "meta.props",
+      "fcode/names.def",
+      "fcode/typeRefs.def",
+      "fcode/methodRefs.def",
+      "fcode/ints.def",
+      "fcode/strs.def",
+      "fcode/durations.def",
+      "fcode/types.def",
+      "fcode/QualityEvaluator.fcode",
+      "fcode/QualityEvaluatorTest.fcode"
+    ]
+  }
+]

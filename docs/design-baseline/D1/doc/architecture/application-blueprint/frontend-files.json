@@ -1,0 +1,511 @@
+[
+  {
+    "file": "upsFleet/ui/src/app/bootstrap.js",
+    "purpose": "GET bootstrap before versioned API; session capability load",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/app/router.js",
+    "purpose": "Hash route parsing, encoded IDs, navigation and guards",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/app/AppShell.js",
+    "purpose": "Persistent navigation and source banner; default Dashboard",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/app/SourceContext.js",
+    "purpose": "Validated mode/session/generation; clear scoped state on context switch",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/api/operationClient.js",
+    "purpose": "Same-origin envelope, errors, idempotency IDs and bounded polling",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/api/responseDecoder.js",
+    "purpose": "Strict response schema 2.0 validation",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/state/SessionStore.js",
+    "purpose": "Current account capabilities; do not persist credentials",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/state/ViewState.js",
+    "purpose": "Equipment selection, filters, cursor and ranges by source context",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/state/RequestScope.js",
+    "purpose": "Cancel requests and reject late responses by context generation",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/state/ThemeStore.js",
+    "purpose": "Per-user Light/Dark preference; Light default",
+    "operations": [],
+    "designEvents": [
+      "set"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/locales/en-US.js",
+    "purpose": "All UI, accessible names and source error translations",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/styles/tokens.css",
+    "purpose": "Theme/spacing/status tokens",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/styles/layout.css",
+    "purpose": "Three-column six-card Dashboard with responsive collapse",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/styles/components.css",
+    "purpose": "44px touch targets, keyboard focus and component states",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/pages/DashboardPage.js",
+    "purpose": "Snapshot, device tabs, six cards, health ring and inline trends",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-04",
+      "OP-22"
+    ],
+    "designEvents": [
+      "render"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/EquipmentPage.js",
+    "purpose": "Filtered authorized fleet and stable cursor",
+    "operations": [
+      "OP-02"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/HistoryPage.js",
+    "purpose": "Segmented historical chart, source provenance and gaps",
+    "operations": [
+      "OP-04",
+      "OP-22"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/AlarmPage.js",
+    "purpose": "Active/cleared/event tabs and timeline",
+    "operations": [
+      "OP-05",
+      "OP-06",
+      "OP-07"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/ReportPage.js",
+    "purpose": "Create/list/cancel report jobs",
+    "operations": [
+      "OP-07",
+      "OP-15",
+      "OP-16",
+      "OP-18"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/ReportDetailPage.js",
+    "purpose": "Progress and protected binary download",
+    "operations": [
+      "OP-07",
+      "OP-16",
+      "OP-17",
+      "OP-18"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/EngineeringPage.js",
+    "purpose": "Six-step draft editor, validate, publish and rollback draft",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/CommissioningPage.js",
+    "purpose": "Read current evidence and accept configured equipment",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-12",
+      "OP-14"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/NotificationPage.js",
+    "purpose": "Channels via configuration; delivery list/test/retry/emergency pause",
+    "operations": [
+      "OP-07",
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-19",
+      "OP-20",
+      "OP-21",
+      "OP-31"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/DiagnosticsPage.js",
+    "purpose": "Read-only lifecycle and recovery diagnostics",
+    "operations": [
+      "OP-12"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/AuditPage.js",
+    "purpose": "Scoped append-only audit viewer",
+    "operations": [
+      "OP-13"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/pages/SimulationPage.js",
+    "purpose": "Session list/create, control, generation, scenario, reset and delete",
+    "operations": [
+      "OP-07",
+      "OP-23",
+      "OP-24",
+      "OP-25",
+      "OP-26",
+      "OP-27",
+      "OP-28",
+      "OP-29",
+      "OP-30"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/components/layout/SourceBanner.js",
+    "purpose": "SourceBanner: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/layout/EquipmentTabs.js",
+    "purpose": "EquipmentTabs: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/layout/ResponsiveShell.js",
+    "purpose": "ResponsiveShell: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": [],
+    "designEvents": [
+      "resize"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/components/layout/ThemeToggle.js",
+    "purpose": "ThemeToggle: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/KpiCard.js",
+    "purpose": "KpiCard: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/HealthRing.js",
+    "purpose": "HealthRing: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/LoadBar.js",
+    "purpose": "LoadBar: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/BatteryPanel.js",
+    "purpose": "BatteryPanel: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/EnvironmentPanel.js",
+    "purpose": "EnvironmentPanel: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/OutlookPanel.js",
+    "purpose": "OutlookPanel: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/InlineTrend.js",
+    "purpose": "InlineTrend: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/dashboard/MaintenancePanel.js",
+    "purpose": "MaintenancePanel: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/QualityValue.js",
+    "purpose": "QualityValue: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/AsyncState.js",
+    "purpose": "AsyncState: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/PermissionGate.js",
+    "purpose": "PermissionGate: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/ConfirmDialog.js",
+    "purpose": "ConfirmDialog: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/CursorPager.js",
+    "purpose": "CursorPager: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/MetricHelp.js",
+    "purpose": "MetricHelp: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/common/ErrorNotice.js",
+    "purpose": "ErrorNotice: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/history/HistoryChart.js",
+    "purpose": "HistoryChart: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/history/RangeSelector.js",
+    "purpose": "RangeSelector: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/history/MappingGapLegend.js",
+    "purpose": "MappingGapLegend: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/alarm/AlarmTable.js",
+    "purpose": "AlarmTable: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/alarm/AlarmTimeline.js",
+    "purpose": "AlarmTimeline: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/alarm/AcknowledgeDialog.js",
+    "purpose": "AcknowledgeDialog: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/alarm/OperationProgress.js",
+    "purpose": "OperationProgress: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/EngineeringWizard.js",
+    "purpose": "EngineeringWizard: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": [],
+    "designEvents": [
+      "patch",
+      "save",
+      "validate",
+      "publish"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/EnrollmentStep.js",
+    "purpose": "EnrollmentStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/CapabilityStep.js",
+    "purpose": "CapabilityStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/MappingStep.js",
+    "purpose": "MappingStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/HistoryRuleStep.js",
+    "purpose": "HistoryRuleStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/PlanEditor.js",
+    "purpose": "PlanEditor: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/ValidationStep.js",
+    "purpose": "ValidationStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/engineering/PublishStep.js",
+    "purpose": "PublishStep: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/report/ReportForm.js",
+    "purpose": "ReportForm: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/report/ReportJobTable.js",
+    "purpose": "ReportJobTable: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/notification/ChannelEditor.js",
+    "purpose": "ChannelEditor: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/notification/SubscriptionEditor.js",
+    "purpose": "SubscriptionEditor: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/notification/DeliveryTable.js",
+    "purpose": "DeliveryTable: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/notification/PauseDialog.js",
+    "purpose": "PauseDialog: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/simulation/SessionTable.js",
+    "purpose": "SessionTable: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/simulation/ScenarioControl.js",
+    "purpose": "ScenarioControl: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/components/simulation/GenerationBanner.js",
+    "purpose": "GenerationBanner: reusable view controlled by its owning page; no direct FIN SDK or independent business threshold authority",
+    "operations": []
+  },
+  {
+    "file": "upsFleet/ui/src/api/sessionApi.js",
+    "purpose": "Typed-by-contract request facade for session; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-01"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/inventoryApi.js",
+    "purpose": "Typed-by-contract request facade for inventory; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-02",
+      "OP-03",
+      "OP-22"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/historyApi.js",
+    "purpose": "Typed-by-contract request facade for history; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-04"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/alarmApi.js",
+    "purpose": "Typed-by-contract request facade for alarm; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-05",
+      "OP-06",
+      "OP-07"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/configurationApi.js",
+    "purpose": "Typed-by-contract request facade for configuration; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-08",
+      "OP-09",
+      "OP-10",
+      "OP-11",
+      "OP-14"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/diagnosticsApi.js",
+    "purpose": "Typed-by-contract request facade for diagnostics; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-12"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/auditApi.js",
+    "purpose": "Typed-by-contract request facade for audit; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-13"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/reportApi.js",
+    "purpose": "Typed-by-contract request facade for report; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-15",
+      "OP-16",
+      "OP-17",
+      "OP-18"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/notificationApi.js",
+    "purpose": "Typed-by-contract request facade for notification; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-19",
+      "OP-20",
+      "OP-21",
+      "OP-31"
+    ]
+  },
+  {
+    "file": "upsFleet/ui/src/api/simulationApi.js",
+    "purpose": "Typed-by-contract request facade for simulation; delegates envelope and transport to operationClient",
+    "operations": [
+      "OP-23",
+      "OP-24",
+      "OP-25",
+      "OP-26",
+      "OP-27",
+      "OP-28",
+      "OP-29",
+      "OP-30"
+    ]
+  }
+]

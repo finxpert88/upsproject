@@ -1,0 +1,482 @@
+[
+  {
+    "id": "SF-01",
+    "requirementDescription": "遥测采集与新鲜度",
+    "fsdSection": "4.1",
+    "operations": "OP-03",
+    "approvedEntry": "TelemetryService.pollBatch",
+    "models": "PointMapping → Metric/Snapshot",
+    "acceptanceIntent": "缓存重读不推进freshness；≤500ms共享检查",
+    "backend": "TelemetryService",
+    "frontend": "DashboardPage",
+    "implementationEntry": [
+      "TelemetryService.pollBatch"
+    ],
+    "acceptanceReferences": [
+      "FT-36"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-04"
+  },
+  {
+    "id": "SF-02",
+    "requirementDescription": "质量决策顺序",
+    "fsdSection": "4.2",
+    "operations": "OP-03",
+    "approvedEntry": "QualityEvaluator.evaluate",
+    "models": "CapabilityProfile/PointMapping → Metric",
+    "acceptanceIntent": "0/false有效；bad值null；超量程保留observedValue",
+    "backend": "QualityEvaluator",
+    "frontend": "QualityValue",
+    "implementationEntry": [
+      "QualityEvaluator.evaluate"
+    ],
+    "acceptanceReferences": [
+      "FT-34"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-04"
+  },
+  {
+    "id": "SF-03",
+    "requirementDescription": "通讯和供电模式",
+    "fsdSection": "4.3",
+    "operations": "OP-02/03",
+    "approvedEntry": "CommunicationResolver.resolve",
+    "models": "FIN诊断/PointMapping → communication/powerMode",
+    "acceptanceIntent": "连接、供电、告警三轴独立",
+    "backend": "CommunicationResolver",
+    "frontend": "EquipmentPage",
+    "implementationEntry": [
+      "CommunicationResolver.resolve"
+    ],
+    "acceptanceReferences": [
+      "FT-34"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-04"
+  },
+  {
+    "id": "SF-04",
+    "requirementDescription": "设备总览",
+    "fsdSection": "5.1/5.7",
+    "operations": "OP-01/02",
+    "approvedEntry": "InventoryService.list",
+    "models": "UpsEnrollment → FleetPage",
+    "acceptanceIntent": "权限范围；5分钟游标；最新统计与冻结成员分离",
+    "backend": "InventoryService",
+    "frontend": "EquipmentPage",
+    "implementationEntry": [
+      "InventoryService.equipmentList"
+    ],
+    "acceptanceReferences": [
+      "FT-32"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-04"
+  },
+  {
+    "id": "SF-05",
+    "requirementDescription": "Dashboard与详情",
+    "fsdSection": "5.2/5.8/17",
+    "operations": "OP-03/04/22",
+    "approvedEntry": "DashboardPresenter.render",
+    "models": "Snapshot/MetricDefinition → 32项组件",
+    "acceptanceIntent": "六卡、健康环、趋势齐全；无评分显示未知",
+    "backend": "TelemetryService",
+    "frontend": "DashboardPage",
+    "implementationEntry": [
+      "DashboardPage.render"
+    ],
+    "acceptanceReferences": [
+      "UI-01",
+      "UI-12"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-04"
+  },
+  {
+    "id": "SF-06",
+    "requirementDescription": "历史趋势",
+    "fsdSection": "5.3/5.6",
+    "operations": "OP-04",
+    "approvedEntry": "HistoryService.querySegments",
+    "models": "MappingInterval/FIN history → HistorySegment",
+    "acceptanceIntent": "4条/7天/1000桶；半开区间；禁止跨映射补值",
+    "backend": "HistoryService",
+    "frontend": "HistoryPage",
+    "implementationEntry": [
+      "HistoryService.querySegments"
+    ],
+    "acceptanceReferences": [
+      "FT-31"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-05"
+  },
+  {
+    "id": "SF-07",
+    "requirementDescription": "告警事件页",
+    "fsdSection": "5.4",
+    "operations": "OP-05/06/07",
+    "approvedEntry": "AlarmService.query",
+    "models": "FIN alarm/AlarmAssociation → Alarm/Timeline",
+    "acceptanceIntent": "发生/恢复/确认独立；纯事件无确认",
+    "backend": "AlarmService",
+    "frontend": "AlarmPage",
+    "implementationEntry": [
+      "AlarmService.alarmListDetail"
+    ],
+    "acceptanceReferences": [
+      "FT-35"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-07"
+  },
+  {
+    "id": "SF-08",
+    "requirementDescription": "工程配置页",
+    "fsdSection": "5.5",
+    "operations": "OP-08/09/10/14",
+    "approvedEntry": "EngineeringWizard",
+    "models": "ConfigDraft/ValidationReport → 发布或错误",
+    "acceptanceIntent": "六步工程流程；无设备凭据字段",
+    "backend": "ConfigurationService",
+    "frontend": "EngineeringPage",
+    "implementationEntry": [
+      "EngineeringWizard.save",
+      "EngineeringWizard.validate",
+      "EngineeringWizard.publish"
+    ],
+    "acceptanceReferences": [
+      "FT-29",
+      "FT-30"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-08"
+  },
+  {
+    "id": "SF-09",
+    "requirementDescription": "三类执行模型",
+    "fsdSection": "6.1/6.3/6.4",
+    "operations": "内部",
+    "approvedEntry": "RuleEngine.advance",
+    "models": "RuleDefinition/RuleState → RuleAlarmOutbox",
+    "acceptanceIntent": "sample/quality/calendar独立驱动；主水位去重",
+    "backend": "RuleEngine",
+    "frontend": "None",
+    "implementationEntry": [
+      "RuleEngine.advance"
+    ],
+    "acceptanceReferences": [
+      "FT-24",
+      "FT-33"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-06"
+  },
+  {
+    "id": "SF-10",
+    "requirementDescription": "规则参数与转换",
+    "fsdSection": "6.2/6.5",
+    "operations": "OP-08/09/10",
+    "approvedEntry": "RuleEvaluator.evaluate",
+    "models": "规则/输入 → 风险与覆盖",
+    "acceptanceIntent": "AND门槛；R-02边界；无来源不造分数",
+    "backend": "RuleEvaluator",
+    "frontend": "HistoryRuleStep",
+    "implementationEntry": [
+      "RuleEvaluator.evaluate"
+    ],
+    "acceptanceReferences": [
+      "FT-27",
+      "FT-34"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-06"
+  },
+  {
+    "id": "SF-11",
+    "requirementDescription": "告警归一",
+    "fsdSection": "7.1/7.4",
+    "operations": "OP-05",
+    "approvedEntry": "AlarmSynchronizer.reconcile",
+    "models": "FIN event → AlarmAssociation",
+    "acceptanceIntent": "稳定发生ID；CREATE/SEVERITY/CLEAR顺序",
+    "backend": "AlarmSynchronizer",
+    "frontend": "AlarmTimeline",
+    "implementationEntry": [
+      "AlarmSynchronizer.dispatchNext",
+      "AlarmSynchronizer.reconcileUnknown"
+    ],
+    "acceptanceReferences": [
+      "FT-25",
+      "FT-26"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-07"
+  },
+  {
+    "id": "SF-12",
+    "requirementDescription": "单条确认",
+    "fsdSection": "7.2",
+    "operations": "OP-06/07",
+    "approvedEntry": "AcknowledgementCoordinator.execute",
+    "models": "OperationJournal → FIN ack → AuditEvent",
+    "acceptanceIntent": "意图先落盘；未知不重放；查询权威结果",
+    "backend": "AcknowledgementCoordinator",
+    "frontend": "AcknowledgeDialog",
+    "implementationEntry": [
+      "AcknowledgementCoordinator.execute",
+      "AcknowledgementCoordinator.reconcile"
+    ],
+    "acceptanceReferences": [
+      "FT-35"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-07"
+  },
+  {
+    "id": "SF-13",
+    "requirementDescription": "审计",
+    "fsdSection": "7.3",
+    "operations": "OP-13",
+    "approvedEntry": "AuditRepository.append",
+    "models": "AuditEvent",
+    "acceptanceIntent": "追加写；拒绝普通用户编辑；失败关闭副作用",
+    "backend": "AuditRepository",
+    "frontend": "AuditPage",
+    "implementationEntry": [
+      "AuditRepository.append"
+    ],
+    "acceptanceReferences": [
+      "FT-29"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-07"
+  },
+  {
+    "id": "SF-14",
+    "requirementDescription": "范围安全草稿",
+    "fsdSection": "8.1",
+    "operations": "OP-08/09/11",
+    "approvedEntry": "ConfigurationService.mergeValidate",
+    "models": "ConfigDraft/ValidationReport",
+    "acceptanceIntent": "局部patch；旧新范围双授权；10分钟报告",
+    "backend": "ConfigurationService",
+    "frontend": "EngineeringWizard",
+    "implementationEntry": [
+      "ConfigurationService.configGetSaveDraft",
+      "ConfigurationService.configValidate"
+    ],
+    "acceptanceReferences": [
+      "FT-29"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-08"
+  },
+  {
+    "id": "SF-15",
+    "requirementDescription": "统一激活",
+    "fsdSection": "8.2/8.3",
+    "operations": "OP-10/07",
+    "approvedEntry": "PublicationCoordinator.activate",
+    "models": "ConfigVersion/Publication/Pointer",
+    "acceptanceIntent": "COMMITTED后只恢复候选；全模块同epoch",
+    "backend": "PublicationCoordinator",
+    "frontend": "PublishStep",
+    "implementationEntry": [
+      "PublicationCoordinator.activate"
+    ],
+    "acceptanceReferences": [
+      "FT-22",
+      "FT-23"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-08"
+  },
+  {
+    "id": "SF-16",
+    "requirementDescription": "活动规则与退役",
+    "fsdSection": "8.4",
+    "operations": "OP-08/09/10",
+    "approvedEntry": "ConfigurationGuard.checkActive",
+    "models": "RuleState/RuleAlarmOutbox/AlarmAssociation",
+    "acceptanceIntent": "未决发生阻止破坏恢复链；确认不解除阻断",
+    "backend": "ConfigurationGuard",
+    "frontend": "ValidationStep",
+    "implementationEntry": [
+      "ConfigurationGuard.checkActiveOccurrences"
+    ],
+    "acceptanceReferences": [
+      "FT-27",
+      "FT-28"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-08"
+  },
+  {
+    "id": "SF-17",
+    "requirementDescription": "生命周期",
+    "fsdSection": "11.1",
+    "operations": "OP-12",
+    "approvedEntry": "Lifecycle.startStop",
+    "models": "Pointer/Journal/Publication",
+    "acceptanceIntent": "不自动造设备；重启先对账；停止释放任务",
+    "backend": "Lifecycle",
+    "frontend": "DiagnosticsPage",
+    "implementationEntry": [
+      "Lifecycle.start",
+      "Lifecycle.stop"
+    ],
+    "acceptanceReferences": [
+      "FT-22",
+      "FT-24"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-12"
+  },
+  {
+    "id": "SF-18",
+    "requirementDescription": "容量与压力保护",
+    "fsdSection": "11.2",
+    "operations": "OP-02/03/04/12",
+    "approvedEntry": "WorkScheduler.admit",
+    "models": "缓存/有界队列",
+    "acceptanceIntent": "100设备/5000点为测试假设；共享读取不随会话倍增",
+    "backend": "WorkScheduler",
+    "frontend": "RequestScope",
+    "implementationEntry": [
+      "WorkScheduler.admit"
+    ],
+    "acceptanceReferences": [
+      "FT-36"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-12"
+  },
+  {
+    "id": "SF-19",
+    "requirementDescription": "打包升级回滚",
+    "fsdSection": "11.3",
+    "operations": "内部",
+    "approvedEntry": "MigrationRunner.run",
+    "models": "SchemaMigration/备份",
+    "acceptanceIntent": "冻结SDK；迁移幂等；审计保全；72h浸泡",
+    "backend": "MigrationRunner",
+    "frontend": "None",
+    "implementationEntry": [
+      "MigrationRunner.inspectCompatibility",
+      "MigrationRunner.planMigration",
+      "MigrationRunner.resumeMigration"
+    ],
+    "acceptanceReferences": [
+      "FT-22",
+      "FT-23"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-14"
+  },
+  {
+    "id": "SF-20",
+    "requirementDescription": "报表导出",
+    "fsdSection": "18.2",
+    "operations": "OP-15/16/17/18",
+    "approvedEntry": "ReportWorker.execute",
+    "models": "ReportJob/File/MappingInterval",
+    "acceptanceIntent": "时间加权；carry-in；历史期末状态；撤权拒下载",
+    "backend": "ReportWorker",
+    "frontend": "ReportPage",
+    "implementationEntry": [
+      "ReportWorker.execute"
+    ],
+    "acceptanceReferences": [
+      "NEW-03",
+      "NEW-06",
+      "R7-08"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-09"
+  },
+  {
+    "id": "SF-21",
+    "requirementDescription": "Telegram通知",
+    "fsdSection": "18.3",
+    "operations": "OP-19/20/21/31",
+    "approvedEntry": "NotificationWorker.deliver",
+    "models": "NotifyJob/Cursor/Gate/Attempt",
+    "acceptanceIntent": "独立outbox；许可与暂停原子；unknown不自动重发",
+    "backend": "NotificationWorker",
+    "frontend": "NotificationPage",
+    "implementationEntry": [
+      "NotificationWorker.deliver"
+    ],
+    "acceptanceReferences": [
+      "NEW-07",
+      "NEW-10",
+      "R7-09"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-10"
+  },
+  {
+    "id": "SF-22",
+    "requirementDescription": "双主题",
+    "fsdSection": "18.4",
+    "operations": "前端本地",
+    "approvedEntry": "ThemeStore.set",
+    "models": "按用户隔离偏好",
+    "acceptanceIntent": "默认Light；不改变查询状态；PDF固定浅色",
+    "backend": "None",
+    "frontend": "ThemeStore",
+    "implementationEntry": [
+      "ThemeStore.set"
+    ],
+    "acceptanceReferences": [
+      "NEW-11",
+      "NEW-12"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-13"
+  },
+  {
+    "id": "SF-23",
+    "requirementDescription": "模拟服务",
+    "fsdSection": "19",
+    "operations": "OP-23～30",
+    "approvedEntry": "SimulationService.advanceEvents",
+    "models": "SimulationSession/Sample/Alarm/Cleanup",
+    "acceptanceIntent": "seed可重放；独立代次；reset/delete屏障；零真实外发",
+    "backend": "SimulationService",
+    "frontend": "SimulationPage",
+    "implementationEntry": [
+      "SimulationEngine.advanceEvents"
+    ],
+    "acceptanceReferences": [
+      "SIM-01",
+      "SIM-08"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-11"
+  },
+  {
+    "id": "SF-24",
+    "requirementDescription": "多屏与触控",
+    "fsdSection": "22",
+    "operations": "复用业务OP",
+    "approvedEntry": "ResponsiveShell.resize",
+    "models": "前端状态",
+    "acceptanceIntent": "320～1920+；44px触控；旋转不重发变更",
+    "backend": "None",
+    "frontend": "ResponsiveShell",
+    "implementationEntry": [
+      "ResponsiveShell.resize"
+    ],
+    "acceptanceReferences": [
+      "UI-01",
+      "UI-12"
+    ],
+    "acceptanceScope": "Selected existing related regression anchors, not exhaustive coverage or new acceptance definitions; retain complete referenced FSD section and RTM.",
+    "developmentTask": "DEV-13"
+  }
+]

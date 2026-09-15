@@ -1,0 +1,111 @@
+{
+  "solution": {
+    "ok": true,
+    "data": {
+      "artifact_type": "solution",
+      "issues": [],
+      "structured_issues": [],
+      "target_version": null,
+      "version_status": "unverified",
+      "version_assessment": {
+        "catalog_version": "2026-08-29",
+        "target_is_concrete": false,
+        "target_normalized": null,
+        "profile_id": null,
+        "status": "unverified",
+        "declared_version": null,
+        "declaration_matches_target": null,
+        "evaluated_rules": {
+          "SOLUTION_CLAIMS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_CLAIM_STATUS": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_CONTEXT": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_DELIVERY_FIELD": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_HIERARCHY": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_TRACEABILITY": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          },
+          "SOLUTION_VERIFIED_SOURCE": {
+            "status": "unverified",
+            "target_version": null,
+            "profile_id": null,
+            "evidence": [],
+            "vendor_runtime_verified": false
+          }
+        },
+        "compatibility_verified": false,
+        "reason": "Target version is absent or non-concrete. Offline checks do not prove FIN compilation or runtime compatibility."
+      },
+      "passed": true,
+      "validation_scope": "offline workspace contracts only",
+      "citation_identity_verified": false,
+      "runtime_verified": false,
+      "warnings": [
+        "Target FIN compatibility is unverified; an empty issues list is not a compiler or runtime result."
+      ]
+    },
+    "errors": [],
+    "warnings": [],
+    "evidence": [],
+    "duration_ms": 1.2370999975246377,
+    "tool_version": "2.0.0",
+    "trace_id": "trace-18ec775e8b38493a8fe7f219d1f286f1"
+  },
+  "workflow": {
+    "id": "wf-10d90361191847c89b9c8fd9d6097ff7",
+    "revision": 2,
+    "status": "completed",
+    "citationIdentityVerified": true,
+    "trace_id": "trace-b18f1b2f70584094be66257932ce5083"
+  },
+  "connectorProbe": {
+    "passed": false,
+    "trace_id": "trace-0d915ad6e8ca4518ab75537ddb2b1fa6",
+    "reason": "Connector validator expects a connector implementation design with transport/retry/lifecycle/write checks. This deliverable is a business POD blueprint, not a new device connector; no connector validation pass is claimed.",
+    "issues": [
+      "CONNECTOR_LIVE_BOUNDARY",
+      "CONNECTOR_VERSION_SCOPE",
+      "CONNECTOR_ARCHITECTURE",
+      "CONNECTOR_RETRY",
+      "CONNECTOR_SECRETS",
+      "CONNECTOR_WRITE_VALIDATION",
+      "CONNECTOR_TESTS",
+      "CONNECTOR_LIFECYCLE_STATUS",
+      "CONNECTOR_LICENSE"
+    ]
+  },
+  "scope": "Offline solution contract validation only; target compatibility, compile and runtime unverified"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "metadata": "pod.name=sys\npod.version=1.0.78.3105\npod.depends=\npod.summary=Fantom system runtime\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=brian-desktop\nbuild.user=brian\nbuild.ts=2022-10-05T04:35:55-04:00 New_York\nbuild.tsKey=221005043555\nbuild.compiler=1.0.78\nbuild.platform=macosx-x86_64\npod.docSrc=true\nlicense.name=Academic Free License 3.0\norg.name=Fantom\npod.native.dotnet=false\nproj.name=Fantom Core\nproj.uri=https:\\u002f/fantom.org/\npod.docApi=true\norg.uri=https:\\u002f/fantom.org/\npod.native.java=false\nvcs.uri=https:\\u002f/github.com/fantom-lang/fantom\npod.native.jni=false\nvcs.name=Git\npod.native.js=false\nskyspark.build=3.1.5\npod.fcode=true\n",
+    "pod": "sys"
+  },
+  {
+    "metadata": "pod.name=compiler\npod.version=1.0.78.3105\npod.depends=sys 1.0\npod.summary=Fantom compiler\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=brian-desktop\nbuild.user=brian\nbuild.ts=2022-10-05T04:35:59-04:00 New_York\nbuild.tsKey=221005043559\nbuild.compiler=1.0.78\nbuild.platform=macosx-x86_64\npod.docSrc=true\nlicense.name=Academic Free License 3.0\norg.name=Fantom\npod.native.dotnet=false\nproj.name=Fantom Core\nproj.uri=https:\\u002f/fantom.org/\npod.docApi=true\norg.uri=https:\\u002f/fantom.org/\npod.native.java=false\nvcs.uri=https:\\u002f/github.com/fantom-lang/fantom\npod.native.jni=false\nvcs.name=Git\npod.native.js=false\nskyspark.build=3.1.5\npod.fcode=true\n",
+    "pod": "compiler"
+  },
+  {
+    "metadata": "pod.name=build\npod.version=1.0.78.3105\npod.depends=sys 1.0;compiler 1.0\npod.summary=Fantom build utility\npod.isScript=false\nfcode.version=1.0.51\nbuild.host=brian-desktop\nbuild.user=brian\nbuild.ts=2022-10-05T04:36:01-04:00 New_York\nbuild.tsKey=221005043601\nbuild.compiler=1.0.78\nbuild.platform=macosx-x86_64\npod.docSrc=true\nlicense.name=Academic Free License 3.0\norg.name=Fantom\npod.native.dotnet=false\nproj.name=Fantom Core\nproj.uri=https:\\u002f/fantom.org/\npod.docApi=true\norg.uri=https:\\u002f/fantom.org/\npod.native.java=false\nvcs.uri=https:\\u002f/github.com/fantom-lang/fantom\npod.native.jni=false\nvcs.name=Git\npod.native.js=false\nskyspark.build=3.1.5\npod.fcode=true\n",
+    "pod": "build"
+  }
+]

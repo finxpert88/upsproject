@@ -1,0 +1,30 @@
+[
+  {
+    "executable": "C:\\Users\\Copperfield\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "arguments": [
+      "-NoProfile",
+      "-File",
+      "scripts/build.ps1",
+      "-FinHome",
+      "C:/Program Files (x86)/FIN Framework/FIN Framework 5.3.0.2761",
+      "-OutputRoot",
+      ".artifacts/DEV-01-independent"
+    ],
+    "exitCode": 1,
+    "output": "Exception: C:\\work\\upsproject-implementation\\scripts\\build.ps1:12\r\nLine |\r\n  12 |  … edOutput) { throw 'DEV-01 OutputRoot must be .artifacts/DEV-01 in thi …\r\n     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | DEV-01 OutputRoot must be .artifacts/DEV-01 in this worktree\r\n"
+  },
+  {
+    "executable": "C:\\Users\\Copperfield\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "arguments": [
+      "-NoProfile",
+      "-File",
+      "scripts/build.ps1",
+      "-FinHome",
+      "C:/Program Files (x86)/FIN Framework/FIN Framework 5.3.0.2761",
+      "-OutputRoot",
+      "../forbidden-dev01-independent"
+    ],
+    "exitCode": 1,
+    "output": "Exception: C:\\work\\upsproject-implementation\\scripts\\build.ps1:12\r\nLine |\r\n  12 |  … edOutput) { throw 'DEV-01 OutputRoot must be .artifacts/DEV-01 in thi …\r\n     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n     | DEV-01 OutputRoot must be .artifacts/DEV-01 in this worktree\r\n"
+  }
+]

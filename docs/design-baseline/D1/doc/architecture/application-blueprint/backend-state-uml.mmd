@@ -1,0 +1,124 @@
+classDiagram
+direction TB
+class RuleEngine {
+  +advance()
+  +recover()
+}
+class RuleEvaluator {
+  +evaluate()
+}
+class RuleStateStore {
+  +load()
+  +commitTransition()
+}
+class AlarmService {
+  +alarmListDetail()
+  +alarmAcknowledge()
+}
+class AlarmSynchronizer {
+  +dispatchNext()
+  +reconcileUnknown()
+}
+class AcknowledgementCoordinator {
+  +execute()
+  +reconcile()
+}
+class ConfigurationService {
+  +configGetSaveDraft()
+  +configValidate()
+  +configPublish()
+}
+class ConfigurationGuard {
+  +validateDraft()
+  +checkActiveOccurrences()
+  +checkAcceptanceEvidence()
+}
+class PublicationCoordinator {
+  +prepare()
+  +commitDecision()
+  +activate()
+}
+class OperationRepository {
+  +operationStatus()
+  +prepare()
+  +recordOutcome()
+}
+class AuditRepository {
+  +auditList()
+  +append()
+}
+class RecordCodec {
+  +encode()
+  +decode()
+}
+class ReportService {
+  +reportCreate()
+  +reportGetList()
+  +reportDownload()
+}
+class ReportWorker {
+  +execute()
+  +expire()
+  +cancelAtBoundary()
+}
+class NotificationService {
+  +notificationTest()
+  +notificationDeliveryList()
+  +notificationRetry()
+}
+class NotificationWorker {
+  +enqueueAuthorityEvent()
+  +claimPermit()
+  +deliver()
+}
+class NotificationTransport {
+  <<interface>>
+  +send()
+}
+class TelegramTransport {
+  +send()
+}
+class SimulatedNotificationTransport {
+  +send()
+}
+class SimulationService {
+  +simulationCreate()
+  +simulationGenerate()
+  +simulationControl()
+}
+class SimulationEngine {
+  +advanceEvents()
+  +replay()
+}
+RuleEngine ..> RuleEvaluator
+RuleEngine ..> RuleStateStore
+RuleStateStore ..> RecordCodec
+AlarmService ..> AlarmSynchronizer
+AlarmService ..> AcknowledgementCoordinator
+AlarmSynchronizer ..> RuleStateStore
+AlarmSynchronizer ..> AuditRepository
+AcknowledgementCoordinator ..> OperationRepository
+AcknowledgementCoordinator ..> AuditRepository
+ConfigurationService ..> ConfigurationGuard
+ConfigurationService ..> PublicationCoordinator
+ConfigurationService ..> RecordCodec
+ConfigurationGuard ..> RuleStateStore
+PublicationCoordinator ..> RecordCodec
+PublicationCoordinator ..> OperationRepository
+PublicationCoordinator ..> AuditRepository
+OperationRepository ..> RecordCodec
+AuditRepository ..> RecordCodec
+ReportService ..> ReportWorker
+ReportService ..> OperationRepository
+ReportService ..> AuditRepository
+ReportWorker ..> AlarmService
+NotificationService ..> NotificationWorker
+NotificationService ..> OperationRepository
+NotificationService ..> AuditRepository
+NotificationWorker ..> NotificationTransport
+SimulationService ..> SimulationEngine
+SimulationService ..> OperationRepository
+SimulationService ..> AuditRepository
+SimulationEngine ..> RuleEngine
+TelegramTransport ..|> NotificationTransport
+SimulatedNotificationTransport ..|> NotificationTransport

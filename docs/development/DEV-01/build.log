@@ -1,0 +1,6 @@
+compile [upsFleet]
+  Compile [upsFleet]
+    FindSourceFiles [1 files]
+    WritePod [file:/C:/work/upsproject-implementation/.artifacts/DEV-01/upsFleet.pod]
+BUILD SUCCESS [21ms]!
+

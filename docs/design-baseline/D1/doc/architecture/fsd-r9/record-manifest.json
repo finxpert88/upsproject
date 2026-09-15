@@ -1,0 +1,3810 @@
+{
+  "baseline": "45e6029acaeb0e61ab7b0338c28f3f9882f6835f467043ed5d99fcf160d822ac",
+  "devices": [
+    {
+      "id": {
+        "ref": "ups-tpl-site"
+      },
+      "dis": "Engineering Template Site",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Site",
+      "site": {
+        "marker": true
+      },
+      "tz": "Singapore",
+      "upsTimezoneNeedsVerification": true
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-ups"
+      },
+      "dis": "UPS Engineering Template",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "UPS",
+      "equip": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsEquipment": {
+        "marker": true
+      },
+      "upsAssetGeneration": "template-generation-1",
+      "upsCommissioningStatus": "draft"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-battery"
+      },
+      "dis": "Battery String Template",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "BatteryString",
+      "equip": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsParentEquipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsBatteryString": {
+        "marker": true
+      }
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-module"
+      },
+      "dis": "Power Module Template",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PowerModule",
+      "equip": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsParentEquipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPowerModule": {
+        "marker": true
+      }
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-environment"
+      },
+      "dis": "Room Sensor Template",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "EnvironmentSensor",
+      "equip": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsEnvironmentSensor": {
+        "marker": true
+      }
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-powerMode"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Str",
+      "upsLogicalField": "powerMode",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-runtimeEstimateMinutes"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "min",
+      "upsLogicalField": "runtimeEstimateMinutes",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batterySocPct"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "batterySocPct",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batterySohPct"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "batterySohPct",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batteryStringVoltage"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "V",
+      "upsLogicalField": "batteryStringVoltage",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batteryImpedance"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "mΩ",
+      "upsLogicalField": "batteryImpedance",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batteryTemperature"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "°C",
+      "upsLogicalField": "batteryTemperature",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-batteryChargeCurrent"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "kind": "Number",
+      "unit": "A",
+      "upsLogicalField": "batteryChargeCurrent",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified",
+      "upsSignConventionStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-outputPowerKw"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "kW",
+      "upsLogicalField": "outputPowerKw",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-outputApparentPowerKva"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "kVA",
+      "upsLogicalField": "outputApparentPowerKva",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-loadPct"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "loadPct",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-outputVoltage"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "V",
+      "upsLogicalField": "outputVoltage",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-outputFrequency"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "Hz",
+      "upsLogicalField": "outputFrequency",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-outputThd"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "outputThd",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified",
+      "upsThdDefinitionStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-rectifierStatus"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-module"
+      },
+      "kind": "Str",
+      "upsLogicalField": "rectifierStatus",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-fanStatus"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-module"
+      },
+      "kind": "Str",
+      "upsLogicalField": "fanStatus",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-capacitorHealthPct"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-module"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "capacitorHealthPct",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-ambientTemp"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "kind": "Number",
+      "unit": "°C",
+      "upsLogicalField": "ambientTemp",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-humidity"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "humidity",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-airQuality"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "kind": "Str",
+      "upsLogicalField": "airQuality",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-waterDetected"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "kind": "Bool",
+      "upsLogicalField": "waterDetected",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-transferStatus"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Str",
+      "upsLogicalField": "transferStatus",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-staticBypassAvailable"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Bool",
+      "upsLogicalField": "staticBypassAvailable",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-staticBypassActive"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Bool",
+      "upsLogicalField": "staticBypassActive",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-maintenanceBypassAvailable"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Bool",
+      "upsLogicalField": "maintenanceBypassAvailable",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-maintenanceBypassActive"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Bool",
+      "upsLogicalField": "maintenanceBypassActive",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-lastTransferDuration"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "ms",
+      "upsLogicalField": "lastTransferDuration",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-healthScore"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "kind": "Number",
+      "unit": "%",
+      "upsLogicalField": "healthScore",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-moduleAvailableCapacity"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-module"
+      },
+      "kind": "Number",
+      "unit": "kW",
+      "upsLogicalField": "moduleAvailableCapacity",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified",
+      "upsDeliveryPhase": "P1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-point-moduleState"
+      },
+      "dis": "Point",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Point",
+      "point": {
+        "marker": true
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "equipRef": {
+        "ref": "ups-tpl-module"
+      },
+      "kind": "Str",
+      "upsLogicalField": "moduleState",
+      "upsCapabilityStatus": "unverified",
+      "upsSourceBindingStatus": "unbound",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsPhaseStatus": "unverified",
+      "upsMeasurementLocationStatus": "unverified",
+      "upsDeliveryPhase": "P1"
+    }
+  ],
+  "business": [
+    {
+      "id": {
+        "ref": "ups-tpl-evidence"
+      },
+      "dis": "EvidenceDocument",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "EvidenceDocument",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsEvidenceStatus": "pending",
+      "upsDocumentVersion": "FSD-r9",
+      "upsLocator": "PRD section 7; target device point list required"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-config"
+      },
+      "dis": "ConfigVersion",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ConfigVersion",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsConfigRevision": "template-cfg-1",
+      "upsImmutable": true,
+      "upsBaseline": "FSD-v0.1-r9",
+      "upsContentHash": "pending-generation",
+      "upsPublicationStatus": "notPublished",
+      "upsRequiredFields": [
+        "projectId",
+        "configRevision",
+        "parentRevision",
+        "members",
+        "contentHash",
+        "state"
+      ],
+      "upsContractType": "ConfigVersionRecord"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-enrollment"
+      },
+      "dis": "UpsEnrollment",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "UpsEnrollment",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsDisplayName": "UPS Engineering Template",
+      "upsCommissioningStatus": "draft",
+      "upsCapabilityProfileRef": {
+        "ref": "ups-tpl-capability"
+      },
+      "upsSourceDocumentVersion": "FSD-r9",
+      "upsBaseRequiredMappingIds": [],
+      "upsAlarmSourceStatus": "unbound"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-capability"
+      },
+      "dis": "CapabilityProfile",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "CapabilityProfile",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsItemsJson": "[{\"field\":\"powerMode\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"runtimeEstimateMinutes\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batterySocPct\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batterySohPct\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryStringVoltage\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryImpedance\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryTemperature\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"batteryChargeCurrent\",\"objectRef\":\"ups-tpl-battery\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputPowerKw\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputApparentPowerKva\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"loadPct\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputVoltage\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputFrequency\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"outputThd\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"rectifierStatus\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"fanStatus\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"capacitorHealthPct\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"ambientTemp\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"humidity\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"airQuality\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"waterDetected\",\"objectRef\":\"ups-tpl-environment\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"transferStatus\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"staticBypassAvailable\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"staticBypassActive\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"maintenanceBypassAvailable\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"maintenanceBypassActive\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"lastTransferDuration\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"healthScore\",\"objectRef\":\"ups-tpl-ups\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"moduleAvailableCapacity\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null},{\"field\":\"moduleState\",\"objectRef\":\"ups-tpl-module\",\"status\":\"unverified\",\"evidenceRef\":null}]"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-powerMode"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-powerMode",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "powerMode",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-powerMode"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-runtimeEstimateMinutes"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-runtimeEstimateMinutes",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "runtimeEstimateMinutes",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-runtimeEstimateMinutes"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "min",
+      "upsUnit": "min",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batterySocPct"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batterySocPct",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batterySocPct",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batterySocPct"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batterySohPct"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batterySohPct",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batterySohPct",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batterySohPct"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batteryStringVoltage"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batteryStringVoltage",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batteryStringVoltage",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batteryStringVoltage"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "V",
+      "upsUnit": "V",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batteryImpedance"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batteryImpedance",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batteryImpedance",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batteryImpedance"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "mΩ",
+      "upsUnit": "mΩ",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batteryTemperature"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batteryTemperature",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batteryTemperature",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batteryTemperature"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "°C",
+      "upsUnit": "°C",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-batteryChargeCurrent"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-batteryChargeCurrent",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsLogicalField": "batteryChargeCurrent",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-batteryChargeCurrent"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "A",
+      "upsUnit": "A",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-outputPowerKw"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-outputPowerKw",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "outputPowerKw",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-outputPowerKw"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "kW",
+      "upsUnit": "kW",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-outputApparentPowerKva"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-outputApparentPowerKva",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "outputApparentPowerKva",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-outputApparentPowerKva"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "kVA",
+      "upsUnit": "kVA",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-loadPct"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-loadPct",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "loadPct",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-loadPct"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-outputVoltage"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-outputVoltage",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "outputVoltage",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-outputVoltage"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "V",
+      "upsUnit": "V",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-outputFrequency"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-outputFrequency",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "outputFrequency",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-outputFrequency"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "Hz",
+      "upsUnit": "Hz",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-outputThd"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-outputThd",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "outputThd",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-outputThd"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-rectifierStatus"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-rectifierStatus",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsLogicalField": "rectifierStatus",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-rectifierStatus"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-fanStatus"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-fanStatus",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsLogicalField": "fanStatus",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-fanStatus"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-capacitorHealthPct"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-capacitorHealthPct",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsLogicalField": "capacitorHealthPct",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-capacitorHealthPct"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-ambientTemp"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-ambientTemp",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsLogicalField": "ambientTemp",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-ambientTemp"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "°C",
+      "upsUnit": "°C",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-humidity"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-humidity",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsLogicalField": "humidity",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-humidity"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-airQuality"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-airQuality",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsLogicalField": "airQuality",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-airQuality"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-waterDetected"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-waterDetected",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsLogicalField": "waterDetected",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-waterDetected"
+      },
+      "upsRawKind": "Bool",
+      "upsNormalizedKind": "Bool",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-transferStatus"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-transferStatus",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "transferStatus",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-transferStatus"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-staticBypassAvailable"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-staticBypassAvailable",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "staticBypassAvailable",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-staticBypassAvailable"
+      },
+      "upsRawKind": "Bool",
+      "upsNormalizedKind": "Bool",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-staticBypassActive"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-staticBypassActive",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "staticBypassActive",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-staticBypassActive"
+      },
+      "upsRawKind": "Bool",
+      "upsNormalizedKind": "Bool",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-maintenanceBypassAvailable"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-maintenanceBypassAvailable",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "maintenanceBypassAvailable",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-maintenanceBypassAvailable"
+      },
+      "upsRawKind": "Bool",
+      "upsNormalizedKind": "Bool",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-maintenanceBypassActive"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-maintenanceBypassActive",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "maintenanceBypassActive",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-maintenanceBypassActive"
+      },
+      "upsRawKind": "Bool",
+      "upsNormalizedKind": "Bool",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-lastTransferDuration"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-lastTransferDuration",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "lastTransferDuration",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-lastTransferDuration"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "ms",
+      "upsUnit": "ms",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-healthScore"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-healthScore",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsLogicalField": "healthScore",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-healthScore"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "%",
+      "upsUnit": "%",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-moduleAvailableCapacity"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-moduleAvailableCapacity",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsLogicalField": "moduleAvailableCapacity",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-moduleAvailableCapacity"
+      },
+      "upsRawKind": "Number",
+      "upsNormalizedKind": "Number",
+      "upsOrigin": "measured",
+      "upsRawUnit": "kW",
+      "upsUnit": "kW",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-moduleState"
+      },
+      "dis": "PointMapping",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "PointMapping",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsMappingId": "mapping-moduleState",
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-module"
+      },
+      "upsLogicalField": "moduleState",
+      "upsPointRef": {
+        "ref": "ups-tpl-point-moduleState"
+      },
+      "upsRawKind": "Str",
+      "upsNormalizedKind": "Str",
+      "upsOrigin": "measured",
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsTransformJson": "{\"scale\":1,\"offset\":0,\"enumMap\":[],\"invertBoolean\":false}",
+      "upsQualityPolicyJson": "{\"expectedIntervalMs\":10000,\"staleAfterMs\":30000,\"min\":null,\"max\":null,\"freshnessBasis\":\"sample\"}",
+      "upsHistoryPolicyJson": "{\"required\":false,\"periodMs\":null,\"retentionDays\":null}",
+      "upsBindingStatus": "unverified",
+      "upsAssetGeneration": "template-generation-1"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-environment-link"
+      },
+      "dis": "EnvironmentAssociation",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "EnvironmentAssociation",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "siteRef": {
+        "ref": "ups-tpl-site"
+      },
+      "upsSensorEquipRef": {
+        "ref": "ups-tpl-environment"
+      },
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsLocationBasisStatus": "pending",
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsAuthority": "publishedMappingAndValidatedLocationEvidence"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-asset-values"
+      },
+      "dis": "AssetProjection",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "AssetProjection",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsEvidenceRef": {
+        "ref": "ups-tpl-evidence"
+      },
+      "upsVerificationStatus": "pending",
+      "upsAuthority": "publishedRuleAndPlatformSnapshot",
+      "upsRequiredFields": [
+        "equipRef",
+        "targetObjectRef",
+        "configRevision",
+        "sourceRevision",
+        "ratedCapacityKw",
+        "ratedCapacityKva",
+        "evidenceRefs"
+      ]
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-assessment"
+      },
+      "dis": "AssessmentBinding",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "AssessmentBinding",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsBindingId": "template-assessment",
+      "upsOutlookRecordRefs": [],
+      "upsEvidenceRefs": [],
+      "upsBindingStatus": "unbound"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-plan"
+      },
+      "dis": "MaintenancePlan",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "MaintenancePlan",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsTargetObjectRef": {
+        "ref": "ups-tpl-battery"
+      },
+      "upsPlanId": "template-plan",
+      "upsPlanRevision": "template-plan-1",
+      "upsSource": "manual",
+      "upsTitle": "Maintenance Plan Template",
+      "upsRemindDays": 30,
+      "upsStatus": "draft",
+      "upsEvidenceRefs": []
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-R-01"
+      },
+      "dis": "RuleDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsRuleId": "template-R-01",
+      "upsRuleVersion": "template-rule-1",
+      "upsRuleType": "R-01",
+      "upsDriver": "sample",
+      "upsEnabled": false,
+      "upsPrimaryMappingRef": {
+        "ref": "ups-tpl-mapping-runtimeEstimateMinutes"
+      },
+      "upsParameterStatus": "engineeringRequired",
+      "upsParametersJson": "{\"requiredMinutes\":null,\"hysteresisMinutes\":2,\"trigger\":{\"count\":2,\"durationMs\":0},\"clear\":{\"count\":2,\"durationMs\":0}}"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-R-02"
+      },
+      "dis": "RuleDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsRuleId": "template-R-02",
+      "upsRuleVersion": "template-rule-1",
+      "upsRuleType": "R-02",
+      "upsDriver": "sample",
+      "upsEnabled": false,
+      "upsPrimaryMappingRef": {
+        "ref": "ups-tpl-mapping-loadPct"
+      },
+      "upsParameterStatus": "engineeringRequired",
+      "upsParametersJson": "{}"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-R-03"
+      },
+      "dis": "RuleDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsRuleId": "template-R-03",
+      "upsRuleVersion": "template-rule-1",
+      "upsRuleType": "R-03",
+      "upsDriver": "sample",
+      "upsEnabled": false,
+      "upsPrimaryMappingRef": {
+        "ref": "ups-tpl-mapping-batteryImpedance"
+      },
+      "upsParameterStatus": "engineeringRequired",
+      "upsParametersJson": "{}"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-R-04"
+      },
+      "dis": "RuleDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsRuleId": "template-R-04",
+      "upsRuleVersion": "template-rule-1",
+      "upsRuleType": "R-04",
+      "upsDriver": "calendar",
+      "upsEnabled": false,
+      "upsParameterStatus": "engineeringRequired",
+      "upsParametersJson": "{\"planId\":null}"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-R-05"
+      },
+      "dis": "RuleDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "equipRef": {
+        "ref": "ups-tpl-ups"
+      },
+      "upsConfigRef": {
+        "ref": "ups-tpl-config"
+      },
+      "upsRuleId": "template-R-05",
+      "upsRuleVersion": "template-rule-1",
+      "upsRuleType": "R-05",
+      "upsDriver": "quality",
+      "upsEnabled": false,
+      "upsParameterStatus": "engineeringRequired",
+      "upsParametersJson": "{\"requiredMappingIds\":[],\"triggerDelayMs\":5000,\"clearDelayMs\":5000}"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-draft"
+      },
+      "dis": "ConfigDraft",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ConfigDraft",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Draft",
+      "upsNaturalKey": "draftId + draftRevision",
+      "upsWriter": "config.edit",
+      "upsRequiredFields": [
+        "baseConfigRevision",
+        "scopeDigest",
+        "contentHash",
+        "patches",
+        "author",
+        "updatedAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-validation"
+      },
+      "dis": "ValidationReport",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ValidationReport",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "ValidationReport",
+      "upsNaturalKey": "validationId",
+      "upsWriter": "config.edit",
+      "upsRequiredFields": [
+        "draftRevision",
+        "contentHash",
+        "platformBindingFingerprint",
+        "blockingIssues",
+        "warnings",
+        "affectedEquip",
+        "affectedActiveAlarms",
+        "expiresAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-publication"
+      },
+      "dis": "Publication",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "Publication",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Publication",
+      "upsNaturalKey": "projectId + operationId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "candidateRevision",
+        "previousRevision",
+        "previousEpoch",
+        "targetEpoch",
+        "state",
+        "moduleReadySet",
+        "decisionAt",
+        "lastError"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-pointer"
+      },
+      "dis": "ActiveConfigPointer",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ActiveConfigPointer",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "configRevision",
+        "activationEpoch",
+        "decisionAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-activation"
+      },
+      "dis": "LastSuccessfulActivation",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "LastSuccessfulActivation",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "configRevision",
+        "activationEpoch",
+        "activatedAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-state"
+      },
+      "dis": "RuleState",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleState",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "RuleStateRecord",
+      "upsNaturalKey": "projectId + mode + sessionId/generationId (simulation only) + equipRef + ruleId + ruleVersion",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "activationEpoch",
+        "primaryWatermark",
+        "candidate",
+        "count",
+        "candidateSince",
+        "badSince",
+        "goodSince",
+        "detectedRisk",
+        "occurrenceId",
+        "syncState",
+        "lastOccurrenceOrdinal",
+        "context",
+        "workerFence"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-rule-outbox"
+      },
+      "dis": "RuleAlarmOutbox",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleAlarmOutbox",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId + mode + sessionId/generationId (simulation only) + occurrenceId + commandSeq",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "ruleStateRef",
+        "commandType",
+        "correlationKey",
+        "epoch",
+        "requestHash",
+        "state",
+        "sourceResultRef",
+        "attempt",
+        "nextAttemptAt",
+        "commandId",
+        "occurrenceId",
+        "commandSeq",
+        "predecessorCommandId",
+        "previousOccurrenceId",
+        "payload",
+        "payloadHash",
+        "reconcileCount",
+        "context",
+        "workerFence"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-association"
+      },
+      "dis": "AlarmAssociation",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "AlarmAssociation",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId + sourceSystem + sourceAlarmId + occurrenceId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "equipRef",
+        "sourceRevision",
+        "ruleVersion",
+        "correlationKey",
+        "sourceQuality",
+        "resolutionKind"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-journal"
+      },
+      "dis": "OperationJournal",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "OperationJournal",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Operation",
+      "upsNaturalKey": "projectId + operationId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "action",
+        "requestHash",
+        "targetRefs",
+        "expectedRevision",
+        "state",
+        "resultAvailability",
+        "resultRef",
+        "updatedAt",
+        "errorCode",
+        "actorId",
+        "requestContext",
+        "canonicalRequestHash",
+        "originalPermission",
+        "ownerSessionId",
+        "cleanupTombstone",
+        "retainedUntil"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-audit"
+      },
+      "dis": "AuditEvent",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "AuditEvent",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Audit",
+      "upsNaturalKey": "auditId",
+      "upsWriter": "systemAppendOnly",
+      "upsRequiredFields": [
+        "projectId",
+        "serverTs",
+        "actorId",
+        "action",
+        "targetRefs",
+        "operationId",
+        "outcome",
+        "beforeRevision",
+        "afterRevision",
+        "redactedDiff",
+        "reasonCode",
+        "sourceResultRef"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-acceptance"
+      },
+      "dis": "AcceptanceReport",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "AcceptanceReport",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "AcceptanceReport",
+      "upsNaturalKey": "reportId",
+      "upsWriter": "commissioning.accept",
+      "upsRequiredFields": [
+        "equipRef",
+        "configRevision",
+        "mappingFingerprint",
+        "modelFirmware",
+        "pointListVersion",
+        "baseChecks",
+        "alarmEvidenceRefs",
+        "disconnectEvidenceRefs",
+        "historyEvidenceRefs",
+        "waivers",
+        "acceptedBy",
+        "acceptedAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-mapping-interval"
+      },
+      "dis": "MappingInterval",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "MappingInterval",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "mappingId + configRevision + validFrom",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "mappingRef",
+        "validFrom",
+        "validTo",
+        "sourceRef",
+        "transform",
+        "normalizedUnit",
+        "assetGeneration",
+        "changeReason",
+        "knownMappingError"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-plan-event"
+      },
+      "dis": "MaintenancePlanEvent",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "MaintenancePlanEvent",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Alarm.eventDetails",
+      "upsNaturalKey": "planId + planRevision + stage",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "equipRef",
+        "targetObjectRef",
+        "stage",
+        "endedAt",
+        "endReason",
+        "ackRequired"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-outlook"
+      },
+      "dis": "OutlookRecord",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "OutlookRecord",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "OutlookItem",
+      "upsNaturalKey": "itemId",
+      "upsWriter": "config.edit",
+      "upsRequiredFields": [
+        "equipRef",
+        "targetObjectRef",
+        "component",
+        "kind",
+        "title",
+        "severity",
+        "dueDate",
+        "windowStart",
+        "windowEnd",
+        "assessedAt",
+        "quality",
+        "evidenceRefs",
+        "methodologyRef",
+        "algorithmVersion",
+        "reason"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-report"
+      },
+      "dis": "ReportJob",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ReportJob",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "ReportJob",
+      "upsNaturalKey": "projectId + ownerId + operationId",
+      "upsWriter": "report.export",
+      "upsRequiredFields": [
+        "jobId",
+        "ownerId",
+        "context",
+        "params",
+        "state",
+        "progressPct",
+        "createdAt",
+        "expiresAt",
+        "dataCutoffAt",
+        "collectedFrom",
+        "collectedTo",
+        "rows",
+        "bytes",
+        "qualitySummary",
+        "checksum",
+        "errorCode",
+        "reason"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-report-file"
+      },
+      "dis": "ReportFileMetadata",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ReportFileMetadata",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "ReportFile",
+      "upsNaturalKey": "jobId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "fileName",
+        "mime",
+        "bytes",
+        "checksum",
+        "protectedStorageKey",
+        "generationId",
+        "expiresAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-channel"
+      },
+      "dis": "NotificationChannel",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "NotificationChannel",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "NotificationChannel",
+      "upsNaturalKey": "channelId + configRevision",
+      "upsWriter": "notification.manage",
+      "upsRequiredFields": [
+        "channelId",
+        "name",
+        "enabled",
+        "secretRef",
+        "chatId",
+        "messageThreadId",
+        "timezone",
+        "resumePauseRevision"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-subscription"
+      },
+      "dis": "NotificationSubscription",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "NotificationSubscription",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "NotificationSubscription",
+      "upsNaturalKey": "subscriptionId + configRevision",
+      "upsWriter": "notification.manage",
+      "upsRequiredFields": [
+        "subscriptionId",
+        "channelId",
+        "enabled",
+        "equipRefs",
+        "severities",
+        "eventTypes",
+        "quietHours"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-gate"
+      },
+      "dis": "ChannelGate",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "ChannelGate",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "ChannelGate",
+      "upsNaturalKey": "projectId + channelId",
+      "upsWriter": "notification.manage",
+      "upsRequiredFields": [
+        "channelId",
+        "paused",
+        "pauseRevision",
+        "pausedAt",
+        "pausedBy",
+        "reason"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-notify"
+      },
+      "dis": "NotifyJob",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "NotifyJob",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "NotifyJob",
+      "upsNaturalKey": "projectId + eventKey + channelId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "notificationId",
+        "context",
+        "channelId",
+        "alarmRef",
+        "eventKey",
+        "eventAt",
+        "createdAt",
+        "state",
+        "attempt",
+        "nextAttemptAt",
+        "channelRevision",
+        "transport",
+        "messageId",
+        "simulatedOutcome",
+        "lastError"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-attempt"
+      },
+      "dis": "NotificationAttempt",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "NotificationAttempt",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "notificationId + attempt",
+      "upsWriter": "systemAppendOnly",
+      "upsRequiredFields": [
+        "operationId",
+        "acceptDuplicateRisk",
+        "permitRevision",
+        "requestHash",
+        "startedAt",
+        "finishedAt",
+        "outcome",
+        "messageId",
+        "error"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-cursor"
+      },
+      "dis": "NotificationCursor",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "NotificationCursor",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId + sourceStream + subscriptionId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "sourceWatermark",
+        "overlapStart",
+        "lastEnqueuedEventKey",
+        "updatedAt",
+        "gapIntervals"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-dictionary"
+      },
+      "dis": "MetricDefinition",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "MetricDefinition",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "MetricDefinition",
+      "upsNaturalKey": "metricId + dictionaryVersion",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "metricId",
+        "name",
+        "meaning",
+        "unit",
+        "formula",
+        "measurementLocation",
+        "sourceRef",
+        "qualityMeaning",
+        "basis"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-simulation"
+      },
+      "dis": "SimulationSession",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationSession",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "SimulationSessionRecord",
+      "upsNaturalKey": "projectId + sessionId",
+      "upsWriter": "simulation.manage",
+      "upsRequiredFields": [
+        "sessionId",
+        "ownerId",
+        "generationId",
+        "controlRevision",
+        "dataRevision",
+        "state",
+        "initialized",
+        "scenarioId",
+        "scenarioVersion",
+        "seed",
+        "deviceCount",
+        "startAt",
+        "timezone",
+        "virtualTime",
+        "speed",
+        "historyHours",
+        "sampleIntervalSeconds",
+        "historyRows",
+        "lastActivityAt",
+        "cleanupOperationId",
+        "reason",
+        "initialScenarioId",
+        "initialScenarioVersion",
+        "generatorVersion",
+        "initialGenerationParameters",
+        "workerFence"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-sim-cleanup"
+      },
+      "dis": "SimulationCleanup",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationCleanup",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "sessionId + operationId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "oldGenerationId",
+        "newGenerationId",
+        "action",
+        "fenceRevision",
+        "state",
+        "pendingWorkers",
+        "pendingFiles",
+        "completedAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-sim-sample"
+      },
+      "dis": "SimulationSample",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationSample",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "sessionId + generationId + objectId + field + sampleTime + sequence",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "value",
+        "unit",
+        "quality",
+        "sourceTs",
+        "scenarioVersion",
+        "seed"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-sim-alarm"
+      },
+      "dis": "SimulationAlarm",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationAlarm",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "Alarm",
+      "upsNaturalKey": "sessionId + generationId + occurrenceId",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "alarmPayload",
+        "sourceMode",
+        "simulationSessionId",
+        "generationId"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-schema-migration"
+      },
+      "dis": "SchemaMigration",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SchemaMigration",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "migrationId + fromVersion + toVersion",
+      "upsWriter": "system",
+      "upsRequiredFields": [
+        "checksum",
+        "state",
+        "checkpoint",
+        "backupRef",
+        "startedAt",
+        "completedAt"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-occurrence"
+      },
+      "dis": "RuleOccurrence",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "RuleOccurrence",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "RuleOccurrenceRecord",
+      "upsNaturalKey": "projectId + mode + sessionId/generationId (simulation only) + occurrenceId",
+      "upsRequiredFields": [
+        "equipRef",
+        "ruleId",
+        "ruleVersion",
+        "activationEpoch",
+        "occurrenceId",
+        "occurrenceOrdinal",
+        "previousOccurrenceId",
+        "detectedStartedAt",
+        "detectedEndedAt",
+        "detectedSeverity",
+        "sourceAlarmId",
+        "nextCommandSeq",
+        "revision",
+        "context",
+        "workerFence"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-scenario-event"
+      },
+      "dis": "SimulationScenarioEvent",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationScenarioEvent",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "ScenarioEventRecord",
+      "upsNaturalKey": "projectId + sessionId + generationId + eventSeq",
+      "upsRequiredFields": [
+        "sessionId",
+        "generationId",
+        "scenarioId",
+        "scenarioVersion",
+        "generatorVersion",
+        "targetSimEquipIds",
+        "virtualEffectiveAt",
+        "eventSeq",
+        "parameters",
+        "controlRevision"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-checkpoint"
+      },
+      "dis": "SimulationCheckpoint",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "SimulationCheckpoint",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "SimulationCheckpointRecord",
+      "upsNaturalKey": "projectId + sessionId + generationId",
+      "upsRequiredFields": [
+        "sessionId",
+        "generationId",
+        "workerFence",
+        "initialScenarioId",
+        "initialScenarioVersion",
+        "generatorVersion",
+        "seed",
+        "startAt",
+        "generationParameters",
+        "assignments",
+        "lastCompleteEventAt",
+        "lastCommittedEventSeq",
+        "nextEventSeq",
+        "sampleWatermarks",
+        "ruleStateRefs",
+        "batchId"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-entity-version"
+      },
+      "dis": "EntityVersion",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "EntityVersion",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "EntityVersionRecord",
+      "upsNaturalKey": "projectId + entityId + entityRevision",
+      "upsRequiredFields": [
+        "entityId",
+        "entityRevision",
+        "entityType",
+        "ownerEquipRefs",
+        "payload",
+        "contentHash"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    },
+    {
+      "id": {
+        "ref": "ups-tpl-battery-asset"
+      },
+      "dis": "BatteryAssetProjection",
+      "upsFleet": {
+        "marker": true
+      },
+      "upsTemplate": {
+        "marker": true
+      },
+      "upsSchemaVersion": "2.0",
+      "upsRecordType": "BatteryAssetProjection",
+      "upsProjectId": "project-template",
+      "upsSourceMode": "template",
+      "upsContractType": "internal",
+      "upsNaturalKey": "projectId + configRevision + targetObjectRef",
+      "upsRequiredFields": [
+        "equipRef",
+        "targetObjectRef",
+        "configRevision",
+        "chemistry",
+        "cellCount",
+        "evidenceRef",
+        "sourceRevision"
+      ],
+      "upsPrototypeState": "notInstantiated"
+    }
+  ]
+}

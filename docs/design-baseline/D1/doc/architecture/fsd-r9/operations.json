@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "OP-01",
+    "name": "sessionCapabilities",
+    "owner": "RequestFacade",
+    "records": "FIN session",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/sessionCapabilities",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "session",
+      "simulation": "session"
+    },
+    "simulationAcl": "visibleSession",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": true,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-02",
+    "name": "equipmentList",
+    "owner": "InventoryService",
+    "records": "UpsEnrollment,CapabilityProfile",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/equipmentList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-03",
+    "name": "equipmentSnapshot",
+    "owner": "TelemetryService",
+    "records": "PointMapping,AssessmentBinding,OutlookRecord",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/equipmentSnapshot",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-04",
+    "name": "metricHistory",
+    "owner": "HistoryService",
+    "records": "MappingInterval,FIN history",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/metricHistory",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "history.view",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-05",
+    "name": "alarmListDetail",
+    "owner": "AlarmService",
+    "records": "AlarmAssociation,FIN alarm",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/alarmListDetail",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "alarm.view",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-06",
+    "name": "alarmAcknowledge",
+    "owner": "AlarmService",
+    "records": "OperationJournal,AuditEvent,AlarmAssociation",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/alarmAcknowledge",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "alarm.ack",
+      "simulation": "simulation.ack"
+    },
+    "simulationAcl": "ack",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-07",
+    "name": "operationStatus",
+    "owner": "OperationRepository",
+    "records": "OperationJournal,Publication",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/operationStatus",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "originalActionByMode",
+      "simulation": "originalActionByMode"
+    },
+    "simulationAcl": "originalAction",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": true,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-08",
+    "name": "configGetSaveDraft",
+    "owner": "ConfigurationService",
+    "records": "ConfigDraft,ConfigVersion",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/configGetSaveDraft",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-09",
+    "name": "configValidate",
+    "owner": "ConfigurationService",
+    "records": "ValidationReport,PointMapping,CapabilityProfile",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/configValidate",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-10",
+    "name": "configPublish",
+    "owner": "ConfigurationService",
+    "records": "Publication,ActiveConfigPointer,LastSuccessfulActivation,MappingInterval,AuditEvent",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/configPublish",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-11",
+    "name": "configRollbackDraft",
+    "owner": "ConfigurationService",
+    "records": "ConfigDraft,ConfigVersion",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/configRollbackDraft",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-12",
+    "name": "diagnostics",
+    "owner": "LifecycleDiagnostics",
+    "records": "Publication,RuleAlarmOutbox,OperationJournal",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/diagnostics",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "diagnostics.view",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-13",
+    "name": "auditList",
+    "owner": "AuditRepository",
+    "records": "AuditEvent",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/auditList",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "audit.view",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-14",
+    "name": "commissioningAccept",
+    "owner": "ConfigurationService",
+    "records": "AcceptanceReport,UpsEnrollment,Publication",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/commissioningAccept",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "commissioning.accept",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-15",
+    "name": "reportCreate",
+    "owner": "ReportService",
+    "records": "ReportJob,MappingInterval",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/reportCreate",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "simulationAcl": "export",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-16",
+    "name": "reportGetList",
+    "owner": "ReportService",
+    "records": "ReportJob",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/reportGetList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.read",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-17",
+    "name": "reportDownload",
+    "owner": "ReportService",
+    "records": "ReportJob,ReportFileMetadata",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/reportDownload",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "simulationAcl": "export",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-18",
+    "name": "reportCancel",
+    "owner": "ReportService",
+    "records": "ReportJob,AuditEvent",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/reportCancel",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "simulationAcl": "export",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": true,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-19",
+    "name": "notificationTest",
+    "owner": "NotificationService",
+    "records": "NotificationChannel,NotifyJob,OperationJournal",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/notificationTest",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-20",
+    "name": "notificationDeliveryList",
+    "owner": "NotificationService",
+    "records": "NotifyJob,NotificationAttempt",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/notificationDeliveryList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "notification.read",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-21",
+    "name": "notificationRetry",
+    "owner": "NotificationService",
+    "records": "NotifyJob,NotificationAttempt,AuditEvent",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/notificationRetry",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-22",
+    "name": "metricDictionary",
+    "owner": "MetricDictionaryService",
+    "records": "MetricDefinition",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/metricDictionary",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-23",
+    "name": "simulationCreate",
+    "owner": "SimulationService",
+    "records": "SimulationSession",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationCreate",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "create owned session"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": true,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-24",
+    "name": "simulationGenerate",
+    "owner": "SimulationService",
+    "records": "SimulationSession,SimulationSample,SimulationAlarm",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationGenerate",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-25",
+    "name": "simulationControl",
+    "owner": "SimulationService",
+    "records": "SimulationSession,OperationJournal",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationControl",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-26",
+    "name": "simulationStep",
+    "owner": "SimulationService",
+    "records": "SimulationSession,SimulationSample,SimulationAlarm",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationStep",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-27",
+    "name": "simulationScenario",
+    "owner": "SimulationService",
+    "records": "SimulationSession,SimulationSample,SimulationAlarm",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationScenario",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  },
+  {
+    "id": "OP-28",
+    "name": "simulationReset",
+    "owner": "SimulationService",
+    "records": "SimulationCleanup,SimulationSession",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationReset",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": "same registered request only; OP-07 returns redacted cleanup status"
+    }
+  },
+  {
+    "id": "OP-29",
+    "name": "simulationDelete",
+    "owner": "SimulationService",
+    "records": "SimulationCleanup,SimulationSession",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationDelete",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "simulationAcl": "manage",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": "same registered request only; OP-07 returns redacted cleanup status"
+    }
+  },
+  {
+    "id": "OP-30",
+    "name": "simulationGetList",
+    "owner": "SimulationService",
+    "records": "SimulationSession",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/simulationGetList",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.read"
+    },
+    "simulationAcl": "read",
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "filter authorized session ACL"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": true,
+    "rootActionRestriction": "list",
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": false,
+      "simulation": false
+    },
+    "idempotency": null
+  },
+  {
+    "id": "OP-31",
+    "name": "notificationPause",
+    "owner": "NotificationService",
+    "records": "ChannelGate,AuditEvent,OperationJournal",
+    "implementationStatus": "design",
+    "transport": "POST /upsFleet/api/v2/operations/notificationPause",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "simulationAcl": null,
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "ownerRequired": false,
+    "rootSimulationAllowed": false,
+    "rootActionRestriction": null,
+    "permissionImplications": {
+      "simulation.manage": [
+        "simulation.read",
+        "simulation.ack",
+        "simulation.export"
+      ]
+    },
+    "externalSideEffectsByMode": {
+      "live": true,
+      "simulation": false
+    },
+    "idempotency": {
+      "uniqueKey": [
+        "projectId",
+        "operationId"
+      ],
+      "bindingFields": [
+        "actorId",
+        "action",
+        "requestContext",
+        "canonicalRequestHash"
+      ],
+      "lookupBeforeRevisionCheck": true,
+      "cleanupOldContextException": null
+    }
+  }
+]

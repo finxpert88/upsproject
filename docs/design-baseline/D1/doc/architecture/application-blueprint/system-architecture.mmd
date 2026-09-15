@@ -1,0 +1,28 @@
+flowchart TB
+  Browser["Browser / en-US UI"]
+  Api["Bootstrap + 31 operations<br/>RequestFacade / guard / codec"]
+  Domain["Inventory / telemetry / history<br/>Rules / alarms / configuration"]
+  Jobs["Reports / notification workers<br/>Bounded scheduler"]
+  Live["LiveDataSource"]
+  Sim["SimulationDataSource<br/>SimulationEngine + shared RuleEngine"]
+  Gateway["FinGateway<br/>Verified SDK binding pending"]
+  Fin["FIN identity / points / history / alarms"]
+  Folio["Folio business records<br/>Config / intents / outboxes / audit"]
+  Files["Protected report files"]
+  Devices["UPS / sensors / FIN connectors"]
+  Telegram["Telegram API<br/>Server transport only"]
+  Local["Simulated delivery<br/>No external send"]
+  Browser --> Api
+  Api --> Domain
+  Api --> Jobs
+  Domain -->|"live context"| Live
+  Domain -->|"simulation context"| Sim
+  Live --> Gateway
+  Sim -->|"isolated records only"| Gateway
+  Jobs --> Gateway
+  Gateway --> Fin
+  Gateway --> Folio
+  Gateway --> Files
+  Devices --> Fin
+  Jobs -->|"live + gate permit"| Telegram
+  Jobs -->|"simulation"| Local

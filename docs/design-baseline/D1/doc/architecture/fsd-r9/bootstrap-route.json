@@ -1,0 +1,14 @@
+{
+  "route": "/upsFleet/api/bootstrap",
+  "method": "GET",
+  "authentication": "public metadata only",
+  "request": {
+    "body": false,
+    "context": false,
+    "schemaVersion": false
+  },
+  "responseType": "BootstrapResponse",
+  "businessData": false,
+  "capabilityRoute": "POST /upsFleet/api/v2/operations/sessionCapabilities",
+  "capabilityAuthentication": "required"
+}

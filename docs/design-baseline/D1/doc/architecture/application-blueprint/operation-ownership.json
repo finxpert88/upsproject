@@ -1,0 +1,667 @@
+[
+  {
+    "operation": "OP-01",
+    "name": "sessionCapabilities",
+    "backendClass": "RequestFacade",
+    "frontendFile": "upsFleet/ui/src/api/sessionApi.js",
+    "requestType": "Contracts['sessionCapabilities']['request']",
+    "responseType": "Contracts['sessionCapabilities']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/sessionCapabilities",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "session",
+      "simulation": "session"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-02",
+    "name": "equipmentList",
+    "backendClass": "InventoryService",
+    "frontendFile": "upsFleet/ui/src/api/inventoryApi.js",
+    "requestType": "Contracts['equipmentList']['request']",
+    "responseType": "Contracts['equipmentList']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/equipmentList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-03",
+    "name": "equipmentSnapshot",
+    "backendClass": "TelemetryService",
+    "frontendFile": "upsFleet/ui/src/api/inventoryApi.js",
+    "requestType": "Contracts['equipmentSnapshot']['request']",
+    "responseType": "Contracts['equipmentSnapshot']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/equipmentSnapshot",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-04",
+    "name": "metricHistory",
+    "backendClass": "HistoryService",
+    "frontendFile": "upsFleet/ui/src/api/historyApi.js",
+    "requestType": "Contracts['metricHistory']['request']",
+    "responseType": "Contracts['metricHistory']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/metricHistory",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "history.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-05",
+    "name": "alarmListDetail",
+    "backendClass": "AlarmService",
+    "frontendFile": "upsFleet/ui/src/api/alarmApi.js",
+    "requestType": "Contracts['alarmListDetail']['request']",
+    "responseType": "Contracts['alarmListDetail']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/alarmListDetail",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "alarm.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-06",
+    "name": "alarmAcknowledge",
+    "backendClass": "AlarmService",
+    "frontendFile": "upsFleet/ui/src/api/alarmApi.js",
+    "requestType": "Contracts['alarmAcknowledge']['request']",
+    "responseType": "Contracts['alarmAcknowledge']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/alarmAcknowledge",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "alarm.ack",
+      "simulation": "simulation.ack"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-07",
+    "name": "operationStatus",
+    "backendClass": "OperationRepository",
+    "frontendFile": "upsFleet/ui/src/api/alarmApi.js",
+    "requestType": "Contracts['operationStatus']['request']",
+    "responseType": "Contracts['operationStatus']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/operationStatus",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "originalActionByMode",
+      "simulation": "originalActionByMode"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-08",
+    "name": "configGetSaveDraft",
+    "backendClass": "ConfigurationService",
+    "frontendFile": "upsFleet/ui/src/api/configurationApi.js",
+    "requestType": "Contracts['configGetSaveDraft']['request']",
+    "responseType": "Contracts['configGetSaveDraft']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/configGetSaveDraft",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-09",
+    "name": "configValidate",
+    "backendClass": "ConfigurationService",
+    "frontendFile": "upsFleet/ui/src/api/configurationApi.js",
+    "requestType": "Contracts['configValidate']['request']",
+    "responseType": "Contracts['configValidate']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/configValidate",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.edit",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-10",
+    "name": "configPublish",
+    "backendClass": "ConfigurationService",
+    "frontendFile": "upsFleet/ui/src/api/configurationApi.js",
+    "requestType": "Contracts['configPublish']['request']",
+    "responseType": "Contracts['configPublish']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/configPublish",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-11",
+    "name": "configRollbackDraft",
+    "backendClass": "ConfigurationService",
+    "frontendFile": "upsFleet/ui/src/api/configurationApi.js",
+    "requestType": "Contracts['configRollbackDraft']['request']",
+    "responseType": "Contracts['configRollbackDraft']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/configRollbackDraft",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "config.publish",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-12",
+    "name": "diagnostics",
+    "backendClass": "LifecycleDiagnostics",
+    "frontendFile": "upsFleet/ui/src/api/diagnosticsApi.js",
+    "requestType": "Contracts['diagnostics']['request']",
+    "responseType": "Contracts['diagnostics']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/diagnostics",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "diagnostics.view",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-13",
+    "name": "auditList",
+    "backendClass": "AuditRepository",
+    "frontendFile": "upsFleet/ui/src/api/auditApi.js",
+    "requestType": "Contracts['auditList']['request']",
+    "responseType": "Contracts['auditList']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/auditList",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "audit.view",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-14",
+    "name": "commissioningAccept",
+    "backendClass": "ConfigurationService",
+    "frontendFile": "upsFleet/ui/src/api/configurationApi.js",
+    "requestType": "Contracts['commissioningAccept']['request']",
+    "responseType": "Contracts['commissioningAccept']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/commissioningAccept",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "commissioning.accept",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-15",
+    "name": "reportCreate",
+    "backendClass": "ReportService",
+    "frontendFile": "upsFleet/ui/src/api/reportApi.js",
+    "requestType": "Contracts['reportCreate']['request']",
+    "responseType": "Contracts['reportCreate']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/reportCreate",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-16",
+    "name": "reportGetList",
+    "backendClass": "ReportService",
+    "frontendFile": "upsFleet/ui/src/api/reportApi.js",
+    "requestType": "Contracts['reportGetList']['request']",
+    "responseType": "Contracts['reportGetList']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/reportGetList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.read",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-17",
+    "name": "reportDownload",
+    "backendClass": "ReportService",
+    "frontendFile": "upsFleet/ui/src/api/reportApi.js",
+    "requestType": "Contracts['reportDownload']['request']",
+    "responseType": "Contracts['reportDownload']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/reportDownload",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": "Binary success; JSON error"
+  },
+  {
+    "operation": "OP-18",
+    "name": "reportCancel",
+    "backendClass": "ReportService",
+    "frontendFile": "upsFleet/ui/src/api/reportApi.js",
+    "requestType": "Contracts['reportCancel']['request']",
+    "responseType": "Contracts['reportCancel']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/reportCancel",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "report.export",
+      "simulation": "simulation.export"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-19",
+    "name": "notificationTest",
+    "backendClass": "NotificationService",
+    "frontendFile": "upsFleet/ui/src/api/notificationApi.js",
+    "requestType": "Contracts['notificationTest']['request']",
+    "responseType": "Contracts['notificationTest']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/notificationTest",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-20",
+    "name": "notificationDeliveryList",
+    "backendClass": "NotificationService",
+    "frontendFile": "upsFleet/ui/src/api/notificationApi.js",
+    "requestType": "Contracts['notificationDeliveryList']['request']",
+    "responseType": "Contracts['notificationDeliveryList']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/notificationDeliveryList",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "notification.read",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-21",
+    "name": "notificationRetry",
+    "backendClass": "NotificationService",
+    "frontendFile": "upsFleet/ui/src/api/notificationApi.js",
+    "requestType": "Contracts['notificationRetry']['request']",
+    "responseType": "Contracts['notificationRetry']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/notificationRetry",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-22",
+    "name": "metricDictionary",
+    "backendClass": "MetricDictionaryService",
+    "frontendFile": "upsFleet/ui/src/api/inventoryApi.js",
+    "requestType": "Contracts['metricDictionary']['request']",
+    "responseType": "Contracts['metricDictionary']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/metricDictionary",
+    "allowedContexts": [
+      "live",
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": "fleet.view",
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-23",
+    "name": "simulationCreate",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationCreate']['request']",
+    "responseType": "Contracts['simulationCreate']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationCreate",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "create owned session"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-24",
+    "name": "simulationGenerate",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationGenerate']['request']",
+    "responseType": "Contracts['simulationGenerate']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationGenerate",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-25",
+    "name": "simulationControl",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationControl']['request']",
+    "responseType": "Contracts['simulationControl']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationControl",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-26",
+    "name": "simulationStep",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationStep']['request']",
+    "responseType": "Contracts['simulationStep']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationStep",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-27",
+    "name": "simulationScenario",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationScenario']['request']",
+    "responseType": "Contracts['simulationScenario']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationScenario",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-28",
+    "name": "simulationReset",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationReset']['request']",
+    "responseType": "Contracts['simulationReset']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationReset",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-29",
+    "name": "simulationDelete",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationDelete']['request']",
+    "responseType": "Contracts['simulationDelete']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationDelete",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.manage"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-30",
+    "name": "simulationGetList",
+    "backendClass": "SimulationService",
+    "frontendFile": "upsFleet/ui/src/api/simulationApi.js",
+    "requestType": "Contracts['simulationGetList']['request']",
+    "responseType": "Contracts['simulationGetList']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/simulationGetList",
+    "allowedContexts": [
+      "simulation"
+    ],
+    "permissionByMode": {
+      "live": null,
+      "simulation": "simulation.read"
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "filter authorized session ACL"
+    },
+    "exception": null
+  },
+  {
+    "operation": "OP-31",
+    "name": "notificationPause",
+    "backendClass": "NotificationService",
+    "frontendFile": "upsFleet/ui/src/api/notificationApi.js",
+    "requestType": "Contracts['notificationPause']['request']",
+    "responseType": "Contracts['notificationPause']['response']",
+    "transport": "POST /upsFleet/api/v2/operations/notificationPause",
+    "allowedContexts": [
+      "live"
+    ],
+    "permissionByMode": {
+      "live": "notification.manage",
+      "simulation": null
+    },
+    "scopeByMode": {
+      "live": "current project + all referenced authorized objects",
+      "simulation": "current session ACL + generation + referenced session objects"
+    },
+    "exception": null
+  }
+]

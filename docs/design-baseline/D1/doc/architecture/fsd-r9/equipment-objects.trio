@@ -1,0 +1,587 @@
+// FSD v0.1 revision 9. Engineering templates only. Never auto-import on startup.
+id: @ups-tpl-site
+dis: "Engineering Template Site"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Site"
+site
+tz: "Singapore"
+upsTimezoneNeedsVerification: true
+---
+id: @ups-tpl-ups
+dis: "UPS Engineering Template"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "UPS"
+equip
+siteRef: @ups-tpl-site
+upsEquipment
+upsAssetGeneration: "template-generation-1"
+upsCommissioningStatus: "draft"
+---
+id: @ups-tpl-battery
+dis: "Battery String Template"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "BatteryString"
+equip
+siteRef: @ups-tpl-site
+upsParentEquipRef: @ups-tpl-ups
+upsBatteryString
+---
+id: @ups-tpl-module
+dis: "Power Module Template"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "PowerModule"
+equip
+siteRef: @ups-tpl-site
+upsParentEquipRef: @ups-tpl-ups
+upsPowerModule
+---
+id: @ups-tpl-environment
+dis: "Room Sensor Template"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "EnvironmentSensor"
+equip
+siteRef: @ups-tpl-site
+upsEnvironmentSensor
+---
+id: @ups-tpl-point-powerMode
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Str"
+upsLogicalField: "powerMode"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-runtimeEstimateMinutes
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "min"
+upsLogicalField: "runtimeEstimateMinutes"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batterySocPct
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "%"
+upsLogicalField: "batterySocPct"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batterySohPct
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "%"
+upsLogicalField: "batterySohPct"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batteryStringVoltage
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "V"
+upsLogicalField: "batteryStringVoltage"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batteryImpedance
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "mΩ"
+upsLogicalField: "batteryImpedance"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batteryTemperature
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "°C"
+upsLogicalField: "batteryTemperature"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-batteryChargeCurrent
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-battery
+kind: "Number"
+unit: "A"
+upsLogicalField: "batteryChargeCurrent"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-battery
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+upsSignConventionStatus: "unverified"
+---
+id: @ups-tpl-point-outputPowerKw
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "kW"
+upsLogicalField: "outputPowerKw"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-outputApparentPowerKva
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "kVA"
+upsLogicalField: "outputApparentPowerKva"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-loadPct
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "%"
+upsLogicalField: "loadPct"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-outputVoltage
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "V"
+upsLogicalField: "outputVoltage"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-outputFrequency
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "Hz"
+upsLogicalField: "outputFrequency"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-outputThd
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "%"
+upsLogicalField: "outputThd"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+upsThdDefinitionStatus: "unverified"
+---
+id: @ups-tpl-point-rectifierStatus
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-module
+kind: "Str"
+upsLogicalField: "rectifierStatus"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-module
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-fanStatus
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-module
+kind: "Str"
+upsLogicalField: "fanStatus"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-module
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-capacitorHealthPct
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-module
+kind: "Number"
+unit: "%"
+upsLogicalField: "capacitorHealthPct"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-module
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-ambientTemp
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-environment
+kind: "Number"
+unit: "°C"
+upsLogicalField: "ambientTemp"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-environment
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-humidity
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-environment
+kind: "Number"
+unit: "%"
+upsLogicalField: "humidity"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-environment
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-airQuality
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-environment
+kind: "Str"
+upsLogicalField: "airQuality"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-environment
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-waterDetected
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-environment
+kind: "Bool"
+upsLogicalField: "waterDetected"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-environment
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-transferStatus
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Str"
+upsLogicalField: "transferStatus"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-staticBypassAvailable
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Bool"
+upsLogicalField: "staticBypassAvailable"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-staticBypassActive
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Bool"
+upsLogicalField: "staticBypassActive"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-maintenanceBypassAvailable
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Bool"
+upsLogicalField: "maintenanceBypassAvailable"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-maintenanceBypassActive
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Bool"
+upsLogicalField: "maintenanceBypassActive"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-lastTransferDuration
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "ms"
+upsLogicalField: "lastTransferDuration"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-healthScore
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-ups
+kind: "Number"
+unit: "%"
+upsLogicalField: "healthScore"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-ups
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+---
+id: @ups-tpl-point-moduleAvailableCapacity
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-module
+kind: "Number"
+unit: "kW"
+upsLogicalField: "moduleAvailableCapacity"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-module
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+upsDeliveryPhase: "P1"
+---
+id: @ups-tpl-point-moduleState
+dis: "Point"
+upsFleet
+upsTemplate
+upsSchemaVersion: "2.0"
+upsRecordType: "Point"
+point
+siteRef: @ups-tpl-site
+equipRef: @ups-tpl-module
+kind: "Str"
+upsLogicalField: "moduleState"
+upsCapabilityStatus: "unverified"
+upsSourceBindingStatus: "unbound"
+upsTargetObjectRef: @ups-tpl-module
+upsPhaseStatus: "unverified"
+upsMeasurementLocationStatus: "unverified"
+upsDeliveryPhase: "P1"

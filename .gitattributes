@@ -2,3 +2,7 @@
 *.xlsx binary
 *.png binary
 *.zip binary
+*.pod binary
+
+# Frozen design inputs are byte-exact SHA-256 snapshots, including line endings.
+/docs/design-baseline/D1/** -text

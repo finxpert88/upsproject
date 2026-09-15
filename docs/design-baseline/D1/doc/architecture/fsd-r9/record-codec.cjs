@@ -1,0 +1,25 @@
+const registry=require('./record-codecs.json');
+function canonical(v){if(v===null||typeof v!=='object'){if(typeof v==='number'&&!Number.isFinite(v)||v===undefined)throw Error('INVALID_SCALAR');return JSON.stringify(v);}if(Array.isArray(v))return '['+v.map(canonical).join(',')+']';return '{'+Object.keys(v).sort().map(k=>JSON.stringify(k)+':'+canonical(v[k])).join(',')+'}';}
+function validDate(x){if(!/^\d{4}-\d{2}-\d{2}$/.test(x))return false;const y=+x.slice(0,4),m=+x.slice(5,7),d=+x.slice(8,10);const leap=y%4===0&&(y%100!==0||y%400===0);return m>=1&&m<=12&&d>=1&&d<=[31,leap?29:28,31,30,31,30,31,31,30,31,30,31][m-1];}
+function format(format,x){if(x===null)return;if(typeof x!=='string')throw Error('FORMAT');if(format==='date'){if(!validDate(x))throw Error('DATE');return;}const match=x.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(Z|([+-])(\d{2}):(\d{2}))$/);if(!match||!validDate(match[1])||+match[2]>23||+match[3]>59||+match[4]>59||(match[6]&&(+match[8]>59||+match[7]>14||+match[7]===14&&+match[8]!==0)))throw Error('TIMESTAMP');}
+function validate(s,v,p='$'){
+ if(s.semanticFormat)format(s.semanticFormat,v);
+ if(s.anyOf){if(!s.anyOf.some(x=>{try{validate(x,v,p);return true;}catch{return false;}}))throw Error('SCHEMA '+p);return;}
+ if('const'in s){if(v!==s.const)throw Error('ENUM '+p);return;}
+ if(s.type==='null'){if(v!==null)throw Error('NULL '+p);return;}
+ if(s.type==='array'){if(!Array.isArray(v))throw Error('ARRAY '+p);v.forEach((x,i)=>validate(s.items,x,p+'.'+i));return;}
+ if(s.type==='object'){if(!v||typeof v!=='object'||Array.isArray(v))throw Error('OBJECT '+p);for(const k of Object.keys(v)){if(!s.properties[k])throw Error('UNKNOWN_FIELD '+p+'.'+k);validate(s.properties[k],v[k],p+'.'+k);}for(const k of s.required)if(!(k in v))throw Error('REQUIRED '+p+'.'+k);return;}
+ if(typeof v!==s.type||(s.type==='number'&&!Number.isFinite(v)))throw Error('TYPE '+p);
+}
+function walk(v,fn,p=[]){if(Array.isArray(v)){v.forEach((x,i)=>walk(x,fn,[...p,String(i)]));return;}if(v&&typeof v==='object')for(const k of Object.keys(v)){fn(v,k,[...p,k]);walk(v[k],fn,[...p,k]);}}
+function refs(v,fn){walk(v,(o,k,p)=>{if(registry.semanticRefFields.includes(k)&&o[k]!==null)o[k]=fn(o[k],p);if(registry.semanticRefArrays.includes(k)&&o[k]!==null)o[k]=o[k].map((x,i)=>fn(x,[...p,String(i)]));});return v;}
+function get(o,p){return p.split('.').reduce((v,k)=>v[k],o);}
+function isRefPath(p){return registry.semanticRefFields.includes(p.split('.').at(-1));}
+function validateEnvelope(env,wire){if(!env||!env.projectId||!['live','simulation'].includes(env.mode)||Object.keys(env).some(k=>!['projectId','mode','sessionId','generationId'].includes(k)))throw Error('ENVELOPE');if(env.mode==='simulation'&&(!env.sessionId||!env.generationId)||env.mode==='live'&&(env.sessionId!==undefined||env.generationId!==undefined))throw Error('ENVELOPE');if(wire.context){const w=wire.context;if(w.sourceMode!==env.mode||env.mode==='simulation'&&(w.simulationSessionId!==env.sessionId||w.generationId!==env.generationId))throw Error('CONTEXT_MISMATCH');}}
+function fromTags(rec){return {projectId:rec.upsProjectId,mode:rec.upsSourceMode,...(rec.upsSourceMode==='simulation'?{sessionId:rec.upsSimulationSessionId,generationId:rec.upsGenerationId}:{})};}
+function encode(type,id,wire,env){validate(registry.schemas[type],wire);validateEnvelope(env,wire);const rec={id:{ref:id},upsRecordType:type,upsSchemaVersion:'2.0',upsPayloadJson:canonical(wire),upsProjectId:env.projectId,upsSourceMode:env.mode,...(env.mode==='simulation'?{upsSimulationSessionId:env.sessionId,upsGenerationId:env.generationId}:{})};for(const [tag,p]of Object.entries(registry.indexes[type])){const v=get(wire,p);rec[tag]=isRefPath(p)&&v!==null?{ref:v}:v;}return rec;}
+function decode(rec,expectedEnvelope){const type=rec.upsRecordType;if(!registry.schemas[type]||rec.upsSchemaVersion!=='2.0'||!rec.id?.ref)throw Error('RECORD_SCHEMA');const env=fromTags(rec);if(!expectedEnvelope||canonical(expectedEnvelope)!==canonical(env))throw Error('SCOPE_MISMATCH');const wire=JSON.parse(rec.upsPayloadJson),expected=encode(type,rec.id.ref,wire,env);if(canonical(expected)!==canonical(rec))throw Error('INDEX_OR_TAG_MISMATCH');return wire;}
+function remap(rec,map,env){const wire=decode(rec,env);refs(wire,x=>map[x]||x);return encode(rec.upsRecordType,map[rec.id.ref]||rec.id.ref,wire,env);}
+function assertRefs(wire,known){refs(structuredClone(wire),(x,p)=>{if(typeof x!=='string'||!known.has(x))throw Error('DANGLING_REF '+p.join('.')+': '+x);return x;});}
+function validateTemplateRefs(records){const known=new Set(records.map(r=>r.id.ref));for(const r of records){for(const [k,v]of Object.entries(r)){if(v?.ref&&!known.has(v.ref))throw Error('DANGLING_REF '+k);if(Array.isArray(v))for(const x of v)if(x?.ref&&!known.has(x.ref))throw Error('DANGLING_REF '+k);if(k.endsWith('Json'))assertRefs(JSON.parse(v),known);}}}
+module.exports={canonical,validate,encode,decode,remap,assertRefs,validateTemplateRefs,refs};

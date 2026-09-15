@@ -1,0 +1,62 @@
+{
+  "recordedAtUtc": "2026-09-15T13:00:49.823314+00:00",
+  "candidateFinHome": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761",
+  "versions": {
+    "sys": {
+      "podVersion": "1.0.78.3105",
+      "sha256": "7b7f69aade02f35921ecf148a31fd297d9f382b9d0a16e5d1f0874c665fe0d99"
+    },
+    "compiler": {
+      "podVersion": "1.0.78.3105",
+      "sha256": "43fb4f1c5307f73899842388afc0dc6cfcc673e906b7bb7335b7c13650fa0a89"
+    },
+    "build": {
+      "podVersion": "1.0.78.3105",
+      "sha256": "c3b780c2ae37d02c3b1eba437b42845df2365fd26d2858a1fe262c3d58ad20ff"
+    },
+    "finBuild": {
+      "podVersion": "1.1.0",
+      "sha256": "88dd95c1302c7ffb1f65fe15fea052b3878dc907f5fec193e69e4bd2d5591252"
+    },
+    "finStackCoreExt": {
+      "podVersion": "5.3.0.2761",
+      "sha256": "b57c55de726d393cfcc7d0dbbaeadc1dc20c117dac85cf13f536685dbc996789"
+    }
+  },
+  "java": {
+    "exitCode": 0,
+    "output": "openjdk version \"11.0.32.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-11.0.32.1+1 (build 11.0.32.1+1)\nOpenJDK 64-Bit Server VM Temurin-11.0.32.1+1 (build 11.0.32.1+1, mixed mode)\n"
+  },
+  "sdkApiEvidence": {
+    "finBuild/doc/BuildFinPod.apidoc": {
+      "sha256": "663c5c67208dc6e2feb7281b33a6543c489cad3b92e5fcd21d2ded16443a517b",
+      "verifiedSymbols": [
+        "BuildFinPod : build::BuildPod",
+        "BuildFinArgs.out : File?"
+      ]
+    },
+    "finBuild/doc/BuildFinArgs.apidoc": {
+      "sha256": "2b66a0d3d3900d30943c80303054ab23040012eda92fbb7124435f95d1a4cbfa",
+      "verifiedSymbols": [
+        "BuildFinPod : build::BuildPod",
+        "BuildFinArgs.out : File?"
+      ]
+    },
+    "build/doc/BuildPod.apidoc": {
+      "sha256": "19ab6d9c07ead59878d650224b48c2a71cf9539e7d920b7eeb0e06128b1076e4",
+      "verifiedSymbols": [
+        "outPodDir : Uri",
+        "outDocDir : Uri",
+        "docApi : Bool",
+        "docSrc : Bool",
+        "srcDirs : Uri[]?"
+      ]
+    }
+  },
+  "isolation": "Copies only sys/compiler/build PODs, sys.jar, timezone and unit data; all Java fan.home/user.home/tmp properties point into worktree; no FIN services copied or started.",
+  "sdkInputHashesUnchanged": true,
+  "installedUpsFleetPodExists": false,
+  "baseline85FilesReverified": true,
+  "productionAndTestDomainSourceHashesMatch": true,
+  "finRuntimeVerified": false
+}

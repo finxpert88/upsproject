@@ -1,0 +1,437 @@
+{
+  "verifiedAt": "2026-09-15T12:54:34.386922+00:00",
+  "sourceRoot": "C:\\work\\upsproject",
+  "destinationRoot": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1",
+  "branch": "feature/ups-pod-implementation",
+  "startingCommit": "3cdc8f5675a0cd32856597d97932f5d5d38ae71a",
+  "count": 85,
+  "allSourceAndDestinationHashesMatch": true,
+  "scope": "Exact D1 transfer; candidate/historical files do not expand approval; DEV-01 only.",
+  "files": [
+    {
+      "source": "C:\\work\\upsproject\\doc\\planning\\UPS-Fleet-FIN-POD-FSD-v0.1.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FIN-POD-FSD-v0.1.md",
+      "sha256": "2561ae531dce682ab8a7a34cba8b9ebf67b431743f8fb31432ababf2cabd18c8"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\planning\\UPS-Fleet-FIN-POD-PRD-v0.1.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FIN-POD-PRD-v0.1.md",
+      "sha256": "d1ed0008843c618d496dcecb6d33e50045d74462a1be9f1556583c9cd657b29f"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\planning\\UPS-Fleet-FSD-r10-review-disposition.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FSD-r10-review-disposition.md",
+      "sha256": "ba082e27abec2c2ef60df22bb95016317467803835960762de155b729586dae3"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\planning\\UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+      "sha256": "a4b2adc124985fa4d0135aa3f2552bb36792ba163e12cf69e743d9efa4fc5f8d"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\architecture-review-results.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture-review-results.md",
+      "sha256": "cd492e8d8809b52fbfc5fafa726f7af9691b3298bde63b21b5b9d0d81e12acd6"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\architecture.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture.md",
+      "sha256": "75ff6e9d7eae9cb1acd94e3bb1104a05ba24164e72adc0db2a8d8582c93f134d"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\architecture.mmd",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture.mmd",
+      "sha256": "998ccadf3640c65cc64d813650159e5cf543742b23fe4f3a125c6b8448f26659"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\bootstrap-route.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\bootstrap-route.json",
+      "sha256": "a1bc3809b9bfd8141c7ec701a90ece21e69ed167a72a80550485bff39910730e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\build-codecs.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\build-codecs.cjs",
+      "sha256": "7a4f683b59c7c02937a0d81fa1253585574abc84e6a37d0a35f0e401e64b62d4"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\build-delivery.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\build-delivery.cjs",
+      "sha256": "9b0a36a260426ef286bd15b6400235afc08a2a6a789065a52c5483e8c88f73a7"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\business-objects.trio",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\business-objects.trio",
+      "sha256": "c78b24728f76c62218ce999e69d00b2bd3d61ca484de9e0f221fff7b8b52e600"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\contract-model.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\contract-model.cjs",
+      "sha256": "6df9bc465b38c6e158d1c4fef97cf8115ac62f4b2a2c8d923fbb028defdf6e3b"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\contracts.ts",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\contracts.ts",
+      "sha256": "9151f49da9fadf5093483fff43cecbe032cad5b9491d6ee7e8f2619bc31825b9"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\equipment-objects.trio",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\equipment-objects.trio",
+      "sha256": "8b531e3621ec70fb9ed2d866e123e9d700c4c8e1dbb3acee8f62a67445bfc5ee"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\fin-validation-a2.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fin-validation-a2.json",
+      "sha256": "6d2676e5d3c06f41739dabc2f66562f3611512e9cd046029162e419543959569"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\fin-validation.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fin-validation.json",
+      "sha256": "dc34e1b50cd952e52b7bb67dc2d483482fcaf7289f14bcb9f0a7b1ca8ad945cb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\fsd-change-proposal.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fsd-change-proposal.md",
+      "sha256": "8daa6108ace5a8fc081413d15671a34cfaec96a88f25e546ddb7b562b0b465cb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\handlers.ts",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\handlers.ts",
+      "sha256": "492d8d37913e211460f17addaa6c86adef3e4cbd817ddb90704edb6652ab586e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\interface-implementation-list.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\interface-implementation-list.md",
+      "sha256": "02afdee851e16eac03dadd406124ac5f9f7dbc98a7d856c343b8742d1e6e1b69"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\local-validation.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\local-validation.json",
+      "sha256": "517cd247db0959479e2fd41b839aeb46733ac41bb1edb900d74aff723106870f"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\model-catalog.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\model-catalog.md",
+      "sha256": "cbc5f2bb91a5de8f51d5667a7acba649b055f3eb0010f5c8fe95da3b18b1ee37"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\operations.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\operations.json",
+      "sha256": "720b7147a5cbd1efdaee39119d6f0fd6528e21f0c4701fa10ad3fbc5d84c007e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\persistence-contracts.ts",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\persistence-contracts.ts",
+      "sha256": "a27f3c60bef82814db848f5d78eb85340149759d6a2b1036e6d4f193da945b96"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\persistence-design.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\persistence-design.md",
+      "sha256": "e05407c4ee447be035a396018086ca15303416635ecc6fae862d2f0e62f89416"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\README.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\README.md",
+      "sha256": "b8a42a5d8a29ea49167f97ef84e65c309625305a28315ad7c1aba865c7ebc1b5"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\record-codec.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-codec.cjs",
+      "sha256": "864903737552c8e1f8047e5e2b4eb4ee521d8317b2e0ab4f6fa478e18623409e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\record-codecs.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-codecs.json",
+      "sha256": "8a205ceddcf52470836733a2fe499ff66bf0ffac8e61893611d5e36a7f6b4b9f"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\record-manifest.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-manifest.json",
+      "sha256": "5b148f4d44a1c57be9e61d336d588b52db355841de80a78c7c80b548f13f486b"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\review-disposition.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\review-disposition.md",
+      "sha256": "e3535d86512f66a49c2368bbfcef91a04c62e8bc3a2a4d332a1e7ce23a959694"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\revision-a2-tests.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\revision-a2-tests.json",
+      "sha256": "3241f1397d82bba8340d1d61dd1dea455085a0b78c8725d1fd8e93a2493ada16"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\revision-a2.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\revision-a2.cjs",
+      "sha256": "2754e3d56964cb9489f0fe2878f9a6f76486baef4c6e053afa4a105a322a1a59"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\test-revision-a2.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\test-revision-a2.cjs",
+      "sha256": "f4e84e7f69eca513caa341387f182b86951bb1ddf5f3e6dd89f5e1cd4fd80afd"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\validate-delivery.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\validate-delivery.cjs",
+      "sha256": "21e53275800846492b8c82b75e7484ffe7085a93eaf11cf5f4a646599a8698a8"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\fsd-r9\\VALIDATION.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\VALIDATION.md",
+      "sha256": "ddd3b54bc2c970a86873e3ce29d2d1a6998989c4904997b5aab613ea09fbffb4"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\backend-classes.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-classes.json",
+      "sha256": "0974c5d194492c0bb78d4e59af53e8b02e05d1f1cd394697f80499bc731af9cf"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\backend-core-uml.mmd",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-core-uml.mmd",
+      "sha256": "69f49739603cf79ff242611eb3a8e9e8f84c55b68ce3e90ef8cdf172494110bb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\backend-design.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-design.md",
+      "sha256": "b223c1812da5b00a470b03250810372bb14c4be906ada5b1b1311651dc524385"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\backend-state-uml.mmd",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-state-uml.mmd",
+      "sha256": "4ba84e51397428d380ea8ded23fb112623bb2c27d10ff2dbeee99859f93c9cbb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\baseline.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\baseline.json",
+      "sha256": "784f7c27258ee428b7cab9187eba2bd473e43f2e32a7b7ba3816b863f009892c"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\build-blueprint.py",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\build-blueprint.py",
+      "sha256": "f57aed88fcea6ae81a0236ff8e6939d433b6ee110305bb4cdeb5b376b74a9600"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\component-contracts.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\component-contracts.md",
+      "sha256": "9eac0841ba8f6749ee0147626d64d9593403b81125b34702c65744bacd9aca50"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\composition.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\composition.json",
+      "sha256": "3b04bc7981a5fdb452864fd66aec8dedb723b09d838b7f8d0c60a508fdd59090"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\data-types.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\data-types.md",
+      "sha256": "cad8c287b1fdecae8978fee4a5911cc08864c577c9d2aa339ccc09bb879424ad"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\decisions-and-boundaries.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\decisions-and-boundaries.md",
+      "sha256": "ec14a3b941b89fdfae69c7127a5f8e8335f8719aa7d2b120dbe390ff03854c4d"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\diagram-models.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\diagram-models.json",
+      "sha256": "9c643164da5451fe2bbec264c48778a5258b5bf7db8c7806b8d5cd44e63fb19c"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\fin-expert-validation.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\fin-expert-validation.json",
+      "sha256": "f59e64d87b4cb16a3556339e3fcc31a9131b0f1e9be6cc2628fa8612318f40a8"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\frontend-design.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-design.md",
+      "sha256": "eda9c9ae887d89f1813078dea1c14a363767a309dec0b209e4f5dacfe50c89cb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\frontend-files.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-files.json",
+      "sha256": "9cae8f7b878fbf980fae64617a53e02856a698ae9bc31be1cfb2ee94bfdd70fd"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\frontend-routes.mmd",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-routes.mmd",
+      "sha256": "c8fdaf24b769c8a23a2be89cd5fbad2f85e3a1cdf1bf369412fe5cd3ccd43f17"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\operation-ownership.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\operation-ownership.json",
+      "sha256": "30e55c6f1b845d372a05d596ee6fe53592da9b1b5ed5529aafe61061965d0d3a"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\planned-verification-files.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\planned-verification-files.md",
+      "sha256": "86e9eec222e4b17812c68db8383e1d2276a2faaad60c7bf07c8fc7f060bf9e5d"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\README.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\README.md",
+      "sha256": "3f044429d2cb5d1d6a3d7e172e80c5be934c281cdcae23982d40f0f7c9dd5126"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\render-diagrams.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\render-diagrams.cjs",
+      "sha256": "06675b0247011c93081b907f2f4c7882407aa195fe0475472e467322d0ac21fa"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\review-disposition-b1.1.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\review-disposition-b1.1.md",
+      "sha256": "a4e8f82ed921fce08993cdf149d2ffa2455c9ebb466d40ed1b39e455cdc4863f"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\revise-b1.py",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\revise-b1.py",
+      "sha256": "9b4afb67cbee096ce8eb2202957fac4ee4f32faa2f9adc4641aa06853fd0fd24"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\revision-b1.1-hashes.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\revision-b1.1-hashes.json",
+      "sha256": "2c297aec08f3c554a7845b38d3046e111e3d0444fa31e199695b7e892fb07471"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\routes.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\routes.json",
+      "sha256": "0e6fc2051a91816d2ed51d4813ff3a0a72d7b93019a4e401396b80553158460e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\spec-coverage.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\spec-coverage.json",
+      "sha256": "2e12afb1ec71f97b1f46573674d57cdc9832026067dca0ba410f05ecce08abc8"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\system-architecture.mmd",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\system-architecture.mmd",
+      "sha256": "a2a280c40acda0d3ef95aac5b87695058a61d704c9b2af4ffbb63ba9c9e97239"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\traceability.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\traceability.md",
+      "sha256": "b9fae2a7286af8664daae2d9e534ec00643e5a83a27d5f16cb9f264b1fad5b04"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\type-inventory.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\type-inventory.json",
+      "sha256": "151bcec92efc4d32c76378a6889781bb5113191cbfd6ebd7a8110f3a30d1b6a3"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\validation-b1.1.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\validation-b1.1.json",
+      "sha256": "525d7ef84621a7ed945372aabd7bbfaa6ec1385d5bb30f8cdaf77e581d983a0a"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\application-blueprint\\validation.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\validation.json",
+      "sha256": "a25058b9327bb0840ecc687edd9470dd1ee32eb0ac106f6353eee863a9e6f92a"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\acceptance-execution-index.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\acceptance-execution-index.json",
+      "sha256": "776459ed4ec35ef76fddb8754e932376cc8354e40f60522a2082136dd7255113"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\baseline-recheck.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\baseline-recheck.json",
+      "sha256": "239bd6586e1738594b873a6673db46dc6b9d958ef0e1e36ebe14f62ee8e3fdba"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\build-plan.py",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\build-plan.py",
+      "sha256": "d4f88094f43c446f65829fd183813db70cb17046bd8e443a8f3aad92685cff15"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\check-contract-keys.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\check-contract-keys.cjs",
+      "sha256": "e019bf5f3e202af742eb3e8625e1214220fb6fafac605838cb0b3f171631d6cb"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\contract-key-verification.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\contract-key-verification.json",
+      "sha256": "d3a6945ab071e07d78fe4c68567594ab2bb9cb823f4409ddd6c3790435fef20a"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\development-plan.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\development-plan.md",
+      "sha256": "fdce642b9f65ee7b1a72e2be3493c49301c5b35a7aaa4f3f6951711888953175"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\fin-expert-review.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\fin-expert-review.json",
+      "sha256": "f49c50376c4d7b5cae258d2390ed0f5615a518d1fb7cd5ae476e701975750a3a"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\findings-and-evidence.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\findings-and-evidence.md",
+      "sha256": "03067d1ac436ba160fb533eea41596955377b3094240b5da7366b475750e85e3"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\first-work-package.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\first-work-package.md",
+      "sha256": "a4db567528facec1702ac117ae728ebd733d92fa32615e84bbcf38349c7368d9"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\operation-execution.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\operation-execution.json",
+      "sha256": "a66c7611db7f287850f95c35254688f1d72e642be4acee30bf7b64b1b8b5bf78"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\operation-reference-correction.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\operation-reference-correction.md",
+      "sha256": "7d5abf1bfbe45afb5c75cf19f0146779900955e59172b00b0cb334610186f2d4"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\plan-validation.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\plan-validation.json",
+      "sha256": "96ae8b05fc79278d69dab53d3b1708dece54bdc7e2fe290436e437466405ddd0"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\README.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\README.md",
+      "sha256": "a044f8b0698accffc4273284d4d569fb7e6d0c339e31d2103b44eaa54bbc7ea4"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\recheck-baseline.cjs",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\recheck-baseline.cjs",
+      "sha256": "84d55530d60ac00de5019fc9a5c7e0969979f9633558083085ae4b802143eff4"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\record-work-packages.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\record-work-packages.json",
+      "sha256": "82c9b6ba8dacf6958df8992bea619e5adca4bbbb2e0173f1dda5a499db5088d7"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\rerun-revision-a2-tests.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\rerun-revision-a2-tests.json",
+      "sha256": "fa81019909ce4ed777889253a08f00a547db66090c46f179516d3a4c658c253e"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\sf-work-packages.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\sf-work-packages.json",
+      "sha256": "0d4ff361a5be2515d21a5b8276cc34d4c03df4017f02bea8cb03c1a3d399de58"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\single-pod-packaging.md",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\single-pod-packaging.md",
+      "sha256": "197d50fcfa2f27833cf13e436b30cfa599f2748e4797097c1832b720c248868c"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\source-manifest.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\source-manifest.json",
+      "sha256": "02ab627af2d7dc4468d921cb715ccfe48b115e9c4e79902773095d563850a604"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\tasks.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\tasks.json",
+      "sha256": "8b4563b0ddeba27e3a3a04719c7f9a8b65ccb209b1657d6ac37ca55e9f69322d"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\transfer-manifest.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\transfer-manifest.json",
+      "sha256": "35e808ee7276a8592437720425cc188c73a5721c8a0418d9959219133658fb75"
+    },
+    {
+      "source": "C:\\work\\upsproject\\doc\\architecture\\development-plan\\plan-freeze.json",
+      "destination": "docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\plan-freeze.json",
+      "sha256": "3540758a81da9b5f82132bbcd08e59d9e83645f2db2d7de21e58f748d76d681b"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "exitCode": 0,
+  "command": "pwsh -NoProfile -File scripts/test.ps1 -FinHome 'C:/Program Files (x86)/FIN Framework/FIN Framework 5.3.0.2761' -OutputRoot '.artifacts/DEV-01-independent'"
+}

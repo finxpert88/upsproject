@@ -8,6 +8,8 @@
 
 新增追溯：FR-26（P0）→PRD 5.6/AC-14/NFR-05→FSD 5.8/22/SF-24/RESP-01～06→responsive.css、responsive.js及verify.cjs。当前26项FR（P0 23、P1 2、P2 1）；AC-14及RESP-01～06新增7项定义，总计102项跨层级检查定义，不等于102项已执行测试。响应式代码检查已通过；真实浏览器、触控与文件保存矩阵未执行。
 
+DEV-01-r1实施状态（2026-09-15）：`develop`承接首个最小Fantom POD，版本化产物为`dist/DEV-01/upsFleet.pod`，SHA-256为`E7C512AB8790DE831EBD6FCA954930D4BBD78BEAE906AB05A4F5C28C14F6D759`。独立限定测试通过FT-01 / AC-02 / SF-02最小切片：同一源时间重复读取不刷新freshness，29/30秒fresh，31/32秒stale，真实Fantom 1 method / 36 verifies通过。该状态仅覆盖FR-03关联的纯领域新鲜度最小切片；不代表FR-03整体、SF-02整体、AC-02全部、FIN G1、插件注册/菜单启用、现场运行或生产验收通过。
+
 G0文档评审和本轮DEMO用户评审：通过。G1技术验收仍受实屏证据缺口限制；G2～G4生产集成/发布验收保持未完成。FR-01～26的生产级逐项状态不因本次确认批量改为通过。历史r7/r8处置及离线validation JSON保留原版本，不作为修订9新执行证据。
 
 ## 1. 基线与使用边界（修订8历史快照）

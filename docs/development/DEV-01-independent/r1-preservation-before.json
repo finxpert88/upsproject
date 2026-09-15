@@ -1,0 +1,634 @@
+[
+  {
+    "path": ".gitattributes",
+    "sha256": "24F16E561CBE96D67D4DEF4E19A1E39253A0EBF8F9540042267F5348893C5900"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "F3BE3E7A6E6904D847601CE42C66C3F05F7182168B84634CE6B6D3B9EBC1CB0E"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\etc\\sys\\timezone-aliases.props",
+    "sha256": "F1FA0D84BC2B0F6297B76A8F5B5BC0146957BED7FBFB518BCAF485373CC85C96"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\etc\\sys\\timezones.ftz",
+    "sha256": "CAD3BEB42A9F83733F6BF36869921E107237F6ECE34C66ABFDD1A87766AC06CE"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\etc\\sys\\units.txt",
+    "sha256": "365ADB70D5842139EC30A16F139756F5397CD1C0198A8DAC16324A7E6E7C22BF"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\lib\\fan\\build.pod",
+    "sha256": "C3B780C2AE37D02C3B1EBA437B42845DF2365FD26D2858A1FE262C3D58AD20FF"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\lib\\fan\\compiler.pod",
+    "sha256": "43FB4F1C5307F73899842388AFC0DC6CFCC673E906B7BB7335B7C13650FA0A89"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\lib\\fan\\sys.pod",
+    "sha256": "7B7F69AADE02F35921ECF148A31FD297D9F382B9D0A16E5D1F0874C665FE0D99"
+  },
+  {
+    "path": "C:\\Program Files (x86)\\FIN Framework\\FIN Framework 5.3.0.2761\\lib\\java\\sys.jar",
+    "sha256": "26D4853DBF1B407DE117390A757A069783B186B3F601C8ABB43DE458743613E5"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\build-test.json",
+    "sha256": "1D659F9E93C209AF7355B051F0F6F46CF3A5F2D5C7A84DA15B013EE64EEF2C4E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\build-test.log",
+    "sha256": "1504D94924D9E4D17DE6AD585EA8CCE26D5B2699098D0B7BCAEC961B34F27ABA"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\build.json",
+    "sha256": "3A435F3DE122CDFAC7619A2EC6457A33DFC0EDD49F1B066C30A0DC06128C9694"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\build.log",
+    "sha256": "88F7FD4BDD6C8CE08A9CCF82574C626540937EC67DF2E434B4281A5D53A1E14D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\test.json",
+    "sha256": "3A1EC4C1814F45436960FA19CEC5D054A7C0505989E4F3669B44D27EC4585116"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\test.log",
+    "sha256": "DA609585B9AEE87CB25C71A3A8FE21557088EF02177D4037CA261673BBC69520"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\test\\upsFleet.pod",
+    "sha256": "82193E78CBD9963F2C96D39A916FC54487B65E80C1767EAE6DA851AD47E60C07"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01-r1-validation\\upsFleet.pod",
+    "sha256": "E7C512AB8790DE831EBD6FCA954930D4BBD78BEAE906AB05A4F5C28C14F6D759"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\build-test.json",
+    "sha256": "CE710FA849A674BEF68CCE1B3ED50D8A50F9B330E49FCB0B6DC2E42FCDF8493D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\build-test.log",
+    "sha256": "6D1514B37933A1947224F67E8A564E4CBDEC04F57B51745CED32CDFEE12E6CCB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\build.json",
+    "sha256": "C714B36F2A2C6188839BA5EDA7D280435D006A86CF611D1A7443DB00BC8510B9"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\build.log",
+    "sha256": "780375966F8BAADD41E9265AA679FA0DCC255C0B867D28DDD7D879D77E5AE654"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\output-guard.log",
+    "sha256": "94EE41B7F4EB3CC1DD946C6D527BADA0575CE4E03A0CD0DBB53A74ACE6A5D2FD"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\test.json",
+    "sha256": "388163728C7D45000D3DD330B16CF0A27F7CDF182D7E4A6D2DB6E348C1BDC615"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\test.log",
+    "sha256": "76EE25BD0AD1BC3A74545A4C122E2CEDB796ECED02A4CFF26917F00915CCA3DA"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\test\\upsFleet.pod",
+    "sha256": "8DAF8C823B499E135FC78B337CFBAEA53A1AC5EF675924F41BBA8732751CBB3C"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.artifacts\\DEV-01\\upsFleet.pod",
+    "sha256": "96196584499A132A35C5D0DA85AFAC15506DD0BF1A3B58653C2CABE04C30B38A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\etc\\sys\\timezone-aliases.props",
+    "sha256": "F1FA0D84BC2B0F6297B76A8F5B5BC0146957BED7FBFB518BCAF485373CC85C96"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\etc\\sys\\timezones.ftz",
+    "sha256": "CAD3BEB42A9F83733F6BF36869921E107237F6ECE34C66ABFDD1A87766AC06CE"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\etc\\sys\\units.txt",
+    "sha256": "365ADB70D5842139EC30A16F139756F5397CD1C0198A8DAC16324A7E6E7C22BF"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\lib\\fan\\build.pod",
+    "sha256": "C3B780C2AE37D02C3B1EBA437B42845DF2365FD26D2858A1FE262C3D58AD20FF"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\lib\\fan\\compiler.pod",
+    "sha256": "43FB4F1C5307F73899842388AFC0DC6CFCC673E906B7BB7335B7C13650FA0A89"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\lib\\fan\\sys.pod",
+    "sha256": "7B7F69AADE02F35921ECF148A31FD297D9F382B9D0A16E5D1F0874C665FE0D99"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\lib\\fan\\upsFleet.pod",
+    "sha256": "82193E78CBD9963F2C96D39A916FC54487B65E80C1767EAE6DA851AD47E60C07"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01-r1-validation\\lib\\java\\sys.jar",
+    "sha256": "26D4853DBF1B407DE117390A757A069783B186B3F601C8ABB43DE458743613E5"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\etc\\sys\\timezone-aliases.props",
+    "sha256": "F1FA0D84BC2B0F6297B76A8F5B5BC0146957BED7FBFB518BCAF485373CC85C96"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\etc\\sys\\timezones.ftz",
+    "sha256": "CAD3BEB42A9F83733F6BF36869921E107237F6ECE34C66ABFDD1A87766AC06CE"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\etc\\sys\\units.txt",
+    "sha256": "365ADB70D5842139EC30A16F139756F5397CD1C0198A8DAC16324A7E6E7C22BF"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\lib\\fan\\build.pod",
+    "sha256": "C3B780C2AE37D02C3B1EBA437B42845DF2365FD26D2858A1FE262C3D58AD20FF"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\lib\\fan\\compiler.pod",
+    "sha256": "43FB4F1C5307F73899842388AFC0DC6CFCC673E906B7BB7335B7C13650FA0A89"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\lib\\fan\\sys.pod",
+    "sha256": "7B7F69AADE02F35921ECF148A31FD297D9F382B9D0A16E5D1F0874C665FE0D99"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\lib\\fan\\upsFleet.pod",
+    "sha256": "8DAF8C823B499E135FC78B337CFBAEA53A1AC5EF675924F41BBA8732751CBB3C"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\.runtime\\DEV-01\\lib\\java\\sys.jar",
+    "sha256": "26D4853DBF1B407DE117390A757A069783B186B3F601C8ABB43DE458743613E5"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-classes.json",
+    "sha256": "0974C5D194492C0BB78D4E59AF53E8B02E05D1F1CD394697F80499BC731AF9CF"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-core-uml.mmd",
+    "sha256": "69F49739603CF79FF242611EB3A8E9E8F84C55B68CE3E90EF8CDF172494110BB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-design.md",
+    "sha256": "B223C1812DA5B00A470B03250810372BB14C4BE906ADA5B1B1311651DC524385"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\backend-state-uml.mmd",
+    "sha256": "4BA84E51397428D380EA8DED23FB112623BB2C27D10FF2DBEEE99859F93C9CBB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\baseline.json",
+    "sha256": "784F7C27258EE428B7CAB9187EBA2BD473E43F2E32A7B7BA3816B863F009892C"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\build-blueprint.py",
+    "sha256": "F57AED88FCEA6AE81A0236FF8E6939D433B6EE110305BB4CDEB5B376B74A9600"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\component-contracts.md",
+    "sha256": "9EAC0841BA8F6749EE0147626D64D9593403B81125B34702C65744BACD9ACA50"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\composition.json",
+    "sha256": "3B04BC7981A5FDB452864FD66AEC8DEDB723B09D838B7F8D0C60A508FDD59090"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\data-types.md",
+    "sha256": "CAD8C287B1FDECAE8978FEE4A5911CC08864C577C9D2AA339CCC09BB879424AD"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\decisions-and-boundaries.md",
+    "sha256": "EC14A3B941B89FDFAE69C7127A5F8E8335F8719AA7D2B120DBE390FF03854C4D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\diagram-models.json",
+    "sha256": "9C643164DA5451FE2BBEC264C48778A5258B5BF7DB8C7806B8D5CD44E63FB19C"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\fin-expert-validation.json",
+    "sha256": "F59E64D87B4CB16A3556339E3FCC31A9131B0F1E9BE6CC2628FA8612318F40A8"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-design.md",
+    "sha256": "EDA9C9AE887D89F1813078DEA1C14A363767A309DEC0B209E4F5DACFE50C89CB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-files.json",
+    "sha256": "9CAE8F7B878FBF980FAE64617A53E02856A698AE9BC31BE1CFB2EE94BFDD70FD"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\frontend-routes.mmd",
+    "sha256": "C8FDAF24B769C8A23A2BE89CD5FBAD2F85E3A1CDF1BF369412FE5CD3CCD43F17"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\operation-ownership.json",
+    "sha256": "30E55C6F1B845D372A05D596EE6FE53592DA9B1B5ED5529AAFE61061965D0D3A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\planned-verification-files.md",
+    "sha256": "86E9EEC222E4B17812C68DB8383E1D2276A2FAAAD60C7BF07C8FC7F060BF9E5D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\README.md",
+    "sha256": "3F044429D2CB5D1D6A3D7E172E80C5BE934C281CDCAE23982D40F0F7C9DD5126"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\render-diagrams.cjs",
+    "sha256": "06675B0247011C93081B907F2F4C7882407AA195FE0475472E467322D0AC21FA"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\review-disposition-b1.1.md",
+    "sha256": "A4E8F82ED921FCE08993CDF149D2FFA2455C9EBB466D40ED1B39E455CDC4863F"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\revise-b1.py",
+    "sha256": "9B4AFB67CBEE096CE8EB2202957FAC4EE4F32FAA2F9ADC4641AA06853FD0FD24"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\revision-b1.1-hashes.json",
+    "sha256": "2C297AEC08F3C554A7845B38D3046E111E3D0444FA31E199695B7E892FB07471"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\routes.json",
+    "sha256": "0E6FC2051A91816D2ED51D4813FF3A0A72D7B93019A4E401396B80553158460E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\spec-coverage.json",
+    "sha256": "2E12AFB1EC71F97B1F46573674D57CDC9832026067DCA0BA410F05ECCE08ABC8"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\system-architecture.mmd",
+    "sha256": "A2A280C40ACDA0D3EF95AAC5B87695058A61D704C9B2AF4FFBB63BA9C9E97239"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\traceability.md",
+    "sha256": "B9FAE2A7286AF8664DAAE2D9E534EC00643E5A83A27D5F16CB9F264B1FAD5B04"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\type-inventory.json",
+    "sha256": "151BCEC92EFC4D32C76378A6889781BB5113191CBFD6EBD7A8110F3A30D1B6A3"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\validation-b1.1.json",
+    "sha256": "525D7EF84621A7ED945372AABD7BBFAA6EC1385D5BB30F8CDAF77E581D983A0A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\application-blueprint\\validation.json",
+    "sha256": "A25058B9327BB0840ECC687EDD9470DD1EE32EB0AC106F6353EEE863A9E6F92A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\acceptance-execution-index.json",
+    "sha256": "776459ED4EC35EF76FDDB8754E932376CC8354E40F60522A2082136DD7255113"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\baseline-recheck.json",
+    "sha256": "239BD6586E1738594B873A6673DB46DC6B9D958EF0E1E36EBE14F62EE8E3FDBA"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\build-plan.py",
+    "sha256": "D4F88094F43C446F65829FD183813DB70CB17046BD8E443A8F3AAD92685CFF15"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\check-contract-keys.cjs",
+    "sha256": "E019BF5F3E202AF742EB3E8625E1214220FB6FAFAC605838CB0B3F171631D6CB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\contract-key-verification.json",
+    "sha256": "D3A6945AB071E07D78FE4C68567594AB2BB9CB823F4409DDD6C3790435FEF20A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\development-plan.md",
+    "sha256": "FDCE642B9F65EE7B1A72E2BE3493C49301C5B35A7AAA4F3F6951711888953175"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\fin-expert-review.json",
+    "sha256": "F49C50376C4D7B5CAE258D2390ED0F5615A518D1FB7CD5AE476E701975750A3A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\findings-and-evidence.md",
+    "sha256": "03067D1AC436BA160FB533EEA41596955377B3094240B5DA7366B475750E85E3"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\first-work-package.md",
+    "sha256": "A4DB567528FACEC1702AC117AE728EBD733D92FA32615E84BBCF38349C7368D9"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\operation-execution.json",
+    "sha256": "A66C7611DB7F287850F95C35254688F1D72E642BE4ACEE30BF7B64B1B8B5BF78"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\operation-reference-correction.md",
+    "sha256": "7D5ABF1BFBE45AFB5C75CF19F0146779900955E59172B00B0CB334610186F2D4"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\plan-freeze.json",
+    "sha256": "3540758A81DA9B5F82132BBCD08E59D9E83645F2DB2D7DE21E58F748D76D681B"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\plan-validation.json",
+    "sha256": "96AE8B05FC79278D69DAB53D3B1708DECE54BDC7E2FE290436E437466405DDD0"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\README.md",
+    "sha256": "A044F8B0698ACCFFC4273284D4D569FB7E6D0C339E31D2103B44EAA54BBC7EA4"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\recheck-baseline.cjs",
+    "sha256": "84D55530D60AC00DE5019FC9A5C7E0969979F9633558083085AE4B802143EFF4"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\record-work-packages.json",
+    "sha256": "82C9B6BA8DACF6958DF8992BEA619E5ADCA4BBBB2E0173F1DDA5A499DB5088D7"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\rerun-revision-a2-tests.json",
+    "sha256": "FA81019909CE4ED777889253A08F00A547DB66090C46F179516D3A4C658C253E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\sf-work-packages.json",
+    "sha256": "0D4FF361A5BE2515D21A5B8276CC34D4C03DF4017F02BEA8CB03C1A3D399DE58"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\single-pod-packaging.md",
+    "sha256": "197D50FCFA2F27833CF13E436B30CFA599F2748E4797097C1832B720C248868C"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\source-manifest.json",
+    "sha256": "02AB627AF2D7DC4468D921CB715CCFE48B115E9C4E79902773095D563850A604"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\tasks.json",
+    "sha256": "8B4563B0DDEBA27E3A3A04719C7F9A8B65CCB209B1657D6AC37CA55E9F69322D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\development-plan\\transfer-manifest.json",
+    "sha256": "35E808EE7276A8592437720425CC188C73A5721C8A0418D9959219133658FB75"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture-review-results.md",
+    "sha256": "CD492E8D8809B52FBFC5FAFA726F7AF9691B3298BDE63B21B5B9D0D81E12ACD6"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture.md",
+    "sha256": "75FF6E9D7EAE9CB1ACD94E3BB1104A05BA24164E72ADC0DB2A8D8582C93F134D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\architecture.mmd",
+    "sha256": "998CCADF3640C65CC64D813650159E5CF543742B23FE4F3A125C6B8448F26659"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\bootstrap-route.json",
+    "sha256": "A1BC3809B9BFD8141C7EC701A90ECE21E69ED167A72A80550485BFF39910730E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\build-codecs.cjs",
+    "sha256": "7A4F683B59C7C02937A0D81FA1253585574ABC84E6A37D0A35F0E401E64B62D4"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\build-delivery.cjs",
+    "sha256": "9B0A36A260426EF286BD15B6400235AFC08A2A6A789065A52C5483E8C88F73A7"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\business-objects.trio",
+    "sha256": "C78B24728F76C62218CE999E69D00B2BD3D61CA484DE9E0F221FFF7B8B52E600"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\contract-model.cjs",
+    "sha256": "6DF9BC465B38C6E158D1C4FEF97CF8115AC62F4B2A2C8D923FBB028DEFDF6E3B"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\contracts.ts",
+    "sha256": "9151F49DA9FADF5093483FFF43CECBE032CAD5B9491D6EE7E8F2619BC31825B9"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\equipment-objects.trio",
+    "sha256": "8B531E3621EC70FB9ED2D866E123E9D700C4C8E1DBB3ACEE8F62A67445BFC5EE"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fin-validation-a2.json",
+    "sha256": "6D2676E5D3C06F41739DABC2F66562F3611512E9CD046029162E419543959569"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fin-validation.json",
+    "sha256": "DC34E1B50CD952E52B7BB67DC2D483482FCAF7289F14BCB9F0A7B1CA8AD945CB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\fsd-change-proposal.md",
+    "sha256": "8DAA6108ACE5A8FC081413D15671A34CFAEC96A88F25E546DDB7B562B0B465CB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\handlers.ts",
+    "sha256": "492D8D37913E211460F17ADDAA6C86ADEF3E4CBD817DDB90704EDB6652AB586E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\interface-implementation-list.md",
+    "sha256": "02AFDEE851E16EAC03DADD406124AC5F9F7DBC98A7D856C343B8742D1E6E1B69"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\local-validation.json",
+    "sha256": "517CD247DB0959479E2FD41B839AEB46733AC41BB1EDB900D74AFF723106870F"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\model-catalog.md",
+    "sha256": "CBC5F2BB91A5DE8F51D5667A7ACBA649B055F3EB0010F5C8FE95DA3B18B1EE37"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\operations.json",
+    "sha256": "720B7147A5CBD1EFDAEE39119D6F0FD6528E21F0C4701FA10AD3FBC5D84C007E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\persistence-contracts.ts",
+    "sha256": "A27F3C60BEF82814DB848F5D78EB85340149759D6A2B1036E6D4F193DA945B96"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\persistence-design.md",
+    "sha256": "E05407C4EE447BE035A396018086CA15303416635ECC6FAE862D2F0E62F89416"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\README.md",
+    "sha256": "B8A42A5D8A29EA49167F97EF84E65C309625305A28315AD7C1ABA865C7EBC1B5"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-codec.cjs",
+    "sha256": "864903737552C8E1F8047E5E2B4EB4EE521D8317B2E0AB4F6FA478E18623409E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-codecs.json",
+    "sha256": "8A205CEDDCF52470836733A2FE499FF66BF0FFAC8E61893611D5E36A7F6B4B9F"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\record-manifest.json",
+    "sha256": "5B148F4D44A1C57BE9E61D336D588B52DB355841DE80A78C7C80B548F13F486B"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\review-disposition.md",
+    "sha256": "E3535D86512F66A49C2368BBFCEF91A04C62E8BC3A2A4D332A1E7CE23A959694"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\revision-a2-tests.json",
+    "sha256": "3241F1397D82BBA8340D1D61DD1DEA455085A0B78C8725D1FD8E93A2493ADA16"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\revision-a2.cjs",
+    "sha256": "2754E3D56964CB9489F0FE2878F9A6F76486BAEF4C6E053AFA4A105A322A1A59"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\test-revision-a2.cjs",
+    "sha256": "F4E84E7F69ECA513CAA341387F182B86951BB1DDF5F3E6DD89F5E1CD4FD80AFD"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\validate-delivery.cjs",
+    "sha256": "21E53275800846492B8C82B75E7484FFE7085A93EAF11CF5F4A646599A8698A8"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\architecture\\fsd-r9\\VALIDATION.md",
+    "sha256": "DDD3B54BC2C970A86873E3CE29D2D1A6998989C4904997B5AAB613EA09FBFFB4"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FIN-POD-FSD-v0.1.md",
+    "sha256": "2561AE531DCE682AB8A7A34CBA8B9EBF67B431743F8FB31432ABABF2CABD18C8"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FIN-POD-PRD-v0.1.md",
+    "sha256": "D1ED0008843C618D496DCECB6D33E50045D74462A1BE9F1556583C9CD657B29F"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-FSD-r10-review-disposition.md",
+    "sha256": "BA082E27ABEC2C2EF60DF22BB95016317467803835960762DE155B729586DAE3"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\doc\\planning\\UPS-Fleet-Requirements-Traceability-Matrix-v0.1.md",
+    "sha256": "A4B2ADC124985FA4D0135AA3F2552BB36792BA163E12CF69E743D9EFA4FC5F8D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\design-baseline\\D1\\README.md",
+    "sha256": "F6ADA11000B42C3E24923134887DDB373AFE80118C843E763253676567862518"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\artifacts.json",
+    "sha256": "B49AA2091E4F1FEB0B1E831FBD097743BF9C88DB98EC32440C6503649681D2F0"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\build-test.json",
+    "sha256": "1D659F9E93C209AF7355B051F0F6F46CF3A5F2D5C7A84DA15B013EE64EEF2C4E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\build-test.log",
+    "sha256": "1504D94924D9E4D17DE6AD585EA8CCE26D5B2699098D0B7BCAEC961B34F27ABA"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\build.json",
+    "sha256": "3A435F3DE122CDFAC7619A2EC6457A33DFC0EDD49F1B066C30A0DC06128C9694"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\build.log",
+    "sha256": "88F7FD4BDD6C8CE08A9CCF82574C626540937EC67DF2E434B4281A5D53A1E14D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\path-checks.json",
+    "sha256": "4AF50D9C3457E44137CF2DE2616E15FE9248865CCC34B73E454740B218E9DCD6"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\preservation-before.json",
+    "sha256": "937AB17AAB05632F60C1D54B8EC23093B7550B57EF882F879EEF257FB651EA04"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\preservation-result.json",
+    "sha256": "D6D04282147588F542E8257C7D75F6C8E24388169DB7F2886B543B4DBD5DC298"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\README.md",
+    "sha256": "88FD168D4FF069F78CDEE360CCDE0EADFB65C493C378FE0B2D564C2A0A47D931"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\source-hashes.json",
+    "sha256": "D614EC4700E1DE01126ADED194A14D416F8D855E59A7F2A22BA5DB872EAB8C45"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\test.json",
+    "sha256": "3A1EC4C1814F45436960FA19CEC5D054A7C0505989E4F3669B44D27EC4585116"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01-r1\\test.log",
+    "sha256": "DA609585B9AEE87CB25C71A3A8FE21557088EF02177D4037CA261673BBC69520"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\artifacts.json",
+    "sha256": "986D769DCDDD000127E6C025B247E2356BEF32706119B4B478F7399C37D1353A"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\baseline-transfer.json",
+    "sha256": "415F078D2E9369BD5EADD3EA3E7358127976BC4EA7DEDDB8786B1434228B5480"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\build-test.json",
+    "sha256": "CE710FA849A674BEF68CCE1B3ED50D8A50F9B330E49FCB0B6DC2E42FCDF8493D"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\build-test.log",
+    "sha256": "6D1514B37933A1947224F67E8A564E4CBDEC04F57B51745CED32CDFEE12E6CCB"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\build.json",
+    "sha256": "C714B36F2A2C6188839BA5EDA7D280435D006A86CF611D1A7443DB00BC8510B9"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\build.log",
+    "sha256": "780375966F8BAADD41E9265AA679FA0DCC255C0B867D28DDD7D879D77E5AE654"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\environment.json",
+    "sha256": "D6BF8346629B1A495A98C10446449476FB0E3C74AAC3E656AC95067C14D427F9"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\fin-expert-review.json",
+    "sha256": "D80046AF9471C305C0283C952524E81F694257D98929BDA73ED43099F3510F38"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\output-guard.log",
+    "sha256": "94EE41B7F4EB3CC1DD946C6D527BADA0575CE4E03A0CD0DBB53A74ACE6A5D2FD"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\README.md",
+    "sha256": "DBAB6C512D317D698B270650F8DE416B45AEB6B67CA8EF9068D50E614FED1B1E"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\source-hashes.json",
+    "sha256": "C3FD0E9ED50682B1362BBBAFD8B1CB1E174ABE92E3CE93FB0F26397AF7951C91"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\test.json",
+    "sha256": "388163728C7D45000D3DD330B16CF0A27F7CDF182D7E4A6D2DB6E348C1BDC615"
+  },
+  {
+    "path": "C:\\work\\upsproject-implementation\\docs\\development\\DEV-01\\test.log",
+    "sha256": "76EE25BD0AD1BC3A74545A4C122E2CEDB796ECED02A4CFF26917F00915CCA3DA"
+  },
+  {
+    "path": "scripts/build.ps1",
+    "sha256": "ADD07DEC35F80669F4EF41FCC57AD2F2F080AAFCCB611D9D29A2C7BFFB238911"
+  },
+  {
+    "path": "scripts/test.ps1",
+    "sha256": "C41A0BDE6AD9DD2480BF063E432C5AADBFC9222A31F13009A85E7C2AE970396F"
+  },
+  {
+    "path": "upsFleet/build.fan",
+    "sha256": "091796F28BDBFF323DCA135754EDB3280E59D5EB055BEEFD5C23385A16D44681"
+  },
+  {
+    "path": "upsFleet/fan/domain/telemetry/QualityEvaluator.fan",
+    "sha256": "AF8936308708EF594A7084FBBCFCD0379E0A41754E95C13DCA29DCD421553C17"
+  },
+  {
+    "path": "upsFleet/test/domain/QualityEvaluatorTest.fan",
+    "sha256": "487EC3F1F40F6FC5CA085C0B0D1AF737860B42A7BA3CF98FCE96F83EEDD617B2"
+  }
+]

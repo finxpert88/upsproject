@@ -1,0 +1,911 @@
+{
+  "backend-core-uml": {
+    "kind": "uml",
+    "nodes": [
+      {
+        "id": "Lifecycle",
+        "label": "Lifecycle",
+        "methods": [
+          "start()",
+          "stop()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "LifecycleDiagnostics",
+        "label": "LifecycleDiagnostics",
+        "methods": [
+          "diagnostics()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "MigrationRunner",
+        "label": "MigrationRunner",
+        "methods": [
+          "inspectCompatibility()",
+          "planMigration()",
+          "resumeMigration()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "WorkScheduler",
+        "label": "WorkScheduler",
+        "methods": [
+          "admit()",
+          "cancel()",
+          "drain()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "RequestFacade",
+        "label": "RequestFacade",
+        "methods": [
+          "bootstrap()",
+          "dispatch()",
+          "sessionCapabilities()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "RequestGuard",
+        "label": "RequestGuard",
+        "methods": [
+          "authorize()",
+          "checkOriginalOperationBinding()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "DtoCodec",
+        "label": "DtoCodec",
+        "methods": [
+          "decodeRequest<K>()",
+          "encodeResponse<K>()",
+          "encodeDownloadError()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "InventoryService",
+        "label": "InventoryService",
+        "methods": [
+          "equipmentList()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "TelemetryService",
+        "label": "TelemetryService",
+        "methods": [
+          "equipmentSnapshot()",
+          "pollBatch()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "QualityEvaluator",
+        "label": "QualityEvaluator",
+        "methods": [
+          "evaluate()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "CommunicationResolver",
+        "label": "CommunicationResolver",
+        "methods": [
+          "resolve()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "AssessmentEvaluator",
+        "label": "AssessmentEvaluator",
+        "methods": [
+          "evaluate()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "HistoryService",
+        "label": "HistoryService",
+        "methods": [
+          "metricHistory()",
+          "querySegments()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "MetricDictionaryService",
+        "label": "MetricDictionaryService",
+        "methods": [
+          "metricDictionary()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "UpsDataSource",
+        "label": "UpsDataSource",
+        "methods": [
+          "listEquipment()",
+          "readPoints()",
+          "readHistory()"
+        ],
+        "interface": true
+      },
+      {
+        "id": "LiveDataSource",
+        "label": "LiveDataSource",
+        "methods": [
+          "listEquipment()",
+          "readPoints()",
+          "readHistory()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "SimulationDataSource",
+        "label": "SimulationDataSource",
+        "methods": [
+          "listEquipment()",
+          "readPoints()",
+          "readHistory()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "FinGateway",
+        "label": "FinGateway",
+        "methods": [
+          "readPlatform()",
+          "commitBusinessRecords()",
+          "compareAndCommit()"
+        ],
+        "interface": false
+      }
+    ],
+    "edges": [
+      [
+        "Lifecycle",
+        "LifecycleDiagnostics",
+        "depends"
+      ],
+      [
+        "Lifecycle",
+        "MigrationRunner",
+        "depends"
+      ],
+      [
+        "Lifecycle",
+        "WorkScheduler",
+        "depends"
+      ],
+      [
+        "LifecycleDiagnostics",
+        "FinGateway",
+        "depends"
+      ],
+      [
+        "LifecycleDiagnostics",
+        "WorkScheduler",
+        "depends"
+      ],
+      [
+        "MigrationRunner",
+        "FinGateway",
+        "depends"
+      ],
+      [
+        "RequestFacade",
+        "RequestGuard",
+        "depends"
+      ],
+      [
+        "RequestFacade",
+        "DtoCodec",
+        "depends"
+      ],
+      [
+        "RequestGuard",
+        "FinGateway",
+        "depends"
+      ],
+      [
+        "InventoryService",
+        "UpsDataSource",
+        "depends"
+      ],
+      [
+        "TelemetryService",
+        "UpsDataSource",
+        "depends"
+      ],
+      [
+        "TelemetryService",
+        "QualityEvaluator",
+        "depends"
+      ],
+      [
+        "TelemetryService",
+        "CommunicationResolver",
+        "depends"
+      ],
+      [
+        "TelemetryService",
+        "AssessmentEvaluator",
+        "depends"
+      ],
+      [
+        "TelemetryService",
+        "WorkScheduler",
+        "depends"
+      ],
+      [
+        "HistoryService",
+        "UpsDataSource",
+        "depends"
+      ],
+      [
+        "HistoryService",
+        "WorkScheduler",
+        "depends"
+      ],
+      [
+        "LiveDataSource",
+        "FinGateway",
+        "depends"
+      ],
+      [
+        "SimulationDataSource",
+        "FinGateway",
+        "depends"
+      ],
+      [
+        "LiveDataSource",
+        "UpsDataSource",
+        "realizes"
+      ],
+      [
+        "SimulationDataSource",
+        "UpsDataSource",
+        "realizes"
+      ]
+    ]
+  },
+  "backend-state-uml": {
+    "kind": "uml",
+    "nodes": [
+      {
+        "id": "RuleEngine",
+        "label": "RuleEngine",
+        "methods": [
+          "advance()",
+          "recover()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "RuleEvaluator",
+        "label": "RuleEvaluator",
+        "methods": [
+          "evaluate()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "RuleStateStore",
+        "label": "RuleStateStore",
+        "methods": [
+          "load()",
+          "commitTransition()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "AlarmService",
+        "label": "AlarmService",
+        "methods": [
+          "alarmListDetail()",
+          "alarmAcknowledge()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "AlarmSynchronizer",
+        "label": "AlarmSynchronizer",
+        "methods": [
+          "dispatchNext()",
+          "reconcileUnknown()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "AcknowledgementCoordinator",
+        "label": "AcknowledgementCoordinator",
+        "methods": [
+          "execute()",
+          "reconcile()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "ConfigurationService",
+        "label": "ConfigurationService",
+        "methods": [
+          "configGetSaveDraft()",
+          "configValidate()",
+          "configPublish()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "ConfigurationGuard",
+        "label": "ConfigurationGuard",
+        "methods": [
+          "validateDraft()",
+          "checkActiveOccurrences()",
+          "checkAcceptanceEvidence()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "PublicationCoordinator",
+        "label": "PublicationCoordinator",
+        "methods": [
+          "prepare()",
+          "commitDecision()",
+          "activate()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "OperationRepository",
+        "label": "OperationRepository",
+        "methods": [
+          "operationStatus()",
+          "prepare()",
+          "recordOutcome()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "AuditRepository",
+        "label": "AuditRepository",
+        "methods": [
+          "auditList()",
+          "append()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "RecordCodec",
+        "label": "RecordCodec",
+        "methods": [
+          "encode()",
+          "decode()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "ReportService",
+        "label": "ReportService",
+        "methods": [
+          "reportCreate()",
+          "reportGetList()",
+          "reportDownload()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "ReportWorker",
+        "label": "ReportWorker",
+        "methods": [
+          "execute()",
+          "expire()",
+          "cancelAtBoundary()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "NotificationService",
+        "label": "NotificationService",
+        "methods": [
+          "notificationTest()",
+          "notificationDeliveryList()",
+          "notificationRetry()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "NotificationWorker",
+        "label": "NotificationWorker",
+        "methods": [
+          "enqueueAuthorityEvent()",
+          "claimPermit()",
+          "deliver()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "NotificationTransport",
+        "label": "NotificationTransport",
+        "methods": [
+          "send()"
+        ],
+        "interface": true
+      },
+      {
+        "id": "TelegramTransport",
+        "label": "TelegramTransport",
+        "methods": [
+          "send()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "SimulatedNotificationTransport",
+        "label": "SimulatedNotificationTransport",
+        "methods": [
+          "send()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "SimulationService",
+        "label": "SimulationService",
+        "methods": [
+          "simulationCreate()",
+          "simulationGenerate()",
+          "simulationControl()"
+        ],
+        "interface": false
+      },
+      {
+        "id": "SimulationEngine",
+        "label": "SimulationEngine",
+        "methods": [
+          "advanceEvents()",
+          "replay()"
+        ],
+        "interface": false
+      }
+    ],
+    "edges": [
+      [
+        "RuleEngine",
+        "RuleEvaluator",
+        "depends"
+      ],
+      [
+        "RuleEngine",
+        "RuleStateStore",
+        "depends"
+      ],
+      [
+        "RuleStateStore",
+        "RecordCodec",
+        "depends"
+      ],
+      [
+        "AlarmService",
+        "AlarmSynchronizer",
+        "depends"
+      ],
+      [
+        "AlarmService",
+        "AcknowledgementCoordinator",
+        "depends"
+      ],
+      [
+        "AlarmSynchronizer",
+        "RuleStateStore",
+        "depends"
+      ],
+      [
+        "AlarmSynchronizer",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "AcknowledgementCoordinator",
+        "OperationRepository",
+        "depends"
+      ],
+      [
+        "AcknowledgementCoordinator",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "ConfigurationService",
+        "ConfigurationGuard",
+        "depends"
+      ],
+      [
+        "ConfigurationService",
+        "PublicationCoordinator",
+        "depends"
+      ],
+      [
+        "ConfigurationService",
+        "RecordCodec",
+        "depends"
+      ],
+      [
+        "ConfigurationGuard",
+        "RuleStateStore",
+        "depends"
+      ],
+      [
+        "PublicationCoordinator",
+        "RecordCodec",
+        "depends"
+      ],
+      [
+        "PublicationCoordinator",
+        "OperationRepository",
+        "depends"
+      ],
+      [
+        "PublicationCoordinator",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "OperationRepository",
+        "RecordCodec",
+        "depends"
+      ],
+      [
+        "AuditRepository",
+        "RecordCodec",
+        "depends"
+      ],
+      [
+        "ReportService",
+        "ReportWorker",
+        "depends"
+      ],
+      [
+        "ReportService",
+        "OperationRepository",
+        "depends"
+      ],
+      [
+        "ReportService",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "ReportWorker",
+        "AlarmService",
+        "depends"
+      ],
+      [
+        "NotificationService",
+        "NotificationWorker",
+        "depends"
+      ],
+      [
+        "NotificationService",
+        "OperationRepository",
+        "depends"
+      ],
+      [
+        "NotificationService",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "NotificationWorker",
+        "NotificationTransport",
+        "depends"
+      ],
+      [
+        "SimulationService",
+        "SimulationEngine",
+        "depends"
+      ],
+      [
+        "SimulationService",
+        "OperationRepository",
+        "depends"
+      ],
+      [
+        "SimulationService",
+        "AuditRepository",
+        "depends"
+      ],
+      [
+        "SimulationEngine",
+        "RuleEngine",
+        "depends"
+      ],
+      [
+        "TelegramTransport",
+        "NotificationTransport",
+        "realizes"
+      ],
+      [
+        "SimulatedNotificationTransport",
+        "NotificationTransport",
+        "realizes"
+      ]
+    ]
+  },
+  "system-architecture": {
+    "kind": "flow",
+    "nodes": [
+      {
+        "id": "Browser",
+        "label": "Browser / en-US UI"
+      },
+      {
+        "id": "Api",
+        "label": "Bootstrap + 31 operations\nRequestFacade / guard / codec"
+      },
+      {
+        "id": "Domain",
+        "label": "Inventory / telemetry / history\nRules / alarms / configuration"
+      },
+      {
+        "id": "Jobs",
+        "label": "Reports / notification workers\nBounded scheduler"
+      },
+      {
+        "id": "Live",
+        "label": "LiveDataSource"
+      },
+      {
+        "id": "Sim",
+        "label": "SimulationDataSource\nSimulationEngine + shared RuleEngine"
+      },
+      {
+        "id": "Gateway",
+        "label": "FinGateway\nVerified SDK binding pending"
+      },
+      {
+        "id": "Fin",
+        "label": "FIN identity / points / history / alarms"
+      },
+      {
+        "id": "Folio",
+        "label": "Folio business records\nConfig / intents / outboxes / audit"
+      },
+      {
+        "id": "Files",
+        "label": "Protected report files"
+      },
+      {
+        "id": "Devices",
+        "label": "UPS / sensors / FIN connectors"
+      },
+      {
+        "id": "Telegram",
+        "label": "Telegram API\nServer transport only"
+      },
+      {
+        "id": "Local",
+        "label": "Simulated delivery\nNo external send"
+      }
+    ],
+    "edges": [
+      [
+        "Browser",
+        "Api",
+        ""
+      ],
+      [
+        "Api",
+        "Domain",
+        ""
+      ],
+      [
+        "Api",
+        "Jobs",
+        ""
+      ],
+      [
+        "Domain",
+        "Live",
+        "live context"
+      ],
+      [
+        "Domain",
+        "Sim",
+        "simulation context"
+      ],
+      [
+        "Live",
+        "Gateway",
+        ""
+      ],
+      [
+        "Sim",
+        "Gateway",
+        "isolated records only"
+      ],
+      [
+        "Jobs",
+        "Gateway",
+        ""
+      ],
+      [
+        "Gateway",
+        "Fin",
+        ""
+      ],
+      [
+        "Gateway",
+        "Folio",
+        ""
+      ],
+      [
+        "Gateway",
+        "Files",
+        ""
+      ],
+      [
+        "Devices",
+        "Fin",
+        ""
+      ],
+      [
+        "Jobs",
+        "Telegram",
+        "live + gate permit"
+      ],
+      [
+        "Jobs",
+        "Local",
+        "simulation"
+      ]
+    ]
+  },
+  "frontend-routes": {
+    "kind": "flow",
+    "nodes": [
+      {
+        "id": "Start",
+        "label": "Bootstrap + session capabilities"
+      },
+      {
+        "id": "Root",
+        "label": "AppShell / validated SourceContext"
+      },
+      {
+        "id": "Live",
+        "label": "Live context"
+      },
+      {
+        "id": "Sessions",
+        "label": "SimulationPage\nList / create"
+      },
+      {
+        "id": "Selected",
+        "label": "Selected simulation\nSession + generation ACL"
+      },
+      {
+        "id": "Dash",
+        "label": "DashboardPage / EquipmentPage"
+      },
+      {
+        "id": "Hist",
+        "label": "HistoryPage"
+      },
+      {
+        "id": "Alarm",
+        "label": "AlarmPage / timeline / ack"
+      },
+      {
+        "id": "Reports",
+        "label": "ReportPage / ReportDetailPage"
+      },
+      {
+        "id": "Eng",
+        "label": "EngineeringPage\nSix-step draft wizard"
+      },
+      {
+        "id": "Commission",
+        "label": "CommissioningPage"
+      },
+      {
+        "id": "Notify",
+        "label": "NotificationPage\nLive: configure / test / pause"
+      },
+      {
+        "id": "Diag",
+        "label": "DiagnosticsPage / AuditPage"
+      },
+      {
+        "id": "LocalNotify",
+        "label": "NotificationPage\nSimulation: local delivery / retry"
+      }
+    ],
+    "edges": [
+      [
+        "Start",
+        "Root",
+        ""
+      ],
+      [
+        "Root",
+        "Live",
+        "default dashboard"
+      ],
+      [
+        "Root",
+        "Sessions",
+        ""
+      ],
+      [
+        "Sessions",
+        "Selected",
+        ""
+      ],
+      [
+        "Live",
+        "Dash",
+        ""
+      ],
+      [
+        "Selected",
+        "Dash",
+        "same pages / isolated data"
+      ],
+      [
+        "Dash",
+        "Hist",
+        "equipment history"
+      ],
+      [
+        "Live",
+        "Alarm",
+        ""
+      ],
+      [
+        "Selected",
+        "Alarm",
+        "sim permissions"
+      ],
+      [
+        "Live",
+        "Reports",
+        ""
+      ],
+      [
+        "Selected",
+        "Reports",
+        "sim permissions"
+      ],
+      [
+        "Live",
+        "Eng",
+        ""
+      ],
+      [
+        "Eng",
+        "Commission",
+        ""
+      ],
+      [
+        "Eng",
+        "Notify",
+        ""
+      ],
+      [
+        "Eng",
+        "Diag",
+        ""
+      ],
+      [
+        "Selected",
+        "LocalNotify",
+        ""
+      ]
+    ]
+  }
+}
